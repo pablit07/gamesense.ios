@@ -1,0 +1,35 @@
+12:00:36.483 Xcode[33058:3264174] Beginning test session gameSenseSportsUITests-B7C701E7-6344-49A1-B17D-08B65F24D9EE at 2016-11-21 12:00:36.482 with Xcode 8A218a on target <DVTiPhoneSimulator: 0x7fc5213631f0> {
+		SimDevice: SimDevice : iPhone 7 Plus (56DC1FB0-E480-4AC9-B39B-96198734E020) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-7-Plus } runtime={ SimRuntime : 10.0 (14A345) - com.apple.CoreSimulator.SimRuntime.iOS-10-0 }
+} (10.0 (14A345))
+12:00:36.483 Xcode[33058:3264174] Launching with Xcode.DebuggerFoundation.Launcher.LLDB
+12:00:36.483 Xcode[33058:3264174] Initializing test infrastructure.
+12:00:36.483 Xcode[33058:4467572] 56DC1FB0-E480-4AC9-B39B-96198734E020: Registered for sim device notification, got token 223
+12:00:36.483 Xcode[33058:4467572] 56DC1FB0-E480-4AC9-B39B-96198734E020: Unregistering for sim device notification with token 223
+12:00:36.483 Xcode[33058:4467572] Sim iPhone 7 Plus is booted (state = 3)
+12:00:36.483 Xcode[33058:4467572] Calling -[SimDevice getenv:error:] for TESTMANAGERD_SIM_SOCK
+12:00:36.484 Xcode[33058:4467572] Returning /private/tmp/com.apple.launchd.ZUFGXC8OWV/com.apple.testmanagerd.unix-domain.socket for TESTMANAGERD_SIM_SOCK
+12:00:36.484 Xcode[33058:4467572] Sim iPhone 7 Plus has testmanagerd socket at /private/tmp/com.apple.launchd.ZUFGXC8OWV/com.apple.testmanagerd.unix-domain.socket
+12:00:36.484 Xcode[33058:4467572] Connected socket 100 to testmanagerd for Sim iPhone 7 Plus
+12:00:36.484 Xcode[33058:4467572] Creating the test bundle connection.
+12:00:36.484 Xcode[33058:4467572] Listening for proxy connection request from the test bundle (all platforms)
+12:00:36.484 Xcode[33058:4467572] Resuming the connection.
+12:00:36.484 Xcode[33058:4467572] Test connection requires daemon assistance.
+12:00:36.491 Xcode[33058:4467572] 56DC1FB0-E480-4AC9-B39B-96198734E020: Registered for sim device notification, got token 224
+12:00:36.491 Xcode[33058:4467572] 56DC1FB0-E480-4AC9-B39B-96198734E020: Unregistering for sim device notification with token 224
+12:00:36.491 Xcode[33058:4467572] Sim iPhone 7 Plus is booted (state = 3)
+12:00:36.491 Xcode[33058:4467572] Calling -[SimDevice getenv:error:] for TESTMANAGERD_SIM_SOCK
+12:00:36.491 Xcode[33058:4467572] Returning /private/tmp/com.apple.launchd.ZUFGXC8OWV/com.apple.testmanagerd.unix-domain.socket for TESTMANAGERD_SIM_SOCK
+12:00:36.491 Xcode[33058:4467572] Sim iPhone 7 Plus has testmanagerd socket at /private/tmp/com.apple.launchd.ZUFGXC8OWV/com.apple.testmanagerd.unix-domain.socket
+12:00:36.491 Xcode[33058:4467572] Connected socket 103 to testmanagerd for Sim iPhone 7 Plus
+12:00:36.495 Xcode[33058:3264174] Received Ready from iOSSimulator
+12:00:36.495 Xcode[33058:3264174] Sending notification: NSConcreteNotification 0x7fc4aec13a40 {name = com.apple.iphonesimulator.startSession; userInfo = {
+    deviceUDID = "56DC1FB0-E480-4AC9-B39B-96198734E020";
+}}
+12:00:36.495 Xcode[33058:3264174] Received Ready from iOSSimulator
+12:00:36.495 Xcode[33058:3264174] Sending notification: NSConcreteNotification 0x7fc4b24cb8d0 {name = com.apple.iphonesimulator.startSession; userInfo = {
+    deviceUDID = "56DC1FB0-E480-4AC9-B39B-96198734E020";
+}}
+12:00:36.499 Xcode[33058:3264174] Starting test session with ID B7C701E7-6344-49A1-B17D-08B65F24D9EE
+12:00:36.499 Xcode[33058:3264174] Checking test manager availability..., will wait up to 120s
+12:00:37.474 Xcode[33058:3264174] Test operation failure: Test operation was canceled.
+12:00:37.475 Xcode[33058:3264174] _finishWithError:Error Domain=IDETestOperationsObserverErrorDomain Code=3 "Test operation was canceled." UserInfo={NSLocalizedDescription=Test operation was canceled.} didCancel: 1

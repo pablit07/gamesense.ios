@@ -1,0 +1,679 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "SharedNetworkConnection"
+provides-nominal:
+- "C15gameSenseSports23SharedNetworkConnection"
+provides-member:
+- ["C15gameSenseSports23SharedNetworkConnection", ""]
+provides-dynamic-lookup:
+- "testURL"
+- "apiGetDrillList"
+- "apiGetDrillVideo"
+- "apiPostAnswerQuestion"
+- "apiLogin"
+- "apiGetDrillQuestions"
+- "apiDrillFinished"
+- "apiLoginWithStoredCredentials"
+- "downloadVideo"
+- "apiGetDrillPitchLocation"
+- "apiPostRegisterDrill"
+depends-top-level:
+- "Bool"
+- "Swift"
+- "SharedNetworkConnection"
+- !private "HTTPURLResponse"
+- "Array"
+- "URLComponents"
+- "URLResponse"
+- "Int"
+- "Data"
+- "NSObject"
+- !private "JSONSerialization"
+- !private "URL"
+- !private "UserDefaults"
+- "Error"
+- !private "!="
+- "AssignmentPrecedence"
+- !private "URLRequest"
+- "String"
+- "CastingPrecedence"
+- "URLSession"
+- !private "print"
+- !private "=="
+- !private "!"
+- !private "Constants"
+- !private "+"
+depends-member:
+- !private ["Ps9AnyObject", "Constants"]
+- !private ["Ps9AnyObject", "JSONSerialization"]
+- !private ["Ps9AnyObject", "String"]
+- !private ["Ps9AnyObject", "URL"]
+- !private ["Ps9AnyObject", "URLRequest"]
+- !private ["Ps9AnyObject", "URLSession"]
+- !private ["Ps9AnyObject", "UserDefaults"]
+- ["Ps9AnyObject", "apiDrillFinished"]
+- ["Ps9AnyObject", "apiDrillFinishedNextCall"]
+- ["Ps9AnyObject", "apiGetDrillList"]
+- ["Ps9AnyObject", "apiGetDrillPitchLocation"]
+- ["Ps9AnyObject", "apiGetDrillQuestions"]
+- ["Ps9AnyObject", "apiGetDrillVideo"]
+- ["Ps9AnyObject", "apiLogin"]
+- ["Ps9AnyObject", "apiLoginWithStoredCredentials"]
+- ["Ps9AnyObject", "apiPostAnswerQuestion"]
+- ["Ps9AnyObject", "apiPostRegisterDrill"]
+- !private ["Ps9AnyObject", "data"]
+- !private ["Ps9AnyObject", "dataTask"]
+- ["Ps9AnyObject", "downloadVideo"]
+- !private ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "jsonObject"]
+- !private ["Ps9AnyObject", "object"]
+- !private ["Ps9AnyObject", "print"]
+- !private ["Ps9AnyObject", "resume"]
+- !private ["Ps9AnyObject", "shared"]
+- !private ["Ps9AnyObject", "standard"]
+- !private ["Ps9AnyObject", "statusCode"]
+- ["Ps9AnyObject", "testURL"]
+- ["Ps9AnyObject", ""]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- ["Sb", "deinit"]
+- !private ["Ps7CVarArg", "Constants"]
+- !private ["Ps7CVarArg", "Index"]
+- !private ["Ps7CVarArg", "JSONSerialization"]
+- !private ["Ps7CVarArg", "String"]
+- !private ["Ps7CVarArg", "SubSequence"]
+- !private ["Ps7CVarArg", "URL"]
+- !private ["Ps7CVarArg", "URLRequest"]
+- !private ["Ps7CVarArg", "URLSession"]
+- !private ["Ps7CVarArg", "UserDefaults"]
+- ["Ps7CVarArg", "apiDrillFinished"]
+- ["Ps7CVarArg", "apiDrillFinishedNextCall"]
+- ["Ps7CVarArg", "apiGetDrillList"]
+- ["Ps7CVarArg", "apiGetDrillPitchLocation"]
+- ["Ps7CVarArg", "apiGetDrillQuestions"]
+- ["Ps7CVarArg", "apiGetDrillVideo"]
+- ["Ps7CVarArg", "apiLogin"]
+- ["Ps7CVarArg", "apiLoginWithStoredCredentials"]
+- ["Ps7CVarArg", "apiPostAnswerQuestion"]
+- ["Ps7CVarArg", "apiPostRegisterDrill"]
+- !private ["Ps7CVarArg", "data"]
+- !private ["Ps7CVarArg", "dataTask"]
+- ["Ps7CVarArg", "downloadVideo"]
+- !private ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "jsonObject"]
+- !private ["Ps7CVarArg", "object"]
+- !private ["Ps7CVarArg", "print"]
+- !private ["Ps7CVarArg", "resume"]
+- !private ["Ps7CVarArg", "shared"]
+- !private ["Ps7CVarArg", "standard"]
+- !private ["Ps7CVarArg", "statusCode"]
+- !private ["Ps7CVarArg", "subscript"]
+- ["Ps7CVarArg", "testURL"]
+- ["Ps7CVarArg", ""]
+- !private ["Vs9Character", "deinit"]
+- !private ["Ps10Collection", "Index"]
+- !private ["Ps10Collection", "Iterator"]
+- !private ["Ps10Collection", "SubSequence"]
+- !private ["Ps10Collection", "_Element"]
+- !private ["Ps10Collection", "subscript"]
+- !private ["Ps10Comparable", "data"]
+- !private ["Ps10Comparable", "init"]
+- !private ["V15gameSenseSports9Constants", "URLs"]
+- !private ["V15gameSenseSports9Constants", "kPasswordKey"]
+- !private ["V15gameSenseSports9Constants", "kUsernameKey"]
+- !private ["Ps28CustomDebugStringConvertible", "Constants"]
+- !private ["Ps28CustomDebugStringConvertible", "Index"]
+- !private ["Ps28CustomDebugStringConvertible", "JSONSerialization"]
+- !private ["Ps28CustomDebugStringConvertible", "String"]
+- !private ["Ps28CustomDebugStringConvertible", "SubSequence"]
+- !private ["Ps28CustomDebugStringConvertible", "URL"]
+- !private ["Ps28CustomDebugStringConvertible", "URLRequest"]
+- !private ["Ps28CustomDebugStringConvertible", "URLSession"]
+- !private ["Ps28CustomDebugStringConvertible", "UserDefaults"]
+- !private ["Ps28CustomDebugStringConvertible", "addValue"]
+- ["Ps28CustomDebugStringConvertible", "apiDrillFinished"]
+- ["Ps28CustomDebugStringConvertible", "apiDrillFinishedNextCall"]
+- ["Ps28CustomDebugStringConvertible", "apiGetDrillList"]
+- ["Ps28CustomDebugStringConvertible", "apiGetDrillPitchLocation"]
+- ["Ps28CustomDebugStringConvertible", "apiGetDrillQuestions"]
+- ["Ps28CustomDebugStringConvertible", "apiGetDrillVideo"]
+- ["Ps28CustomDebugStringConvertible", "apiLogin"]
+- ["Ps28CustomDebugStringConvertible", "apiLoginWithStoredCredentials"]
+- ["Ps28CustomDebugStringConvertible", "apiPostAnswerQuestion"]
+- ["Ps28CustomDebugStringConvertible", "apiPostRegisterDrill"]
+- !private ["Ps28CustomDebugStringConvertible", "data"]
+- !private ["Ps28CustomDebugStringConvertible", "dataTask"]
+- ["Ps28CustomDebugStringConvertible", "downloadVideo"]
+- !private ["Ps28CustomDebugStringConvertible", "httpBody"]
+- !private ["Ps28CustomDebugStringConvertible", "httpMethod"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "jsonObject"]
+- !private ["Ps28CustomDebugStringConvertible", "object"]
+- !private ["Ps28CustomDebugStringConvertible", "print"]
+- !private ["Ps28CustomDebugStringConvertible", "resume"]
+- !private ["Ps28CustomDebugStringConvertible", "setValue"]
+- !private ["Ps28CustomDebugStringConvertible", "shared"]
+- !private ["Ps28CustomDebugStringConvertible", "standard"]
+- !private ["Ps28CustomDebugStringConvertible", "statusCode"]
+- !private ["Ps28CustomDebugStringConvertible", "subscript"]
+- ["Ps28CustomDebugStringConvertible", "testURL"]
+- !private ["Ps28CustomDebugStringConvertible", "url"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "data"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps17CustomReflectable", "Index"]
+- !private ["Ps17CustomReflectable", "SubSequence"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "addValue"]
+- !private ["Ps17CustomReflectable", "data"]
+- !private ["Ps17CustomReflectable", "httpBody"]
+- !private ["Ps17CustomReflectable", "httpMethod"]
+- !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "setValue"]
+- !private ["Ps17CustomReflectable", "subscript"]
+- !private ["Ps17CustomReflectable", "url"]
+- !private ["Ps23CustomStringConvertible", "Constants"]
+- !private ["Ps23CustomStringConvertible", "Index"]
+- !private ["Ps23CustomStringConvertible", "JSONSerialization"]
+- !private ["Ps23CustomStringConvertible", "String"]
+- !private ["Ps23CustomStringConvertible", "SubSequence"]
+- !private ["Ps23CustomStringConvertible", "URL"]
+- !private ["Ps23CustomStringConvertible", "URLRequest"]
+- !private ["Ps23CustomStringConvertible", "URLSession"]
+- !private ["Ps23CustomStringConvertible", "UserDefaults"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps23CustomStringConvertible", "addValue"]
+- ["Ps23CustomStringConvertible", "apiDrillFinished"]
+- ["Ps23CustomStringConvertible", "apiDrillFinishedNextCall"]
+- ["Ps23CustomStringConvertible", "apiGetDrillList"]
+- ["Ps23CustomStringConvertible", "apiGetDrillPitchLocation"]
+- ["Ps23CustomStringConvertible", "apiGetDrillQuestions"]
+- ["Ps23CustomStringConvertible", "apiGetDrillVideo"]
+- ["Ps23CustomStringConvertible", "apiLogin"]
+- ["Ps23CustomStringConvertible", "apiLoginWithStoredCredentials"]
+- ["Ps23CustomStringConvertible", "apiPostAnswerQuestion"]
+- ["Ps23CustomStringConvertible", "apiPostRegisterDrill"]
+- !private ["Ps23CustomStringConvertible", "data"]
+- !private ["Ps23CustomStringConvertible", "dataTask"]
+- ["Ps23CustomStringConvertible", "downloadVideo"]
+- !private ["Ps23CustomStringConvertible", "httpBody"]
+- !private ["Ps23CustomStringConvertible", "httpMethod"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "jsonObject"]
+- !private ["Ps23CustomStringConvertible", "object"]
+- !private ["Ps23CustomStringConvertible", "print"]
+- !private ["Ps23CustomStringConvertible", "resume"]
+- !private ["Ps23CustomStringConvertible", "setValue"]
+- !private ["Ps23CustomStringConvertible", "shared"]
+- !private ["Ps23CustomStringConvertible", "standard"]
+- !private ["Ps23CustomStringConvertible", "statusCode"]
+- !private ["Ps23CustomStringConvertible", "subscript"]
+- ["Ps23CustomStringConvertible", "testURL"]
+- !private ["Ps23CustomStringConvertible", "url"]
+- !private ["Ps23CustomStringConvertible", "utf8"]
+- ["Ps23CustomStringConvertible", ""]
+- !private ["V10Foundation4Data", "deinit"]
+- !private ["Vs10Dictionary", "Index"]
+- !private ["Vs10Dictionary", "SubSequence"]
+- !private ["Vs10Dictionary", "deinit"]
+- !private ["Vs10Dictionary", "subscript"]
+- !private ["Sd", "deinit"]
+- ["VE10FoundationSS8Encoding", "deinit"]
+- !private ["VE10FoundationSS8Encoding", "utf8"]
+- !private ["Ps9Equatable", "Constants"]
+- !private ["Ps9Equatable", "Element"]
+- !private ["Ps9Equatable", "JSONSerialization"]
+- !private ["Ps9Equatable", "String"]
+- !private ["Ps9Equatable", "URL"]
+- !private ["Ps9Equatable", "URLRequest"]
+- !private ["Ps9Equatable", "URLSession"]
+- !private ["Ps9Equatable", "UserDefaults"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- !private ["Ps9Equatable", "addValue"]
+- ["Ps9Equatable", "apiDrillFinished"]
+- ["Ps9Equatable", "apiDrillFinishedNextCall"]
+- ["Ps9Equatable", "apiGetDrillList"]
+- ["Ps9Equatable", "apiGetDrillPitchLocation"]
+- ["Ps9Equatable", "apiGetDrillQuestions"]
+- ["Ps9Equatable", "apiGetDrillVideo"]
+- ["Ps9Equatable", "apiLogin"]
+- ["Ps9Equatable", "apiLoginWithStoredCredentials"]
+- ["Ps9Equatable", "apiPostAnswerQuestion"]
+- ["Ps9Equatable", "apiPostRegisterDrill"]
+- !private ["Ps9Equatable", "data"]
+- !private ["Ps9Equatable", "dataTask"]
+- ["Ps9Equatable", "downloadVideo"]
+- !private ["Ps9Equatable", "httpBody"]
+- !private ["Ps9Equatable", "httpMethod"]
+- !private ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "jsonObject"]
+- !private ["Ps9Equatable", "object"]
+- !private ["Ps9Equatable", "print"]
+- !private ["Ps9Equatable", "resume"]
+- !private ["Ps9Equatable", "setValue"]
+- !private ["Ps9Equatable", "shared"]
+- !private ["Ps9Equatable", "standard"]
+- !private ["Ps9Equatable", "statusCode"]
+- ["Ps9Equatable", "testURL"]
+- !private ["Ps9Equatable", "url"]
+- !private ["Ps9Equatable", "utf8"]
+- ["Ps9Equatable", ""]
+- !private ["Ps5Error", "deinit"]
+- !private ["Ps25ExpressibleByArrayLiteral", "Element"]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "Index"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "SubSequence"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "subscript"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "data"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps32ExpressibleByStringInterpolation", "data"]
+- !private ["Ps32ExpressibleByStringInterpolation", "init"]
+- !private ["Ps26ExpressibleByStringLiteral", "data"]
+- !private ["Ps26ExpressibleByStringLiteral", "init"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "data"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["Sf", "deinit"]
+- !private ["CSo15HTTPURLResponse", "deinit"]
+- !private ["CSo15HTTPURLResponse", "statusCode"]
+- !private ["Ps8Hashable", "Constants"]
+- !private ["Ps8Hashable", "JSONSerialization"]
+- !private ["Ps8Hashable", "String"]
+- !private ["Ps8Hashable", "URL"]
+- !private ["Ps8Hashable", "URLRequest"]
+- !private ["Ps8Hashable", "URLSession"]
+- !private ["Ps8Hashable", "UserDefaults"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps8Hashable", "addValue"]
+- ["Ps8Hashable", "apiDrillFinished"]
+- ["Ps8Hashable", "apiDrillFinishedNextCall"]
+- ["Ps8Hashable", "apiGetDrillList"]
+- ["Ps8Hashable", "apiGetDrillPitchLocation"]
+- ["Ps8Hashable", "apiGetDrillQuestions"]
+- ["Ps8Hashable", "apiGetDrillVideo"]
+- ["Ps8Hashable", "apiLogin"]
+- ["Ps8Hashable", "apiLoginWithStoredCredentials"]
+- ["Ps8Hashable", "apiPostAnswerQuestion"]
+- ["Ps8Hashable", "apiPostRegisterDrill"]
+- !private ["Ps8Hashable", "data"]
+- !private ["Ps8Hashable", "dataTask"]
+- ["Ps8Hashable", "downloadVideo"]
+- !private ["Ps8Hashable", "httpBody"]
+- !private ["Ps8Hashable", "httpMethod"]
+- !private ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "jsonObject"]
+- !private ["Ps8Hashable", "object"]
+- !private ["Ps8Hashable", "print"]
+- !private ["Ps8Hashable", "resume"]
+- !private ["Ps8Hashable", "setValue"]
+- !private ["Ps8Hashable", "shared"]
+- !private ["Ps8Hashable", "standard"]
+- !private ["Ps8Hashable", "statusCode"]
+- ["Ps8Hashable", "testURL"]
+- !private ["Ps8Hashable", "url"]
+- !private ["Ps8Hashable", "utf8"]
+- ["Ps8Hashable", ""]
+- !private ["Ps9Indexable", "Index"]
+- !private ["Ps9Indexable", "Iterator"]
+- !private ["Ps9Indexable", "SubSequence"]
+- !private ["Ps9Indexable", "_Element"]
+- !private ["Ps9Indexable", "subscript"]
+- !private ["Ps13IndexableBase", "Index"]
+- !private ["Ps13IndexableBase", "Iterator"]
+- !private ["Ps13IndexableBase", "SubSequence"]
+- !private ["Ps13IndexableBase", "_Element"]
+- !private ["Ps13IndexableBase", "subscript"]
+- !private ["Vs16IndexingIterator", "Element"]
+- ["Si", "deinit"]
+- !private ["Vs5Int16", "deinit"]
+- !private ["Vs5Int32", "deinit"]
+- !private ["Vs5Int64", "deinit"]
+- !private ["Vs4Int8", "deinit"]
+- !private ["Ps16IteratorProtocol", "Element"]
+- !private ["CSo17JSONSerialization", "jsonObject"]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps25LosslessStringConvertible", "data"]
+- !private ["Ps25LosslessStringConvertible", "init"]
+- !private ["Ps10MirrorPath", "data"]
+- !private ["Ps10MirrorPath", "init"]
+- !private ["PSo8NSCoding", "data"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "statusCode"]
+- !private ["PSo9NSCopying", "data"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "resume"]
+- !private ["PSo9NSCopying", "statusCode"]
+- !private ["PSo16NSMutableCopying", "data"]
+- !private ["PSo16NSMutableCopying", "init"]
+- ["CSo8NSObject", "Bool"]
+- !private ["CSo8NSObject", "Constants"]
+- ["CSo8NSObject", "Data"]
+- ["CSo8NSObject", "Error"]
+- !private ["CSo8NSObject", "HTTPURLResponse"]
+- ["CSo8NSObject", "Int"]
+- !private ["CSo8NSObject", "JSONSerialization"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "Swift"]
+- !private ["CSo8NSObject", "URL"]
+- ["CSo8NSObject", "URLComponents"]
+- !private ["CSo8NSObject", "URLRequest"]
+- ["CSo8NSObject", "URLResponse"]
+- ["CSo8NSObject", "URLSession"]
+- !private ["CSo8NSObject", "UserDefaults"]
+- ["CSo8NSObject", "apiDrillFinished"]
+- ["CSo8NSObject", "apiDrillFinishedNextCall"]
+- ["CSo8NSObject", "apiGetDrillList"]
+- ["CSo8NSObject", "apiGetDrillPitchLocation"]
+- ["CSo8NSObject", "apiGetDrillQuestions"]
+- ["CSo8NSObject", "apiGetDrillVideo"]
+- ["CSo8NSObject", "apiLogin"]
+- ["CSo8NSObject", "apiLoginWithStoredCredentials"]
+- ["CSo8NSObject", "apiPostAnswerQuestion"]
+- ["CSo8NSObject", "apiPostRegisterDrill"]
+- !private ["CSo8NSObject", "data"]
+- !private ["CSo8NSObject", "dataTask"]
+- ["CSo8NSObject", "deinit"]
+- ["CSo8NSObject", "downloadVideo"]
+- ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "jsonObject"]
+- !private ["CSo8NSObject", "object"]
+- !private ["CSo8NSObject", "print"]
+- !private ["CSo8NSObject", "resume"]
+- !private ["CSo8NSObject", "shared"]
+- !private ["CSo8NSObject", "standard"]
+- !private ["CSo8NSObject", "statusCode"]
+- ["CSo8NSObject", "testURL"]
+- ["CSo8NSObject", ""]
+- !private ["PSo16NSObjectProtocol", "Constants"]
+- !private ["PSo16NSObjectProtocol", "JSONSerialization"]
+- !private ["PSo16NSObjectProtocol", "String"]
+- !private ["PSo16NSObjectProtocol", "URL"]
+- !private ["PSo16NSObjectProtocol", "URLRequest"]
+- !private ["PSo16NSObjectProtocol", "URLSession"]
+- !private ["PSo16NSObjectProtocol", "UserDefaults"]
+- ["PSo16NSObjectProtocol", "apiDrillFinished"]
+- ["PSo16NSObjectProtocol", "apiDrillFinishedNextCall"]
+- ["PSo16NSObjectProtocol", "apiGetDrillList"]
+- ["PSo16NSObjectProtocol", "apiGetDrillPitchLocation"]
+- ["PSo16NSObjectProtocol", "apiGetDrillQuestions"]
+- ["PSo16NSObjectProtocol", "apiGetDrillVideo"]
+- ["PSo16NSObjectProtocol", "apiLogin"]
+- ["PSo16NSObjectProtocol", "apiLoginWithStoredCredentials"]
+- ["PSo16NSObjectProtocol", "apiPostAnswerQuestion"]
+- ["PSo16NSObjectProtocol", "apiPostRegisterDrill"]
+- !private ["PSo16NSObjectProtocol", "data"]
+- !private ["PSo16NSObjectProtocol", "dataTask"]
+- ["PSo16NSObjectProtocol", "downloadVideo"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "jsonObject"]
+- !private ["PSo16NSObjectProtocol", "object"]
+- !private ["PSo16NSObjectProtocol", "print"]
+- !private ["PSo16NSObjectProtocol", "resume"]
+- !private ["PSo16NSObjectProtocol", "shared"]
+- !private ["PSo16NSObjectProtocol", "standard"]
+- !private ["PSo16NSObjectProtocol", "statusCode"]
+- ["PSo16NSObjectProtocol", "testURL"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "data"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "statusCode"]
+- !private ["CSo8NSString", "data"]
+- !private ["CSo8NSString", "init"]
+- !private ["Ps9OptionSet", "Element"]
+- ["Sq", "deinit"]
+- !private ["Ps16RawRepresentable", "Element"]
+- !private ["Ps16RawRepresentable", "utf8"]
+- !private ["VCSo17JSONSerialization14ReadingOptions", "Element"]
+- !private ["VCSo17JSONSerialization14ReadingOptions", "deinit"]
+- !private ["P10Foundation20ReferenceConvertible", "addValue"]
+- !private ["P10Foundation20ReferenceConvertible", "httpBody"]
+- !private ["P10Foundation20ReferenceConvertible", "httpMethod"]
+- !private ["P10Foundation20ReferenceConvertible", "init"]
+- !private ["P10Foundation20ReferenceConvertible", "setValue"]
+- !private ["P10Foundation20ReferenceConvertible", "url"]
+- !private ["Ps8Sequence", "Element"]
+- !private ["Ps8Sequence", "Index"]
+- !private ["Ps8Sequence", "Iterator"]
+- !private ["Ps8Sequence", "SubSequence"]
+- !private ["Ps8Sequence", "_Element"]
+- !private ["Ps8Sequence", "subscript"]
+- !private ["Ps10SetAlgebra", "Element"]
+- ["C15gameSenseSports23SharedNetworkConnection", "Bool"]
+- !private ["C15gameSenseSports23SharedNetworkConnection", "Constants"]
+- ["C15gameSenseSports23SharedNetworkConnection", "Data"]
+- ["C15gameSenseSports23SharedNetworkConnection", "Error"]
+- !private ["C15gameSenseSports23SharedNetworkConnection", "HTTPURLResponse"]
+- ["C15gameSenseSports23SharedNetworkConnection", "Int"]
+- !private ["C15gameSenseSports23SharedNetworkConnection", "JSONSerialization"]
+- ["C15gameSenseSports23SharedNetworkConnection", "String"]
+- ["C15gameSenseSports23SharedNetworkConnection", "Swift"]
+- !private ["C15gameSenseSports23SharedNetworkConnection", "URL"]
+- ["C15gameSenseSports23SharedNetworkConnection", "URLComponents"]
+- !private ["C15gameSenseSports23SharedNetworkConnection", "URLRequest"]
+- ["C15gameSenseSports23SharedNetworkConnection", "URLResponse"]
+- ["C15gameSenseSports23SharedNetworkConnection", "URLSession"]
+- !private ["C15gameSenseSports23SharedNetworkConnection", "UserDefaults"]
+- ["C15gameSenseSports23SharedNetworkConnection", "apiDrillFinished"]
+- !private ["C15gameSenseSports23SharedNetworkConnection", "apiDrillFinishedNextCall"]
+- ["C15gameSenseSports23SharedNetworkConnection", "apiGetDrillList"]
+- ["C15gameSenseSports23SharedNetworkConnection", "apiGetDrillPitchLocation"]
+- ["C15gameSenseSports23SharedNetworkConnection", "apiGetDrillQuestions"]
+- ["C15gameSenseSports23SharedNetworkConnection", "apiGetDrillVideo"]
+- ["C15gameSenseSports23SharedNetworkConnection", "apiLogin"]
+- ["C15gameSenseSports23SharedNetworkConnection", "apiLoginWithStoredCredentials"]
+- ["C15gameSenseSports23SharedNetworkConnection", "apiPostAnswerQuestion"]
+- ["C15gameSenseSports23SharedNetworkConnection", "apiPostRegisterDrill"]
+- ["C15gameSenseSports23SharedNetworkConnection", "deinit"]
+- ["C15gameSenseSports23SharedNetworkConnection", "downloadVideo"]
+- ["C15gameSenseSports23SharedNetworkConnection", "init"]
+- !private ["C15gameSenseSports23SharedNetworkConnection", "print"]
+- ["C15gameSenseSports23SharedNetworkConnection", "testURL"]
+- !private ["Vs5Slice", "Index"]
+- !private ["Vs5Slice", "Iterator"]
+- !private ["Vs5Slice", "SubSequence"]
+- !private ["Vs5Slice", "_Element"]
+- !private ["SS", "data"]
+- ["SS", "deinit"]
+- !private ["SS", "init"]
+- !private ["Ps16TextOutputStream", "data"]
+- !private ["Ps16TextOutputStream", "init"]
+- !private ["Ps20TextOutputStreamable", "data"]
+- !private ["Ps20TextOutputStreamable", "init"]
+- !private ["Su", "deinit"]
+- !private ["Vs6UInt16", "deinit"]
+- !private ["Vs6UInt32", "deinit"]
+- !private ["Vs6UInt64", "deinit"]
+- !private ["Vs5UInt8", "deinit"]
+- ["V10Foundation3URL", "deinit"]
+- !private ["V10Foundation3URL", "init"]
+- ["V10Foundation13URLComponents", "deinit"]
+- !private ["V10Foundation13URLComponents", "url"]
+- !private ["V10Foundation10URLRequest", "addValue"]
+- ["V10Foundation10URLRequest", "deinit"]
+- !private ["V10Foundation10URLRequest", "httpBody"]
+- !private ["V10Foundation10URLRequest", "httpMethod"]
+- !private ["V10Foundation10URLRequest", "init"]
+- !private ["V10Foundation10URLRequest", "setValue"]
+- !private ["CSo11URLResponse", "statusCode"]
+- !private ["CSo10URLSession", "dataTask"]
+- ["CSo10URLSession", "deinit"]
+- !private ["CSo10URLSession", "shared"]
+- ["CSo18URLSessionDataTask", "deinit"]
+- !private ["CSo18URLSessionDataTask", "resume"]
+- !private ["CSo14URLSessionTask", "resume"]
+- !private ["VV15gameSenseSports9Constants4URLs", "DrillList"]
+- !private ["VV15gameSenseSports9Constants4URLs", "DrillQuestions"]
+- !private ["VV15gameSenseSports9Constants4URLs", "Login"]
+- !private ["VV15gameSenseSports9Constants4URLs", "apiAnswerQuestion"]
+- !private ["VV15gameSenseSports9Constants4URLs", "apiBase"]
+- !private ["VV15gameSenseSports9Constants4URLs", "apiDrillFinished"]
+- !private ["VV15gameSenseSports9Constants4URLs", "apiDrillFinishedNext"]
+- !private ["VV15gameSenseSports9Constants4URLs", "apiRegisterDrill"]
+- !private ["VV15gameSenseSports9Constants4URLs", "awsBase"]
+- !private ["Sc", "deinit"]
+- ["CSo12UserDefaults", "deinit"]
+- !private ["CSo12UserDefaults", "object"]
+- !private ["CSo12UserDefaults", "standard"]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "data"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "data"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "data"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "data"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- !private ["Ps34_ExpressibleByFileReferenceLiteral", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "data"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps9_Hashable", "Constants"]
+- !private ["Ps9_Hashable", "JSONSerialization"]
+- !private ["Ps9_Hashable", "String"]
+- !private ["Ps9_Hashable", "URL"]
+- !private ["Ps9_Hashable", "URLRequest"]
+- !private ["Ps9_Hashable", "URLSession"]
+- !private ["Ps9_Hashable", "UserDefaults"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps9_Hashable", "addValue"]
+- ["Ps9_Hashable", "apiDrillFinished"]
+- ["Ps9_Hashable", "apiDrillFinishedNextCall"]
+- ["Ps9_Hashable", "apiGetDrillList"]
+- ["Ps9_Hashable", "apiGetDrillPitchLocation"]
+- ["Ps9_Hashable", "apiGetDrillQuestions"]
+- ["Ps9_Hashable", "apiGetDrillVideo"]
+- ["Ps9_Hashable", "apiLogin"]
+- ["Ps9_Hashable", "apiLoginWithStoredCredentials"]
+- ["Ps9_Hashable", "apiPostAnswerQuestion"]
+- ["Ps9_Hashable", "apiPostRegisterDrill"]
+- !private ["Ps9_Hashable", "data"]
+- !private ["Ps9_Hashable", "dataTask"]
+- ["Ps9_Hashable", "downloadVideo"]
+- !private ["Ps9_Hashable", "httpBody"]
+- !private ["Ps9_Hashable", "httpMethod"]
+- !private ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "jsonObject"]
+- !private ["Ps9_Hashable", "object"]
+- !private ["Ps9_Hashable", "print"]
+- !private ["Ps9_Hashable", "resume"]
+- !private ["Ps9_Hashable", "setValue"]
+- !private ["Ps9_Hashable", "shared"]
+- !private ["Ps9_Hashable", "standard"]
+- !private ["Ps9_Hashable", "statusCode"]
+- ["Ps9_Hashable", "testURL"]
+- !private ["Ps9_Hashable", "url"]
+- !private ["Ps9_Hashable", "utf8"]
+- ["Ps9_Hashable", ""]
+- !private ["P10Foundation14_MutableBoxing", "url"]
+- !private ["Ps21_ObjectiveCBridgeable", "Index"]
+- !private ["Ps21_ObjectiveCBridgeable", "SubSequence"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "addValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "data"]
+- !private ["Ps21_ObjectiveCBridgeable", "httpBody"]
+- !private ["Ps21_ObjectiveCBridgeable", "httpMethod"]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "setValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "subscript"]
+- !private ["Ps21_ObjectiveCBridgeable", "url"]
+- !private ["Vs26_OptionalNilComparisonType", "deinit"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Sb"
+- "Ps7CVarArg"
+- !private "Vs9Character"
+- !private "Ps10Collection"
+- !private "Ps10Comparable"
+- !private "V15gameSenseSports9Constants"
+- "Ps28CustomDebugStringConvertible"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- !private "V10Foundation4Data"
+- !private "Vs10Dictionary"
+- !private "Sd"
+- "VE10FoundationSS8Encoding"
+- "Ps9Equatable"
+- !private "Ps5Error"
+- !private "Ps25ExpressibleByArrayLiteral"
+- !private "Ps27ExpressibleByBooleanLiteral"
+- !private "Ps30ExpressibleByDictionaryLiteral"
+- !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- !private "Ps32ExpressibleByStringInterpolation"
+- !private "Ps26ExpressibleByStringLiteral"
+- !private "Ps33ExpressibleByUnicodeScalarLiteral"
+- !private "Sf"
+- !private "CSo15HTTPURLResponse"
+- "Ps8Hashable"
+- !private "Ps9Indexable"
+- !private "Ps13IndexableBase"
+- !private "Vs16IndexingIterator"
+- "Si"
+- !private "Vs5Int16"
+- !private "Vs5Int32"
+- !private "Vs5Int64"
+- !private "Vs4Int8"
+- !private "Ps16IteratorProtocol"
+- !private "CSo17JSONSerialization"
+- !private "Ps25LosslessStringConvertible"
+- !private "Ps10MirrorPath"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "PSo16NSMutableCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
+- !private "Ps9OptionSet"
+- "Sq"
+- !private "Ps16RawRepresentable"
+- !private "VCSo17JSONSerialization14ReadingOptions"
+- !private "P10Foundation20ReferenceConvertible"
+- !private "Ps8Sequence"
+- !private "Ps10SetAlgebra"
+- "C15gameSenseSports23SharedNetworkConnection"
+- !private "Vs5Slice"
+- "SS"
+- !private "Ps16TextOutputStream"
+- !private "Ps20TextOutputStreamable"
+- !private "Su"
+- !private "Vs6UInt16"
+- !private "Vs6UInt32"
+- !private "Vs6UInt64"
+- !private "Vs5UInt8"
+- "V10Foundation3URL"
+- "V10Foundation13URLComponents"
+- "V10Foundation10URLRequest"
+- !private "CSo11URLResponse"
+- "CSo10URLSession"
+- "CSo18URLSessionDataTask"
+- !private "CSo14URLSessionTask"
+- !private "VV15gameSenseSports9Constants4URLs"
+- !private "Sc"
+- "CSo12UserDefaults"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
+- !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- !private "Ps34_ExpressibleByBuiltinStringLiteral"
+- !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- !private "Ps34_ExpressibleByFileReferenceLiteral"
+- !private "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+- !private "P10Foundation14_MutableBoxing"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Vs26_OptionalNilComparisonType"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
+interface-hash: "eac2fc02b3e9837fa2d26237db72f274"

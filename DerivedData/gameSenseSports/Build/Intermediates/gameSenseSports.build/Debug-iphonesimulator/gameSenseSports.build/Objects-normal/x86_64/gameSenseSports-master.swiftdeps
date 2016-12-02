@@ -1,0 +1,16 @@
+version: "Apple Swift version 3.0.1 (swiftlang-800.0.58.6 clang-800.0.42.1)"
+options: "3e63495816006af26e97b627fb6e1af9"
+build_time: [533946891, 430032000]
+inputs:
+  "/Users/Ra/Documents/gameSenseSports/gameSenseSports/gameSenseSports/DrillQuestionParser.swift": [533787444, 0]
+  "/Users/Ra/Documents/gameSenseSports/gameSenseSports/gameSenseSports/LoginViewController.swift": [533861322, 0]
+  "/Users/Ra/Documents/gameSenseSports/gameSenseSports/gameSenseSports/AppDelegate.swift": [533860342, 0]
+  "/Users/Ra/Documents/gameSenseSports/gameSenseSports/gameSenseSports/VideoPlayerViewController.swift": [533943035, 0]
+  "/Users/Ra/Documents/gameSenseSports/gameSenseSports/gameSenseSports/DrillListParser.swift": [533322705, 0]
+  "/Users/Ra/Documents/gameSenseSports/gameSenseSports/gameSenseSports/DrillListViewController.swift": [533852095, 0]
+  "/Users/Ra/Documents/gameSenseSports/gameSenseSports/gameSenseSports/SharedNetworkConnection.swift": [533853603, 0]
+  "/Users/Ra/Documents/gameSenseSports/gameSenseSports/gameSenseSports/DrillQuestionsViewController.swift": [533860229, 0]
+  "/Users/Ra/Documents/gameSenseSports/gameSenseSports/gameSenseSports/RegistrationWebViewController.swift": [533540278, 0]
+  "/Users/Ra/Documents/gameSenseSports/gameSenseSports/gameSenseSports/DrillPitchLocationParser.swift": [533067073, 0]
+  "/Users/Ra/Documents/gameSenseSports/gameSenseSports/gameSenseSports/DrillVideoParser.swift": [532999494, 0]
+  "/Users/Ra/Documents/gameSenseSports/gameSenseSports/gameSenseSports/Constants.swift": [533844572, 0]

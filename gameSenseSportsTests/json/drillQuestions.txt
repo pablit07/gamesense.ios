@@ -1,0 +1,223 @@
+{
+"count": 12,
+"next": null,
+"previous": null,
+"results": [
+{
+"id": 1181,
+"pitch_type_value": null,
+"pitch_location_value": null,
+"pitcher_hand_value": null,
+"batter_hand_value": "R",
+"occluded_video": "/player/api-auth/baseball/videos/134/",
+"full_video": "/player/api-auth/baseball/videos/135/",
+"pitcher_name_value": "Robles",
+"response_uris": [
+"/player/api-auth/baseball/pitchtypes/?video_id=134",
+"/player/api-auth/baseball/pitchlocations/"
+],
+"text": null,
+"field_name": null,
+"full_video_file": "Robles-13-full.mp4",
+"occluded_video_file": "Robles-13.mp4"
+},
+{
+"id": 1182,
+"pitch_type_value": null,
+"pitch_location_value": null,
+"pitcher_hand_value": null,
+"batter_hand_value": "R",
+"occluded_video": "/player/api-auth/baseball/videos/136/",
+"full_video": "/player/api-auth/baseball/videos/137/",
+"pitcher_name_value": "Robles",
+"response_uris": [
+"/player/api-auth/baseball/pitchtypes/?video_id=136",
+"/player/api-auth/baseball/pitchlocations/"
+],
+"text": null,
+"field_name": null,
+"full_video_file": "Robles-14-full.mp4",
+"occluded_video_file": "Robles-14.mp4"
+},
+{
+"id": 1183,
+"pitch_type_value": null,
+"pitch_location_value": null,
+"pitcher_hand_value": null,
+"batter_hand_value": "R",
+"occluded_video": "/player/api-auth/baseball/videos/138/",
+"full_video": "/player/api-auth/baseball/videos/139/",
+"pitcher_name_value": "Robles",
+"response_uris": [
+"/player/api-auth/baseball/pitchtypes/?video_id=138",
+"/player/api-auth/baseball/pitchlocations/"
+],
+"text": null,
+"field_name": null,
+"full_video_file": "Robles-15-full.mp4",
+"occluded_video_file": "Robles-15.mp4"
+},
+{
+"id": 1184,
+"pitch_type_value": null,
+"pitch_location_value": null,
+"pitcher_hand_value": null,
+"batter_hand_value": "R",
+"occluded_video": "/player/api-auth/baseball/videos/140/",
+"full_video": "/player/api-auth/baseball/videos/141/",
+"pitcher_name_value": "Robles",
+"response_uris": [
+"/player/api-auth/baseball/pitchtypes/?video_id=140",
+"/player/api-auth/baseball/pitchlocations/"
+],
+"text": null,
+"field_name": null,
+"full_video_file": "Robles-22-full.mp4",
+"occluded_video_file": "Robles-22.mp4"
+},
+{
+"id": 1185,
+"pitch_type_value": null,
+"pitch_location_value": null,
+"pitcher_hand_value": null,
+"batter_hand_value": "R",
+"occluded_video": "/player/api-auth/baseball/videos/142/",
+"full_video": "/player/api-auth/baseball/videos/143/",
+"pitcher_name_value": "Robles",
+"response_uris": [
+"/player/api-auth/baseball/pitchtypes/?video_id=142",
+"/player/api-auth/baseball/pitchlocations/"
+],
+"text": null,
+"field_name": null,
+"full_video_file": "Robles-26-full.mp4",
+"occluded_video_file": "Robles-26.mp4"
+},
+{
+"id": 1186,
+"pitch_type_value": null,
+"pitch_location_value": null,
+"pitcher_hand_value": null,
+"batter_hand_value": "R",
+"occluded_video": "/player/api-auth/baseball/videos/148/",
+"full_video": "/player/api-auth/baseball/videos/149/",
+"pitcher_name_value": "Robles",
+"response_uris": [
+"/player/api-auth/baseball/pitchtypes/?video_id=148",
+"/player/api-auth/baseball/pitchlocations/"
+],
+"text": null,
+"field_name": null,
+"full_video_file": "Robles-40-full.mp4",
+"occluded_video_file": "Robles-40.mp4"
+},
+{
+"id": 1187,
+"pitch_type_value": null,
+"pitch_location_value": null,
+"pitcher_hand_value": null,
+"batter_hand_value": "R",
+"occluded_video": "/player/api-auth/baseball/videos/150/",
+"full_video": "/player/api-auth/baseball/videos/151/",
+"pitcher_name_value": "Robles",
+"response_uris": [
+"/player/api-auth/baseball/pitchtypes/?video_id=150",
+"/player/api-auth/baseball/pitchlocations/"
+],
+"text": null,
+"field_name": null,
+"full_video_file": "Robles-41-full.mp4",
+"occluded_video_file": "Robles-41.mp4"
+},
+{
+"id": 1188,
+"pitch_type_value": null,
+"pitch_location_value": null,
+"pitcher_hand_value": null,
+"batter_hand_value": "R",
+"occluded_video": "/player/api-auth/baseball/videos/152/",
+"full_video": "/player/api-auth/baseball/videos/153/",
+"pitcher_name_value": "Robles",
+"response_uris": [
+"/player/api-auth/baseball/pitchtypes/?video_id=152",
+"/player/api-auth/baseball/pitchlocations/"
+],
+"text": null,
+"field_name": null,
+"full_video_file": "Robles-42-full.mp4",
+"occluded_video_file": "Robles-42.mp4"
+},
+{
+"id": 1189,
+"pitch_type_value": null,
+"pitch_location_value": null,
+"pitcher_hand_value": null,
+"batter_hand_value": "R",
+"occluded_video": "/player/api-auth/baseball/videos/154/",
+"full_video": "/player/api-auth/baseball/videos/155/",
+"pitcher_name_value": "Robles",
+"response_uris": [
+"/player/api-auth/baseball/pitchtypes/?video_id=154",
+"/player/api-auth/baseball/pitchlocations/"
+],
+"text": null,
+"field_name": null,
+"full_video_file": "Robles-43-full.mp4",
+"occluded_video_file": "Robles-43.mp4"
+},
+{
+"id": 1190,
+"pitch_type_value": null,
+"pitch_location_value": null,
+"pitcher_hand_value": null,
+"batter_hand_value": "R",
+"occluded_video": "/player/api-auth/baseball/videos/157/",
+"full_video": "/player/api-auth/baseball/videos/158/",
+"pitcher_name_value": "Robles",
+"response_uris": [
+"/player/api-auth/baseball/pitchtypes/?video_id=157",
+"/player/api-auth/baseball/pitchlocations/"
+],
+"text": null,
+"field_name": null,
+"full_video_file": "Robles-36-full.mp4",
+"occluded_video_file": "Robles-36.mp4"
+},
+{
+"id": 1191,
+"pitch_type_value": null,
+"pitch_location_value": null,
+"pitcher_hand_value": null,
+"batter_hand_value": "R",
+"occluded_video": "/player/api-auth/baseball/videos/156/",
+"full_video": "/player/api-auth/baseball/videos/159/",
+"pitcher_name_value": "Robles",
+"response_uris": [
+"/player/api-auth/baseball/pitchtypes/?video_id=156",
+"/player/api-auth/baseball/pitchlocations/"
+],
+"text": null,
+"field_name": null,
+"full_video_file": "Robles-35-full.mp4",
+"occluded_video_file": "Robles-35.mp4"
+},
+{
+"id": 1192,
+"pitch_type_value": null,
+"pitch_location_value": null,
+"pitcher_hand_value": null,
+"batter_hand_value": "R",
+"occluded_video": "/player/api-auth/baseball/videos/130/",
+"full_video": "/player/api-auth/baseball/videos/131/",
+"pitcher_name_value": "Robles",
+"response_uris": [
+"/player/api-auth/baseball/pitchtypes/?video_id=130",
+"/player/api-auth/baseball/pitchlocations/"
+],
+"text": null,
+"field_name": null,
+"full_video_file": "Robles-10-full.mp4",
+"occluded_video_file": "Robles-10.mp4"
+}
+]
+}
