@@ -41,6 +41,8 @@
 		11E139211DE5E88E005B2A6F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E139201DE5E88E005B2A6F /* Constants.swift */; };
 		11ECB99D1DECC2B900BEBF31 /* ballcheer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11ECB99B1DECC2B900BEBF31 /* ballcheer.mp3 */; };
 		11ECB99E1DECC2B900BEBF31 /* caughtball.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11ECB99C1DECC2B900BEBF31 /* caughtball.mp3 */; };
+		AF8A22D21DF3ACF500A88E00 /* Rollbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */; };
+		AF8A22D71DF3C61600A88E00 /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A22D61DF3C61600A88E00 /* CrashReporter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,9 @@
 		11E139201DE5E88E005B2A6F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		11ECB99B1DECC2B900BEBF31 /* ballcheer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ballcheer.mp3; path = sounds/ballcheer.mp3; sourceTree = "<group>"; };
 		11ECB99C1DECC2B900BEBF31 /* caughtball.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = caughtball.mp3; path = sounds/caughtball.mp3; sourceTree = "<group>"; };
+		AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rollbar.framework; path = gameSenseSports/Rollbar.framework; sourceTree = "<group>"; };
+		AF8A22D31DF3C4B200A88E00 /* gameSenseSports-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gameSenseSports-Bridging-Header.h"; sourceTree = "<group>"; };
+		AF8A22D61DF3C61600A88E00 /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CrashReporter.framework; path = gameSenseSports/CrashReporter.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +113,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8A22D71DF3C61600A88E00 /* CrashReporter.framework in Frameworks */,
 				11698FD31DDBA3CC00C24D3C /* MediaPlayer.framework in Frameworks */,
+				AF8A22D21DF3ACF500A88E00 /* Rollbar.framework in Frameworks */,
 				11698FD41DDBA3CC00C24D3C /* MediaToolbox.framework in Frameworks */,
 				11698FD01DDBA3C300C24D3C /* MobileCoreServices.framework in Frameworks */,
 				11698FCD1DDBA3BD00C24D3C /* AVFoundation.framework in Frameworks */,
@@ -214,6 +221,7 @@
 				11698FA11DDB999600C24D3C /* Info.plist */,
 				11698F991DDB999600C24D3C /* gameSenseSports.xcdatamodeld */,
 				11E139201DE5E88E005B2A6F /* Constants.swift */,
+				AF8A22D31DF3C4B200A88E00 /* gameSenseSports-Bridging-Header.h */,
 			);
 			path = gameSenseSports;
 			sourceTree = "<group>";
@@ -241,6 +249,8 @@
 		11698FCA1DDBA3BD00C24D3C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF8A22D61DF3C61600A88E00 /* CrashReporter.framework */,
+				AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */,
 				11698FD11DDBA3CC00C24D3C /* MediaPlayer.framework */,
 				11698FD21DDBA3CC00C24D3C /* MediaToolbox.framework */,
 				11698FCF1DDBA3C300C24D3C /* MobileCoreServices.framework */,
@@ -328,6 +338,7 @@
 					11698F8E1DDB999600C24D3C = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 2LR9N6ERWB;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					11698FA51DDB999600C24D3C = {
@@ -569,12 +580,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2LR9N6ERWB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/gameSenseSports",
+				);
 				INFOPLIST_FILE = gameSenseSports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gameSenseSports.gameSenseSports;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "gameSenseSports/gameSenseSports-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -583,12 +601,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2LR9N6ERWB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/gameSenseSports",
+				);
 				INFOPLIST_FILE = gameSenseSports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gameSenseSports.gameSenseSports;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "gameSenseSports/gameSenseSports-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -28,6 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let config: RollbarConfiguration = RollbarConfiguration()
+        config.environment = "production"
+        
+        Rollbar.initWithAccessToken("baf22868646f4734974666a99bcf157a", configuration: config)
+        
         let cacheDirectory = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         let fileManager =  FileManager.default
         let files = try! fileManager.contentsOfDirectory(at: cacheDirectory, includingPropertiesForKeys: nil, options: [])
