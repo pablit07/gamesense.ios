@@ -37,6 +37,7 @@ class DrillListParser : NSObject
                 }
             }
         }
+        drillArray = drillArray.sorted { $0.title < $1.title }
         return drillArray
     }
 }

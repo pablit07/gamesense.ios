@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let config: RollbarConfiguration = RollbarConfiguration()
         config.environment = "production"
         
-        Rollbar.initWithAccessToken("baf22868646f4734974666a99bcf157a", configuration: config)
+        Rollbar.initWithAccessToken("3b7e8110851641b9898b93abf2ef0fa0", configuration: config)
         
         let cacheDirectory = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         let fileManager =  FileManager.default
