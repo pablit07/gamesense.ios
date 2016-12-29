@@ -10,21 +10,22 @@ provides-member:
 - ["V15gameSenseSports13DrillListItem", ""]
 - ["V15gameSenseSports13DrillListItem", "init"]
 provides-dynamic-lookup:
-- "jsonString"
 - "recordCount"
+- "jsonString"
 depends-top-level:
-- "String"
 - !private "BooleanLiteralType"
-- !private "JSONSerialization"
-- "NSObject"
-- !private "StringLiteralType"
-- "DrillListParser"
-- "CastingPrecedence"
 - "Int"
-- "DrillListItem"
+- "DrillListParser"
 - "Array"
+- !private "JSONSerialization"
+- !private "StringLiteralType"
+- "DrillListItem"
+- "CastingPrecedence"
+- "String"
 - "AssignmentPrecedence"
 - "Bool"
+- "NSObject"
+- !private "<"
 depends-member:
 - !private ["Ps9AnyObject", "DrillListItem"]
 - !private ["Ps9AnyObject", "Encoding"]
@@ -42,14 +43,17 @@ depends-member:
 - !private ["Sa", "append"]
 - ["Sa", "deinit"]
 - !private ["Sa", "init"]
+- !private ["Sa", "sorted"]
 - !private ["Ps23BidirectionalCollection", "Iterator"]
 - !private ["Ps23BidirectionalCollection", "_Element"]
 - !private ["Ps23BidirectionalCollection", "append"]
 - !private ["Ps23BidirectionalCollection", "init"]
+- !private ["Ps23BidirectionalCollection", "sorted"]
 - !private ["Ps22BidirectionalIndexable", "Iterator"]
 - !private ["Ps22BidirectionalIndexable", "_Element"]
 - !private ["Ps22BidirectionalIndexable", "append"]
 - !private ["Ps22BidirectionalIndexable", "init"]
+- !private ["Ps22BidirectionalIndexable", "sorted"]
 - ["Sb", "deinit"]
 - !private ["Ps7CVarArg", "DrillListItem"]
 - !private ["Ps7CVarArg", "Encoding"]
@@ -66,6 +70,7 @@ depends-member:
 - !private ["Ps7CVarArg", "jsonObject"]
 - ["Ps7CVarArg", "jsonString"]
 - ["Ps7CVarArg", "recordCount"]
+- !private ["Ps7CVarArg", "sorted"]
 - !private ["Ps7CVarArg", "subscript"]
 - ["Ps7CVarArg", ""]
 - !private ["Ps10Collection", "Index"]
@@ -74,6 +79,7 @@ depends-member:
 - !private ["Ps10Collection", "_Element"]
 - !private ["Ps10Collection", "append"]
 - !private ["Ps10Collection", "init"]
+- !private ["Ps10Collection", "sorted"]
 - !private ["Ps10Collection", "subscript"]
 - !private ["Ps10Comparable", "Encoding"]
 - !private ["Ps10Comparable", "data"]
@@ -93,6 +99,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "jsonObject"]
 - ["Ps28CustomDebugStringConvertible", "jsonString"]
 - ["Ps28CustomDebugStringConvertible", "recordCount"]
+- !private ["Ps28CustomDebugStringConvertible", "sorted"]
 - !private ["Ps28CustomDebugStringConvertible", "subscript"]
 - ["Ps28CustomDebugStringConvertible", ""]
 - !private ["Ps29CustomPlaygroundQuickLookable", "Encoding"]
@@ -106,6 +113,7 @@ depends-member:
 - !private ["Ps17CustomReflectable", "append"]
 - !private ["Ps17CustomReflectable", "data"]
 - !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "sorted"]
 - !private ["Ps17CustomReflectable", "subscript"]
 - !private ["Ps23CustomStringConvertible", "DrillListItem"]
 - !private ["Ps23CustomStringConvertible", "Encoding"]
@@ -122,6 +130,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "jsonObject"]
 - ["Ps23CustomStringConvertible", "jsonString"]
 - ["Ps23CustomStringConvertible", "recordCount"]
+- !private ["Ps23CustomStringConvertible", "sorted"]
 - !private ["Ps23CustomStringConvertible", "subscript"]
 - !private ["Ps23CustomStringConvertible", "utf8"]
 - ["Ps23CustomStringConvertible", ""]
@@ -170,6 +179,7 @@ depends-member:
 - !private ["Ps25ExpressibleByArrayLiteral", "_Element"]
 - !private ["Ps25ExpressibleByArrayLiteral", "append"]
 - !private ["Ps25ExpressibleByArrayLiteral", "init"]
+- !private ["Ps25ExpressibleByArrayLiteral", "sorted"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "Index"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "SubSequence"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "subscript"]
@@ -203,6 +213,7 @@ depends-member:
 - !private ["Ps9Indexable", "_Element"]
 - !private ["Ps9Indexable", "append"]
 - !private ["Ps9Indexable", "init"]
+- !private ["Ps9Indexable", "sorted"]
 - !private ["Ps9Indexable", "subscript"]
 - !private ["Ps13IndexableBase", "Index"]
 - !private ["Ps13IndexableBase", "Iterator"]
@@ -210,6 +221,7 @@ depends-member:
 - !private ["Ps13IndexableBase", "_Element"]
 - !private ["Ps13IndexableBase", "append"]
 - !private ["Ps13IndexableBase", "init"]
+- !private ["Ps13IndexableBase", "sorted"]
 - !private ["Ps13IndexableBase", "subscript"]
 - !private ["Vs16IndexingIterator", "Element"]
 - ["Si", "deinit"]
@@ -225,10 +237,12 @@ depends-member:
 - !private ["Ps17MutableCollection", "_Element"]
 - !private ["Ps17MutableCollection", "append"]
 - !private ["Ps17MutableCollection", "init"]
+- !private ["Ps17MutableCollection", "sorted"]
 - !private ["Ps16MutableIndexable", "Iterator"]
 - !private ["Ps16MutableIndexable", "_Element"]
 - !private ["Ps16MutableIndexable", "append"]
 - !private ["Ps16MutableIndexable", "init"]
+- !private ["Ps16MutableIndexable", "sorted"]
 - !private ["PSo8NSCoding", "Encoding"]
 - !private ["PSo8NSCoding", "data"]
 - !private ["PSo8NSCoding", "init"]
@@ -276,18 +290,22 @@ depends-member:
 - !private ["Ps22RandomAccessCollection", "_Element"]
 - !private ["Ps22RandomAccessCollection", "append"]
 - !private ["Ps22RandomAccessCollection", "init"]
+- !private ["Ps22RandomAccessCollection", "sorted"]
 - !private ["Ps21RandomAccessIndexable", "Iterator"]
 - !private ["Ps21RandomAccessIndexable", "_Element"]
 - !private ["Ps21RandomAccessIndexable", "append"]
 - !private ["Ps21RandomAccessIndexable", "init"]
+- !private ["Ps21RandomAccessIndexable", "sorted"]
 - !private ["Ps26RangeReplaceableCollection", "Iterator"]
 - !private ["Ps26RangeReplaceableCollection", "_Element"]
 - !private ["Ps26RangeReplaceableCollection", "append"]
 - !private ["Ps26RangeReplaceableCollection", "init"]
+- !private ["Ps26RangeReplaceableCollection", "sorted"]
 - !private ["Ps25RangeReplaceableIndexable", "Iterator"]
 - !private ["Ps25RangeReplaceableIndexable", "_Element"]
 - !private ["Ps25RangeReplaceableIndexable", "append"]
 - !private ["Ps25RangeReplaceableIndexable", "init"]
+- !private ["Ps25RangeReplaceableIndexable", "sorted"]
 - !private ["Ps16RawRepresentable", "Element"]
 - !private ["Ps16RawRepresentable", "utf8"]
 - !private ["VCSo17JSONSerialization14ReadingOptions", "Element"]
@@ -299,6 +317,7 @@ depends-member:
 - !private ["Ps8Sequence", "_Element"]
 - !private ["Ps8Sequence", "append"]
 - !private ["Ps8Sequence", "init"]
+- !private ["Ps8Sequence", "sorted"]
 - !private ["Ps8Sequence", "subscript"]
 - !private ["Ps10SetAlgebra", "Element"]
 - !private ["Vs5Slice", "Index"]
@@ -322,10 +341,12 @@ depends-member:
 - !private ["Ps14_ArrayProtocol", "_Element"]
 - !private ["Ps14_ArrayProtocol", "append"]
 - !private ["Ps14_ArrayProtocol", "init"]
+- !private ["Ps14_ArrayProtocol", "sorted"]
 - !private ["Ps24_DestructorSafeContainer", "Iterator"]
 - !private ["Ps24_DestructorSafeContainer", "_Element"]
 - !private ["Ps24_DestructorSafeContainer", "append"]
 - !private ["Ps24_DestructorSafeContainer", "init"]
+- !private ["Ps24_DestructorSafeContainer", "sorted"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "Encoding"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "data"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
@@ -361,6 +382,7 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "append"]
 - !private ["Ps21_ObjectiveCBridgeable", "data"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "sorted"]
 - !private ["Ps21_ObjectiveCBridgeable", "subscript"]
 depends-nominal:
 - "Ps9AnyObject"
@@ -434,12 +456,15 @@ depends-nominal:
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Users/Ra/Documents/gameSenseSports/Repo/gamesense.ios/gameSenseSports/gameSenseSports-Bridging-Header.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Users/Ra/Documents/gameSenseSports/Repo/gamesense.ios/gameSenseSports/Rollbar.framework/Headers/Rollbar.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Users/Ra/Documents/gameSenseSports/Repo/gamesense.ios/gameSenseSports/Rollbar.framework/Headers/RollbarConfiguration.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"

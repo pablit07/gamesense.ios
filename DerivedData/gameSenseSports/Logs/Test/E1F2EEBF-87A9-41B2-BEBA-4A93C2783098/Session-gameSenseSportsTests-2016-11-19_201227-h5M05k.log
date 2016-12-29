@@ -1,9 +1,0 @@
-20:12:27.743 Xcode[33058:3264174] Beginning test session gameSenseSportsTests-5E6006BC-1BB8-4074-8660-9B90C27991CA at 2016-11-19 20:12:27.743 with Xcode 8A218a on target <DVTiPhoneSimulator: 0x7fc5213631f0> {
-		SimDevice: SimDevice : iPhone 7 Plus (56DC1FB0-E480-4AC9-B39B-96198734E020) : state={ Shutting Down } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-7-Plus } runtime={ SimRuntime : 10.0 (14A345) - com.apple.CoreSimulator.SimRuntime.iOS-10-0 }
-} (10.0 (14A345))
-20:12:27.743 Xcode[33058:3264174] Launching with Xcode.DebuggerFoundation.Launcher.LLDB
-20:12:27.744 Xcode[33058:3264174] Initializing test infrastructure.
-20:12:27.744 Xcode[33058:3871092] 56DC1FB0-E480-4AC9-B39B-96198734E020: Registered for sim device notification, got token 48
-20:12:27.745 Xcode[33058:3871092] Sim iPhone 7 Plus is not booted, will wait up to 120 seconds.
-20:12:30.525 Xcode[33058:3264174] Test operation failure: Test operation was canceled.
-20:12:30.525 Xcode[33058:3264174] _finishWithError:Error Domain=IDETestOperationsObserverErrorDomain Code=3 "Test operation was canceled." UserInfo={NSLocalizedDescription=Test operation was canceled.} didCancel: 1

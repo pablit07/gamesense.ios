@@ -6,76 +6,79 @@ provides-nominal:
 provides-member:
 - ["C15gameSenseSports25VideoPlayerViewController", ""]
 provides-dynamic-lookup:
-- "replayHandler"
-- "viewDidLoad"
-- "replayDrillHandler"
-- "shouldPerformSegue"
-- "points"
-- "returnedDrillID"
+- "locationPoints"
 - "viewDidAppear"
-- "observeValue"
 - "loadingIndicator"
 - "replay"
-- "locationPoints"
-- "didReceiveMemoryWarning"
-- "typePoints"
+- "replayHandler"
+- "returnedDrillID"
 - "viewWillDisappear"
+- "didReceiveMemoryWarning"
+- "shouldPerformSegue"
+- "points"
+- "replayDrillHandler"
 - "modalButton"
 - "doneHandler"
 - "index"
-- "nextHandler"
-- "replayFinished"
 - "playerFinished"
+- "typePoints"
+- "viewDidLoad"
+- "replayFinished"
+- "nextHandler"
+- "observeValue"
 depends-top-level:
-- "UIAlertAction"
-- "StringLiteralType"
-- !private "AppDelegate"
-- "Dictionary"
-- "NSKeyValueChangeKey"
-- !private "UIAlertActionStyle"
-- !private "||"
-- !private "NotificationCenter"
-- "BooleanLiteralType"
-- !private "JSONSerialization"
-- !private "!"
-- "UnsafeMutableRawPointer"
-- !private "DrillListViewController"
-- "VideoPlayerViewController"
-- !private "UIAlertControllerStyle"
-- "DrillQuestionItem"
-- !private "Int"
-- "Array"
-- !private "HTTPURLResponse"
-- !private "<="
-- !private "AVPlayerStatus"
-- !private "DispatchQueue"
+- !private "UIScreen"
+- !private "CGRect"
 - !private "URL"
+- "Bool"
+- !private "!="
+- !private "AppDelegate"
+- "NSKeyValueChangeKey"
+- !private "DispatchQueue"
+- !private "HTTPURLResponse"
+- !private "FileManager"
+- "String"
+- "UnsafeMutableRawPointer"
+- !private "UIAlertControllerStyle"
+- !private "AVPlayerStatus"
+- "DrillListItem"
+- !private "AVLayerVideoGravityResizeAspect"
+- !private "+"
+- !private "URLSession"
+- !private "NotificationCenter"
+- !private "<="
+- "DrillQuestionItem"
+- !private "JSONSerialization"
+- "DrillQuestionParser"
+- !private "SharedNetworkConnection"
+- "Array"
+- !private "NSKeyValueObservingOptions"
+- "BooleanLiteralType"
+- !private "UIAlertController"
+- !private "+="
+- "UIButton"
+- !private "UnicodeScalarType"
+- "UIActivityIndicatorView"
+- !private "NSNotification"
+- "StringLiteralType"
+- !private "AVPlayer"
+- !private "*"
+- !private "!"
+- !private "||"
 - !private "print"
+- !private "UIAlertActionStyle"
+- !private "DrillListViewController"
+- "CastingPrecedence"
+- "VideoPlayerViewController"
+- !private "AVPlayerLayer"
+- !private "Constants"
 - "AssignmentPrecedence"
 - !private "=="
-- "CastingPrecedence"
-- !private "UIApplication"
-- !private "Constants"
+- "UIAlertAction"
 - "UIViewController"
-- "Bool"
-- !private "FileManager"
-- "UIActivityIndicatorView"
-- !private "NSKeyValueObservingOptions"
-- !private "AVLayerVideoGravityResizeAspect"
-- "String"
-- "UIButton"
-- !private "SharedNetworkConnection"
-- !private "+"
-- !private "!="
-- !private "UnicodeScalarType"
-- !private "AVPlayerLayer"
-- !private "+="
-- !private "AVPlayer"
-- !private "UIAlertController"
-- !private "URLSession"
-- "DrillQuestionParser"
-- !private "NSNotification"
-- "DrillListItem"
+- "Dictionary"
+- !private "Int"
+- !private "UIApplication"
 depends-member:
 - !private ["CSo8AVPlayer", "addObserver"]
 - ["CSo8AVPlayer", "deinit"]
@@ -98,6 +101,7 @@ depends-member:
 - !private ["Ps9AnyObject", "AVPlayer"]
 - !private ["Ps9AnyObject", "AVPlayerLayer"]
 - !private ["Ps9AnyObject", "AVPlayerStatus"]
+- !private ["Ps9AnyObject", "CGRect"]
 - !private ["Ps9AnyObject", "Constants"]
 - !private ["Ps9AnyObject", "DispatchQueue"]
 - ["Ps9AnyObject", "DrillListItem"]
@@ -116,6 +120,7 @@ depends-member:
 - !private ["Ps9AnyObject", "UIAlertController"]
 - !private ["Ps9AnyObject", "UIAlertControllerStyle"]
 - !private ["Ps9AnyObject", "UIApplication"]
+- !private ["Ps9AnyObject", "UIScreen"]
 - !private ["Ps9AnyObject", "URLSession"]
 - !private ["Ps9AnyObject", "VideoPlayerViewController"]
 - !private ["Ps9AnyObject", "addAction"]
@@ -260,11 +265,15 @@ depends-member:
 - !private ["PSo13CAMediaTiming", "videoGravity"]
 - !private ["V12CoreGraphics7CGFloat", "Stride"]
 - !private ["V12CoreGraphics7CGFloat", "deinit"]
+- !private ["VSC6CGRect", "deinit"]
+- !private ["VSC6CGRect", "init"]
+- !private ["VSC6CGRect", "width"]
 - !private ["VSC6CMTime", "deinit"]
 - !private ["Ps7CVarArg", "AVLayerVideoGravityResizeAspect"]
 - !private ["Ps7CVarArg", "AVPlayer"]
 - !private ["Ps7CVarArg", "AVPlayerLayer"]
 - !private ["Ps7CVarArg", "AVPlayerStatus"]
+- !private ["Ps7CVarArg", "CGRect"]
 - !private ["Ps7CVarArg", "Constants"]
 - !private ["Ps7CVarArg", "DispatchQueue"]
 - ["Ps7CVarArg", "DrillListItem"]
@@ -290,6 +299,7 @@ depends-member:
 - !private ["Ps7CVarArg", "UIAlertController"]
 - !private ["Ps7CVarArg", "UIAlertControllerStyle"]
 - !private ["Ps7CVarArg", "UIApplication"]
+- !private ["Ps7CVarArg", "UIScreen"]
 - !private ["Ps7CVarArg", "URLSession"]
 - ["Ps7CVarArg", "Value"]
 - !private ["Ps7CVarArg", "VideoPlayerViewController"]
@@ -398,6 +408,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "AVPlayer"]
 - !private ["Ps28CustomDebugStringConvertible", "AVPlayerLayer"]
 - !private ["Ps28CustomDebugStringConvertible", "AVPlayerStatus"]
+- !private ["Ps28CustomDebugStringConvertible", "CGRect"]
 - !private ["Ps28CustomDebugStringConvertible", "Constants"]
 - !private ["Ps28CustomDebugStringConvertible", "DispatchQueue"]
 - ["Ps28CustomDebugStringConvertible", "DrillListItem"]
@@ -422,6 +433,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "UIAlertController"]
 - !private ["Ps28CustomDebugStringConvertible", "UIAlertControllerStyle"]
 - !private ["Ps28CustomDebugStringConvertible", "UIApplication"]
+- !private ["Ps28CustomDebugStringConvertible", "UIScreen"]
 - !private ["Ps28CustomDebugStringConvertible", "URLSession"]
 - ["Ps28CustomDebugStringConvertible", "Value"]
 - !private ["Ps28CustomDebugStringConvertible", "VideoPlayerViewController"]
@@ -502,6 +514,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "viewDidAppear"]
 - ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
 - ["Ps28CustomDebugStringConvertible", "viewWillDisappear"]
+- !private ["Ps28CustomDebugStringConvertible", "width"]
 - !private ["Ps28CustomDebugStringConvertible", "write"]
 - ["Ps28CustomDebugStringConvertible", ""]
 - !private ["Ps29CustomPlaygroundQuickLookable", "IntegerLiteralType"]
@@ -513,6 +526,7 @@ depends-member:
 - !private ["Ps29CustomPlaygroundQuickLookable", "appendPathComponent"]
 - ["Ps29CustomPlaygroundQuickLookable", "init"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "path"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "width"]
 - !private ["Ps17CustomReflectable", "Index"]
 - !private ["Ps17CustomReflectable", "IndexDistance"]
 - !private ["Ps17CustomReflectable", "IntegerLiteralType"]
@@ -528,11 +542,13 @@ depends-member:
 - ["Ps17CustomReflectable", "init"]
 - !private ["Ps17CustomReflectable", "shuffled"]
 - !private ["Ps17CustomReflectable", "subscript"]
+- !private ["Ps17CustomReflectable", "width"]
 - !private ["Ps17CustomReflectable", "write"]
 - !private ["Ps23CustomStringConvertible", "AVLayerVideoGravityResizeAspect"]
 - !private ["Ps23CustomStringConvertible", "AVPlayer"]
 - !private ["Ps23CustomStringConvertible", "AVPlayerLayer"]
 - !private ["Ps23CustomStringConvertible", "AVPlayerStatus"]
+- !private ["Ps23CustomStringConvertible", "CGRect"]
 - !private ["Ps23CustomStringConvertible", "Constants"]
 - !private ["Ps23CustomStringConvertible", "DispatchQueue"]
 - ["Ps23CustomStringConvertible", "DrillListItem"]
@@ -558,6 +574,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "UIAlertController"]
 - !private ["Ps23CustomStringConvertible", "UIAlertControllerStyle"]
 - !private ["Ps23CustomStringConvertible", "UIApplication"]
+- !private ["Ps23CustomStringConvertible", "UIScreen"]
 - !private ["Ps23CustomStringConvertible", "URLSession"]
 - ["Ps23CustomStringConvertible", "Value"]
 - !private ["Ps23CustomStringConvertible", "VideoPlayerViewController"]
@@ -693,6 +710,7 @@ depends-member:
 - !private ["Ps9Equatable", "AVPlayerItemDidPlayToEndTime"]
 - !private ["Ps9Equatable", "AVPlayerLayer"]
 - !private ["Ps9Equatable", "AVPlayerStatus"]
+- !private ["Ps9Equatable", "CGRect"]
 - !private ["Ps9Equatable", "Constants"]
 - !private ["Ps9Equatable", "DispatchQueue"]
 - ["Ps9Equatable", "DrillListItem"]
@@ -715,6 +733,7 @@ depends-member:
 - !private ["Ps9Equatable", "UIAlertController"]
 - !private ["Ps9Equatable", "UIAlertControllerStyle"]
 - !private ["Ps9Equatable", "UIApplication"]
+- !private ["Ps9Equatable", "UIScreen"]
 - !private ["Ps9Equatable", "URLSession"]
 - !private ["Ps9Equatable", "VideoPlayerViewController"]
 - !private ["Ps9Equatable", "_DisabledRangeIndex"]
@@ -800,6 +819,7 @@ depends-member:
 - ["Ps9Equatable", "viewDidAppear"]
 - ["Ps9Equatable", "viewDidLoad"]
 - ["Ps9Equatable", "viewWillDisappear"]
+- !private ["Ps9Equatable", "width"]
 - !private ["Ps9Equatable", "write"]
 - ["Ps9Equatable", ""]
 - !private ["Ps5Error", "deinit"]
@@ -851,6 +871,7 @@ depends-member:
 - !private ["Ps8Hashable", "AVPlayerItemDidPlayToEndTime"]
 - !private ["Ps8Hashable", "AVPlayerLayer"]
 - !private ["Ps8Hashable", "AVPlayerStatus"]
+- !private ["Ps8Hashable", "CGRect"]
 - !private ["Ps8Hashable", "Constants"]
 - !private ["Ps8Hashable", "DispatchQueue"]
 - ["Ps8Hashable", "DrillListItem"]
@@ -872,6 +893,7 @@ depends-member:
 - !private ["Ps8Hashable", "UIAlertController"]
 - !private ["Ps8Hashable", "UIAlertControllerStyle"]
 - !private ["Ps8Hashable", "UIApplication"]
+- !private ["Ps8Hashable", "UIScreen"]
 - !private ["Ps8Hashable", "URLSession"]
 - !private ["Ps8Hashable", "VideoPlayerViewController"]
 - !private ["Ps8Hashable", "_DisabledRangeIndex"]
@@ -1051,6 +1073,7 @@ depends-member:
 - !private ["PSo8NSCoding", "AVPlayer"]
 - !private ["PSo8NSCoding", "AVPlayerLayer"]
 - !private ["PSo8NSCoding", "AVPlayerStatus"]
+- !private ["PSo8NSCoding", "CGRect"]
 - !private ["PSo8NSCoding", "Constants"]
 - !private ["PSo8NSCoding", "DispatchQueue"]
 - ["PSo8NSCoding", "DrillListItem"]
@@ -1069,6 +1092,7 @@ depends-member:
 - !private ["PSo8NSCoding", "UIAlertController"]
 - !private ["PSo8NSCoding", "UIAlertControllerStyle"]
 - !private ["PSo8NSCoding", "UIApplication"]
+- !private ["PSo8NSCoding", "UIScreen"]
 - !private ["PSo8NSCoding", "URLSession"]
 - !private ["PSo8NSCoding", "VideoPlayerViewController"]
 - !private ["PSo8NSCoding", "addAction"]
@@ -1131,6 +1155,7 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "AVPlayer"]
 - !private ["PSo26NSExtensionRequestHandling", "AVPlayerLayer"]
 - !private ["PSo26NSExtensionRequestHandling", "AVPlayerStatus"]
+- !private ["PSo26NSExtensionRequestHandling", "CGRect"]
 - !private ["PSo26NSExtensionRequestHandling", "Constants"]
 - !private ["PSo26NSExtensionRequestHandling", "DispatchQueue"]
 - ["PSo26NSExtensionRequestHandling", "DrillListItem"]
@@ -1148,6 +1173,7 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "UIAlertController"]
 - !private ["PSo26NSExtensionRequestHandling", "UIAlertControllerStyle"]
 - !private ["PSo26NSExtensionRequestHandling", "UIApplication"]
+- !private ["PSo26NSExtensionRequestHandling", "UIScreen"]
 - !private ["PSo26NSExtensionRequestHandling", "URLSession"]
 - !private ["PSo26NSExtensionRequestHandling", "VideoPlayerViewController"]
 - !private ["PSo26NSExtensionRequestHandling", "addAction"]
@@ -1204,6 +1230,7 @@ depends-member:
 - !private ["CSo8NSObject", "AVPlayerStatus"]
 - !private ["CSo8NSObject", "AppDelegate"]
 - ["CSo8NSObject", "Bool"]
+- !private ["CSo8NSObject", "CGRect"]
 - !private ["CSo8NSObject", "Constants"]
 - !private ["CSo8NSObject", "DispatchQueue"]
 - ["CSo8NSObject", "DrillListItem"]
@@ -1228,6 +1255,7 @@ depends-member:
 - !private ["CSo8NSObject", "UIAlertControllerStyle"]
 - !private ["CSo8NSObject", "UIApplication"]
 - ["CSo8NSObject", "UIButton"]
+- !private ["CSo8NSObject", "UIScreen"]
 - !private ["CSo8NSObject", "URL"]
 - !private ["CSo8NSObject", "URLSession"]
 - ["CSo8NSObject", "UnsafeMutableRawPointer"]
@@ -1308,6 +1336,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "AVPlayer"]
 - !private ["PSo16NSObjectProtocol", "AVPlayerLayer"]
 - !private ["PSo16NSObjectProtocol", "AVPlayerStatus"]
+- !private ["PSo16NSObjectProtocol", "CGRect"]
 - !private ["PSo16NSObjectProtocol", "Constants"]
 - !private ["PSo16NSObjectProtocol", "DispatchQueue"]
 - ["PSo16NSObjectProtocol", "DrillListItem"]
@@ -1326,6 +1355,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "UIAlertController"]
 - !private ["PSo16NSObjectProtocol", "UIAlertControllerStyle"]
 - !private ["PSo16NSObjectProtocol", "UIApplication"]
+- !private ["PSo16NSObjectProtocol", "UIScreen"]
 - !private ["PSo16NSObjectProtocol", "URLSession"]
 - !private ["PSo16NSObjectProtocol", "VideoPlayerViewController"]
 - !private ["PSo16NSObjectProtocol", "addAction"]
@@ -1555,6 +1585,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "AVPlayer"]
 - !private ["PSo21UIAppearanceContainer", "AVPlayerLayer"]
 - !private ["PSo21UIAppearanceContainer", "AVPlayerStatus"]
+- !private ["PSo21UIAppearanceContainer", "CGRect"]
 - !private ["PSo21UIAppearanceContainer", "Constants"]
 - !private ["PSo21UIAppearanceContainer", "DispatchQueue"]
 - ["PSo21UIAppearanceContainer", "DrillListItem"]
@@ -1572,6 +1603,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "UIAlertController"]
 - !private ["PSo21UIAppearanceContainer", "UIAlertControllerStyle"]
 - !private ["PSo21UIAppearanceContainer", "UIApplication"]
+- !private ["PSo21UIAppearanceContainer", "UIScreen"]
 - !private ["PSo21UIAppearanceContainer", "URLSession"]
 - !private ["PSo21UIAppearanceContainer", "VideoPlayerViewController"]
 - !private ["PSo21UIAppearanceContainer", "addAction"]
@@ -1628,6 +1660,7 @@ depends-member:
 - !private ["PSo18UIContentContainer", "AVPlayer"]
 - !private ["PSo18UIContentContainer", "AVPlayerLayer"]
 - !private ["PSo18UIContentContainer", "AVPlayerStatus"]
+- !private ["PSo18UIContentContainer", "CGRect"]
 - !private ["PSo18UIContentContainer", "Constants"]
 - !private ["PSo18UIContentContainer", "DispatchQueue"]
 - ["PSo18UIContentContainer", "DrillListItem"]
@@ -1645,6 +1678,7 @@ depends-member:
 - !private ["PSo18UIContentContainer", "UIAlertController"]
 - !private ["PSo18UIContentContainer", "UIAlertControllerStyle"]
 - !private ["PSo18UIContentContainer", "UIApplication"]
+- !private ["PSo18UIContentContainer", "UIScreen"]
 - !private ["PSo18UIContentContainer", "URLSession"]
 - !private ["PSo18UIContentContainer", "VideoPlayerViewController"]
 - !private ["PSo18UIContentContainer", "addAction"]
@@ -1701,6 +1735,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "AVPlayer"]
 - !private ["PSo18UIFocusEnvironment", "AVPlayerLayer"]
 - !private ["PSo18UIFocusEnvironment", "AVPlayerStatus"]
+- !private ["PSo18UIFocusEnvironment", "CGRect"]
 - !private ["PSo18UIFocusEnvironment", "Constants"]
 - !private ["PSo18UIFocusEnvironment", "DispatchQueue"]
 - ["PSo18UIFocusEnvironment", "DrillListItem"]
@@ -1718,6 +1753,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "UIAlertController"]
 - !private ["PSo18UIFocusEnvironment", "UIAlertControllerStyle"]
 - !private ["PSo18UIFocusEnvironment", "UIApplication"]
+- !private ["PSo18UIFocusEnvironment", "UIScreen"]
 - !private ["PSo18UIFocusEnvironment", "URLSession"]
 - !private ["PSo18UIFocusEnvironment", "VideoPlayerViewController"]
 - !private ["PSo18UIFocusEnvironment", "addAction"]
@@ -1778,6 +1814,7 @@ depends-member:
 - !private ["CSo11UIResponder", "AVPlayerStatus"]
 - !private ["CSo11UIResponder", "AppDelegate"]
 - ["CSo11UIResponder", "Bool"]
+- !private ["CSo11UIResponder", "CGRect"]
 - !private ["CSo11UIResponder", "Constants"]
 - !private ["CSo11UIResponder", "DispatchQueue"]
 - ["CSo11UIResponder", "DrillListItem"]
@@ -1801,6 +1838,7 @@ depends-member:
 - !private ["CSo11UIResponder", "UIAlertControllerStyle"]
 - !private ["CSo11UIResponder", "UIApplication"]
 - ["CSo11UIResponder", "UIButton"]
+- !private ["CSo11UIResponder", "UIScreen"]
 - !private ["CSo11UIResponder", "URL"]
 - !private ["CSo11UIResponder", "URLSession"]
 - ["CSo11UIResponder", "UnsafeMutableRawPointer"]
@@ -1857,6 +1895,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "AVPlayer"]
 - !private ["PSo30UIResponderStandardEditActions", "AVPlayerLayer"]
 - !private ["PSo30UIResponderStandardEditActions", "AVPlayerStatus"]
+- !private ["PSo30UIResponderStandardEditActions", "CGRect"]
 - !private ["PSo30UIResponderStandardEditActions", "Constants"]
 - !private ["PSo30UIResponderStandardEditActions", "DispatchQueue"]
 - ["PSo30UIResponderStandardEditActions", "DrillListItem"]
@@ -1874,6 +1913,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "UIAlertController"]
 - !private ["PSo30UIResponderStandardEditActions", "UIAlertControllerStyle"]
 - !private ["PSo30UIResponderStandardEditActions", "UIApplication"]
+- !private ["PSo30UIResponderStandardEditActions", "UIScreen"]
 - !private ["PSo30UIResponderStandardEditActions", "URLSession"]
 - !private ["PSo30UIResponderStandardEditActions", "VideoPlayerViewController"]
 - !private ["PSo30UIResponderStandardEditActions", "addAction"]
@@ -1925,11 +1965,15 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
 - ["PSo30UIResponderStandardEditActions", "viewWillDisappear"]
 - ["PSo30UIResponderStandardEditActions", ""]
+- !private ["CSo8UIScreen", "bounds"]
+- !private ["CSo8UIScreen", "deinit"]
+- !private ["CSo8UIScreen", "main"]
 - !private ["PSo20UIScrollViewDelegate", "selectedDrillItem"]
 - !private ["PSo16UIStateRestoring", "AVLayerVideoGravityResizeAspect"]
 - !private ["PSo16UIStateRestoring", "AVPlayer"]
 - !private ["PSo16UIStateRestoring", "AVPlayerLayer"]
 - !private ["PSo16UIStateRestoring", "AVPlayerStatus"]
+- !private ["PSo16UIStateRestoring", "CGRect"]
 - !private ["PSo16UIStateRestoring", "Constants"]
 - !private ["PSo16UIStateRestoring", "DispatchQueue"]
 - ["PSo16UIStateRestoring", "DrillListItem"]
@@ -1947,6 +1991,7 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "UIAlertController"]
 - !private ["PSo16UIStateRestoring", "UIAlertControllerStyle"]
 - !private ["PSo16UIStateRestoring", "UIApplication"]
+- !private ["PSo16UIStateRestoring", "UIScreen"]
 - !private ["PSo16UIStateRestoring", "URLSession"]
 - !private ["PSo16UIStateRestoring", "VideoPlayerViewController"]
 - !private ["PSo16UIStateRestoring", "addAction"]
@@ -1997,6 +2042,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "AVPlayer"]
 - !private ["PSo18UITraitEnvironment", "AVPlayerLayer"]
 - !private ["PSo18UITraitEnvironment", "AVPlayerStatus"]
+- !private ["PSo18UITraitEnvironment", "CGRect"]
 - !private ["PSo18UITraitEnvironment", "Constants"]
 - !private ["PSo18UITraitEnvironment", "DispatchQueue"]
 - ["PSo18UITraitEnvironment", "DrillListItem"]
@@ -2014,6 +2060,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "UIAlertController"]
 - !private ["PSo18UITraitEnvironment", "UIAlertControllerStyle"]
 - !private ["PSo18UITraitEnvironment", "UIApplication"]
+- !private ["PSo18UITraitEnvironment", "UIScreen"]
 - !private ["PSo18UITraitEnvironment", "URLSession"]
 - !private ["PSo18UITraitEnvironment", "VideoPlayerViewController"]
 - !private ["PSo18UITraitEnvironment", "addAction"]
@@ -2032,6 +2079,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "layer"]
 - ["PSo18UITraitEnvironment", "loadingIndicator"]
 - ["PSo18UITraitEnvironment", "locationPoints"]
+- !private ["PSo18UITraitEnvironment", "main"]
 - ["PSo18UITraitEnvironment", "modalButton"]
 - !private ["PSo18UITraitEnvironment", "navigationController"]
 - ["PSo18UITraitEnvironment", "nextHandler"]
@@ -2072,6 +2120,7 @@ depends-member:
 - !private ["CSo16UIViewController", "AVPlayerStatus"]
 - !private ["CSo16UIViewController", "AppDelegate"]
 - ["CSo16UIViewController", "Bool"]
+- !private ["CSo16UIViewController", "CGRect"]
 - !private ["CSo16UIViewController", "Constants"]
 - !private ["CSo16UIViewController", "DispatchQueue"]
 - ["CSo16UIViewController", "DrillListItem"]
@@ -2095,6 +2144,7 @@ depends-member:
 - !private ["CSo16UIViewController", "UIAlertControllerStyle"]
 - !private ["CSo16UIViewController", "UIApplication"]
 - ["CSo16UIViewController", "UIButton"]
+- !private ["CSo16UIViewController", "UIScreen"]
 - !private ["CSo16UIViewController", "URL"]
 - !private ["CSo16UIViewController", "URLSession"]
 - ["CSo16UIViewController", "UnsafeMutableRawPointer"]
@@ -2179,6 +2229,7 @@ depends-member:
 - !private ["C15gameSenseSports25VideoPlayerViewController", "AVPlayerStatus"]
 - !private ["C15gameSenseSports25VideoPlayerViewController", "AppDelegate"]
 - ["C15gameSenseSports25VideoPlayerViewController", "Bool"]
+- !private ["C15gameSenseSports25VideoPlayerViewController", "CGRect"]
 - !private ["C15gameSenseSports25VideoPlayerViewController", "Constants"]
 - !private ["C15gameSenseSports25VideoPlayerViewController", "DispatchQueue"]
 - ["C15gameSenseSports25VideoPlayerViewController", "DrillListItem"]
@@ -2202,6 +2253,7 @@ depends-member:
 - !private ["C15gameSenseSports25VideoPlayerViewController", "UIAlertControllerStyle"]
 - !private ["C15gameSenseSports25VideoPlayerViewController", "UIApplication"]
 - ["C15gameSenseSports25VideoPlayerViewController", "UIButton"]
+- !private ["C15gameSenseSports25VideoPlayerViewController", "UIScreen"]
 - !private ["C15gameSenseSports25VideoPlayerViewController", "URL"]
 - !private ["C15gameSenseSports25VideoPlayerViewController", "URLSession"]
 - ["C15gameSenseSports25VideoPlayerViewController", "UnsafeMutableRawPointer"]
@@ -2293,6 +2345,7 @@ depends-member:
 - !private ["Ps9_Hashable", "AVPlayerItemDidPlayToEndTime"]
 - !private ["Ps9_Hashable", "AVPlayerLayer"]
 - !private ["Ps9_Hashable", "AVPlayerStatus"]
+- !private ["Ps9_Hashable", "CGRect"]
 - !private ["Ps9_Hashable", "Constants"]
 - !private ["Ps9_Hashable", "DispatchQueue"]
 - ["Ps9_Hashable", "DrillListItem"]
@@ -2314,6 +2367,7 @@ depends-member:
 - !private ["Ps9_Hashable", "UIAlertController"]
 - !private ["Ps9_Hashable", "UIAlertControllerStyle"]
 - !private ["Ps9_Hashable", "UIApplication"]
+- !private ["Ps9_Hashable", "UIScreen"]
 - !private ["Ps9_Hashable", "URLSession"]
 - !private ["Ps9_Hashable", "VideoPlayerViewController"]
 - !private ["Ps9_Hashable", "_DisabledRangeIndex"]
@@ -2431,6 +2485,7 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "path"]
 - !private ["Ps21_ObjectiveCBridgeable", "shuffled"]
 - !private ["Ps21_ObjectiveCBridgeable", "subscript"]
+- !private ["Ps21_ObjectiveCBridgeable", "width"]
 - !private ["Ps21_ObjectiveCBridgeable", "write"]
 - !private ["Vs26_OptionalNilComparisonType", "deinit"]
 - !private ["Ps8_Pointer", "Stride"]
@@ -2465,6 +2520,7 @@ depends-nominal:
 - !private "PSo15CALayerDelegate"
 - !private "PSo13CAMediaTiming"
 - !private "V12CoreGraphics7CGFloat"
+- !private "VSC6CGRect"
 - !private "VSC6CMTime"
 - "Ps7CVarArg"
 - !private "Vs9Character"
@@ -2585,6 +2641,7 @@ depends-nominal:
 - "CSo22UINavigationController"
 - "CSo11UIResponder"
 - "PSo30UIResponderStandardEditActions"
+- !private "CSo8UIScreen"
 - !private "PSo20UIScrollViewDelegate"
 - "PSo16UIStateRestoring"
 - !private "PSo21UITableViewDataSource"
@@ -2637,12 +2694,15 @@ depends-nominal:
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Users/Ra/Documents/gameSenseSports/Repo/gamesense.ios/gameSenseSports/gameSenseSports-Bridging-Header.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Users/Ra/Documents/gameSenseSports/Repo/gamesense.ios/gameSenseSports/Rollbar.framework/Headers/Rollbar.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Users/Ra/Documents/gameSenseSports/Repo/gamesense.ios/gameSenseSports/Rollbar.framework/Headers/RollbarConfiguration.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"

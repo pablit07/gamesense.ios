@@ -6,43 +6,47 @@ provides-nominal:
 provides-member:
 - ["C15gameSenseSports11AppDelegate", ""]
 provides-dynamic-lookup:
-- "applicationDidBecomeActive"
 - "window"
 - "applicationWillTerminate"
+- "apiToken"
+- "applicationDidBecomeActive"
 - "application"
 - "applicationDidEnterBackground"
-- "applicationWillResignActive"
-- "apiToken"
 - "applicationWillEnterForeground"
+- "applicationWillResignActive"
 depends-top-level:
-- "CastingPrecedence"
-- !private ">"
-- "AssignmentPrecedence"
-- "String"
-- "AppDelegate"
-- "UIApplicationDelegate"
-- "UIWindow"
-- "UIResponder"
-- !private "||"
-- !private "Array"
-- "UIApplication"
-- "Int64"
-- !private "+="
-- !private "NSDictionary"
-- "StringLiteralType"
-- !private "FileManager"
-- !private "ByteCountFormatter"
-- "Bool"
 - !private "BooleanLiteralType"
-- !private "<"
-- "UIApplicationLaunchOptionsKey"
+- !private "Rollbar"
+- !private "FileManager"
+- !private ">"
+- !private "ByteCountFormatter"
 - !private "NSNumber"
+- "Bool"
+- !private "||"
+- "UIApplication"
+- "UIApplicationLaunchOptionsKey"
+- "String"
+- !private "Array"
+- "StringLiteralType"
+- !private "+="
+- !private "<"
+- !private "RollbarConfiguration"
+- "CastingPrecedence"
 - !private "NSSearchPathForDirectoriesInDomains"
+- "UIResponder"
+- "AssignmentPrecedence"
+- "UIApplicationDelegate"
+- !private "NSDictionary"
+- "UIWindow"
+- "Int64"
+- "AppDelegate"
 depends-member:
 - !private ["Ps9AnyObject", "ByteCountFormatter"]
 - !private ["Ps9AnyObject", "FileManager"]
 - !private ["Ps9AnyObject", "Int64"]
 - !private ["Ps9AnyObject", "NSSearchPathForDirectoriesInDomains"]
+- !private ["Ps9AnyObject", "Rollbar"]
+- !private ["Ps9AnyObject", "RollbarConfiguration"]
 - ["Ps9AnyObject", "_apiToken"]
 - !private ["Ps9AnyObject", "allowedUnits"]
 - ["Ps9AnyObject", "apiToken"]
@@ -64,8 +68,10 @@ depends-member:
 - !private ["Ps9AnyObject", "countStyle"]
 - !private ["Ps9AnyObject", "default"]
 - ["Ps9AnyObject", "deviceRemainingFreeSpaceInBytes"]
+- !private ["Ps9AnyObject", "environment"]
 - !private ["Ps9AnyObject", "fileSize"]
 - ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "initWithAccessToken"]
 - !private ["Ps9AnyObject", "int64Value"]
 - !private ["Ps9AnyObject", "removeItem"]
 - !private ["Ps9AnyObject", "url"]
@@ -78,6 +84,8 @@ depends-member:
 - !private ["C15gameSenseSports11AppDelegate", "NSDictionary"]
 - !private ["C15gameSenseSports11AppDelegate", "NSNumber"]
 - !private ["C15gameSenseSports11AppDelegate", "NSSearchPathForDirectoriesInDomains"]
+- !private ["C15gameSenseSports11AppDelegate", "Rollbar"]
+- !private ["C15gameSenseSports11AppDelegate", "RollbarConfiguration"]
 - ["C15gameSenseSports11AppDelegate", "String"]
 - ["C15gameSenseSports11AppDelegate", "UIApplication"]
 - ["C15gameSenseSports11AppDelegate", "UIApplicationLaunchOptionsKey"]
@@ -129,6 +137,8 @@ depends-member:
 - !private ["Ps7CVarArg", "IntegerLiteralType"]
 - !private ["Ps7CVarArg", "Iterator"]
 - !private ["Ps7CVarArg", "NSSearchPathForDirectoriesInDomains"]
+- !private ["Ps7CVarArg", "Rollbar"]
+- !private ["Ps7CVarArg", "RollbarConfiguration"]
 - !private ["Ps7CVarArg", "Stride"]
 - !private ["Ps7CVarArg", "SubSequence"]
 - !private ["Ps7CVarArg", "_DisabledRangeIndex"]
@@ -154,9 +164,11 @@ depends-member:
 - !private ["Ps7CVarArg", "countStyle"]
 - !private ["Ps7CVarArg", "default"]
 - ["Ps7CVarArg", "deviceRemainingFreeSpaceInBytes"]
+- !private ["Ps7CVarArg", "environment"]
 - !private ["Ps7CVarArg", "fileSize"]
 - !private ["Ps7CVarArg", "hashValue"]
 - ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "initWithAccessToken"]
 - !private ["Ps7CVarArg", "int64Value"]
 - !private ["Ps7CVarArg", "last"]
 - !private ["Ps7CVarArg", "removeItem"]
@@ -187,6 +199,8 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "Int64"]
 - !private ["Ps28CustomDebugStringConvertible", "Iterator"]
 - !private ["Ps28CustomDebugStringConvertible", "NSSearchPathForDirectoriesInDomains"]
+- !private ["Ps28CustomDebugStringConvertible", "Rollbar"]
+- !private ["Ps28CustomDebugStringConvertible", "RollbarConfiguration"]
 - !private ["Ps28CustomDebugStringConvertible", "SubSequence"]
 - !private ["Ps28CustomDebugStringConvertible", "_Element"]
 - ["Ps28CustomDebugStringConvertible", "_apiToken"]
@@ -210,8 +224,10 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "countStyle"]
 - !private ["Ps28CustomDebugStringConvertible", "default"]
 - ["Ps28CustomDebugStringConvertible", "deviceRemainingFreeSpaceInBytes"]
+- !private ["Ps28CustomDebugStringConvertible", "environment"]
 - !private ["Ps28CustomDebugStringConvertible", "fileSize"]
 - ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "initWithAccessToken"]
 - !private ["Ps28CustomDebugStringConvertible", "int64Value"]
 - !private ["Ps28CustomDebugStringConvertible", "last"]
 - !private ["Ps28CustomDebugStringConvertible", "path"]
@@ -251,6 +267,8 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "IntegerLiteralType"]
 - !private ["Ps23CustomStringConvertible", "Iterator"]
 - !private ["Ps23CustomStringConvertible", "NSSearchPathForDirectoriesInDomains"]
+- !private ["Ps23CustomStringConvertible", "Rollbar"]
+- !private ["Ps23CustomStringConvertible", "RollbarConfiguration"]
 - !private ["Ps23CustomStringConvertible", "Stride"]
 - !private ["Ps23CustomStringConvertible", "SubSequence"]
 - !private ["Ps23CustomStringConvertible", "_DisabledRangeIndex"]
@@ -277,9 +295,11 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "countStyle"]
 - !private ["Ps23CustomStringConvertible", "default"]
 - ["Ps23CustomStringConvertible", "deviceRemainingFreeSpaceInBytes"]
+- !private ["Ps23CustomStringConvertible", "environment"]
 - !private ["Ps23CustomStringConvertible", "fileSize"]
 - !private ["Ps23CustomStringConvertible", "hashValue"]
 - ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "initWithAccessToken"]
 - !private ["Ps23CustomStringConvertible", "int64Value"]
 - !private ["Ps23CustomStringConvertible", "last"]
 - !private ["Ps23CustomStringConvertible", "path"]
@@ -305,6 +325,8 @@ depends-member:
 - !private ["Ps9Equatable", "Int64"]
 - !private ["Ps9Equatable", "IntegerLiteralType"]
 - !private ["Ps9Equatable", "NSSearchPathForDirectoriesInDomains"]
+- !private ["Ps9Equatable", "Rollbar"]
+- !private ["Ps9Equatable", "RollbarConfiguration"]
 - !private ["Ps9Equatable", "Stride"]
 - !private ["Ps9Equatable", "_DisabledRangeIndex"]
 - ["Ps9Equatable", "_apiToken"]
@@ -331,10 +353,12 @@ depends-member:
 - !private ["Ps9Equatable", "default"]
 - ["Ps9Equatable", "deviceRemainingFreeSpaceInBytes"]
 - !private ["Ps9Equatable", "documentDirectory"]
+- !private ["Ps9Equatable", "environment"]
 - !private ["Ps9Equatable", "file"]
 - !private ["Ps9Equatable", "fileSize"]
 - !private ["Ps9Equatable", "hashValue"]
 - ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "initWithAccessToken"]
 - !private ["Ps9Equatable", "int64Value"]
 - !private ["Ps9Equatable", "path"]
 - !private ["Ps9Equatable", "removeItem"]
@@ -386,6 +410,8 @@ depends-member:
 - !private ["Ps8Hashable", "Int64"]
 - !private ["Ps8Hashable", "IntegerLiteralType"]
 - !private ["Ps8Hashable", "NSSearchPathForDirectoriesInDomains"]
+- !private ["Ps8Hashable", "Rollbar"]
+- !private ["Ps8Hashable", "RollbarConfiguration"]
 - !private ["Ps8Hashable", "Stride"]
 - !private ["Ps8Hashable", "_DisabledRangeIndex"]
 - ["Ps8Hashable", "_apiToken"]
@@ -412,10 +438,12 @@ depends-member:
 - !private ["Ps8Hashable", "default"]
 - ["Ps8Hashable", "deviceRemainingFreeSpaceInBytes"]
 - !private ["Ps8Hashable", "documentDirectory"]
+- !private ["Ps8Hashable", "environment"]
 - !private ["Ps8Hashable", "file"]
 - !private ["Ps8Hashable", "fileSize"]
 - !private ["Ps8Hashable", "hashValue"]
 - ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "initWithAccessToken"]
 - !private ["Ps8Hashable", "int64Value"]
 - !private ["Ps8Hashable", "path"]
 - !private ["Ps8Hashable", "removeItem"]
@@ -423,6 +451,7 @@ depends-member:
 - !private ["Ps8Hashable", "url"]
 - ["Ps8Hashable", "window"]
 - ["Ps8Hashable", ""]
+- !private ["SQ", "deinit"]
 - !private ["Ps9Indexable", "Index"]
 - !private ["Ps9Indexable", "IndexDistance"]
 - !private ["Ps9Indexable", "Iterator"]
@@ -493,6 +522,8 @@ depends-member:
 - !private ["CSo8NSObject", "NSDictionary"]
 - !private ["CSo8NSObject", "NSNumber"]
 - !private ["CSo8NSObject", "NSSearchPathForDirectoriesInDomains"]
+- !private ["CSo8NSObject", "Rollbar"]
+- !private ["CSo8NSObject", "RollbarConfiguration"]
 - ["CSo8NSObject", "String"]
 - ["CSo8NSObject", "UIApplication"]
 - ["CSo8NSObject", "UIApplicationLaunchOptionsKey"]
@@ -518,8 +549,10 @@ depends-member:
 - !private ["CSo8NSObject", "countStyle"]
 - !private ["CSo8NSObject", "default"]
 - ["CSo8NSObject", "deviceRemainingFreeSpaceInBytes"]
+- !private ["CSo8NSObject", "environment"]
 - !private ["CSo8NSObject", "fileSize"]
 - ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "initWithAccessToken"]
 - !private ["CSo8NSObject", "int64Value"]
 - !private ["CSo8NSObject", "removeItem"]
 - !private ["CSo8NSObject", "url"]
@@ -528,6 +561,8 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "FileManager"]
 - !private ["PSo16NSObjectProtocol", "Int64"]
 - !private ["PSo16NSObjectProtocol", "NSSearchPathForDirectoriesInDomains"]
+- !private ["PSo16NSObjectProtocol", "Rollbar"]
+- !private ["PSo16NSObjectProtocol", "RollbarConfiguration"]
 - ["PSo16NSObjectProtocol", "_apiToken"]
 - !private ["PSo16NSObjectProtocol", "allowedUnits"]
 - ["PSo16NSObjectProtocol", "apiToken"]
@@ -549,8 +584,10 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "countStyle"]
 - !private ["PSo16NSObjectProtocol", "default"]
 - ["PSo16NSObjectProtocol", "deviceRemainingFreeSpaceInBytes"]
+- !private ["PSo16NSObjectProtocol", "environment"]
 - !private ["PSo16NSObjectProtocol", "fileSize"]
 - ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "initWithAccessToken"]
 - !private ["PSo16NSObjectProtocol", "int64Value"]
 - !private ["PSo16NSObjectProtocol", "removeItem"]
 - !private ["PSo16NSObjectProtocol", "url"]
@@ -586,6 +623,10 @@ depends-member:
 - !private ["Ps16RawRepresentable", "useBytes"]
 - !private ["Ps16RawRepresentable", "userDomainMask"]
 - !private ["P10Foundation20ReferenceConvertible", "path"]
+- !private ["CSo7Rollbar", "initWithAccessToken"]
+- ["CSo20RollbarConfiguration", "deinit"]
+- !private ["CSo20RollbarConfiguration", "environment"]
+- !private ["CSo20RollbarConfiguration", "init"]
 - !private ["OCSo11FileManager19SearchPathDirectory", "cachesDirectory"]
 - ["OCSo11FileManager19SearchPathDirectory", "deinit"]
 - !private ["OCSo11FileManager19SearchPathDirectory", "documentDirectory"]
@@ -628,6 +669,8 @@ depends-member:
 - !private ["PSo21UIApplicationDelegate", "FileManager"]
 - !private ["PSo21UIApplicationDelegate", "Int64"]
 - !private ["PSo21UIApplicationDelegate", "NSSearchPathForDirectoriesInDomains"]
+- !private ["PSo21UIApplicationDelegate", "Rollbar"]
+- !private ["PSo21UIApplicationDelegate", "RollbarConfiguration"]
 - !private ["PSo21UIApplicationDelegate", "_apiToken"]
 - ["PSo21UIApplicationDelegate", "application"]
 - ["PSo21UIApplicationDelegate", "applicationDidBecomeActive"]
@@ -651,6 +694,8 @@ depends-member:
 - !private ["CSo11UIResponder", "NSDictionary"]
 - !private ["CSo11UIResponder", "NSNumber"]
 - !private ["CSo11UIResponder", "NSSearchPathForDirectoriesInDomains"]
+- !private ["CSo11UIResponder", "Rollbar"]
+- !private ["CSo11UIResponder", "RollbarConfiguration"]
 - ["CSo11UIResponder", "String"]
 - ["CSo11UIResponder", "UIApplication"]
 - ["CSo11UIResponder", "UIApplicationLaunchOptionsKey"]
@@ -678,6 +723,8 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "FileManager"]
 - !private ["PSo30UIResponderStandardEditActions", "Int64"]
 - !private ["PSo30UIResponderStandardEditActions", "NSSearchPathForDirectoriesInDomains"]
+- !private ["PSo30UIResponderStandardEditActions", "Rollbar"]
+- !private ["PSo30UIResponderStandardEditActions", "RollbarConfiguration"]
 - ["PSo30UIResponderStandardEditActions", "_apiToken"]
 - ["PSo30UIResponderStandardEditActions", "apiToken"]
 - ["PSo30UIResponderStandardEditActions", "application"]
@@ -730,6 +777,8 @@ depends-member:
 - !private ["Ps9_Hashable", "Int64"]
 - !private ["Ps9_Hashable", "IntegerLiteralType"]
 - !private ["Ps9_Hashable", "NSSearchPathForDirectoriesInDomains"]
+- !private ["Ps9_Hashable", "Rollbar"]
+- !private ["Ps9_Hashable", "RollbarConfiguration"]
 - !private ["Ps9_Hashable", "Stride"]
 - !private ["Ps9_Hashable", "_DisabledRangeIndex"]
 - ["Ps9_Hashable", "_apiToken"]
@@ -756,10 +805,12 @@ depends-member:
 - !private ["Ps9_Hashable", "default"]
 - ["Ps9_Hashable", "deviceRemainingFreeSpaceInBytes"]
 - !private ["Ps9_Hashable", "documentDirectory"]
+- !private ["Ps9_Hashable", "environment"]
 - !private ["Ps9_Hashable", "file"]
 - !private ["Ps9_Hashable", "fileSize"]
 - !private ["Ps9_Hashable", "hashValue"]
 - ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "initWithAccessToken"]
 - !private ["Ps9_Hashable", "int64Value"]
 - !private ["Ps9_Hashable", "path"]
 - !private ["Ps9_Hashable", "removeItem"]
@@ -842,6 +893,7 @@ depends-nominal:
 - "CSo11FileManager"
 - !private "CSo9Formatter"
 - "Ps8Hashable"
+- !private "SQ"
 - !private "Ps9Indexable"
 - !private "Ps13IndexableBase"
 - !private "Vs16IndexingIterator"
@@ -875,6 +927,8 @@ depends-nominal:
 - !private "Ps25RangeReplaceableIndexable"
 - !private "Ps16RawRepresentable"
 - !private "P10Foundation20ReferenceConvertible"
+- !private "CSo7Rollbar"
+- "CSo20RollbarConfiguration"
 - "OCSo11FileManager19SearchPathDirectory"
 - "VCSo11FileManager20SearchPathDomainMask"
 - !private "Ps8Sequence"
@@ -916,12 +970,15 @@ depends-nominal:
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Users/Ra/Documents/gameSenseSports/Repo/gamesense.ios/gameSenseSports/gameSenseSports-Bridging-Header.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Users/Ra/Documents/gameSenseSports/Repo/gamesense.ios/gameSenseSports/Rollbar.framework/Headers/Rollbar.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Users/Ra/Documents/gameSenseSports/Repo/gamesense.ios/gameSenseSports/Rollbar.framework/Headers/RollbarConfiguration.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"

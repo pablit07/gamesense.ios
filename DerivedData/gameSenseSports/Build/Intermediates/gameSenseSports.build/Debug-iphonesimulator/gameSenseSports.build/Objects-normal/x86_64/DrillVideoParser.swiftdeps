@@ -12,18 +12,18 @@ provides-member:
 provides-dynamic-lookup:
 - "jsonString"
 depends-top-level:
-- "Int"
-- !private "Array"
+- "CastingPrecedence"
 - "DrillVideoItem"
 - "AssignmentPrecedence"
-- "CastingPrecedence"
-- "String"
 - "DrillVideoParser"
-- !private "Dictionary"
-- !private "JSONSerialization"
-- !private "StringLiteralType"
 - "NSObject"
+- !private "Dictionary"
+- "Int"
 - !private "BooleanLiteralType"
+- !private "StringLiteralType"
+- !private "Array"
+- "String"
+- !private "JSONSerialization"
 depends-member:
 - !private ["Ps9AnyObject", "DrillVideoItem"]
 - !private ["Ps9AnyObject", "Encoding"]
@@ -356,12 +356,15 @@ depends-nominal:
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Users/Ra/Documents/gameSenseSports/Repo/gamesense.ios/gameSenseSports/gameSenseSports-Bridging-Header.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Users/Ra/Documents/gameSenseSports/Repo/gamesense.ios/gameSenseSports/Rollbar.framework/Headers/Rollbar.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Users/Ra/Documents/gameSenseSports/Repo/gamesense.ios/gameSenseSports/Rollbar.framework/Headers/RollbarConfiguration.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"

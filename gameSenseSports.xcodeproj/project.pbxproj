@@ -36,6 +36,9 @@
 		11698FD61DDD14BE00C24D3C /* lance-lynn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11698FD51DDD14BE00C24D3C /* lance-lynn.jpg */; };
 		11698FD81DDD16FF00C24D3C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 11698FD71DDD16FF00C24D3C /* logo.png */; };
 		11698FDA1DDD1CFD00C24D3C /* RegistrationWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11698FD91DDD1CFD00C24D3C /* RegistrationWebViewController.swift */; };
+		118287601E14D9BE0009CCAF /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 1182875F1E14D9BE0009CCAF /* clock.png */; };
+		118287631E14E6CE0009CCAF /* bb_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 118287611E14E6CE0009CCAF /* bb_ball.png */; };
+		118287641E14E6CE0009CCAF /* bb_strike.png in Resources */ = {isa = PBXBuildFile; fileRef = 118287621E14E6CE0009CCAF /* bb_strike.png */; };
 		11DC88D01DEF6501002D3847 /* gs_logo_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 11DC88CF1DEF6501002D3847 /* gs_logo_login.png */; };
 		11E1391F1DE4C932005B2A6F /* SharedNetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1391E1DE4C932005B2A6F /* SharedNetworkConnection.swift */; };
 		11E139211DE5E88E005B2A6F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E139201DE5E88E005B2A6F /* Constants.swift */; };
@@ -98,6 +101,9 @@
 		11698FD51DDD14BE00C24D3C /* lance-lynn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "lance-lynn.jpg"; path = "images/lance-lynn.jpg"; sourceTree = "<group>"; };
 		11698FD71DDD16FF00C24D3C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = images/logo.png; sourceTree = "<group>"; };
 		11698FD91DDD1CFD00C24D3C /* RegistrationWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationWebViewController.swift; sourceTree = "<group>"; };
+		1182875F1E14D9BE0009CCAF /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock.png; path = images/clock.png; sourceTree = "<group>"; };
+		118287611E14E6CE0009CCAF /* bb_ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bb_ball.png; path = images/bb_ball.png; sourceTree = "<group>"; };
+		118287621E14E6CE0009CCAF /* bb_strike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bb_strike.png; path = images/bb_strike.png; sourceTree = "<group>"; };
 		11DC88CF1DEF6501002D3847 /* gs_logo_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gs_logo_login.png; path = images/gs_logo_login.png; sourceTree = "<group>"; };
 		11E1391E1DE4C932005B2A6F /* SharedNetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedNetworkConnection.swift; sourceTree = "<group>"; };
 		11E139201DE5E88E005B2A6F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -155,6 +161,9 @@
 		11225C2A1DDE73B30071D1CF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				118287611E14E6CE0009CCAF /* bb_ball.png */,
+				118287621E14E6CE0009CCAF /* bb_strike.png */,
+				1182875F1E14D9BE0009CCAF /* clock.png */,
 				11DC88CF1DEF6501002D3847 /* gs_logo_login.png */,
 				11698FD71DDD16FF00C24D3C /* logo.png */,
 				11698FD51DDD14BE00C24D3C /* lance-lynn.jpg */,
@@ -379,11 +388,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				11698FA01DDB999600C24D3C /* LaunchScreen.storyboard in Resources */,
+				118287641E14E6CE0009CCAF /* bb_strike.png in Resources */,
 				11698FC41DDB9C4700C24D3C /* gameSenseSports.png in Resources */,
 				11698FD81DDD16FF00C24D3C /* logo.png in Resources */,
+				118287631E14E6CE0009CCAF /* bb_ball.png in Resources */,
 				11DC88D01DEF6501002D3847 /* gs_logo_login.png in Resources */,
 				11ECB99E1DECC2B900BEBF31 /* caughtball.mp3 in Resources */,
 				11698F9D1DDB999600C24D3C /* Assets.xcassets in Resources */,
+				118287601E14D9BE0009CCAF /* clock.png in Resources */,
 				11698FD61DDD14BE00C24D3C /* lance-lynn.jpg in Resources */,
 				11698F981DDB999600C24D3C /* Main.storyboard in Resources */,
 				11ECB99D1DECC2B900BEBF31 /* ballcheer.mp3 in Resources */,

@@ -15,12 +15,14 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate
     @IBOutlet weak var questionsLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
     
+    @IBOutlet weak var timeLabel: UILabel!
+    
     @IBOutlet weak var answerView1: UIView!
     @IBOutlet weak var answerView2: UIView!
     @IBOutlet weak var answerView3: UIView!
     @IBOutlet weak var answerView4: UIView!
-    @IBOutlet weak var answerView5: UIView!
-    @IBOutlet weak var answerView6: UIView!
+    @IBOutlet weak var timerView: UIView!
+
     
     private var audioPlayerHit: AVAudioPlayer?
     private var audioPlayerMiss: AVAudioPlayer?
@@ -43,8 +45,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate
         answerView2.alpha = 0
         answerView3.alpha = 0
         answerView4.alpha = 0
-        answerView5.alpha = 0
-        answerView6.alpha = 0
         loadVideos()
     }
     
@@ -56,6 +56,9 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate
         questionsLabel.text = String(parentViewController.index + 1)
         drillQuestionItem = parentViewController.drillQuestionsArray[parentViewController.index]
         getPitchLocations()
+        self.setTimer(value: 2.5)
+        self.startClockTimer()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -291,6 +294,70 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate
         } catch let error as NSError {
             print("audioPlayer error \(error.localizedDescription)")
         }
+    }
+    
+    
+    private var shapeLayer = CAShapeLayer()
+    private var countDownTimer = Timer()
+    private var timerValue = 900.0
+    
+    private func startAnimation() {
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = 0
+        animation.toValue = 1
+        animation.duration = Double(self.timerValue)
+        animation.fillMode = kCAFillModeForwards
+        animation.isRemovedOnCompletion = false
+        self.shapeLayer.add(animation, forKey: "ani")
+    }
+    
+    private func addCircle() {
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: 171,y: 75), radius: CGFloat(75), startAngle: CGFloat(-M_PI_2), endAngle:CGFloat(2*M_PI-M_PI_2), clockwise: true)
+        
+        self.shapeLayer.path = circlePath.cgPath
+        self.shapeLayer.fillColor = UIColor.clear.cgColor
+        self.shapeLayer.strokeColor = UIColor.white.cgColor
+        self.shapeLayer.lineWidth = 5.0
+        
+        timerView.layer.addSublayer(self.shapeLayer)
+    }
+    
+    private func updateLabel(value: Double) {
+        //self.setLabelText(self.timeFormatted(value))
+        self.addCircle()
+    }
+    
+    func setTimer(value: Double) {
+        self.timerValue = value
+        self.updateLabel(value: value)
+    }
+    
+    func startClockTimer() {
+        self.countDownTimer.invalidate()
+        self.countDownTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(DrillQuestionsViewController.countdown), userInfo: nil, repeats: true)
+
+        self.startAnimation()
+        
+    }
+    
+    func countdown()
+    {
+        self.timerValue -= 0.1
+        if self.timerValue < 0 {
+            self.setLabelText(value: "0.00s")
+            self.countDownTimer.invalidate()
+        }
+        else {
+            self.setLabelText(value: self.timeFormatted(timer: self.timerValue))
+        }
+    }
+    
+    private func timeFormatted(timer: Double) -> String {
+        return String(format: "%.2fs", timer)
+    }
+    
+    private func setLabelText(value: String) {
+        timeLabel.text = value
     }
     
     @IBAction func buttonPressed(sender: UIButton) {

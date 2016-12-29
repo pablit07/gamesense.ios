@@ -1,1 +1,1 @@
-/Users/Ra/Documents/gameSenseSports/gameSenseSports/DerivedData/gameSenseSports/Build/Intermediates/ArchiveIntermediates/gameSenseSports/InstallationBuildProductsLocation/Applications/gameSenseSports.app
+/Users/Ra/Documents/gameSenseSports/Repo/gamesense.ios/DerivedData/gameSenseSports/Build/Intermediates/ArchiveIntermediates/gameSenseSports/InstallationBuildProductsLocation/Applications/gameSenseSports.app

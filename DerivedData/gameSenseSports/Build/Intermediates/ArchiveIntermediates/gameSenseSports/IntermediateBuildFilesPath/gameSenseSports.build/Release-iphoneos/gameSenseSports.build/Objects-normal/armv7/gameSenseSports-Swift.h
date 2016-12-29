@@ -196,12 +196,12 @@ SWIFT_CLASS("_TtC15gameSenseSports28DrillQuestionsViewController")
 @interface DrillQuestionsViewController : UIViewController <AVAudioPlayerDelegate>
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified questionsLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified pointsLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified timeLabel;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified answerView1;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified answerView2;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified answerView3;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified answerView4;
-@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified answerView5;
-@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified answerView6;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified timerView;
 @property (nonatomic) BOOL answeredCorrectly;
 @property (nonatomic) NSInteger correctPitchLocationID;
 @property (nonatomic) NSInteger correctPitchTypeID;
@@ -212,6 +212,9 @@ SWIFT_CLASS("_TtC15gameSenseSports28DrillQuestionsViewController")
 - (void)didReceiveMemoryWarning;
 - (void)replayHandlerWithAlert:(UIAlertAction * _Null_unspecified)alert;
 - (void)nextHandlerWithAlert:(UIAlertAction * _Null_unspecified)alert;
+- (void)setTimerWithValue:(double)value;
+- (void)startClockTimer;
+- (void)countdown;
 - (IBAction)buttonPressedWithSender:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -294,6 +297,8 @@ SWIFT_CLASS("_TtC15gameSenseSports25VideoPlayerViewController")
 - (void)replayFinished;
 - (void)replayHandlerWithAlert:(UIAlertAction * _Null_unspecified)alert;
 - (void)nextHandlerWithAlert:(UIAlertAction * _Null_unspecified)alert;
+- (void)replayDrillHandlerWithAlert:(UIAlertAction * _Null_unspecified)alert;
+- (void)doneHandlerWithAlert:(UIAlertAction * _Null_unspecified)alert;
 - (void)playerFinished;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
