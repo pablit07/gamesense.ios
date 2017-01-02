@@ -9,20 +9,16 @@
 import UIKit
 import AVFoundation
 
-class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate
+class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UITableViewDataSource, UITableViewDelegate
 {
     
     @IBOutlet weak var questionsLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
     
     @IBOutlet weak var timeLabel: UILabel!
-    
-    @IBOutlet weak var answerView1: UIView!
-    @IBOutlet weak var answerView2: UIView!
-    @IBOutlet weak var answerView3: UIView!
-    @IBOutlet weak var answerView4: UIView!
     @IBOutlet weak var timerView: UIView!
 
+    @IBOutlet weak var pitchesTable: UITableView!
     
     private var audioPlayerHit: AVAudioPlayer?
     private var audioPlayerMiss: AVAudioPlayer?
@@ -33,6 +29,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate
     public var answered = false
     public var answeredCorrectly = false
     public var timeout = false
+    public var alternateColor = false
     
     public var correctPitchLocationID = -1
     public var correctPitchTypeID = -1
@@ -43,10 +40,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        answerView1.alpha = 0
-        answerView2.alpha = 0
-        answerView3.alpha = 0
-        answerView4.alpha = 0
         loadVideos()
     }
     
@@ -89,27 +82,9 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate
             let drillPitchLocationParser = DrillPitchLocationParser(jsonString: String(data: data, encoding: .utf8)!)
             self.pitchArray = (drillPitchLocationParser?.getDrillVideoPitchLocationArray())!
             DispatchQueue.main.async {
-                self.updateUIView()
+                self.pitchesTable.reloadData()
             }
         })
-
-    }
-    
-    private func updateUIView()
-    {
-        var viewGroup = 1
-        for drillPitchItem in self.pitchArray {
-            if (viewGroup < 6)
-            {
-                let uiView = self.view.viewWithTag(viewGroup)!
-                uiView.alpha = 1
-                let viewTitle = uiView.viewWithTag(viewGroup * 10) as! UILabel
-                viewTitle.text = drillPitchItem.name
-                let hiddenLabel = uiView.viewWithTag(viewGroup * 10 + 9) as! UILabel
-                hiddenLabel.text = String(drillPitchItem.drillPitchID)
-                viewGroup += 1
-            }
-        }
     }
     
     private func getVideoAnswer(pitchType: Int, pitchLocation: Int)
@@ -315,7 +290,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate
     }
     
     private func addCircle() {
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: 171,y: 75), radius: CGFloat(75), startAngle: CGFloat(-M_PI_2), endAngle:CGFloat(2*M_PI-M_PI_2), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: self.view.frame.width/2,y: 75), radius: CGFloat(75), startAngle: CGFloat(-M_PI_2), endAngle:CGFloat(2*M_PI-M_PI_2), clockwise: true)
         
         self.shapeLayer.path = circlePath.cgPath
         self.shapeLayer.fillColor = UIColor.clear.cgColor
@@ -345,13 +320,15 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate
     
     func countdown()
     {
+        if (answered)
+        {
+            self.countDownTimer.invalidate()
+            return
+        }
         self.timerValue -= 0.1
         if self.timerValue < 0 {
-            if (!answered)
-            {
-                self.timeout = true
-                self.getVideoAnswer(pitchType: -1, pitchLocation: -1)
-            }
+            self.timeout = true
+            self.getVideoAnswer(pitchType: -1, pitchLocation: -1)
             self.setLabelText(value: "0.00s")
             self.countDownTimer.invalidate()
         }
@@ -368,12 +345,46 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate
         timeLabel.text = value
     }
     
+    func numberOfSectionsInTableView(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.pitchArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "answerCell", for: indexPath)
+        let drillPitchItem = self.pitchArray[indexPath.row]
+        let pitchLabel = cell.viewWithTag(3) as! UILabel
+            pitchLabel.text = drillPitchItem.name
+        let hiddenLabel = cell.viewWithTag(4) as! UILabel
+        hiddenLabel.text = String(drillPitchItem.drillPitchID)
+        if (alternateColor) {
+            alternateColor = false
+            cell.backgroundColor = UIColor.lightGray
+        }
+        else {
+            alternateColor = true
+            cell.backgroundColor = UIColor.darkGray
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
     @IBAction func buttonPressed(sender: UIButton) {
         if (!timeout)
         {
-            answered = true
-            let hiddenLabel = sender.superview?.viewWithTag(sender.tag / 10 * 10 + 9) as! UILabel
-            self.getVideoAnswer(pitchType: Int(hiddenLabel.text!)!, pitchLocation: sender.tag%10)
+            self.answered = true
+            let pausedTime = self.shapeLayer.convertTime(CACurrentMediaTime(), from: nil)
+            self.shapeLayer.speed = 0
+            self.shapeLayer.timeOffset = pausedTime
+            let hiddenLabel = sender.superview?.viewWithTag(4) as! UILabel
+            self.getVideoAnswer(pitchType: Int(hiddenLabel.text!)!, pitchLocation: sender.tag)
         }
     }
 }

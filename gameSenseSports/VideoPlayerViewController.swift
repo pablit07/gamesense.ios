@@ -202,16 +202,19 @@ class VideoPlayerViewController: UIViewController
     {
         self.removeVideoPlayer()
         if (!replay) {
+            //set view bounds
             let player = AVPlayer(url: videoURL)
             player.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions(), context: nil)
             let playerLayer = AVPlayerLayer(player: player)
             playerLayer.frame = self.view.bounds
             playerLayer.bounds = self.view.bounds
+
             //get size of screen
             let screenSize : CGRect = UIScreen.main.bounds
             playerLayer.frame = CGRect.init(x:0, y:75, width:screenSize.width, height:(screenSize.width * 0.5625))
             playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
             self.view.layer.addSublayer(playerLayer)
+            
             NotificationCenter.default.addObserver(self, selector: #selector(VideoPlayerViewController.playerFinished), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
             player.play()
         }
