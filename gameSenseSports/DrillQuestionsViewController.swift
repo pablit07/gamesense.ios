@@ -30,7 +30,9 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate
     private var drillQuestionItem = DrillQuestionItem(json: [:])
     private var pitchArray = [DrillPitchLocationItem]()
     
+    public var answered = false
     public var answeredCorrectly = false
+    public var timeout = false
     
     public var correctPitchLocationID = -1
     public var correctPitchTypeID = -1
@@ -193,6 +195,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate
         if (self.answeredPitchLocationID == 1) {
             pitchLocation = "Ball"
         }
+        
         SharedNetworkConnection.apiPostAnswerQuestion(apiToken: appDelegate.apiToken, correctAnswer: correctAnswer, activityID: parentViewController.returnedDrillID, questionID: drillQuestionItem.drillQuestionID, answerID: self.answeredPitchTypeID, pitchLocation: pitchLocation, questionJson: drillQuestionItem.fullJson, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
@@ -344,6 +347,11 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate
     {
         self.timerValue -= 0.1
         if self.timerValue < 0 {
+            if (!answered)
+            {
+                self.timeout = true
+                self.getVideoAnswer(pitchType: -1, pitchLocation: -1)
+            }
             self.setLabelText(value: "0.00s")
             self.countDownTimer.invalidate()
         }
@@ -361,7 +369,11 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate
     }
     
     @IBAction func buttonPressed(sender: UIButton) {
-        let hiddenLabel = sender.superview?.viewWithTag(sender.tag / 10 * 10 + 9) as! UILabel
-        self.getVideoAnswer(pitchType: Int(hiddenLabel.text!)!, pitchLocation: sender.tag%10)
+        if (!timeout)
+        {
+            answered = true
+            let hiddenLabel = sender.superview?.viewWithTag(sender.tag / 10 * 10 + 9) as! UILabel
+            self.getVideoAnswer(pitchType: Int(hiddenLabel.text!)!, pitchLocation: sender.tag%10)
+        }
     }
 }

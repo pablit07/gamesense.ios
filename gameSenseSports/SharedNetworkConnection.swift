@@ -95,7 +95,13 @@ class SharedNetworkConnection: NSObject
         request.addValue(apiString, forHTTPHeaderField: "Authorization")
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField:"Content-Type")
         request.httpMethod = "POST"
-        let postString = "activity_id=" + String(activityID) + "&question_id=" + String(questionID) + "&action_name=\"Question Response\"&action_value={\"Response\": {\"id\": " + String(answerID) + ", \"name\": \"" + pitchLocation + "\", \"correct\": " + String(correctAnswer) + ", \"incorrect\": " + String(!correctAnswer) + ", \"objName\": \"pitch_location\"},\"Question\": " + questionJson + "}"
+        var postString = ""
+        if (answerID == -1) {
+            postString = "activity_id=" + String(activityID) + "&question_id=" + String(questionID) + "&action_name=\"Question Response\"&action_value={\"Response\": null,\"Question\": " + questionJson + "}"        
+        }
+        else {
+            postString = "activity_id=" + String(activityID) + "&question_id=" + String(questionID) + "&action_name=\"Question Response\"&action_value={\"Response\": {\"id\": " + String(answerID) + ", \"name\": \"" + pitchLocation + "\", \"correct\": " + String(correctAnswer) + ", \"incorrect\": " + String(!correctAnswer) + ", \"objName\": \"pitch_location\"},\"Question\": " + questionJson + "}"
+        }
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
         task.resume()
