@@ -26,6 +26,8 @@ class VideoPlayerViewController: UIViewController
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var modalButton: UIButton!
     
+    @IBOutlet weak var movieView: UIView!
+    
     private var drillQuestionsParser = DrillQuestionParser(jsonString: "")
     private var drillListItem = DrillListItem(json: [:])
     private var presenting = false
@@ -45,6 +47,7 @@ class VideoPlayerViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.movieView.backgroundColor = UIColor.black
         let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
         drillListItem = parentViewController.selectedDrillItem
     }
@@ -206,14 +209,14 @@ class VideoPlayerViewController: UIViewController
             let player = AVPlayer(url: videoURL)
             player.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions(), context: nil)
             let playerLayer = AVPlayerLayer(player: player)
-            playerLayer.frame = self.view.bounds
-            playerLayer.bounds = self.view.bounds
+            playerLayer.frame = self.movieView.bounds
+            playerLayer.bounds = self.movieView.bounds
 
             //get size of screen
             let screenSize : CGRect = UIScreen.main.bounds
             playerLayer.frame = CGRect.init(x:0, y:75, width:screenSize.width, height:(screenSize.width * 0.5625))
             playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
-            self.view.layer.addSublayer(playerLayer)
+            self.movieView.layer.addSublayer(playerLayer)
             
             NotificationCenter.default.addObserver(self, selector: #selector(VideoPlayerViewController.playerFinished), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
             player.play()
@@ -222,13 +225,13 @@ class VideoPlayerViewController: UIViewController
             let player = AVPlayer(url: videoURL)
             player.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions(), context: nil)
             let playerLayer = AVPlayerLayer(player: player)
-            playerLayer.frame = self.view.bounds
-            playerLayer.bounds = self.view.bounds
+            playerLayer.frame = self.movieView.bounds
+            playerLayer.bounds = self.movieView.bounds
             //get size of screen
             let screenSize : CGRect = UIScreen.main.bounds
             playerLayer.frame = CGRect.init(x:0, y:75, width:screenSize.width, height:(screenSize.width * 0.5625))
             playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
-            self.view.layer.addSublayer(playerLayer)
+            self.movieView.layer.addSublayer(playerLayer)
             NotificationCenter.default.addObserver(self, selector: #selector(VideoPlayerViewController.replayFinished), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
             player.play()
         }
@@ -268,7 +271,10 @@ class VideoPlayerViewController: UIViewController
     
     private func removeVideoPlayer()
     {
-        for layer in self.view.layer.sublayers!
+        if (self.movieView.layer.sublayers?.count == nil) {
+            return
+        }
+        for layer in self.movieView.layer.sublayers!
         {
             guard let playerLayer = layer as? AVPlayerLayer else
             {
