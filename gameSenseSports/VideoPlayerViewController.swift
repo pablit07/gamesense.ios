@@ -27,6 +27,7 @@ class VideoPlayerViewController: UIViewController
     @IBOutlet weak var modalButton: UIButton!
     
     @IBOutlet weak var movieView: UIView!
+    @IBOutlet weak var containerView: UIView!
     
     private var drillQuestionsParser = DrillQuestionParser(jsonString: "")
     private var drillListItem = DrillListItem(json: [:])
@@ -50,6 +51,7 @@ class VideoPlayerViewController: UIViewController
         self.movieView.backgroundColor = UIColor.black
         let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
         drillListItem = parentViewController.selectedDrillItem
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -244,6 +246,11 @@ class VideoPlayerViewController: UIViewController
         }
         if (player.status == AVPlayerStatus.readyToPlay) {
             self.loadingIndicator?.stopAnimating()
+            let dq = self.childViewControllers[0] as! DrillQuestionsViewController
+            if (!replay)
+            {
+                dq.triggerCountdown()
+            }
         }
         else if (player.status == AVPlayerStatus.failed){
             self.loadingIndicator?.stopAnimating()
@@ -298,6 +305,7 @@ class VideoPlayerViewController: UIViewController
     }
     
     func replayHandler(alert: UIAlertAction!) {
+        self.replay = true
         self.resetView()
     }
     
@@ -316,16 +324,16 @@ class VideoPlayerViewController: UIViewController
         self.points = 0
         self.locationPoints = 0
         self.typePoints = 0
-        self.startDtill()
         self.resetView()
+        self.startDtill()
     }
     
     func doneHandler(alert: UIAlertAction!)
     {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController!.popViewController(animated: true)
     }
 
-    private func resetView()
+    public func resetView()
     {
         presenting = false
         if (index == 0) {
@@ -385,7 +393,7 @@ class VideoPlayerViewController: UIViewController
     func playerFinished()
     {
         if (!presenting) {
-            self.performSegue(withIdentifier: "DrillQuestions", sender: self)
+            //self.performSegue(withIdentifier: "DrillQuestions", sender: self)
         }
     }
 }

@@ -40,20 +40,12 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.view.alpha = 0
         loadVideos()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let navController = self.presentingViewController as! UINavigationController
-        let parentViewController = navController.viewControllers[1] as! VideoPlayerViewController
-        pointsLabel.text = String(parentViewController.points)
-        questionsLabel.text = String(parentViewController.index + 1)
-        drillQuestionItem = parentViewController.drillQuestionsArray[parentViewController.index]
-        getPitchLocations()
-        self.setTimer(value: 2.5)
-        self.startClockTimer()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,10 +53,31 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         // Dispose of any resources that can be recreated.
     }
     
+    public func triggerCountdown()
+    {
+        self.view.alpha = 1
+        answered = false
+        answeredCorrectly = false
+        timeout = false
+        alternateColor = false
+        correctPitchLocationID = -1
+        correctPitchTypeID = -1
+        answeredPitchLocationID = -1
+        answeredPitchTypeID = -1
+        self.shapeLayer.removeFromSuperlayer()
+        self.shapeLayer = CAShapeLayer()
+        let parentViewController = self.parent as! VideoPlayerViewController
+        pointsLabel.text = String(parentViewController.points)
+        questionsLabel.text = String(parentViewController.index + 1)
+        drillQuestionItem = parentViewController.drillQuestionsArray[parentViewController.index]
+        getPitchLocations()
+        self.setTimer(value: 5.0)
+        self.startClockTimer()
+    }
+    
     private func getPitchLocations()
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        //let navController = self.presentingViewController as! UINavigationController
         let drillVideo = drillQuestionItem!.responseURI0
         
         SharedNetworkConnection.apiGetDrillPitchLocation(apiToken: appDelegate.apiToken, responseURI: drillVideo, completionHandler: { data, response, error in
@@ -125,8 +138,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
                 self.answeredPitchTypeID = pitchType
                 self.answeredPitchLocationID = pitchLocation
                 
-                let navController = self.presentingViewController as! UINavigationController
-                let parentViewController = navController.viewControllers[1] as! VideoPlayerViewController
+                let parentViewController = self.parent as! VideoPlayerViewController
 
                 if (pitchType == drillVideoItem?.pitchTypeID && pitchLocation == drillVideoItem?.pitchLocationID) {
                     self.sendUserAnswer(correctAnswer: true)
@@ -153,8 +165,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     
     private func calculcatePoints(points: Int)
     {
-        let navController = self.presentingViewController as! UINavigationController
-        let parentViewController = navController.viewControllers[1] as! VideoPlayerViewController
+        let parentViewController = self.parent as! VideoPlayerViewController
         parentViewController.points += points
         self.pointsLabel.text = String(parentViewController.points)
     }
@@ -162,8 +173,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     private func sendUserAnswer(correctAnswer: Bool)
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let navController = self.presentingViewController as! UINavigationController
-        let parentViewController = navController.viewControllers[1] as! VideoPlayerViewController
+        let parentViewController = self.parent as! VideoPlayerViewController
         let drillQuestionItem = parentViewController.drillQuestionsArray[parentViewController.index]
         
         var pitchLocation = "Strike"
@@ -232,19 +242,19 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     }
     
     func replayHandler(alert: UIAlertAction!) {
-        let navController = self.presentingViewController as! UINavigationController
-        let parentViewController = navController.viewControllers[1] as! VideoPlayerViewController
+        let parentViewController = self.parent as! VideoPlayerViewController
         parentViewController.replay = true
-        self.dismiss(animated: true, completion: nil)
+        self.view.alpha = 0
+        parentViewController.resetView()
     }
     
     func nextHandler(alert: UIAlertAction!)
     {
-        let navController = self.presentingViewController as! UINavigationController
-        let parentViewController = navController.viewControllers[1] as! VideoPlayerViewController
+        let parentViewController = self.parent as! VideoPlayerViewController
         parentViewController.replay = false
         parentViewController.index += 1
-        self.dismiss(animated: true, completion: nil)
+        self.view.alpha = 0
+        parentViewController.resetView()
     }
     
     private func loadVideos()
@@ -280,6 +290,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     private var timerValue = 900.0
     
     private func startAnimation() {
+        
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = 0
         animation.toValue = 1
@@ -290,18 +301,18 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     }
     
     private func addCircle() {
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: self.view.frame.width/2,y: 75), radius: CGFloat(75), startAngle: CGFloat(-M_PI_2), endAngle:CGFloat(2*M_PI-M_PI_2), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: self.view.frame.width/2,y: 50), radius: CGFloat(45), startAngle: CGFloat(-M_PI_2), endAngle:CGFloat(2*M_PI-M_PI_2), clockwise: true)
         
         self.shapeLayer.path = circlePath.cgPath
         self.shapeLayer.fillColor = UIColor.clear.cgColor
         self.shapeLayer.strokeColor = UIColor.white.cgColor
-        self.shapeLayer.lineWidth = 5.0
+        self.shapeLayer.lineWidth = 7.0
         
         timerView.layer.addSublayer(self.shapeLayer)
     }
     
     private func updateLabel(value: Double) {
-        //self.setLabelText(self.timeFormatted(value))
+        self.setLabelText(value: self.timeFormatted(timer: value))
         self.addCircle()
     }
     
@@ -361,6 +372,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             pitchLabel.text = drillPitchItem.name
         let hiddenLabel = cell.viewWithTag(4) as! UILabel
         hiddenLabel.text = String(drillPitchItem.drillPitchID)
+
         if (alternateColor) {
             alternateColor = false
             cell.backgroundColor = UIColor.lightGray
