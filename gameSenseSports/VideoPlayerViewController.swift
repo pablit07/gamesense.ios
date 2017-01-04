@@ -245,10 +245,7 @@ class VideoPlayerViewController: UIViewController
         if (player.status == AVPlayerStatus.readyToPlay) {
             self.showIndicator(shouldAppear:false)
             let dq = self.childViewControllers[0] as! DrillQuestionsViewController
-            if (!replay)
-            {
-                dq.triggerCountdown()
-            }
+            dq.resetViewForDisplay()
         }
         else if (player.status == AVPlayerStatus.failed){
             self.showIndicator(shouldAppear:false)
@@ -291,15 +288,6 @@ class VideoPlayerViewController: UIViewController
             NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
             layer.removeFromSuperlayer()
         }
-    }
-    
-    func replayFinished()
-    {
-        // Allow another replay
-        let alert = UIAlertController(title: (drillListItem?.title)! + " " + String(index + 1), message: nil, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: replayHandler))
-        alert.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.default, handler: nextHandler))
-        self.present(alert, animated: true, completion: nil)
     }
     
     func replayHandler(alert: UIAlertAction!) {
@@ -409,8 +397,19 @@ class VideoPlayerViewController: UIViewController
     func playerFinished()
     {
         if (!presenting) {
-            //self.performSegue(withIdentifier: "DrillQuestions", sender: self)
+            let dq = self.childViewControllers[0] as! DrillQuestionsViewController
+            dq.triggerCountdown()
         }
+    }
+    
+    
+    func replayFinished()
+    {
+        // Allow another replay
+        let alert = UIAlertController(title: (drillListItem?.title)! + " " + String(index + 1), message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: replayHandler))
+        alert.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.default, handler: nextHandler))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

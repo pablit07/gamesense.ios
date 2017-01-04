@@ -53,7 +53,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         // Dispose of any resources that can be recreated.
     }
     
-    public func triggerCountdown()
+    public func resetViewForDisplay()
     {
         self.view.alpha = 1
         answered = false
@@ -71,7 +71,11 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         questionsLabel.text = String(parentViewController.index + 1)
         drillQuestionItem = parentViewController.drillQuestionsArray[parentViewController.index]
         getPitchLocations()
-        self.setTimer(value: 5.0)
+    }
+    
+    public func triggerCountdown()
+    {
+        self.setTimer(value: 2.5)
         self.startClockTimer()
     }
     
@@ -307,12 +311,12 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     }
     
     private func addCircle() {
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: self.view.frame.width/2,y: 50), radius: CGFloat(45), startAngle: CGFloat(-M_PI_2), endAngle:CGFloat(2*M_PI-M_PI_2), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: self.view.frame.width/2,y: 33), radius: CGFloat(40), startAngle: CGFloat(-M_PI_2), endAngle:CGFloat(2*M_PI-M_PI_2), clockwise: true)
         
         self.shapeLayer.path = circlePath.cgPath
         self.shapeLayer.fillColor = UIColor.clear.cgColor
         self.shapeLayer.strokeColor = UIColor.white.cgColor
-        self.shapeLayer.lineWidth = 7.0
+        self.shapeLayer.lineWidth = 5.0
         
         timerView.layer.addSublayer(self.shapeLayer)
     }
