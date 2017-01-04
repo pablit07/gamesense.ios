@@ -213,8 +213,8 @@ class VideoPlayerViewController: UIViewController
             playerLayer.bounds = self.movieView.bounds
 
             //get size of screen
-            let screenSize : CGRect = UIScreen.main.bounds
-            playerLayer.frame = CGRect.init(x:0, y:75, width:screenSize.width, height:(screenSize.width * 0.5625))
+            let screenSize : CGRect = self.movieView.bounds
+            playerLayer.frame = CGRect.init(x:0, y:0, width:screenSize.width, height:(screenSize.width * 0.5625))
             playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
             self.movieView.layer.addSublayer(playerLayer)
             
@@ -228,8 +228,8 @@ class VideoPlayerViewController: UIViewController
             playerLayer.frame = self.movieView.bounds
             playerLayer.bounds = self.movieView.bounds
             //get size of screen
-            let screenSize : CGRect = UIScreen.main.bounds
-            playerLayer.frame = CGRect.init(x:0, y:75, width:screenSize.width, height:(screenSize.width * 0.5625))
+            let screenSize : CGRect = self.movieView.bounds
+            playerLayer.frame = CGRect.init(x:0, y:0, width:screenSize.width, height:(screenSize.width * 0.5625))
             playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
             self.movieView.layer.addSublayer(playerLayer)
             NotificationCenter.default.addObserver(self, selector: #selector(VideoPlayerViewController.replayFinished), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
