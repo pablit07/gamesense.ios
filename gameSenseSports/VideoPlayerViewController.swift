@@ -23,11 +23,9 @@ class VideoPlayerViewController: UIViewController
         URLSession.shared.invalidateAndCancel()
     }
     
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var modalButton: UIButton!
-    
     @IBOutlet weak var movieView: UIView!
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var loadingView: UIView!
     
     private var drillQuestionsParser = DrillQuestionParser(jsonString: "")
     private var drillListItem = DrillListItem(json: [:])
@@ -164,7 +162,7 @@ class VideoPlayerViewController: UIViewController
     
     private func downloadVideo()
     {
-        self.loadingIndicator?.startAnimating()
+        self.showIndicator(shouldAppear:true)
         let currentDrillQuestionItem = drillQuestionsArray[index]
         var cacheDirectory = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         var filename = ""
@@ -245,7 +243,7 @@ class VideoPlayerViewController: UIViewController
             return
         }
         if (player.status == AVPlayerStatus.readyToPlay) {
-            self.loadingIndicator?.stopAnimating()
+            self.showIndicator(shouldAppear:false)
             let dq = self.childViewControllers[0] as! DrillQuestionsViewController
             if (!replay)
             {
@@ -253,7 +251,7 @@ class VideoPlayerViewController: UIViewController
             }
         }
         else if (player.status == AVPlayerStatus.failed){
-            self.loadingIndicator?.stopAnimating()
+            self.showIndicator(shouldAppear:false)
             let alert = UIAlertController(title: "Sorry", message: "Your video failed to play. If this issue continues, please contact gamesenseSports at " + Constants.gamesenseSportsContact, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -349,7 +347,7 @@ class VideoPlayerViewController: UIViewController
                 self.downloadVideo()
             }
             else {
-                self.loadingIndicator?.startAnimating()
+                self.showIndicator(shouldAppear:true)
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 SharedNetworkConnection.apiDrillFinished(apiToken: appDelegate.apiToken, drill_id: (self.drillListItem?.drillID)!, activityID: self.returnedDrillID, score: self.points, locationScore: self.locationPoints, typeScore: self.typePoints, completionHandler:  { data, response, error in
                     guard let data = data, error == nil else {                                                 // check for fundamental networking error
@@ -379,7 +377,7 @@ class VideoPlayerViewController: UIViewController
                     
                     let stringData = String(data: data, encoding: .utf8)!
                     print(stringData)
-                    self.loadingIndicator?.stopAnimating()
+                    self.showIndicator(shouldAppear:false)
                     
                     let alert = UIAlertController(title: (self.drillListItem?.title)!, message: "Drill Finished", preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: self.replayDrillHandler))
@@ -387,6 +385,24 @@ class VideoPlayerViewController: UIViewController
                     self.present(alert, animated: true, completion: nil)
                 })
             }
+        }
+    }
+    
+    public func showIndicator(shouldAppear: Bool)
+    {
+        if (shouldAppear) {
+            self.loadingView.isUserInteractionEnabled = false
+            UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
+                self.loadingView.alpha = 1
+            },completion: { finished in
+            })
+        }
+        else {
+            self.loadingView.isUserInteractionEnabled = false
+            UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
+                self.loadingView.alpha = 0
+            },completion: { finished in
+            })
         }
     }
     

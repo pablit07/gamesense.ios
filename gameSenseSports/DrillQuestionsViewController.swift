@@ -103,7 +103,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     private func getVideoAnswer(pitchType: Int, pitchLocation: Int)
     {
         let parentViewController = self.parent as! VideoPlayerViewController
-        parentViewController.loadingIndicator?.startAnimating()
+        parentViewController.showIndicator(shouldAppear: true)
 
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         SharedNetworkConnection.apiGetDrillVideo(apiToken: appDelegate.apiToken, responseURI: (drillQuestionItem?.answerURL)!, completionHandler: { data, response, error in
@@ -116,7 +116,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
                 // 403 on no token
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(response)")
-                parentViewController.loadingIndicator?.stopAnimating()
+                parentViewController.showIndicator(shouldAppear: false)
                 SharedNetworkConnection.apiLoginWithStoredCredentials(completionHandler: { data, response, error in
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     let json = try? JSONSerialization.jsonObject(with: data!, options: [])
@@ -188,7 +188,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
                 let parentViewController = self.parent as! VideoPlayerViewController
-                parentViewController.loadingIndicator?.stopAnimating()
+                parentViewController.showIndicator(shouldAppear: false)
                 return
             }
             
@@ -211,7 +211,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
                 return
             }
             let parentViewController = self.parent as! VideoPlayerViewController
-            parentViewController.loadingIndicator?.stopAnimating()
+            parentViewController.showIndicator(shouldAppear: false)
             self.showAnswer(correctAnswer: correctAnswer)
         })
     }
