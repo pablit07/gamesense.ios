@@ -37,10 +37,34 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     public var answeredPitchLocationID = -1
     public var answeredPitchTypeID = -1
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        let verticalClass = self.traitCollection.verticalSizeClass
+        
+        if verticalClass == UIUserInterfaceSizeClass.compact {
+            
+            for subview in self.view.subviews {
+                if subview.tag == 1 {
+                    subview.isHidden = true
+                }
+            }
+        }
+
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.alpha = 0
+        let verticalClass = self.traitCollection.verticalSizeClass
+        if verticalClass == UIUserInterfaceSizeClass.compact {
+
+            for subview in self.view.subviews {
+                if subview.tag == 1 {
+                    subview.isHidden = true
+                }
+            }
+        }
         loadVideos()
     }
     
