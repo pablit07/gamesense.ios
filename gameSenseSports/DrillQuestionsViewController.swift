@@ -15,6 +15,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     @IBOutlet weak var questionsLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
     
+    @IBOutlet weak var scoreView: UIView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timerView: UIView!
 
@@ -37,17 +38,34 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     public var answeredPitchLocationID = -1
     public var answeredPitchTypeID = -1
     
+    public var portraitFrame: CGRect?
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         let verticalClass = self.traitCollection.verticalSizeClass
-        
+        let deviceBounds = UIScreen.main.bounds
         if verticalClass == UIUserInterfaceSizeClass.compact {
-            
-            for subview in self.view.subviews {
-                if subview.tag == 1 {
-                    subview.isHidden = true
-                }
-            }
+            self.scoreView.isHidden = true
+            self.view.backgroundColor = UIColor.clear
+            self.timerView.isHidden = true
+            let toMoveX = deviceBounds.width * 0.65
+            var viewFrame = self.view.frame
+            viewFrame.origin = CGPoint.init(x:viewFrame.origin.x + toMoveX, y:viewFrame.origin.y)
+            viewFrame.size.width = viewFrame.width - toMoveX
+            viewFrame.size.height = deviceBounds.height
+            self.view.frame = viewFrame
+            self.pitchesTable.frame.origin.y = 0
+        } else {
+            self.timerView.isHidden = false
+            self.scoreView.isHidden = false
+            self.view.superview?.frame = CGRect.init(x:0, y:286, width:deviceBounds.width, height:381)
+            self.view.backgroundColor = UIColor.black
+            self.view.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:381)
+            self.pitchesTable.frame = CGRect.init(x:0, y:86, width:deviceBounds.width, height:203)
+            self.scoreView.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:78)
+            self.scoreView.subviews[0].frame = CGRect.init(x:7, y:7, width:175, height:67)
+            self.scoreView.subviews[1].frame = CGRect.init(x:192, y:7, width:175, height:67)
+            self.timerView.frame = CGRect.init(x:0, y:302, width:deviceBounds.width, height:64)
         }
 
     }
@@ -56,15 +74,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.alpha = 0
-        let verticalClass = self.traitCollection.verticalSizeClass
-        if verticalClass == UIUserInterfaceSizeClass.compact {
-
-            for subview in self.view.subviews {
-                if subview.tag == 1 {
-                    subview.isHidden = true
-                }
-            }
-        }
         loadVideos()
     }
     

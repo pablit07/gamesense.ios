@@ -430,6 +430,7 @@
                         <outlet property="pitchesTable" destination="rpO-U4-DXc" id="W9u-5m-C2v"/>
                         <outlet property="pointsLabel" destination="lYu-16-be4" id="M0C-ZK-dag"/>
                         <outlet property="questionsLabel" destination="wG7-6c-WWY" id="UXo-jU-a2T"/>
+                        <outlet property="scoreView" destination="Y9p-Ax-0ab" id="E3c-4k-uqG"/>
                         <outlet property="timeLabel" destination="NEA-AY-mwX" id="Q1k-Iz-TWU"/>
                         <outlet property="timerView" destination="JMH-Ty-1R4" id="nbr-kc-qNq"/>
                     </connections>

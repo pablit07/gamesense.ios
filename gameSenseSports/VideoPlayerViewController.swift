@@ -43,6 +43,26 @@ class VideoPlayerViewController: UIViewController
     
     public var returnedDrillID = -1
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        let screenSize : CGRect = self.movieView.bounds
+        let fullScreenSize = UIScreen.main.bounds
+        let verticalClass = self.traitCollection.verticalSizeClass
+        if verticalClass == UIUserInterfaceSizeClass.compact {
+            self.movieView.frame = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
+            self.movieView.bounds = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
+            if self.movieView.layer.sublayers != nil {
+                self.movieView.layer.sublayers?[0].frame = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
+                self.movieView.layer.sublayers?[0].bounds = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
+            }
+        } else {
+            if self.movieView.layer.sublayers != nil {
+                self.movieView.frame = CGRect.init(x:0, y:63, width:fullScreenSize.width, height:215)
+                self.movieView.layer.sublayers?[0].frame = CGRect.init(x:0, y:0, width:screenSize.width, height:(screenSize.width * 0.5625))
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -214,7 +234,16 @@ class VideoPlayerViewController: UIViewController
 
             //get size of screen
             let screenSize : CGRect = self.movieView.bounds
-            playerLayer.frame = CGRect.init(x:0, y:0, width:screenSize.width, height:(screenSize.width * 0.5625))
+            let verticalClass = self.traitCollection.verticalSizeClass
+            if verticalClass == UIUserInterfaceSizeClass.compact {
+                let fullScreenSize = UIScreen.main.bounds
+                self.movieView.frame = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
+                self.movieView.bounds = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
+                playerLayer.frame = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
+                playerLayer.bounds = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
+            } else {
+                playerLayer.frame = CGRect.init(x:0, y:0, width:screenSize.width, height:(screenSize.width * 0.5625))
+            }
             playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
             self.movieView.layer.addSublayer(playerLayer)
             
