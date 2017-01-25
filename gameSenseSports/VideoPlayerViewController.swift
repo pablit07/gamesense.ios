@@ -395,8 +395,11 @@ class VideoPlayerViewController: UIViewController
                     let stringData = String(data: data, encoding: .utf8)!
                     print(stringData)
                     self.showIndicator(shouldAppear:false)
-                    
-                    let alert = UIAlertController(title: (self.drillListItem?.title)!, message: "Drill Finished", preferredStyle: UIAlertControllerStyle.alert)
+                    let maxPoints = (self.drillListItem?.questionCount)! * 25
+                    let points = self.points
+                    let recommendation = ((Double(points)/Double(maxPoints)) > 0.75) ? "repeat this drill" : "start a new drill"
+                    let completeMessage = "You scored \(points) points out of a max of \(maxPoints) points. We recommend for you to \(recommendation)."
+                    let alert = UIAlertController(title: "Drill Complete", message: completeMessage, preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: self.replayDrillHandler))
                     alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: self.doneHandler))
                     self.present(alert, animated: true, completion: nil)
