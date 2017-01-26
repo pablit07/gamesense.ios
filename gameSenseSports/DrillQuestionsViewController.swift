@@ -26,6 +26,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     
     private var drillQuestionItem = DrillQuestionItem(json: [:])
     private var pitchArray = [DrillPitchLocationItem]()
+    private var drillVideoItem = DrillVideoItem(json: [:])
     
     public var answered = false
     public var answeredCorrectly = false
@@ -38,33 +39,13 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     public var answeredPitchLocationID = -1
     public var answeredPitchTypeID = -1
     
-    public var portraitFrame: CGRect?
+    public var isLandscape = false
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         let verticalClass = self.traitCollection.verticalSizeClass
-        let deviceBounds = UIScreen.main.bounds
-        if verticalClass == UIUserInterfaceSizeClass.compact {
-            self.scoreView.isHidden = true
-            self.view.backgroundColor = UIColor.clear
-            self.timerView.isHidden = true
-            let toMoveX = deviceBounds.width * 0.65
-            var viewFrame = self.view.frame
-            viewFrame.origin = CGPoint.init(x:viewFrame.origin.x + toMoveX, y:viewFrame.origin.y)
-            viewFrame.size.width = viewFrame.width - toMoveX
-            viewFrame.size.height = deviceBounds.height
-            self.view.frame = viewFrame
-            self.pitchesTable.frame.origin.y = 0
-        } else {
-            self.timerView.isHidden = false
-            self.scoreView.isHidden = false
-            self.view.superview?.frame = CGRect.init(x:0, y:286, width:deviceBounds.width, height:381)
-            self.view.backgroundColor = UIColor.black
-            self.view.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:381)
-            self.pitchesTable.frame = CGRect.init(x:0, y:86, width:deviceBounds.width, height:203)
-            self.scoreView.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:78)
-            self.timerView.frame = CGRect.init(x:0, y:302, width:deviceBounds.width, height:64)
-        }
+        self.isLandscape = verticalClass == UIUserInterfaceSizeClass.compact
+        updateViewComponents(battingHand: "R")
 
     }
 
@@ -73,6 +54,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         // Do any additional setup after loading the view, typically from a nib.
         self.view.alpha = 0
         loadVideos()
+        self.isLandscape = self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -102,12 +84,47 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         questionsLabel.text = String(parentViewController.index + 1)
         drillQuestionItem = parentViewController.drillQuestionsArray[parentViewController.index]
         getPitchLocations()
+        loadVideoData()
     }
     
     public func triggerCountdown()
     {
         self.setTimer(value: 2.5)
         self.startClockTimer()
+    }
+    
+    private func updateViewComponents(battingHand: String)
+    {
+        let deviceBounds = UIScreen.main.bounds
+        if isLandscape
+        {
+            self.scoreView.isHidden = true
+            self.view.backgroundColor = UIColor.clear
+            self.timerView.isHidden = true
+            let toMoveX = deviceBounds.width * 0.65
+            var viewFrame = self.view.frame
+            assert(battingHand == "R" || battingHand == "L")
+            if battingHand == "R" {
+                viewFrame.origin = CGPoint.init(x:toMoveX, y:0)
+            } else if battingHand == "L" {
+                viewFrame.origin = CGPoint.init(x:0, y:0)
+            }
+            viewFrame.size.width = deviceBounds.width - toMoveX
+            viewFrame.size.height = deviceBounds.height
+            self.view.frame = viewFrame
+            self.pitchesTable.frame.origin.y = 0
+            self.isLandscape = true
+        } else {
+            self.timerView.isHidden = false
+            self.scoreView.isHidden = false
+            self.view.superview?.frame = CGRect.init(x:0, y:286, width:deviceBounds.width, height:381)
+            self.view.backgroundColor = UIColor.black
+            self.view.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:381)
+            self.pitchesTable.frame = CGRect.init(x:0, y:86, width:deviceBounds.width, height:203)
+            self.scoreView.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:78)
+            self.timerView.frame = CGRect.init(x:0, y:302, width:deviceBounds.width, height:64)
+            self.isLandscape = false
+        }
     }
     
     private func getPitchLocations()
@@ -135,11 +152,9 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         })
     }
     
-    private func getVideoAnswer(pitchType: Int, pitchLocation: Int)
+    private func loadVideoData()
     {
-        let parentViewController = self.parent as! VideoPlayerViewController
-        parentViewController.showIndicator(shouldAppear: true)
-
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         SharedNetworkConnection.apiGetDrillVideo(apiToken: appDelegate.apiToken, responseURI: (drillQuestionItem?.answerURL)!, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
@@ -151,54 +166,59 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
                 // 403 on no token
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(response)")
-                parentViewController.showIndicator(shouldAppear: false)
+                
+                
                 SharedNetworkConnection.apiLoginWithStoredCredentials(completionHandler: { data, response, error in
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     let json = try? JSONSerialization.jsonObject(with: data!, options: [])
                     if let dictionary = json as? [String: Any] {
                         if let apiToken = dictionary["token"] as? (String) {
                             appDelegate.apiToken = apiToken
-                            self.getVideoAnswer(pitchType: pitchType, pitchLocation: pitchLocation)
+                            self.loadVideoData()
                         }
-                    }                    
+                    }
                 })
                 
                 return
             }
             
             let drillVideoParser = DrillVideoParser(jsonString: String(data: data, encoding: .utf8)!)
-            let drillVideoItem = drillVideoParser?.getDrillVideoItem()
+            self.drillVideoItem = drillVideoParser?.getDrillVideoItem()
             
             DispatchQueue.main.async {
-                self.correctPitchLocationID = (drillVideoItem?.pitchLocationID)!
-                self.correctPitchTypeID = (drillVideoItem?.pitchTypeID)!
-                
-                self.answeredPitchTypeID = pitchType
-                self.answeredPitchLocationID = pitchLocation
-                
-                let parentViewController = self.parent as! VideoPlayerViewController
-
-                if (pitchType == drillVideoItem?.pitchTypeID && pitchLocation == drillVideoItem?.pitchLocationID) {
-                    self.sendUserAnswer(correctAnswer: true)
-                    parentViewController.locationPoints += 10
-                    parentViewController.typePoints += 10
-                    self.calculcatePoints(points: 25)
-                }
-                else {
-                    var points = 0
-                    if (pitchType == drillVideoItem?.pitchTypeID) {
-                        points += 10
-                        parentViewController.typePoints += 10
-                    }
-                    if (pitchLocation == drillVideoItem?.pitchLocationID) {
-                        points += 10
-                        parentViewController.locationPoints += 10
-                    }
-                    self.calculcatePoints(points: points)
-                    self.sendUserAnswer(correctAnswer: false)
-                }
+                self.updateViewComponents(battingHand: (self.drillVideoItem?.batterHand)!)
             }
         })
+    }
+    
+    private func getVideoAnswer(pitchType: Int, pitchLocation: Int)
+    {
+        self.correctPitchLocationID = (self.drillVideoItem?.pitchLocationID)!
+        self.correctPitchTypeID = (self.drillVideoItem?.pitchTypeID)!
+        
+        self.answeredPitchTypeID = pitchType
+        self.answeredPitchLocationID = pitchLocation
+        
+        let parentViewController = self.parent as! VideoPlayerViewController
+        if (pitchType == self.drillVideoItem?.pitchTypeID && pitchLocation == self.drillVideoItem?.pitchLocationID) {
+            self.sendUserAnswer(correctAnswer: true)
+            parentViewController.locationPoints += 10
+            parentViewController.typePoints += 10
+            self.calculcatePoints(points: 25)
+        }
+        else {
+            var points = 0
+            if (pitchType == self.drillVideoItem?.pitchTypeID) {
+                points += 10
+                parentViewController.typePoints += 10
+            }
+            if (pitchLocation == self.drillVideoItem?.pitchLocationID) {
+                points += 10
+                parentViewController.locationPoints += 10
+            }
+            self.calculcatePoints(points: points)
+            self.sendUserAnswer(correctAnswer: false)
+        }
     }
     
     private func calculcatePoints(points: Int)
@@ -245,9 +265,11 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
                 
                 return
             }
-            let parentViewController = self.parent as! VideoPlayerViewController
-            parentViewController.showIndicator(shouldAppear: false)
-            self.showAnswer(correctAnswer: correctAnswer)
+            let parentViewController = self.parent as? VideoPlayerViewController
+            parentViewController?.showIndicator(shouldAppear: false)
+            if parentViewController != nil {
+                self.showAnswer(correctAnswer: correctAnswer)
+            }
         })
     }
     
@@ -266,19 +288,25 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             }
         }
         
+        let parentViewController = self.parent as? VideoPlayerViewController
+        let points = (parentViewController?.points)!
+        let questionCount = (parentViewController?.index)! + 1
+        
+        message = message + "\n\nPoints: \(points)\nQuestion: \(questionCount)\n "
+        
         if (correctAnswer) {
             let alert = UIAlertController(title: "Correct!", message: message, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: replayHandler))
             alert.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.default, handler: nextHandler))
             self.present(alert, animated: true, completion: nil)
-            audioPlayerHit?.play()
+            //audioPlayerHit?.play()
         }
         else {
             let alert = UIAlertController(title: "Miss", message: message, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: replayHandler))
             alert.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.default, handler: nextHandler))
             self.present(alert, animated: true, completion: nil)
-            audioPlayerMiss?.play()
+            //audioPlayerMiss?.play()
         }
     }
     

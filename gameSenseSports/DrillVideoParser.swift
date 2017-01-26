@@ -35,6 +35,7 @@ struct DrillVideoItem {
     let drillVideoID: Int
     let pitchTypeID: Int
     let pitchLocationID: Int
+    let batterHand: String
 }
 
 extension DrillVideoItem {
@@ -42,7 +43,8 @@ extension DrillVideoItem {
         guard let drillVideoID = json["id"] as? Int,
             let file = json["file"] as? String,
             let pitchLocationID = json["pitch_location"] as? Int,
-            let pitchTypeID = json["pitch_type"] as? Int
+            let pitchTypeID = json["pitch_type"] as? Int,
+            let batterHand = json["batter_hand"] as? String
             else {
                 return nil
         }
@@ -51,5 +53,6 @@ extension DrillVideoItem {
         self.file = file
         self.pitchLocationID = pitchLocationID
         self.pitchTypeID = pitchTypeID
+        self.batterHand = batterHand
     }
 }
