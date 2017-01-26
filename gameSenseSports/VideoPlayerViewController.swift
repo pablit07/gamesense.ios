@@ -49,7 +49,7 @@ class VideoPlayerViewController: UIViewController
         let fullScreenSize = UIScreen.main.bounds
         let verticalClass = self.traitCollection.verticalSizeClass
         if verticalClass == UIUserInterfaceSizeClass.compact {
-            self.movieView.frame = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
+            self.movieView.frame = CGRect.init(x:0, y:63, width:fullScreenSize.width, height:fullScreenSize.height)
             self.movieView.bounds = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
             if self.movieView.layer.sublayers != nil {
                 self.movieView.layer.sublayers?[0].frame = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
@@ -237,7 +237,7 @@ class VideoPlayerViewController: UIViewController
             let verticalClass = self.traitCollection.verticalSizeClass
             if verticalClass == UIUserInterfaceSizeClass.compact {
                 let fullScreenSize = UIScreen.main.bounds
-                self.movieView.frame = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
+                self.movieView.frame = CGRect.init(x:0, y:63, width:fullScreenSize.width, height:fullScreenSize.height)
                 self.movieView.bounds = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
                 playerLayer.frame = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
                 playerLayer.bounds = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
