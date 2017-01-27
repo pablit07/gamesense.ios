@@ -55,10 +55,16 @@ class VideoPlayerViewController: UIViewController
                 self.movieView.layer.sublayers?[0].frame = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
                 self.movieView.layer.sublayers?[0].bounds = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
             }
+            if self.loadingView.subviews.count > 0 {
+                self.loadingView.subviews[0].frame.origin.y = 100
+            }
         } else {
             if self.movieView.layer.sublayers != nil {
                 self.movieView.frame = CGRect.init(x:0, y:63, width:fullScreenSize.width, height:215)
                 self.movieView.layer.sublayers?[0].frame = CGRect.init(x:0, y:0, width:screenSize.width, height:(screenSize.width * 0.5625))
+            }
+            if self.loadingView.subviews.count > 0 {
+                self.loadingView.subviews[0].frame.origin.y = 284
             }
         }
     }
