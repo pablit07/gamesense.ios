@@ -45,7 +45,11 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         super.traitCollectionDidChange(previousTraitCollection)
         let verticalClass = self.traitCollection.verticalSizeClass
         self.isLandscape = verticalClass == UIUserInterfaceSizeClass.compact
-        updateViewComponents(battingHand: "R")
+        if self.drillVideoItem != nil {
+            updateViewComponents(battingHand: (self.drillVideoItem?.batterHand)!)
+        } else {
+            updateViewComponents(battingHand: "R")
+        }
 
     }
 
@@ -122,6 +126,8 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             self.view.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:381)
             self.pitchesTable.frame = CGRect.init(x:0, y:86, width:deviceBounds.width, height:203)
             self.scoreView.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:78)
+            self.scoreView.subviews[0].frame = CGRect.init(x:7, y:7, width:((deviceBounds.width / 2) - 17), height:67)
+            self.scoreView.subviews[1].frame = CGRect.init(x:((deviceBounds.width / 2) + 7), y:7, width:((deviceBounds.width / 2) - 17), height:67)
             self.timerView.frame = CGRect.init(x:0, y:302, width:deviceBounds.width, height:64)
             self.isLandscape = false
         }
