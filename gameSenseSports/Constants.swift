@@ -12,6 +12,7 @@ struct Constants {
     static let gamesenseSportsContact = "admin@gameSenseSports.com"
     static let kUsernameKey = "username"
     static let kPasswordKey = "password"
+    static let kCacheKey = "cache"
     
     struct URLs {
         static let Login = "https://app.gamesensesports.com/api-token-auth/"
@@ -26,6 +27,8 @@ struct Constants {
         
         static let apiDrillFinished = "https://app.gamesensesports.com/player/api-auth/score/"
         static let apiDrillFinishedNext = "https://app.gamesensesports.com/account/api-auth/register-action/score/"
+        
+        static let imageCacheZip = "https://s3.amazonaws.com/gamesense-secure/cache-init.zip"
     }
     
     static func getDrillList() -> String
