@@ -162,4 +162,12 @@ class SharedNetworkConnection: NSObject
         let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
         task.resume()
     }
+    
+    static func downloadCache(completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
+    {
+        var request = URLRequest(url: URL(string: Constants.URLs.imageCacheZip)!)
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
+        task.resume()
+    }
 }

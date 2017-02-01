@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SystemConfiguration
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -51,6 +52,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 try? fileManager.removeItem(at: file)
             }
         }
+        
+        // Check for initial cache and create if unavailable
+        if (UserDefaults.standard.object(forKey: Constants.kCacheKey) == nil && isConnectedToNetwork())
+        {
+            SharedNetworkConnection.downloadCache(completionHandler: { data, response, error in
+                guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                    print("error=\(error)")
+                    return
+                }
+                
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                    // 403 on no token
+                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                    print("response = \(response)")
+                }
+                try? data.write(to: cacheDirectory.appendingPathComponent("cache.zip"))
+                // Unzip
+                SSZipArchive.unzipFile(atPath: cacheDirectory.appendingPathComponent("cache.zip").path, toDestination: cacheDirectory.path)
+                try? fileManager.removeItem(at: cacheDirectory.appendingPathComponent("cache.zip"))
+                UserDefaults.standard.set(true, forKey: Constants.kCacheKey)
+            })
+        }
+        
         return true
     }
 
@@ -133,6 +157,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return nil
         }
         return freeSize.int64Value
+    }
+    
+    func isConnectedToNetwork() -> Bool {
+        
+        var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr: 0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+            }
+        }
+        
+        var flags: SCNetworkReachabilityFlags = SCNetworkReachabilityFlags(rawValue: 0)
+        if SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) == false {
+            return false
+        }
+        
+        let isReachable = flags == .reachable
+        let needsConnection = flags == .connectionRequired
+        
+        
+        
+        return isReachable && !needsConnection
     }
 }
 

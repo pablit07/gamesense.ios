@@ -4,3 +4,4 @@
 
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <Rollbar/Rollbar.h>
+#import "SSZipArchive.h"
