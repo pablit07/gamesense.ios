@@ -106,8 +106,9 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         {
             self.scoreView.isHidden = true
             self.view.backgroundColor = UIColor.clear
+            self.view.alpha = 0.7
             self.timerView.isHidden = true
-            let toMoveX = deviceBounds.width * 0.65
+            let toMoveX = deviceBounds.width * 0.68
             var viewFrame = self.view.frame
             assert(battingHand == "R" || battingHand == "L")
             if battingHand == "R" {
@@ -123,6 +124,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         } else {
             self.timerView.isHidden = false
             self.scoreView.isHidden = false
+            self.view.alpha = 1
             self.view.superview?.frame = CGRect.init(x:0, y:parentViewController.movieView.frame.size.height + 63, width:deviceBounds.width, height:381)
             self.view.backgroundColor = UIColor.black
             self.view.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:381)
