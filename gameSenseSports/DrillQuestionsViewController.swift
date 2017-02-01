@@ -100,6 +100,8 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     private func updateViewComponents(battingHand: String)
     {
         let deviceBounds = UIScreen.main.bounds
+        let parentViewController = self.parent as! VideoPlayerViewController
+        
         if isLandscape
         {
             self.scoreView.isHidden = true
@@ -121,7 +123,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         } else {
             self.timerView.isHidden = false
             self.scoreView.isHidden = false
-            self.view.superview?.frame = CGRect.init(x:0, y:286, width:deviceBounds.width, height:381)
+            self.view.superview?.frame = CGRect.init(x:0, y:parentViewController.movieView.frame.size.height + 63, width:deviceBounds.width, height:381)
             self.view.backgroundColor = UIColor.black
             self.view.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:381)
             self.pitchesTable.frame = CGRect.init(x:0, y:86, width:deviceBounds.width, height:203)
