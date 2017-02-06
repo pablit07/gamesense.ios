@@ -33,7 +33,7 @@
 		11698FD01DDBA3C300C24D3C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11698FCF1DDBA3C300C24D3C /* MobileCoreServices.framework */; };
 		11698FD31DDBA3CC00C24D3C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11698FD11DDBA3CC00C24D3C /* MediaPlayer.framework */; };
 		11698FD41DDBA3CC00C24D3C /* MediaToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11698FD21DDBA3CC00C24D3C /* MediaToolbox.framework */; };
-		11698FD61DDD14BE00C24D3C /* lance-lynn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11698FD51DDD14BE00C24D3C /* lance-lynn.jpg */; };
+		11698FD61DDD14BE00C24D3C /* lance-lynn-OLD.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11698FD51DDD14BE00C24D3C /* lance-lynn-OLD.jpg */; };
 		11698FD81DDD16FF00C24D3C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 11698FD71DDD16FF00C24D3C /* logo.png */; };
 		11698FDA1DDD1CFD00C24D3C /* RegistrationWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11698FD91DDD1CFD00C24D3C /* RegistrationWebViewController.swift */; };
 		118287601E14D9BE0009CCAF /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 1182875F1E14D9BE0009CCAF /* clock.png */; };
@@ -61,6 +61,7 @@
 		11E139211DE5E88E005B2A6F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E139201DE5E88E005B2A6F /* Constants.swift */; };
 		11ECB99D1DECC2B900BEBF31 /* ballcheer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11ECB99B1DECC2B900BEBF31 /* ballcheer.mp3 */; };
 		11ECB99E1DECC2B900BEBF31 /* caughtball.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11ECB99C1DECC2B900BEBF31 /* caughtball.mp3 */; };
+		AF76AA321E477D8D00A9407D /* lance-lynn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF76AA311E477D8D00A9407D /* lance-lynn.jpg */; };
 		AF8A22D21DF3ACF500A88E00 /* Rollbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */; };
 		AF8A22D71DF3C61600A88E00 /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A22D61DF3C61600A88E00 /* CrashReporter.framework */; };
 /* End PBXBuildFile section */
@@ -115,7 +116,7 @@
 		11698FCF1DDBA3C300C24D3C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		11698FD11DDBA3CC00C24D3C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		11698FD21DDBA3CC00C24D3C /* MediaToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaToolbox.framework; path = System/Library/Frameworks/MediaToolbox.framework; sourceTree = SDKROOT; };
-		11698FD51DDD14BE00C24D3C /* lance-lynn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "lance-lynn.jpg"; path = "images/lance-lynn.jpg"; sourceTree = "<group>"; };
+		11698FD51DDD14BE00C24D3C /* lance-lynn-OLD.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "lance-lynn-OLD.jpg"; path = "images/lance-lynn-OLD.jpg"; sourceTree = "<group>"; };
 		11698FD71DDD16FF00C24D3C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = images/logo.png; sourceTree = "<group>"; };
 		11698FD91DDD1CFD00C24D3C /* RegistrationWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationWebViewController.swift; sourceTree = "<group>"; };
 		1182875F1E14D9BE0009CCAF /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock.png; path = images/clock.png; sourceTree = "<group>"; };
@@ -163,6 +164,7 @@
 		11E139201DE5E88E005B2A6F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		11ECB99B1DECC2B900BEBF31 /* ballcheer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ballcheer.mp3; path = sounds/ballcheer.mp3; sourceTree = "<group>"; };
 		11ECB99C1DECC2B900BEBF31 /* caughtball.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = caughtball.mp3; path = sounds/caughtball.mp3; sourceTree = "<group>"; };
+		AF76AA311E477D8D00A9407D /* lance-lynn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lance-lynn.jpg"; sourceTree = "<group>"; };
 		AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rollbar.framework; path = gameSenseSports/Rollbar.framework; sourceTree = "<group>"; };
 		AF8A22D31DF3C4B200A88E00 /* gameSenseSports-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gameSenseSports-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF8A22D61DF3C61600A88E00 /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CrashReporter.framework; path = gameSenseSports/CrashReporter.framework; sourceTree = "<group>"; };
@@ -221,7 +223,8 @@
 				1182875F1E14D9BE0009CCAF /* clock.png */,
 				11DC88CF1DEF6501002D3847 /* gs_logo_login.png */,
 				11698FD71DDD16FF00C24D3C /* logo.png */,
-				11698FD51DDD14BE00C24D3C /* lance-lynn.jpg */,
+				AF76AA311E477D8D00A9407D /* lance-lynn.jpg */,
+				11698FD51DDD14BE00C24D3C /* lance-lynn-OLD.jpg */,
 				11698FC31DDB9C4700C24D3C /* gameSenseSports.png */,
 			);
 			name = Images;
@@ -518,9 +521,10 @@
 				118287681E17363E0009CCAF /* round_strike.png in Resources */,
 				11ECB99E1DECC2B900BEBF31 /* caughtball.mp3 in Resources */,
 				11698F9D1DDB999600C24D3C /* Assets.xcassets in Resources */,
+				AF76AA321E477D8D00A9407D /* lance-lynn.jpg in Resources */,
 				118287601E14D9BE0009CCAF /* clock.png in Resources */,
 				118287671E17363E0009CCAF /* round_ball.png in Resources */,
-				11698FD61DDD14BE00C24D3C /* lance-lynn.jpg in Resources */,
+				11698FD61DDD14BE00C24D3C /* lance-lynn-OLD.jpg in Resources */,
 				11698F981DDB999600C24D3C /* Main.storyboard in Resources */,
 				11ECB99D1DECC2B900BEBF31 /* ballcheer.mp3 in Resources */,
 				11C04F091E3FEE49005BDC4B /* Info.plist in Resources */,

@@ -23,7 +23,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lance-lynn.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cv4-au-mlW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="245"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Drx-OE-sLi">
                                 <rect key="frame" x="28" y="341" width="318" height="30"/>
@@ -209,6 +209,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="drillTableView" destination="ZFf-od-oZs" id="Zgm-E1-OAh"/>
+                        <outlet property="logo" destination="j6N-BT-qfD" id="qbF-vD-rnx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSm-lQ-cQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -244,7 +245,7 @@
                                 </connections>
                             </containerView>
                             <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gmA-cy-KGH">
-                                <rect key="frame" x="0.0" y="63" width="375" height="604"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="604"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="P59-Gp-INf">
@@ -304,6 +305,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="381"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3nf-8z-Cjp" userLabel="Line Timer View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rpO-U4-DXc">
                                 <rect key="frame" x="0.0" y="86" width="375" height="203"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -427,6 +433,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="lineTimerView" destination="3nf-8z-Cjp" id="8l3-KU-NBz"/>
                         <outlet property="pitchesTable" destination="rpO-U4-DXc" id="W9u-5m-C2v"/>
                         <outlet property="pointsLabel" destination="lYu-16-be4" id="M0C-ZK-dag"/>
                         <outlet property="questionsLabel" destination="wG7-6c-WWY" id="UXo-jU-a2T"/>
@@ -443,7 +450,7 @@
     <resources>
         <image name="clock.png" width="225" height="225"/>
         <image name="gs_logo_login.png" width="1500" height="291"/>
-        <image name="lance-lynn.jpg" width="1244" height="829"/>
+        <image name="lance-lynn.jpg" width="750" height="727"/>
         <image name="round_ball.png" width="766" height="767"/>
         <image name="round_strike.png" width="766" height="767"/>
     </resources>

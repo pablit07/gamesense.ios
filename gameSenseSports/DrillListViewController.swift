@@ -10,7 +10,9 @@ import UIKit
 
 class DrillListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
+    
     @IBOutlet weak var drillTableView: UITableView!
+    @IBOutlet weak var logo: UIImageView!
     
     private var drillListParser = DrillListParser(jsonString: "")
     private var drillListArray = [DrillListItem]()
@@ -23,6 +25,18 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         get {
             return _selectedDrillItem!
         }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        let verticalClass = self.traitCollection.verticalSizeClass
+        let isLandscape = verticalClass == UIUserInterfaceSizeClass.compact
+        if isLandscape {
+            self.logo.isHidden = true
+        } else {
+            self.logo.isHidden = false
+        }
+        
     }
     
     override func viewDidLoad() {

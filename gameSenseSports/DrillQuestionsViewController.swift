@@ -17,6 +17,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     
     @IBOutlet weak var scoreView: UIView!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var lineTimerView: UIView!
     @IBOutlet weak var timerView: UIView!
 
     @IBOutlet weak var pitchesTable: UITableView!
@@ -104,6 +105,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         
         if isLandscape
         {
+            self.lineTimerView.isHidden = false
             self.scoreView.isHidden = true
             self.view.backgroundColor = UIColor.clear
             self.view.alpha = 0.7
@@ -119,8 +121,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             viewFrame.size.width = deviceBounds.width - toMoveX
             viewFrame.size.height = deviceBounds.height
             self.view.frame = viewFrame
-            self.pitchesTable.frame.origin.y = 0
-            self.isLandscape = true
+            self.pitchesTable.frame.origin.y = 1
         } else {
             self.timerView.isHidden = false
             self.scoreView.isHidden = false
@@ -133,7 +134,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             self.scoreView.subviews[0].frame = CGRect.init(x:7, y:7, width:((deviceBounds.width / 2) - 17), height:67)
             self.scoreView.subviews[1].frame = CGRect.init(x:((deviceBounds.width / 2) + 7), y:7, width:((deviceBounds.width / 2) - 17), height:67)
             self.timerView.frame = CGRect.init(x:0, y:302, width:deviceBounds.width, height:64)
-            self.isLandscape = false
+            self.lineTimerView.isHidden = true
         }
     }
     
@@ -365,6 +366,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     
     
     private var shapeLayer = CAShapeLayer()
+    private var lineLayer = CAShapeLayer()
     private var countDownTimer = Timer()
     private var timerValue = 900.0
     
@@ -377,6 +379,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         animation.fillMode = kCAFillModeForwards
         animation.isRemovedOnCompletion = false
         self.shapeLayer.add(animation, forKey: "ani")
+        self.lineLayer.add(animation, forKey: "ani")
     }
     
     private func addCircle() {
@@ -390,9 +393,22 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         timerView.layer.addSublayer(self.shapeLayer)
     }
     
+    private func addLine() {
+        let linePath = UIBezierPath()
+        linePath.move(to: CGPoint(x:0, y:0))
+        linePath.addLine(to: CGPoint(x:self.view.frame.width, y:0))
+        self.lineLayer.path = linePath.cgPath
+        self.lineLayer.fillColor = UIColor.clear.cgColor
+        self.lineLayer.strokeColor = UIColor.white.cgColor
+        self.lineLayer.lineWidth = 5.0
+        
+        lineTimerView.layer.addSublayer(self.lineLayer)
+    }
+    
     private func updateLabel(value: Double) {
         self.setLabelText(value: self.timeFormatted(timer: value))
         self.addCircle()
+        self.addLine()
     }
     
     func setTimer(value: Double) {
