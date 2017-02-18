@@ -36,22 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let cacheDirectory = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         let fileManager =  FileManager.default
-        let files = try! fileManager.contentsOfDirectory(at: cacheDirectory, includingPropertiesForKeys: nil, options: [])
-        var folderFileSizeInBytes = 0
-        for file in files {
-            folderFileSizeInBytes +=  try! (fileManager.attributesOfItem(atPath: file.path) as NSDictionary).fileSize().hashValue
-        }
-        // format it using NSByteCountFormatter to display it properly
-        let  byteCountFormatter =  ByteCountFormatter()
-        byteCountFormatter.allowedUnits = .useBytes
-        byteCountFormatter.countStyle = .file
-        
-        if (Int64(folderFileSizeInBytes) > 150000000 || self.deviceRemainingFreeSpaceInBytes()! < 150000000)
-        {
-            for file in files {
-                try? fileManager.removeItem(at: file)
-            }
-        }
         
         // Check for initial cache and create if unavailable
         if (UserDefaults.standard.object(forKey: Constants.kCacheKey) == nil && isConnectedToNetwork())

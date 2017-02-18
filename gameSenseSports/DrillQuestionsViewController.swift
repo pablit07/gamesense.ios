@@ -16,8 +16,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     @IBOutlet weak var pointsLabel: UILabel!
     
     @IBOutlet weak var scoreView: UIView!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var timerView: UIView!
 
     @IBOutlet weak var pitchesTable: UITableView!
     
@@ -81,20 +79,12 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         correctPitchTypeID = -1
         answeredPitchLocationID = -1
         answeredPitchTypeID = -1
-        self.shapeLayer.removeFromSuperlayer()
-        self.shapeLayer = CAShapeLayer()
         let parentViewController = self.parent as! VideoPlayerViewController
         pointsLabel.text = String(parentViewController.points)
         questionsLabel.text = String(parentViewController.index + 1)
         drillQuestionItem = parentViewController.drillQuestionsArray[parentViewController.index]
         getPitchLocations()
         loadVideoData()
-    }
-    
-    public func triggerCountdown()
-    {
-        self.setTimer(value: 2.5)
-        self.startClockTimer()
     }
     
     private func updateViewComponents(battingHand: String)
@@ -104,7 +94,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         {
             self.scoreView.isHidden = true
             self.view.backgroundColor = UIColor.clear
-            self.timerView.isHidden = true
             let toMoveX = deviceBounds.width * 0.65
             var viewFrame = self.view.frame
             assert(battingHand == "R" || battingHand == "L")
@@ -119,7 +108,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             self.pitchesTable.frame.origin.y = 0
             self.isLandscape = true
         } else {
-            self.timerView.isHidden = false
             self.scoreView.isHidden = false
             self.view.superview?.frame = CGRect.init(x:0, y:286, width:deviceBounds.width, height:381)
             self.view.backgroundColor = UIColor.black
@@ -128,7 +116,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             self.scoreView.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:78)
             self.scoreView.subviews[0].frame = CGRect.init(x:7, y:7, width:((deviceBounds.width / 2) - 17), height:67)
             self.scoreView.subviews[1].frame = CGRect.init(x:((deviceBounds.width / 2) + 7), y:7, width:((deviceBounds.width / 2) - 17), height:67)
-            self.timerView.frame = CGRect.init(x:0, y:302, width:deviceBounds.width, height:64)
             self.isLandscape = false
         }
     }
@@ -359,78 +346,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         }
     }
     
-    
-    private var shapeLayer = CAShapeLayer()
-    private var countDownTimer = Timer()
-    private var timerValue = 900.0
-    
-    private func startAnimation() {
-        
-        let animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.fromValue = 0
-        animation.toValue = 1
-        animation.duration = Double(self.timerValue)
-        animation.fillMode = kCAFillModeForwards
-        animation.isRemovedOnCompletion = false
-        self.shapeLayer.add(animation, forKey: "ani")
-    }
-    
-    private func addCircle() {
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: self.view.frame.width/2,y: 33), radius: CGFloat(40), startAngle: CGFloat(-M_PI_2), endAngle:CGFloat(2*M_PI-M_PI_2), clockwise: true)
-        
-        self.shapeLayer.path = circlePath.cgPath
-        self.shapeLayer.fillColor = UIColor.clear.cgColor
-        self.shapeLayer.strokeColor = UIColor.white.cgColor
-        self.shapeLayer.lineWidth = 5.0
-        
-        timerView.layer.addSublayer(self.shapeLayer)
-    }
-    
-    private func updateLabel(value: Double) {
-        self.setLabelText(value: self.timeFormatted(timer: value))
-        self.addCircle()
-    }
-    
-    func setTimer(value: Double) {
-        self.timerValue = value
-        self.updateLabel(value: value)
-    }
-    
-    func startClockTimer() {
-        self.countDownTimer.invalidate()
-        self.countDownTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(DrillQuestionsViewController.countdown), userInfo: nil, repeats: true)
-
-        self.startAnimation()
-        
-    }
-    
-    func countdown()
-    {
-        if (answered)
-        {
-            self.countDownTimer.invalidate()
-            return
-        }
-        self.timerValue -= 0.1
-        if self.timerValue < 0 {
-            self.timeout = true
-            self.getVideoAnswer(pitchType: -1, pitchLocation: -1)
-            self.setLabelText(value: "0.00s")
-            self.countDownTimer.invalidate()
-        }
-        else {
-            self.setLabelText(value: self.timeFormatted(timer: self.timerValue))
-        }
-    }
-    
-    private func timeFormatted(timer: Double) -> String {
-        return String(format: "%.2fs", timer)
-    }
-    
-    private func setLabelText(value: String) {
-        timeLabel.text = value
-    }
-    
     func numberOfSectionsInTableView(in tableView: UITableView) -> Int {
         return 1
     }
@@ -467,9 +382,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         if (!timeout)
         {
             self.answered = true
-            let pausedTime = self.shapeLayer.convertTime(CACurrentMediaTime(), from: nil)
-            self.shapeLayer.speed = 0
-            self.shapeLayer.timeOffset = pausedTime
             let hiddenLabel = sender.superview?.viewWithTag(4) as! UILabel
             self.getVideoAnswer(pitchType: Int(hiddenLabel.text!)!, pitchLocation: sender.tag)
         }

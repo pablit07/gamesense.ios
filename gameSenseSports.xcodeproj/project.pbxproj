@@ -26,7 +26,6 @@
 		11698FAB1DDB999600C24D3C /* gameSenseSportsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11698FAA1DDB999600C24D3C /* gameSenseSportsTests.swift */; };
 		11698FB61DDB999600C24D3C /* gameSenseSportsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11698FB51DDB999600C24D3C /* gameSenseSportsUITests.swift */; };
 		11698FC41DDB9C4700C24D3C /* gameSenseSports.png in Resources */ = {isa = PBXBuildFile; fileRef = 11698FC31DDB9C4700C24D3C /* gameSenseSports.png */; };
-		11698FC71DDBA28100C24D3C /* DrillListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11698FC61DDBA28100C24D3C /* DrillListViewController.swift */; };
 		11698FC91DDBA35A00C24D3C /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11698FC81DDBA35A00C24D3C /* VideoPlayerViewController.swift */; };
 		11698FCD1DDBA3BD00C24D3C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11698FCB1DDBA3BD00C24D3C /* AVFoundation.framework */; };
 		11698FCE1DDBA3BD00C24D3C /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11698FCC1DDBA3BD00C24D3C /* AVKit.framework */; };
@@ -35,7 +34,6 @@
 		11698FD41DDBA3CC00C24D3C /* MediaToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11698FD21DDBA3CC00C24D3C /* MediaToolbox.framework */; };
 		11698FD61DDD14BE00C24D3C /* lance-lynn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11698FD51DDD14BE00C24D3C /* lance-lynn.jpg */; };
 		11698FD81DDD16FF00C24D3C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 11698FD71DDD16FF00C24D3C /* logo.png */; };
-		11698FDA1DDD1CFD00C24D3C /* RegistrationWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11698FD91DDD1CFD00C24D3C /* RegistrationWebViewController.swift */; };
 		118287601E14D9BE0009CCAF /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 1182875F1E14D9BE0009CCAF /* clock.png */; };
 		118287671E17363E0009CCAF /* round_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 118287651E17363E0009CCAF /* round_ball.png */; };
 		118287681E17363E0009CCAF /* round_strike.png in Resources */ = {isa = PBXBuildFile; fileRef = 118287661E17363E0009CCAF /* round_strike.png */; };
@@ -108,7 +106,6 @@
 		11698FB51DDB999600C24D3C /* gameSenseSportsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameSenseSportsUITests.swift; sourceTree = "<group>"; };
 		11698FB71DDB999600C24D3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11698FC31DDB9C4700C24D3C /* gameSenseSports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameSenseSports.png; path = images/gameSenseSports.png; sourceTree = "<group>"; };
-		11698FC61DDBA28100C24D3C /* DrillListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrillListViewController.swift; sourceTree = "<group>"; };
 		11698FC81DDBA35A00C24D3C /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		11698FCB1DDBA3BD00C24D3C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		11698FCC1DDBA3BD00C24D3C /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -117,7 +114,6 @@
 		11698FD21DDBA3CC00C24D3C /* MediaToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaToolbox.framework; path = System/Library/Frameworks/MediaToolbox.framework; sourceTree = SDKROOT; };
 		11698FD51DDD14BE00C24D3C /* lance-lynn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "lance-lynn.jpg"; path = "images/lance-lynn.jpg"; sourceTree = "<group>"; };
 		11698FD71DDD16FF00C24D3C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = images/logo.png; sourceTree = "<group>"; };
-		11698FD91DDD1CFD00C24D3C /* RegistrationWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationWebViewController.swift; sourceTree = "<group>"; };
 		1182875F1E14D9BE0009CCAF /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clock.png; path = images/clock.png; sourceTree = "<group>"; };
 		118287651E17363E0009CCAF /* round_ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = round_ball.png; path = images/round_ball.png; sourceTree = "<group>"; };
 		118287661E17363E0009CCAF /* round_strike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = round_strike.png; path = images/round_strike.png; sourceTree = "<group>"; };
@@ -205,8 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				11698F941DDB999600C24D3C /* LoginViewController.swift */,
-				11698FD91DDD1CFD00C24D3C /* RegistrationWebViewController.swift */,
-				11698FC61DDBA28100C24D3C /* DrillListViewController.swift */,
 				11698FC81DDBA35A00C24D3C /* VideoPlayerViewController.swift */,
 				1147DC881DEAA3A5000D8025 /* DrillQuestionsViewController.swift */,
 			);
@@ -560,12 +554,10 @@
 				11698FC91DDBA35A00C24D3C /* VideoPlayerViewController.swift in Sources */,
 				11225C311DE15CEC0071D1CF /* DrillListParser.swift in Sources */,
 				11C04F081E3FEE49005BDC4B /* sha1.c in Sources */,
-				11698FC71DDBA28100C24D3C /* DrillListViewController.swift in Sources */,
 				11E1391F1DE4C932005B2A6F /* SharedNetworkConnection.swift in Sources */,
 				1147DC891DEAA3A5000D8025 /* DrillQuestionsViewController.swift in Sources */,
 				11C04F0E1E3FEE49005BDC4B /* SSZipArchive+Swift.swift in Sources */,
 				11C04F0F1E3FEE49005BDC4B /* SSZipArchive.m in Sources */,
-				11698FDA1DDD1CFD00C24D3C /* RegistrationWebViewController.swift in Sources */,
 				11C04F0A1E3FEE49005BDC4B /* ioapi.c in Sources */,
 				11C04F061E3FEE49005BDC4B /* prng.c in Sources */,
 				11C04F021E3FEE49005BDC4B /* aestab.c in Sources */,
@@ -743,11 +735,12 @@
 				INFOPLIST_FILE = gameSenseSports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gameSenseSports.gameSenseSports;
+				PRODUCT_BUNDLE_IDENTIFIER = reds.gameSenseSports;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "gameSenseSports/gameSenseSports-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -764,10 +757,11 @@
 				INFOPLIST_FILE = gameSenseSports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gameSenseSports.gameSenseSports;
+				PRODUCT_BUNDLE_IDENTIFIER = reds.gameSenseSports;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "gameSenseSports/gameSenseSports-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -73,8 +73,10 @@ class VideoPlayerViewController: UIViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.movieView.backgroundColor = UIColor.black
-        let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
-        drillListItem = parentViewController.selectedDrillItem
+        //Testing
+        let dlp = DrillListParser(jsonString: Constants.getDrillList())
+        let drillList = dlp?.getDrillListArray()
+        self.drillListItem = drillList?[0]
         
     }
     
@@ -436,7 +438,6 @@ class VideoPlayerViewController: UIViewController
     {
         if (!presenting) {
             let dq = self.childViewControllers[0] as! DrillQuestionsViewController
-            dq.triggerCountdown()
         }
     }
     
