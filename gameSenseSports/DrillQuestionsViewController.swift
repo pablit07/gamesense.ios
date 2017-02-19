@@ -41,6 +41,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
+        /*
         let verticalClass = self.traitCollection.verticalSizeClass
         self.isLandscape = verticalClass == UIUserInterfaceSizeClass.compact
         if self.drillVideoItem != nil {
@@ -48,7 +49,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         } else {
             updateViewComponents(battingHand: "R")
         }
-
+        */
     }
 
     override func viewDidLoad() {
@@ -56,7 +57,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         // Do any additional setup after loading the view, typically from a nib.
         self.view.alpha = 0
         loadVideos()
-        self.isLandscape = self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact
+        //self.isLandscape = self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -89,6 +90,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     
     private func updateViewComponents(battingHand: String)
     {
+        /*
         let deviceBounds = UIScreen.main.bounds
         if isLandscape
         {
@@ -118,6 +120,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             self.scoreView.subviews[1].frame = CGRect.init(x:((deviceBounds.width / 2) + 7), y:7, width:((deviceBounds.width / 2) - 17), height:67)
             self.isLandscape = false
         }
+ */
     }
     
     private func getPitchLocations()

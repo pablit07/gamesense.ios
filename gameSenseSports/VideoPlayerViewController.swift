@@ -16,16 +16,18 @@ import UIKit
 
 class VideoPlayerViewController: UIViewController
 {
- 
     deinit {
         self.removeVideoPlayer()
         NotificationCenter.default.removeObserver(self)
         URLSession.shared.invalidateAndCancel()
     }
+
     
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var modalButton: UIButton!
     @IBOutlet weak var movieView: UIView!
     @IBOutlet weak var loadingView: UIView!
+    
     
     private var drillQuestionsParser = DrillQuestionParser(jsonString: "")
     private var drillListItem = DrillListItem(json: [:])
@@ -45,6 +47,7 @@ class VideoPlayerViewController: UIViewController
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
+/*
         let screenSize : CGRect = self.movieView.bounds
         let fullScreenSize = UIScreen.main.bounds
         let verticalClass = self.traitCollection.verticalSizeClass
@@ -67,6 +70,7 @@ class VideoPlayerViewController: UIViewController
                 self.loadingView.subviews[0].frame.origin.y = 284
             }
         }
+ */
     }
     
     override func viewDidLoad() {
@@ -104,48 +108,7 @@ class VideoPlayerViewController: UIViewController
         return true
     }
     
-    private func startDtill()
-    {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        SharedNetworkConnection.apiPostRegisterDrill(apiToken: appDelegate.apiToken, drillID: drillListItem!.drillID, drillTitle: (drillListItem?.title)!, completionHandler: { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
-                return
-            }
-            
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                // 403 on no token
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-                
-                if (httpStatus.statusCode == 403)
-                {
-                    SharedNetworkConnection.apiLoginWithStoredCredentials(completionHandler: { data, response, error in
-                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                        let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-                        if let dictionary = json as? [String: Any] {
-                            if let apiToken = dictionary["token"] as? (String) {
-                                appDelegate.apiToken = apiToken
-                                self.startDtill()
-                            }
-                        }
-                    })
-                }
-            }
-            
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let dictionary = json as? [String: Any] {
-                if let returnedDrillID = dictionary["id"] as? (Int) {
-                    self.returnedDrillID = returnedDrillID
-                }
-            }
-            
-            
-            let stringData = String(data: data, encoding: .utf8)!
-            print(stringData)
-        })
-    }
-    
+    // Function to be hard-coded
     private func getDrillQuestions()
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -181,7 +144,6 @@ class VideoPlayerViewController: UIViewController
             else {
                 self.drillQuestionsArray = (self.drillQuestionsParser?.getDrillQuestionArray())!
             }
-            self.startDtill()
             DispatchQueue.main.async {
                 self.downloadVideo()
             }
@@ -240,19 +202,7 @@ class VideoPlayerViewController: UIViewController
             playerLayer.frame = self.movieView.bounds
             playerLayer.bounds = self.movieView.bounds
 
-            //get size of screen
-            let screenSize : CGRect = self.movieView.bounds
-            let verticalClass = self.traitCollection.verticalSizeClass
-            if verticalClass == UIUserInterfaceSizeClass.compact {
-                let fullScreenSize = UIScreen.main.bounds
-                self.movieView.frame = CGRect.init(x:0, y:63, width:fullScreenSize.width, height:fullScreenSize.height)
-                self.movieView.bounds = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
-                playerLayer.frame = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
-                playerLayer.bounds = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
-            } else {
-                playerLayer.frame = CGRect.init(x:0, y:0, width:screenSize.width, height:(screenSize.width * 0.5625))
-            }
-            playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
+            playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
             self.movieView.layer.addSublayer(playerLayer)
             
             NotificationCenter.default.addObserver(self, selector: #selector(VideoPlayerViewController.playerFinished), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
@@ -348,7 +298,6 @@ class VideoPlayerViewController: UIViewController
         self.locationPoints = 0
         self.typePoints = 0
         self.resetView()
-        self.startDtill()
     }
     
     func doneHandler(alert: UIAlertAction!)
@@ -372,46 +321,10 @@ class VideoPlayerViewController: UIViewController
                 self.downloadVideo()
             }
             else {
-                self.showIndicator(shouldAppear:true)
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                SharedNetworkConnection.apiDrillFinished(apiToken: appDelegate.apiToken, drill_id: (self.drillListItem?.drillID)!, activityID: self.returnedDrillID, score: self.points, locationScore: self.locationPoints, typeScore: self.typePoints, completionHandler:  { data, response, error in
-                    guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                        print("error=\(error)")
-                        return
-                    }
-                    
-                    if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                        // 403 on no token
-                        print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                        print("response = \(response)")
-                        
-                        if (httpStatus.statusCode == 403)
-                        {
-                            SharedNetworkConnection.apiLoginWithStoredCredentials(completionHandler: { data, response, error in
-                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                                let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-                                if let dictionary = json as? [String: Any] {
-                                    if let apiToken = dictionary["token"] as? (String) {
-                                        appDelegate.apiToken = apiToken
-                                        self.resetView()
-                                    }
-                                }
-                            })
-                        }
-                    }
-                    
-                    let stringData = String(data: data, encoding: .utf8)!
-                    print(stringData)
-                    self.showIndicator(shouldAppear:false)
-                    let maxPoints = (self.drillListItem?.questionCount)! * 25
-                    let points = self.points
-                    let recommendation = ((Double(points)/Double(maxPoints)) > 0.75) ? "start a new drill" : "repeat this drill"
-                    let completeMessage = "You scored \(points) points out of a max of \(maxPoints) points. We recommend for you to \(recommendation)."
-                    let alert = UIAlertController(title: "Drill Complete", message: completeMessage, preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: self.replayDrillHandler))
-                    alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: self.doneHandler))
-                    self.present(alert, animated: true, completion: nil)
-                })
+                let alertController = UIAlertController(title: "Done", message:
+                    "Drill Complete", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
             }
         }
     }
@@ -438,6 +351,7 @@ class VideoPlayerViewController: UIViewController
     {
         if (!presenting) {
             let dq = self.childViewControllers[0] as! DrillQuestionsViewController
+            dq.resetViewForDisplay()
         }
     }
     
