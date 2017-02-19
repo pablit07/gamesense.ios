@@ -28,7 +28,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     
     public var answered = false
     public var answeredCorrectly = false
-    public var timeout = false
     public var alternateColor = false
     
     public var correctPitchLocationID = -1
@@ -74,7 +73,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         self.view.alpha = 1
         answered = false
         answeredCorrectly = false
-        timeout = false
         alternateColor = false
         correctPitchLocationID = -1
         correctPitchTypeID = -1
@@ -128,7 +126,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let drillVideo = drillQuestionItem!.responseURI0
         
-        SharedNetworkConnection.apiGetDrillPitchLocation(apiToken: appDelegate.apiToken, responseURI: drillVideo, completionHandler: { data, response, error in
+        SharedNetworkConnection.apiGetDrillPitchLocation(apiToken: "", responseURI: drillVideo, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
                 return
@@ -152,7 +150,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        SharedNetworkConnection.apiGetDrillVideo(apiToken: appDelegate.apiToken, responseURI: (drillQuestionItem?.answerURL)!, completionHandler: { data, response, error in
+        SharedNetworkConnection.apiGetDrillVideo(apiToken: "", responseURI: (drillQuestionItem?.answerURL)!, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
                 return
@@ -169,7 +167,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
                     let json = try? JSONSerialization.jsonObject(with: data!, options: [])
                     if let dictionary = json as? [String: Any] {
                         if let apiToken = dictionary["token"] as? (String) {
-                            appDelegate.apiToken = apiToken
                             self.loadVideoData()
                         }
                     }
@@ -235,7 +232,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             pitchLocation = "Ball"
         }
         
-        SharedNetworkConnection.apiPostAnswerQuestion(apiToken: appDelegate.apiToken, correctAnswer: correctAnswer, activityID: parentViewController.returnedDrillID, questionID: drillQuestionItem.drillQuestionID, answerID: self.answeredPitchTypeID, pitchLocation: pitchLocation, questionJson: drillQuestionItem.fullJson, completionHandler: { data, response, error in
+        SharedNetworkConnection.apiPostAnswerQuestion(apiToken: "", correctAnswer: correctAnswer, activityID: parentViewController.returnedDrillID, questionID: drillQuestionItem.drillQuestionID, answerID: self.answeredPitchTypeID, pitchLocation: pitchLocation, questionJson: drillQuestionItem.fullJson, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
                 let parentViewController = self.parent as! VideoPlayerViewController
@@ -253,7 +250,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
                     let json = try? JSONSerialization.jsonObject(with: data!, options: [])
                     if let dictionary = json as? [String: Any] {
                         if let apiToken = dictionary["token"] as? (String) {
-                            appDelegate.apiToken = apiToken
                             self.sendUserAnswer(correctAnswer: correctAnswer)
                         }
                     }
@@ -382,11 +378,8 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     }
     
     @IBAction func buttonPressed(sender: UIButton) {
-        if (!timeout)
-        {
-            self.answered = true
-            let hiddenLabel = sender.superview?.viewWithTag(4) as! UILabel
-            self.getVideoAnswer(pitchType: Int(hiddenLabel.text!)!, pitchLocation: sender.tag)
-        }
+        self.answered = true
+        let hiddenLabel = sender.superview?.viewWithTag(4) as! UILabel
+        self.getVideoAnswer(pitchType: Int(hiddenLabel.text!)!, pitchLocation: sender.tag)
     }
 }

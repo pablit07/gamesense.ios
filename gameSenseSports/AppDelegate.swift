@@ -14,15 +14,16 @@ import SystemConfiguration
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private var _apiToken: String = ""
-    public var apiToken : String
+    private var _batterHand: String = ""
+    
+    public var batterHand : String
     {
         set(value)
         {
-            _apiToken = value
+            _batterHand = value
         }
         get {
-            return _apiToken
+            return _batterHand
         }
     }
 

@@ -47,6 +47,15 @@ class LoginViewController: UIViewController {
             self.showIDAlert()
             return false
         }
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        if (handSegment.selectedSegmentIndex == 1)
+        {
+            appDelegate.batterHand = "right"
+        }
+        else
+        {
+            appDelegate.batterHand = "left"
+        }
         return true
     }
     

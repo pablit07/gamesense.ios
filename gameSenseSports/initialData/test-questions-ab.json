@@ -16,6 +16,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4833",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -33,6 +39,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4832",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -52,6 +64,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4831",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -69,6 +87,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4830",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -88,6 +112,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4829",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -105,6 +135,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4828",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -124,6 +160,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4827",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -141,6 +183,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4826",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -160,6 +208,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4825",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -177,6 +231,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4824",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -196,6 +256,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4823",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -213,6 +279,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4822",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -232,6 +304,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4821",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -249,6 +327,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4820",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -268,6 +352,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4819",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -285,6 +375,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4818",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -304,6 +400,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4816",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -321,6 +423,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4817",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -340,6 +448,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4815",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -357,6 +471,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4814",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -376,6 +496,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4813",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -393,6 +519,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4812",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -412,6 +544,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4811",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -429,6 +567,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4810",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -448,6 +592,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4809",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -465,6 +615,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4808",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -484,6 +640,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4807",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -501,6 +663,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4806",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -520,6 +688,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4805",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -537,6 +711,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4804",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -556,6 +736,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4803",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -573,6 +759,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4802",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -592,6 +784,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4801",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -609,6 +807,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4800",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -628,6 +832,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4799",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -645,6 +855,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4798",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -664,6 +880,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4761",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -681,6 +903,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4760",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -700,6 +928,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4759",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -717,6 +951,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4758",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -736,6 +976,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4757",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -753,6 +999,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4756",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -772,6 +1024,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4755",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -789,6 +1047,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4754",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -808,6 +1072,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4753",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -825,6 +1095,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4752",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -844,6 +1120,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4751",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -861,6 +1143,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4750",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -880,6 +1168,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4749",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -897,6 +1191,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4748",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -916,6 +1216,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4747",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -933,6 +1239,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4746",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -952,6 +1264,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4745",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -969,6 +1287,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4744",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -988,6 +1312,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4725",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -1005,6 +1335,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4724",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -1024,6 +1360,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4723",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -1041,6 +1383,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4722",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -1060,6 +1408,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4721",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -1077,6 +1431,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4720",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -1096,6 +1456,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4719",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -1113,6 +1479,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4718",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -1132,6 +1504,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4717",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -1149,6 +1527,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4716",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -1168,6 +1552,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4715",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -1185,6 +1575,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4714",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -1204,6 +1600,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4713",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -1221,6 +1623,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4712",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -1240,6 +1648,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4711",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -1257,6 +1671,12 @@
       "response_uris": [
         "/player/api-auth/baseball/pitchtypes/?video_id=4710",
         "/player/api-auth/baseball/pitchlocations/"
+      ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
       ],
       "text": null,
       "field_name": null,
@@ -1276,6 +1696,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4709",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -1294,6 +1720,12 @@
         "/player/api-auth/baseball/pitchtypes/?video_id=4708",
         "/player/api-auth/baseball/pitchlocations/"
       ],
+      "pitch_responses": [
+        "Fastball", 
+        "Cutter", 
+        "Changeup",
+        "Slider"
+      ],
       "text": null,
       "field_name": null,
       "full_video_file": null,
@@ -1301,5 +1733,3 @@
     }
   ]
 }
-
-//getDrillQuestions

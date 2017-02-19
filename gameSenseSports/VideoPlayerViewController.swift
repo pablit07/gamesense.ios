@@ -112,7 +112,7 @@ class VideoPlayerViewController: UIViewController
     private func getDrillQuestions()
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        SharedNetworkConnection.apiGetDrillQuestions(apiToken: appDelegate.apiToken, drillID: drillListItem!.drillID, completionHandler: { data, response, error in
+        SharedNetworkConnection.apiGetDrillQuestions(apiToken: "", drillID: drillListItem!.drillID, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
                 return
@@ -128,7 +128,6 @@ class VideoPlayerViewController: UIViewController
                     let json = try? JSONSerialization.jsonObject(with: data!, options: [])
                     if let dictionary = json as? [String: Any] {
                         if let apiToken = dictionary["token"] as? (String) {
-                            appDelegate.apiToken = apiToken
                             self.getDrillQuestions()
                         }
                     }                    
