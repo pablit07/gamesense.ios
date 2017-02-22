@@ -39,49 +39,45 @@ class VideoPlayerViewController: UIViewController
     public var replay = false
     public var index = 0
 
-    public var points = 0
-    public var locationPoints = 0
-    public var typePoints = 0
     
     public var returnedDrillID = -1
+    public var allowRotation = true
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-/*
-        let screenSize : CGRect = self.movieView.bounds
-        let fullScreenSize = UIScreen.main.bounds
-        let verticalClass = self.traitCollection.verticalSizeClass
-        if verticalClass == UIUserInterfaceSizeClass.compact {
-            self.movieView.frame = CGRect.init(x:0, y:63, width:fullScreenSize.width, height:fullScreenSize.height)
-            self.movieView.bounds = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
-            if self.movieView.layer.sublayers != nil {
-                self.movieView.layer.sublayers?[0].frame = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
-                self.movieView.layer.sublayers?[0].bounds = CGRect.init(x:0, y:0, width:fullScreenSize.width, height:fullScreenSize.height)
-            }
-            if self.loadingView.subviews.count > 0 {
-                self.loadingView.subviews[0].frame.origin.y = 100
-            }
-        } else {
-            if self.movieView.layer.sublayers != nil {
-                self.movieView.frame = CGRect.init(x:0, y:63, width:fullScreenSize.width, height:215)
-                self.movieView.layer.sublayers?[0].frame = CGRect.init(x:0, y:0, width:screenSize.width, height:(screenSize.width * 0.5625))
-            }
-            if self.loadingView.subviews.count > 0 {
-                self.loadingView.subviews[0].frame.origin.y = 284
-            }
-        }
- */
-    }
+    private var containerPadding = CGFloat(0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.containerPadding = self.containerView.frame.origin.x
         // Do any additional setup after loading the view, typically from a nib.
         self.movieView.backgroundColor = UIColor.black
-        //Testing
-        let dlp = DrillListParser(jsonString: Constants.getDrillList())
-        let drillList = dlp?.getDrillListArray()
-        self.drillListItem = drillList?[0]
-        
+
+        //Reds - Loaded from Bundle
+        let jsonString = self.setDrillVariables()
+        let data = jsonString.data(using: String.Encoding.utf8, allowLossyConversion: false)!
+        let json = try? JSONSerialization.jsonObject(with: data, options: [])
+        if let dictionary = json as? [String: Any] {
+            self.drillListItem = DrillListItem(json: dictionary)
+            print(dictionary)
+        }
+    }
+    
+    private func setDrillVariables()->String
+    {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        var jsonString = ""
+        if (appDelegate.batterHand == "right")
+        {
+            jsonString = AppDelegate.readJsonFile(fileName: "test-ab", bundle: Bundle(for: type(of: self)))
+            self.containerView.autoresizingMask = [.flexibleTopMargin, .flexibleRightMargin]
+            self.containerView.frame.origin.x = self.containerPadding
+        }
+        else
+        {
+            jsonString = AppDelegate.readJsonFile(fileName: "test-cd", bundle: Bundle(for: type(of: self)))
+            self.containerView.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin]
+            self.containerView.frame.origin.x = self.view.frame.width - self.containerView.frame.origin.x - self.containerView.frame.width
+        }
+        return jsonString
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -108,85 +104,45 @@ class VideoPlayerViewController: UIViewController
         return true
     }
     
-    // Function to be hard-coded
     private func getDrillQuestions()
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        SharedNetworkConnection.apiGetDrillQuestions(apiToken: "", drillID: drillListItem!.drillID, completionHandler: { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
-                return
-            }
-            
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                // 403 on no token
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-                
-                SharedNetworkConnection.apiLoginWithStoredCredentials(completionHandler: { data, response, error in
-                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                    let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-                    if let dictionary = json as? [String: Any] {
-                        if let apiToken = dictionary["token"] as? (String) {
-                            self.getDrillQuestions()
-                        }
-                    }                    
-                })
-                
-                return
-            }
-
-            self.drillQuestionsParser = DrillQuestionParser(jsonString: String(data: data, encoding: .utf8)!)
-            if (self.drillListItem?.randomize)! {
-                self.drillQuestionsArray = (self.drillQuestionsParser?.getDrillQuestionArray())!.shuffled()
-            }
-            else {
-                self.drillQuestionsArray = (self.drillQuestionsParser?.getDrillQuestionArray())!
-            }
-            DispatchQueue.main.async {
-                self.downloadVideo()
-            }
-        })
+        var jsonString = ""
+        if (appDelegate.batterHand == "right")
+        {
+            jsonString = AppDelegate.readJsonFile(fileName: "test-questions-ab", bundle: Bundle(for: type(of: self)))
+        }
+        else
+        {
+            jsonString = AppDelegate.readJsonFile(fileName: "test-questions-cd", bundle: Bundle(for: type(of: self)))
+        }
+        
+        let data = jsonString.data(using: String.Encoding.utf8, allowLossyConversion: false)!
+        self.drillQuestionsParser = DrillQuestionParser(jsonString: String(data: data, encoding: .utf8)!)
+        if (self.drillListItem?.randomize)! {
+            self.drillQuestionsArray = (self.drillQuestionsParser?.getDrillQuestionArray())!.shuffled()
+        }
+        else {
+            self.drillQuestionsArray = (self.drillQuestionsParser?.getDrillQuestionArray())!
+        }
+        DispatchQueue.main.async {
+            self.downloadVideo()
+        }
     }
     
     private func downloadVideo()
     {
         self.showIndicator(shouldAppear:true)
         let currentDrillQuestionItem = drillQuestionsArray[index]
-        var cacheDirectory = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        var filename = ""
-        if (!replay) {
-            cacheDirectory.appendPathComponent(currentDrillQuestionItem.occludedVideo)
-            filename = currentDrillQuestionItem.occludedVideo
-        }
-        else {
-            cacheDirectory.appendPathComponent(currentDrillQuestionItem.fullVideo)
-            filename = currentDrillQuestionItem.fullVideo
-        }
+        var fullFileName = currentDrillQuestionItem.occludedVideo.components(separatedBy: ".")
         
-        if (FileManager.default.fileExists(atPath: cacheDirectory.path)) {
+        let bundle = Bundle.main
+        let path = bundle.path(forResource: fullFileName[0], ofType: "mp4")
+        
+        if (FileManager.default.fileExists(atPath: path!)) {
             DispatchQueue.main.async {
-                self.updateVideoPlayer(videoURL: cacheDirectory)
+                self.updateVideoPlayer(videoURL: Bundle.main.url(forResource: fullFileName[0], withExtension:"mp4", subdirectory:"/")!)
             }
-        }
-        else {
-            SharedNetworkConnection.downloadVideo(resourceFilename: filename, completionHandler: { data, response, error in
-                guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                    print("error=\(error)")
-                    return
-                }
-                
-                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                    // 403 on no token
-                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
-                }
-                
-                try? data.write(to: cacheDirectory)
-                DispatchQueue.main.async {
-                    self.updateVideoPlayer(videoURL: cacheDirectory)
-                }
-            })
         }
     }
     
@@ -201,24 +157,10 @@ class VideoPlayerViewController: UIViewController
             playerLayer.frame = self.movieView.bounds
             playerLayer.bounds = self.movieView.bounds
 
-            playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+            playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
             self.movieView.layer.addSublayer(playerLayer)
             
             NotificationCenter.default.addObserver(self, selector: #selector(VideoPlayerViewController.playerFinished), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
-            player.play()
-        }
-        else {
-            let player = AVPlayer(url: videoURL)
-            player.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions(), context: nil)
-            let playerLayer = AVPlayerLayer(player: player)
-            playerLayer.frame = self.movieView.bounds
-            playerLayer.bounds = self.movieView.bounds
-            //get size of screen
-            let screenSize : CGRect = self.movieView.bounds
-            playerLayer.frame = CGRect.init(x:0, y:0, width:screenSize.width, height:(screenSize.width * 0.5625))
-            playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
-            self.movieView.layer.addSublayer(playerLayer)
-            NotificationCenter.default.addObserver(self, selector: #selector(VideoPlayerViewController.replayFinished), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
             player.play()
         }
     }
@@ -232,28 +174,18 @@ class VideoPlayerViewController: UIViewController
             self.showIndicator(shouldAppear:false)
             let dq = self.childViewControllers[0] as! DrillQuestionsViewController
             dq.resetViewForDisplay()
+            allowRotation = false
         }
-        else if (player.status == AVPlayerStatus.failed){
+        else if (player.status == AVPlayerStatus.failed) {
             self.showIndicator(shouldAppear:false)
             let alert = UIAlertController(title: "Sorry", message: "Your video failed to play. If this issue continues, please contact gamesenseSports at " + Constants.gamesenseSportsContact, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            
-            let currentDrillQuestionItem = drillQuestionsArray[index]
-            var cacheDirectory = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            
-            if (!replay) {
-                cacheDirectory.appendPathComponent(currentDrillQuestionItem.occludedVideo)
-            }
-            else {
-                cacheDirectory.appendPathComponent(currentDrillQuestionItem.fullVideo)
-            }
-            
-            try? FileManager.default.removeItem(atPath: cacheDirectory.path)
+            self.dismiss(animated: false, completion: nil)
         }
         else
         {
-            
+
         }
     }
     
@@ -276,32 +208,16 @@ class VideoPlayerViewController: UIViewController
         }
     }
     
-    func replayHandler(alert: UIAlertAction!) {
-        self.replay = true
-        self.resetView()
-    }
-    
     func nextHandler(alert: UIAlertAction!)
     {
         self.replay = false
         self.index += 1
         self.resetView()
     }
-
-    func replayDrillHandler(alert: UIAlertAction!) {
-        self.drillQuestionsArray = self.drillQuestionsArray.shuffled()
-        index = 0
-        self.replay = false
-        self.presenting = false
-        self.points = 0
-        self.locationPoints = 0
-        self.typePoints = 0
-        self.resetView()
-    }
     
     func doneHandler(alert: UIAlertAction!)
     {
-        self.navigationController!.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
 
     public func resetView()
@@ -322,7 +238,7 @@ class VideoPlayerViewController: UIViewController
             else {
                 let alertController = UIAlertController(title: "Done", message:
                     "Drill Complete", preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: doneHandler))
                 self.present(alertController, animated: true, completion: nil)
             }
         }
@@ -348,20 +264,11 @@ class VideoPlayerViewController: UIViewController
     
     func playerFinished()
     {
+        allowRotation = true
         if (!presenting) {
             let dq = self.childViewControllers[0] as! DrillQuestionsViewController
             dq.resetViewForDisplay()
         }
-    }
-    
-    
-    func replayFinished()
-    {
-        // Allow another replay
-        let alert = UIAlertController(title: (drillListItem?.title)! + " " + String(index + 1), message: nil, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: replayHandler))
-        alert.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.default, handler: nextHandler))
-        self.present(alert, animated: true, completion: nil)
     }
 }
 

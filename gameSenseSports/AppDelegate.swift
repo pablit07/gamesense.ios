@@ -167,5 +167,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return isReachable && !needsConnection
     }
+    
+    static func readJsonFile(fileName: String, bundle: Bundle) -> String
+    {
+        var fileString : String = ""
+        let path = bundle.path(forResource: fileName, ofType: "json")!
+        do {
+            fileString = try String(contentsOfFile: path, encoding: String.Encoding.utf8)
+        } catch {
+            assert(true)
+        }
+        return fileString
+    }
 }
 

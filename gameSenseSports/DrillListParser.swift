@@ -15,7 +15,7 @@ class DrillListParser : NSObject
     
     init?(jsonString: String) {
         self.jsonString = jsonString
-        self.recordCount = 0;
+        self.recordCount = 0
     }
 
     func getDrillListArray() -> Array<DrillListItem>

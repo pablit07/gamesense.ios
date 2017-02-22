@@ -48,18 +48,13 @@ struct DrillQuestionItem
     let fullJson: String
     let drillQuestionID: Int
     let occludedVideo: String
-    let fullVideo: String
-    let answerURL: String
-    let responseURI0: String
-    let responseURI1: String
+    let pitchArray: Array<Any>
 }
 
 extension DrillQuestionItem {
     init?(json: [String: Any]) {
         guard let drillQuestionID = json["id"] as? Int,
         let occludedVideo = json["occluded_video_file"] as? String,
-        let fullVideo = json["full_video_file"] as? String,
-        let answerURL = json["full_video"] as? String,
         let responseURIs = json["response_uris"] as? [Any]
             else {
                 return nil
@@ -67,10 +62,15 @@ extension DrillQuestionItem {
         
         self.drillQuestionID = drillQuestionID
         self.occludedVideo = occludedVideo
-        self.fullVideo = fullVideo
-        self.answerURL = answerURL
-        self.responseURI0 = responseURIs[0] as! String
-        self.responseURI1 = responseURIs[1] as! String
+        //Array of Objects -> [{},{},{}]
+        var pArray = Array<Any>()
+        let r0 = responseURIs[0] as? [Any]
+        for object in r0!
+        {
+            pArray.append(object)
+        }
+        self.pitchArray = pArray
+        
         self.fullJson = try! String(data:JSONSerialization.data(withJSONObject: json, options: .prettyPrinted),encoding: String.Encoding.utf8)!
     }
 }

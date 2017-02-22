@@ -23,14 +23,14 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        idField.text = ""
-        handSegment.selectedSegmentIndex = 1
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
         self.loginComplete = false
+        self.idField.text = ""
+        self.handSegment.selectedSegmentIndex = 1
         showLoginActiveView(shouldAppear: false)
     }
 
