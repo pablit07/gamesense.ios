@@ -145,7 +145,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             
             //json file structure to come
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let dictionary : [String: Any] = ["test_id": (self.drillListItem?.drillID)!, "question_id": (self.drillQuestionItem?.drillQuestionID)!, "response_id": pitchType, "response_location": pitchLocation, "time_elapsed": parent.videoStartTime, "timestamp": Date().iso8601, "player_id": appDelegate.userID]
+            let dictionary : [String: Any] = ["test_id": (self.drillListItem?.drillID)!, "question_id": (self.drillQuestionItem?.drillQuestionID)!, "response_id": pitchType, "response_location": pitchLocation, "time_video_started": parent.videoStartTime, "time_answered": Date().iso8601, "player_id": appDelegate.userID]
 
             let jsonData = try? JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
             // here "jsonData" is the dictionary encoded in JSON data
