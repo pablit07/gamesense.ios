@@ -68,14 +68,14 @@ class VideoPlayerViewController: UIViewController
         if (appDelegate.batterHand == "right")
         {
             jsonString = AppDelegate.readJsonFile(fileName: "test-ab", bundle: Bundle(for: type(of: self)))
-            self.containerView.autoresizingMask = [.flexibleTopMargin, .flexibleRightMargin]
-            self.containerView.frame.origin.x = self.containerPadding
+            self.containerView.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin]
+            self.containerView.frame.origin.x = self.view.frame.width - self.containerView.frame.origin.x - self.containerView.frame.width
         }
         else
         {
             jsonString = AppDelegate.readJsonFile(fileName: "test-cd", bundle: Bundle(for: type(of: self)))
-            self.containerView.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin]
-            self.containerView.frame.origin.x = self.view.frame.width - self.containerView.frame.origin.x - self.containerView.frame.width
+            self.containerView.autoresizingMask = [.flexibleTopMargin, .flexibleRightMargin]
+            self.containerView.frame.origin.x = self.containerPadding
         }
         return jsonString
     }
@@ -237,7 +237,7 @@ class VideoPlayerViewController: UIViewController
             }
             else {
                 let alertController = UIAlertController(title: "Done", message:
-                    "Drill Complete", preferredStyle: UIAlertControllerStyle.alert)
+                    "Thank you for your time. You have completed the gameSense Sports Pitch Recognition Test", preferredStyle: UIAlertControllerStyle.alert)
                 alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: doneHandler))
                 self.present(alertController, animated: true, completion: nil)
             }

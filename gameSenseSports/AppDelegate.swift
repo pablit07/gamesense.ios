@@ -35,31 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Rollbar.initWithAccessToken("3b7e8110851641b9898b93abf2ef0fa0", configuration: config)
         
-        let cacheDirectory = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        let fileManager =  FileManager.default
-        
-        // Check for initial cache and create if unavailable
-        if (UserDefaults.standard.object(forKey: Constants.kCacheKey) == nil && isConnectedToNetwork())
-        {
-            SharedNetworkConnection.downloadCache(completionHandler: { data, response, error in
-                guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                    print("error=\(error)")
-                    return
-                }
-                
-                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                    // 403 on no token
-                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
-                }
-                try? data.write(to: cacheDirectory.appendingPathComponent("cache.zip"))
-                // Unzip
-                SSZipArchive.unzipFile(atPath: cacheDirectory.appendingPathComponent("cache.zip").path, toDestination: cacheDirectory.path)
-                try? fileManager.removeItem(at: cacheDirectory.appendingPathComponent("cache.zip"))
-                UserDefaults.standard.set(true, forKey: Constants.kCacheKey)
-            })
-        }
-        
         return true
     }
 

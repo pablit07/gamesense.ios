@@ -24,7 +24,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     
     private var drillQuestionItem = DrillQuestionItem(json: [:])
     private var pitchArray = Array<Any>()
-    private var drillVideoItem = DrillVideoItem(json: [:])
     
     public var answered = false
     public var answeredCorrectly = false
