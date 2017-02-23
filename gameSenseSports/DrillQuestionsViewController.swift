@@ -22,8 +22,9 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     private var audioPlayerHit: AVAudioPlayer?
     private var audioPlayerMiss: AVAudioPlayer?
     
-    private var drillQuestionItem = DrillQuestionItem(json: [:])
+    private var drillListItem = DrillListItem(json: [:])
     private var pitchArray = Array<Any>()
+    private var drillQuestionItem = DrillQuestionItem(json: [:])
     
     public var answered = false
     public var answeredCorrectly = false
@@ -41,11 +42,12 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.alpha = 0
-        //self.isLandscape = self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let parent = self.parent as! VideoPlayerViewController
+        self.drillListItem = parent.drillListItem
     }
     
     override func didReceiveMemoryWarning() {
@@ -125,14 +127,36 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     
     func storeAnswer(pitchType: Int, pitchLocation: Int)
     {
+        let parent = self.parent as! VideoPlayerViewController
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let url = NSURL(fileURLWithPath: path)
+        let filePath = url.appendingPathComponent("nameOfFileHere")?.path
+        let fileManager = FileManager.default
+        var fileCreated = false
+        if fileManager.fileExists(atPath: filePath!) {
+            fileCreated = true
+        }
+        
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             .appendingPathComponent("answers.txt")
         
         if let outputStream = OutputStream(url: fileURL, append: true) {
             outputStream.open()
+            
             //json file structure to come
-            var text = "Pitch: \(pitchType) \(pitchLocation) \(drillQuestionItem?.drillQuestionID)"
-            text = text + "\n"
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let dictionary : [String: Any] = ["test_id": (self.drillListItem?.drillID)!, "question_id": (self.drillQuestionItem?.drillQuestionID)!, "response_id": pitchType, "response_location": pitchLocation, "time_elapsed": parent.videoStartTime, "timestamp": Date().iso8601, "player_id": appDelegate.userID]
+
+            let jsonData = try? JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
+            // here "jsonData" is the dictionary encoded in JSON data
+            var text = ""
+            if (fileCreated) {
+                text = text + "["
+            }
+            else {
+                text = text + ","
+            }
+            text = text + String(data: jsonData!, encoding: String.Encoding.utf8)!
             let bytesWritten = outputStream.write(text, maxLength: text.lengthOfBytes(using: String.Encoding.utf8))
             if bytesWritten < 0 { print("write failure") }
             outputStream.close()
@@ -146,5 +170,26 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         let hiddenLabel = sender.superview?.viewWithTag(4) as! UILabel
         self.storeAnswer(pitchType: Int(hiddenLabel.text!)!, pitchLocation: sender.tag)
         self.nextVideo(pitchType: Int(hiddenLabel.text!)!, pitchLocation: sender.tag)
+    }
+    
+}
+
+extension Date {
+    static let iso8601Formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+        return formatter
+    }()
+    var iso8601: String {
+        return Date.iso8601Formatter.string(from: self)
+    }
+}
+
+extension String {
+    var dateFromISO8601: Date? {
+        return Date.iso8601Formatter.date(from: self)
     }
 }

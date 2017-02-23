@@ -17,13 +17,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var _batterHand: String = ""
     
     public var batterHand : String
-    {
+        {
         set(value)
         {
             _batterHand = value
         }
         get {
             return _batterHand
+        }
+    }
+    
+    private var _userID: String = ""
+    
+    public var userID : String
+        {
+        set(value)
+        {
+            _userID = value
+        }
+        get {
+            return _userID
         }
     }
 

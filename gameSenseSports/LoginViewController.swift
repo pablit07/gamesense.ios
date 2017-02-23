@@ -69,6 +69,7 @@ class LoginViewController: UIViewController {
             return false
         }
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.userID = self.idField.text!
         if (handSegment.selectedSegmentIndex == 1)
         {
             appDelegate.batterHand = "right"

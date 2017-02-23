@@ -30,7 +30,7 @@ class VideoPlayerViewController: UIViewController
     
     
     private var drillQuestionsParser = DrillQuestionParser(jsonString: "")
-    private var drillListItem = DrillListItem(json: [:])
+    public var drillListItem = DrillListItem(json: [:])
     private var presenting = false
     
     private var drillStartTime = ""
@@ -38,6 +38,7 @@ class VideoPlayerViewController: UIViewController
     public var drillQuestionsArray = [DrillQuestionItem]()
     public var replay = false
     public var index = 0
+    public var videoStartTime: String = ""
 
     
     public var returnedDrillID = -1
@@ -175,6 +176,7 @@ class VideoPlayerViewController: UIViewController
             let dq = self.childViewControllers[0] as! DrillQuestionsViewController
             dq.resetViewForDisplay()
             allowRotation = false
+            self.videoStartTime = Date().iso8601
         }
         else if (player.status == AVPlayerStatus.failed) {
             self.showIndicator(shouldAppear:false)
