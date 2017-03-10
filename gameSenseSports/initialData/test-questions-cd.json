@@ -4,14 +4,10 @@
   "previous": null,
   "results": [
     {
-      "id": 29404,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4850/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -38,60 +34,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-6d5.mp4"
-    },
-    {
-      "id": 29416,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4838/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-2d5.mp4"
-    },
-    {
-      "id": 29428,
-      "pitch_type_value": null,
       "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
       "occluded_video": "/player/api-auth/baseball/videos/4790/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-4c5.mp4",
+      "text": null,
+      "id": 29428,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -118,20 +74,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-4c5.mp4"
-    },
-    {
-      "id": 29426,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4792/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-5c2.mp4",
+      "text": null,
+      "id": 29426,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -158,20 +114,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-5c2.mp4"
-    },
-    {
-      "id": 29435,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4783/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-2c2.mp4",
+      "text": null,
+      "id": 29435,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -198,20 +154,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-2c2.mp4"
-    },
-    {
-      "id": 29425,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4793/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-5c5.mp4",
+      "text": null,
+      "id": 29425,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -238,20 +194,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-5c5.mp4"
-    },
-    {
-      "id": 29432,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4786/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-3c2.mp4",
+      "text": null,
+      "id": 29432,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -278,20 +234,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-3c2.mp4"
-    },
-    {
-      "id": 29422,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4796/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-6c5.mp4",
+      "text": null,
+      "id": 29422,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -318,100 +274,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-6c5.mp4"
-    },
-    {
-      "id": 29407,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4847/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-5d5.mp4"
-    },
-    {
-      "id": 29408,
-      "pitch_type_value": null,
       "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4846/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-5d2.mp4"
-    },
-    {
-      "id": 29437,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
       "occluded_video": "/player/api-auth/baseball/videos/4781/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-1c5.mp4",
+      "text": null,
+      "id": 29437,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -438,20 +314,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-1c5.mp4"
-    },
-    {
-      "id": 29427,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4791/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-4c-NO.mp4",
+      "text": null,
+      "id": 29427,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -478,20 +354,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-4c-NO.mp4"
-    },
-    {
-      "id": 29431,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4787/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-3c5.mp4",
+      "text": null,
+      "id": 29431,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -518,20 +394,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-3c5.mp4"
-    },
-    {
-      "id": 29429,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4789/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-4c2.mp4",
+      "text": null,
+      "id": 29429,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -558,140 +434,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-4c2.mp4"
-    },
-    {
-      "id": 29411,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4843/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-4d2.mp4"
-    },
-    {
-      "id": 29419,
-      "pitch_type_value": null,
       "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4835/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-1d5.mp4"
-    },
-    {
-      "id": 29415,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4839/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-2d-NO.mp4"
-    },
-    {
-      "id": 29433,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
       "occluded_video": "/player/api-auth/baseball/videos/4785/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-2c-NO.mp4",
+      "text": null,
+      "id": 29433,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -718,60 +474,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-2c-NO.mp4"
-    },
-    {
-      "id": 29414,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4840/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-3d2.mp4"
-    },
-    {
-      "id": 29421,
-      "pitch_type_value": null,
       "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
       "occluded_video": "/player/api-auth/baseball/videos/4797/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-6c-NO.mp4",
+      "text": null,
+      "id": 29421,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -798,20 +514,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-6c-NO.mp4"
-    },
-    {
-      "id": 29423,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4795/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-6c2.mp4",
+      "text": null,
+      "id": 29423,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -838,20 +554,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-6c2.mp4"
-    },
-    {
-      "id": 29438,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4780/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-1c2.mp4",
+      "text": null,
+      "id": 29438,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -878,60 +594,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-1c2.mp4"
-    },
-    {
-      "id": 29405,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4849/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-6d2.mp4"
-    },
-    {
-      "id": 29430,
-      "pitch_type_value": null,
       "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
       "occluded_video": "/player/api-auth/baseball/videos/4788/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-3c-NO.mp4",
+      "text": null,
+      "id": 29430,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -958,180 +634,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-3c-NO.mp4"
-    },
-    {
-      "id": 29413,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4841/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-3d5.mp4"
-    },
-    {
-      "id": 29417,
-      "pitch_type_value": null,
       "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4837/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-2d2.mp4"
-    },
-    {
-      "id": 29409,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4845/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-4d-NO.mp4"
-    },
-    {
-      "id": 29403,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4851/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-6d-NO.mp4"
-    },
-    {
-      "id": 29434,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
       "occluded_video": "/player/api-auth/baseball/videos/4784/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-2c5.mp4",
+      "text": null,
+      "id": 29434,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1158,100 +674,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-2c5.mp4"
-    },
-    {
-      "id": 29410,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4844/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-4d5.mp4"
-    },
-    {
-      "id": 29420,
-      "pitch_type_value": null,
       "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4834/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-1d2.mp4"
-    },
-    {
-      "id": 29424,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
       "occluded_video": "/player/api-auth/baseball/videos/4794/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-5c-NO.mp4",
+      "text": null,
+      "id": 29424,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1278,100 +714,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-5c-NO.mp4"
-    },
-    {
-      "id": 29412,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4842/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-3d-NO.mp4"
-    },
-    {
-      "id": 29418,
-      "pitch_type_value": null,
       "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4836/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-1d-NO.mp4"
-    },
-    {
-      "id": 29436,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
       "occluded_video": "/player/api-auth/baseball/videos/4782/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M40-test-1c-NO.mp4",
+      "text": null,
+      "id": 29436,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1379,12 +735,12 @@
             "name": "Fastball"
           },
           {
-            "id": 3,
-            "name": "Changeup"
+            "id": 2,
+            "name": "Cutter"
           },
           {
-            "id": 5,
-            "name": "Slider"
+            "id": 3,
+            "name": "Changeup"
           }
         ],
         [
@@ -1398,60 +754,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-1c-NO.mp4"
-    },
-    {
-      "id": 29406,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4848/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 3,
-            "name": "Changeup"
-          },
-          {
-            "id": 5,
-            "name": "Slider"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M40-test-5d-NO.mp4"
-    },
-    {
-      "id": 29439,
-      "pitch_type_value": null,
       "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
       "occluded_video": "/player/api-auth/baseball/videos/4779/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-6d-NO.mp4",
+      "text": null,
+      "id": 29439,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1478,20 +794,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-6d-NO.mp4"
-    },
-    {
-      "id": 29440,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4778/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-6d5.mp4",
+      "text": null,
+      "id": 29440,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1518,20 +834,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-6d5.mp4"
-    },
-    {
-      "id": 29445,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4773/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-4d-NO.mp4",
+      "text": null,
+      "id": 29445,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1558,20 +874,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-4d-NO.mp4"
-    },
-    {
-      "id": 29448,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4770/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-3d-NO.mp4",
+      "text": null,
+      "id": 29448,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1598,20 +914,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-3d-NO.mp4"
-    },
-    {
-      "id": 29455,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4763/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-1d5.mp4",
+      "text": null,
+      "id": 29455,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1638,20 +954,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-1d5.mp4"
-    },
-    {
-      "id": 29450,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4768/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-3d2.mp4",
+      "text": null,
+      "id": 29450,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1678,20 +994,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-3d2.mp4"
-    },
-    {
-      "id": 29442,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4776/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-5d-NO.mp4",
+      "text": null,
+      "id": 29442,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1718,20 +1034,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-5d-NO.mp4"
-    },
-    {
-      "id": 29454,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4764/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-1d-NO.mp4",
+      "text": null,
+      "id": 29454,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1758,20 +1074,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-1d-NO.mp4"
-    },
-    {
-      "id": 29449,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4769/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-3d5.mp4",
+      "text": null,
+      "id": 29449,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1798,20 +1114,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-3d5.mp4"
-    },
-    {
-      "id": 29447,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4771/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-4d2.mp4",
+      "text": null,
+      "id": 29447,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1838,20 +1154,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-4d2.mp4"
-    },
-    {
-      "id": 29444,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4774/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-5d2.mp4",
+      "text": null,
+      "id": 29444,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1878,20 +1194,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-5d2.mp4"
-    },
-    {
-      "id": 29446,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4772/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-4d5.mp4",
+      "text": null,
+      "id": 29446,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1918,20 +1234,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-4d5.mp4"
-    },
-    {
-      "id": 29441,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4777/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-6d2.mp4",
+      "text": null,
+      "id": 29441,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1958,20 +1274,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-6d2.mp4"
-    },
-    {
-      "id": 29451,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4767/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-2d-NO.mp4",
+      "text": null,
+      "id": 29451,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -1998,20 +1314,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-2d-NO.mp4"
-    },
-    {
-      "id": 29443,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4775/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-5d5.mp4",
+      "text": null,
+      "id": 29443,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2038,20 +1354,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-5d5.mp4"
-    },
-    {
-      "id": 29456,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4762/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-1d2.mp4",
+      "text": null,
+      "id": 29456,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2078,20 +1394,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-1d2.mp4"
-    },
-    {
-      "id": 29452,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4766/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-2d5.mp4",
+      "text": null,
+      "id": 29452,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2118,20 +1434,20 @@
           }
         ]
       ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-2d5.mp4"
-    },
-    {
-      "id": 29453,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
       "batter_hand_value": "L",
+      "pitch_location_value": null,
       "occluded_video": "/player/api-auth/baseball/videos/4765/",
-      "full_video": null,
+      "field_name": null,
+      "occluded_video_file": "M43-test-2d2.mp4",
+      "text": null,
+      "id": 29453,
+      "full_video_file": null
+    },
+    {
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2139,48 +1455,728 @@
             "name": "Fastball"
           },
           {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
             "id": 2,
-            "name": "Cutter"
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4731/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-2c-NO.mp4",
+      "text": null,
+      "id": 29469,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4743/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-6c-NO.mp4",
+      "text": null,
+      "id": 29457,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4739/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-5c5.mp4",
+      "text": null,
+      "id": 29461,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4734/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-3c-NO.mp4",
+      "text": null,
+      "id": 29466,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4728/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-1c-NO.mp4",
+      "text": null,
+      "id": 29472,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4726/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-1c2.mp4",
+      "text": null,
+      "id": 29474,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4736/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-4c5.mp4",
+      "text": null,
+      "id": 29464,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4732/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-3c2.mp4",
+      "text": null,
+      "id": 29468,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4737/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-4c-NO.mp4",
+      "text": null,
+      "id": 29463,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4740/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-5c-NO.mp4",
+      "text": null,
+      "id": 29460,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4738/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-5c2.mp4",
+      "text": null,
+      "id": 29462,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4735/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-4c2.mp4",
+      "text": null,
+      "id": 29465,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4733/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-3c5.mp4",
+      "text": null,
+      "id": 29467,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4727/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-1c5.mp4",
+      "text": null,
+      "id": 29473,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4729/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-2c2.mp4",
+      "text": null,
+      "id": 29471,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4730/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-2c5.mp4",
+      "text": null,
+      "id": 29470,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4741/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-6c2.mp4",
+      "text": null,
+      "id": 29459,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
+          },
+          {
+            "id": 4,
+            "name": "Curveball"
+          },
+          {
+            "id": 5,
+            "name": "Slider"
+          }
+        ],
+        [
+          {
+            "id": 1,
+            "name": "Ball"
+          },
+          {
+            "id": 2,
+            "name": "Strike"
+          }
+        ]
+      ],
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4742/",
+      "field_name": null,
+      "occluded_video_file": "F44-test-6c5.mp4",
+      "text": null,
+      "id": 29458,
+      "full_video_file": null
+    },
+    {
+      "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
+      "response_uris": [
+        [
+          {
+            "id": 1,
+            "name": "Fastball"
           },
           {
             "id": 3,
             "name": "Changeup"
-          }
-        ],
-        [
-          {
-            "id": 1,
-            "name": "Ball"
-          },
-          {
-            "id": 2,
-            "name": "Strike"
-          }
-        ]
-      ],
-      "text": null,
-      "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "M43-test-2d2.mp4"
-    },
-    {
-      "id": 29469,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4731/",
-      "full_video": null,
-      "pitcher_name_value": null,
-      "response_uris": [
-        [
-          {
-            "id": 1,
-            "name": "Fastball"
-          },
-          {
-            "id": 4,
-            "name": "Curveball"
           },
           {
             "id": 5,
@@ -2198,20 +2194,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4848/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-2c-NO.mp4"
+      "occluded_video_file": "M40-test-5d-NO.mp4",
+      "text": null,
+      "id": 29406,
+      "full_video_file": null
     },
     {
-      "id": 29457,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4743/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2219,8 +2215,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2238,20 +2234,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4836/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-6c-NO.mp4"
+      "occluded_video_file": "M40-test-1d-NO.mp4",
+      "text": null,
+      "id": 29418,
+      "full_video_file": null
     },
     {
-      "id": 29461,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4739/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2259,8 +2255,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2278,20 +2274,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4842/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-5c5.mp4"
+      "occluded_video_file": "M40-test-3d-NO.mp4",
+      "text": null,
+      "id": 29412,
+      "full_video_file": null
     },
     {
-      "id": 29466,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4734/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2299,8 +2295,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2318,20 +2314,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4834/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-3c-NO.mp4"
+      "occluded_video_file": "M40-test-1d2.mp4",
+      "text": null,
+      "id": 29420,
+      "full_video_file": null
     },
     {
-      "id": 29472,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4728/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2339,8 +2335,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2358,20 +2354,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4844/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-1c-NO.mp4"
+      "occluded_video_file": "M40-test-4d5.mp4",
+      "text": null,
+      "id": 29410,
+      "full_video_file": null
     },
     {
-      "id": 29474,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4726/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2379,8 +2375,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2398,20 +2394,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4851/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-1c2.mp4"
+      "occluded_video_file": "M40-test-6d-NO.mp4",
+      "text": null,
+      "id": 29403,
+      "full_video_file": null
     },
     {
-      "id": 29464,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4736/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2419,8 +2415,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2438,20 +2434,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4845/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-4c5.mp4"
+      "occluded_video_file": "M40-test-4d-NO.mp4",
+      "text": null,
+      "id": 29409,
+      "full_video_file": null
     },
     {
-      "id": 29468,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4732/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2459,8 +2455,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2478,20 +2474,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4837/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-3c2.mp4"
+      "occluded_video_file": "M40-test-2d2.mp4",
+      "text": null,
+      "id": 29417,
+      "full_video_file": null
     },
     {
-      "id": 29463,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4737/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2499,8 +2495,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2518,20 +2514,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4841/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-4c-NO.mp4"
+      "occluded_video_file": "M40-test-3d5.mp4",
+      "text": null,
+      "id": 29413,
+      "full_video_file": null
     },
     {
-      "id": 29460,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4740/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2539,8 +2535,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2558,20 +2554,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4849/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-5c-NO.mp4"
+      "occluded_video_file": "M40-test-6d2.mp4",
+      "text": null,
+      "id": 29405,
+      "full_video_file": null
     },
     {
-      "id": 29462,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4738/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2579,8 +2575,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2598,20 +2594,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4840/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-5c2.mp4"
+      "occluded_video_file": "M40-test-3d2.mp4",
+      "text": null,
+      "id": 29414,
+      "full_video_file": null
     },
     {
-      "id": 29465,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4735/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2619,8 +2615,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2638,20 +2634,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4839/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-4c2.mp4"
+      "occluded_video_file": "M40-test-2d-NO.mp4",
+      "text": null,
+      "id": 29415,
+      "full_video_file": null
     },
     {
-      "id": 29467,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4733/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2659,8 +2655,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2678,20 +2674,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4835/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-3c5.mp4"
+      "occluded_video_file": "M40-test-1d5.mp4",
+      "text": null,
+      "id": 29419,
+      "full_video_file": null
     },
     {
-      "id": 29473,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4727/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2699,8 +2695,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2718,20 +2714,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4843/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-1c5.mp4"
+      "occluded_video_file": "M40-test-4d2.mp4",
+      "text": null,
+      "id": 29411,
+      "full_video_file": null
     },
     {
-      "id": 29471,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4729/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2739,8 +2735,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2758,20 +2754,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4846/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-2c2.mp4"
+      "occluded_video_file": "M40-test-5d2.mp4",
+      "text": null,
+      "id": 29408,
+      "full_video_file": null
     },
     {
-      "id": 29470,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4730/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2779,8 +2775,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2798,20 +2794,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4847/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-2c5.mp4"
+      "occluded_video_file": "M40-test-5d5.mp4",
+      "text": null,
+      "id": 29407,
+      "full_video_file": null
     },
     {
-      "id": 29459,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4741/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2819,8 +2815,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2838,20 +2834,20 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4838/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-6c2.mp4"
+      "occluded_video_file": "M40-test-2d5.mp4",
+      "text": null,
+      "id": 29416,
+      "full_video_file": null
     },
     {
-      "id": 29458,
-      "pitch_type_value": null,
-      "pitch_location_value": null,
-      "pitcher_hand_value": null,
-      "batter_hand_value": "L",
-      "occluded_video": "/player/api-auth/baseball/videos/4742/",
-      "full_video": null,
       "pitcher_name_value": null,
+      "full_video": null,
+      "pitcher_hand_value": null,
+      "pitch_type_value": null,
       "response_uris": [
         [
           {
@@ -2859,8 +2855,8 @@
             "name": "Fastball"
           },
           {
-            "id": 4,
-            "name": "Curveball"
+            "id": 3,
+            "name": "Changeup"
           },
           {
             "id": 5,
@@ -2878,10 +2874,14 @@
           }
         ]
       ],
-      "text": null,
+      "batter_hand_value": "L",
+      "pitch_location_value": null,
+      "occluded_video": "/player/api-auth/baseball/videos/4850/",
       "field_name": null,
-      "full_video_file": null,
-      "occluded_video_file": "F44-test-6c5.mp4"
+      "occluded_video_file": "M40-test-6d5.mp4",
+      "text": null,
+      "id": 29404,
+      "full_video_file": null
     }
   ]
 }
