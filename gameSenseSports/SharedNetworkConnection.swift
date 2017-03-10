@@ -19,8 +19,9 @@ class SharedNetworkConnection: NSObject
     static func apiLogin(username: String, password: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
     {
         var request = URLRequest(url: URL(string: Constants.URLs.Login)!)
+        let escapedUsername = username.addingPercentEncoding(withAllowedCharacters: .rfc3986Unreserved)!
         request.httpMethod = "POST"
-        let postString = "username=" + username + "&password=" + password
+        let postString = "username=" + escapedUsername + "&password=" + password
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
         task.resume()
@@ -170,4 +171,8 @@ class SharedNetworkConnection: NSObject
         let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
         task.resume()
     }
+}
+
+extension CharacterSet {
+    static let rfc3986Unreserved = CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~")
 }
