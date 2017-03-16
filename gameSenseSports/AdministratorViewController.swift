@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AWSS3
 
 class AdministratorViewController: UIViewController {
 
@@ -29,9 +30,8 @@ class AdministratorViewController: UIViewController {
     
     
     @IBAction func uploadFile(_ sender: Any) {
-        /*
         let getPreSignedURLRequest = AWSS3GetPreSignedURLRequest()
-        getPreSignedURLRequest.bucket = "myBucket"
+        getPreSignedURLRequest.bucket = "gamesense-test-responses"
         getPreSignedURLRequest.key = "myFile.txt"
         getPreSignedURLRequest.httpMethod = .PUT
         getPreSignedURLRequest.expires = Date(timeIntervalSinceNow: 3600)
@@ -54,12 +54,14 @@ class AdministratorViewController: UIViewController {
             request.httpMethod = "PUT"
             request.setValue(fileContentTypeStr, forHTTPHeaderField: "Content-Type")
             
-            let uploadTask: URLSessionTask = URLSession.shared.uploadTask(with: request, fromFile: URL(fileURLWithPath: "your/file/path/myFile.txt"))
+            let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                .appendingPathComponent("answers.txt")
+            
+            let uploadTask: URLSessionTask = URLSession.shared.uploadTask(with: request, fromFile: URL(fileURLWithPath: fileURL.path))
             uploadTask.resume()
             
             return nil
         }
-        */
     }
     
     @IBAction func closeModal(_ sender: Any) {

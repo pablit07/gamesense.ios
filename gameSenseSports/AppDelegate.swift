@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import SystemConfiguration
+import AWSCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -47,6 +48,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         config.environment = "production"
         
         Rollbar.initWithAccessToken("3b7e8110851641b9898b93abf2ef0fa0", configuration: config)
+        
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1, identityPoolId: "us-east-1_87pWOPnFh")
+        let configuration = AWSServiceConfiguration(region: .USEast1 , credentialsProvider:credentialsProvider)
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
         
         return true
     }
