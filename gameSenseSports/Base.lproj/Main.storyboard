@@ -58,7 +58,7 @@
                                     <color key="titleColor" red="0.9934229457" green="0.98780879659999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="uzr-Ny-Wxn" kind="show" id="BF0-bV-5gj"/>
+                                    <segue destination="uzr-Ny-Wxn" kind="show" identifier="login" id="BF0-bV-5gj"/>
                                 </connections>
                             </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LWc-Gv-zad">
@@ -83,11 +83,65 @@
                         <outlet property="handSegment" destination="jqx-GN-efc" id="5bH-Kp-ARS"/>
                         <outlet property="idField" destination="Drx-OE-sLi" id="5q1-wd-XgB"/>
                         <outlet property="loginActiveView" destination="0eK-ex-nAk" id="TvL-4a-0PC"/>
+                        <segue destination="z21-ad-ZYL" kind="show" identifier="admin" id="NlX-ld-CBU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+        </scene>
+        <!--Administrator View Controller-->
+        <scene sceneID="Y2u-Hb-iDf">
+            <objects>
+                <viewController id="z21-ad-ZYL" customClass="AdministratorViewController" customModule="gameSenseSports" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CLc-KX-Fsl"/>
+                        <viewControllerLayoutGuide type="bottom" id="JR8-kN-S80"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Yc-cC-RBO">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qHR-79-fyU">
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Administrator" id="ke9-xg-BZy">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="Tni-Mf-ZXj">
+                                            <connections>
+                                                <action selector="closeModal:" destination="z21-ad-ZYL" id="i5Y-lw-GpY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K4M-bD-DSd">
+                                <rect key="frame" x="20" y="497" width="1326" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W75-Wm-05p">
+                                <rect key="frame" x="660" y="663" width="166" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.8713713515" green="0.8713713515" blue="0.8713713515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Upload Answers"/>
+                                <connections>
+                                    <action selector="uploadFile:" destination="z21-ad-ZYL" eventType="touchUpInside" id="NS7-Pb-xAN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeModal" destination="Tni-Mf-ZXj" id="RwW-mZ-Xqn"/>
+                        <outlet property="teamName" destination="K4M-bD-DSd" id="H7z-HP-QCJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h03-Kb-gfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="676.86676427525617" y="-1302.5390625"/>
         </scene>
         <!--Video-->
         <scene sceneID="NHn-eC-ZM5">

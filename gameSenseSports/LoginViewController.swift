@@ -15,8 +15,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var handSegment: UISegmentedControl!
     
 
-    private var loginComplete : Bool = false
-    private var loginInProgress : Bool = false
+    private var loginComplete: Bool = false
+    private var loginInProgress: Bool = false
+    
+    var alertController: UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +64,19 @@ class LoginViewController: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         showLoginActiveView(shouldAppear: true)
+        if (self.idField.text == Constants.adminPassPhrase)
+        {
+            if (identifier == "login")
+            {
+                self.showPasswordAlert()
+                return false
+            }
+            else if (identifier == "admin")
+            {
+                return true
+            }
+        }
+        
         if (self.idField.text?.isEmpty)!
         {
             showLoginActiveView(shouldAppear: false)
@@ -79,6 +94,41 @@ class LoginViewController: UIViewController {
             appDelegate.batterHand = "left"
         }
         return true
+    }
+    
+    private func showPasswordAlert()
+    {
+        alertController = UIAlertController(title: "Administrator",
+                                            message: "Please enter your password",
+                                            preferredStyle: .alert)
+        alertController!.addTextField(
+            configurationHandler: {(textField: UITextField!) in
+                textField.placeholder = "Password"
+        })
+        let action = UIAlertAction(title: "Submit",
+                                   style: UIAlertActionStyle.default,
+                                   handler: {[weak self]
+                                    (paramAction:UIAlertAction!) in
+                                    if let textFields = self?.alertController?.textFields{
+                                        let theTextFields = textFields as [UITextField]
+                                        let enteredText = theTextFields[0].text
+                                        if (enteredText == Constants.adminPassword)
+                                        {
+                                            self?.performSegue(withIdentifier: "admin", sender: nil)
+                                        }
+                                        else
+                                        {
+                                            self?.showLoginActiveView(shouldAppear: false)
+                                            self?.dismissKeyboard()
+                                            self?.alertController!.dismiss(animated: false, completion: nil)
+                                        }
+                                    }
+        })
+        alertController?.addAction(action)
+        
+        self.present(alertController!,
+                     animated: true,
+                     completion: nil)
     }
     
     private func showLoginActiveView(shouldAppear: Bool)

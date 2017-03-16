@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1100A7141E7A22A90051CE16 /* AdministratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100A7131E7A22A90051CE16 /* AdministratorViewController.swift */; };
 		110A95ED1E5A4FEA00EA36A4 /* test-ab.json in Resources */ = {isa = PBXBuildFile; fileRef = 110A95581E5A4FEA00EA36A4 /* test-ab.json */; };
 		110A95EE1E5A4FEA00EA36A4 /* test-cd.json in Resources */ = {isa = PBXBuildFile; fileRef = 110A95591E5A4FEA00EA36A4 /* test-cd.json */; };
 		110A95EF1E5A4FEA00EA36A4 /* test-questions-ab.json in Resources */ = {isa = PBXBuildFile; fileRef = 110A955A1E5A4FEA00EA36A4 /* test-questions-ab.json */; };
@@ -224,6 +225,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1100A7131E7A22A90051CE16 /* AdministratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdministratorViewController.swift; sourceTree = "<group>"; };
 		110A95581E5A4FEA00EA36A4 /* test-ab.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "test-ab.json"; sourceTree = "<group>"; };
 		110A95591E5A4FEA00EA36A4 /* test-cd.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "test-cd.json"; sourceTree = "<group>"; };
 		110A955A1E5A4FEA00EA36A4 /* test-questions-ab.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "test-questions-ab.json"; sourceTree = "<group>"; };
@@ -652,6 +654,7 @@
 				11698F941DDB999600C24D3C /* LoginViewController.swift */,
 				11698FC81DDBA35A00C24D3C /* VideoPlayerViewController.swift */,
 				1147DC881DEAA3A5000D8025 /* DrillQuestionsViewController.swift */,
+				1100A7131E7A22A90051CE16 /* AdministratorViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1157,6 +1160,7 @@
 				11C04F041E3FEE49005BDC4B /* fileenc.c in Sources */,
 				11698F9B1DDB999600C24D3C /* gameSenseSports.xcdatamodeld in Sources */,
 				11C04F001E3FEE49005BDC4B /* aescrypt.c in Sources */,
+				1100A7141E7A22A90051CE16 /* AdministratorViewController.swift in Sources */,
 				11C04F0D1E3FEE49005BDC4B /* zip.c in Sources */,
 				11C04F071E3FEE49005BDC4B /* pwd2key.c in Sources */,
 				11E139211DE5E88E005B2A6F /* Constants.swift in Sources */,

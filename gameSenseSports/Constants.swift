@@ -14,6 +14,9 @@ struct Constants {
     static let kPasswordKey = "password"
     static let kCacheKey = "cache"
     
+    static let adminPassPhrase = "admin"
+    static let adminPassword = "pass"
+    
     struct URLs {
         static let Login = "https://app.gamesensesports.com/api-token-auth/"
         static let DrillList = "https://app.gamesensesports.com/player/api-auth/baseball/drills/"
