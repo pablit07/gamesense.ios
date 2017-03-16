@@ -50,7 +50,7 @@
                                 <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQp-Lx-GdV">
-                                <rect key="frame" x="408" y="830" width="546" height="67"/>
+                                <rect key="frame" x="200" y="830" width="390" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.2666666667" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
@@ -59,6 +59,18 @@
                                 </state>
                                 <connections>
                                     <segue destination="uzr-Ny-Wxn" kind="show" identifier="login" id="BF0-bV-5gj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbe-XY-fKx">
+                                <rect key="frame" x="781" y="830" width="390" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.5568627451" green="0.2666666667" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Tutorial">
+                                    <color key="titleColor" red="0.9934229457" green="0.98780879659999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="6up-lt-dXh" kind="show" identifier="tutorial" id="FJa-qa-o0p"/>
                                 </connections>
                             </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LWc-Gv-zad">
@@ -88,7 +100,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+            <point key="canvasLocation" x="32.503660322108345" y="36.9140625"/>
+        </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="im8-Kd-YKg">
+            <objects>
+                <viewController id="6up-lt-dXh" customClass="TutorialViewController" customModule="gameSenseSports" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hsL-kx-WKw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Je7-ty-fwo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p00-qO-3ej">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FpD-id-xqc">
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="movieView" destination="FpD-id-xqc" id="TmU-y0-5NS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TaT-7U-n3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.942898975109806" y="891.79687499999989"/>
         </scene>
         <!--Administrator View Controller-->
         <scene sceneID="Y2u-Hb-iDf">
@@ -135,7 +175,6 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="closeModal" destination="Tni-Mf-ZXj" id="RwW-mZ-Xqn"/>
                         <outlet property="teamName" destination="K4M-bD-DSd" id="H7z-HP-QCJ"/>
                     </connections>
                 </viewController>

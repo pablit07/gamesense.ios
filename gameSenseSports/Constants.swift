@@ -13,6 +13,8 @@ struct Constants {
     static let kUsernameKey = "username"
     static let kPasswordKey = "password"
     static let kCacheKey = "cache"
+    static let kTeamKey = "team"
+    static let kTutorialKey = "tutorial"
     
     static let adminPassPhrase = "admin"
     static let adminPassword = "pass"

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1100A7141E7A22A90051CE16 /* AdministratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100A7131E7A22A90051CE16 /* AdministratorViewController.swift */; };
+		1100A7161E7AEABF0051CE16 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100A7151E7AEABF0051CE16 /* TutorialViewController.swift */; };
+		1100A7181E7AECBF0051CE16 /* PR-Test-Instructions-317.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1100A7171E7AECBF0051CE16 /* PR-Test-Instructions-317.mp4 */; };
 		110A95ED1E5A4FEA00EA36A4 /* test-ab.json in Resources */ = {isa = PBXBuildFile; fileRef = 110A95581E5A4FEA00EA36A4 /* test-ab.json */; };
 		110A95EE1E5A4FEA00EA36A4 /* test-cd.json in Resources */ = {isa = PBXBuildFile; fileRef = 110A95591E5A4FEA00EA36A4 /* test-cd.json */; };
 		110A95EF1E5A4FEA00EA36A4 /* test-questions-ab.json in Resources */ = {isa = PBXBuildFile; fileRef = 110A955A1E5A4FEA00EA36A4 /* test-questions-ab.json */; };
@@ -226,6 +228,8 @@
 
 /* Begin PBXFileReference section */
 		1100A7131E7A22A90051CE16 /* AdministratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdministratorViewController.swift; sourceTree = "<group>"; };
+		1100A7151E7AEABF0051CE16 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		1100A7171E7AECBF0051CE16 /* PR-Test-Instructions-317.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PR-Test-Instructions-317.mp4"; sourceTree = "<group>"; };
 		110A95581E5A4FEA00EA36A4 /* test-ab.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "test-ab.json"; sourceTree = "<group>"; };
 		110A95591E5A4FEA00EA36A4 /* test-cd.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "test-cd.json"; sourceTree = "<group>"; };
 		110A955A1E5A4FEA00EA36A4 /* test-questions-ab.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "test-questions-ab.json"; sourceTree = "<group>"; };
@@ -488,6 +492,7 @@
 		110A95571E5A4FEA00EA36A4 /* initialData */ = {
 			isa = PBXGroup;
 			children = (
+				1100A7171E7AECBF0051CE16 /* PR-Test-Instructions-317.mp4 */,
 				110A95581E5A4FEA00EA36A4 /* test-ab.json */,
 				110A95591E5A4FEA00EA36A4 /* test-cd.json */,
 				110A955A1E5A4FEA00EA36A4 /* test-questions-ab.json */,
@@ -655,6 +660,7 @@
 				11698FC81DDBA35A00C24D3C /* VideoPlayerViewController.swift */,
 				1147DC881DEAA3A5000D8025 /* DrillQuestionsViewController.swift */,
 				1100A7131E7A22A90051CE16 /* AdministratorViewController.swift */,
+				1100A7151E7AEABF0051CE16 /* TutorialViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1015,6 +1021,7 @@
 				11ECB99E1DECC2B900BEBF31 /* caughtball.mp3 in Resources */,
 				110A97811E5BF00000EA36A4 /* M43-test-1d2.mp4 in Resources */,
 				110A97991E5BF00000EA36A4 /* M43-test-5d2.mp4 in Resources */,
+				1100A7181E7AECBF0051CE16 /* PR-Test-Instructions-317.mp4 in Resources */,
 				110A97531E5BF00000EA36A4 /* M40-test-3c-NO.mp4 in Resources */,
 				110A97831E5BF00000EA36A4 /* M43-test-2b-NO.mp4 in Resources */,
 				110A97521E5BF00000EA36A4 /* M40-test-3b5.mp4 in Resources */,
@@ -1157,6 +1164,7 @@
 				11C04F011E3FEE49005BDC4B /* aeskey.c in Sources */,
 				11C04F0C1E3FEE49005BDC4B /* unzip.c in Sources */,
 				11C04F051E3FEE49005BDC4B /* hmac.c in Sources */,
+				1100A7161E7AEABF0051CE16 /* TutorialViewController.swift in Sources */,
 				11C04F041E3FEE49005BDC4B /* fileenc.c in Sources */,
 				11698F9B1DDB999600C24D3C /* gameSenseSports.xcdatamodeld in Sources */,
 				11C04F001E3FEE49005BDC4B /* aescrypt.c in Sources */,

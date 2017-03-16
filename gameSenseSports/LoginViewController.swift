@@ -56,6 +56,16 @@ class LoginViewController: UIViewController {
         self.handSegment.selectedSegmentIndex = 1
         showLoginActiveView(shouldAppear: false)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if (UserDefaults.standard.object(forKey: Constants.kTutorialKey) == nil)
+        {
+            self.performSegue(withIdentifier: "tutorial", sender: nil)
+            UserDefaults.standard.set(true, forKey: Constants.kTutorialKey)
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -63,6 +73,10 @@ class LoginViewController: UIViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (identifier == "tutorial")
+        {
+            return true
+        }
         showLoginActiveView(shouldAppear: true)
         if (self.idField.text == Constants.adminPassPhrase)
         {
