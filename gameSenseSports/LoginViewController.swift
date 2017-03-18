@@ -63,12 +63,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        if (UserDefaults.standard.object(forKey: Constants.kTutorialKey) == nil)
-        {
-            self.performSegue(withIdentifier: "tutorial", sender: nil)
-            UserDefaults.standard.set(true, forKey: Constants.kTutorialKey)
-        }
     }
 
     override func didReceiveMemoryWarning() {
