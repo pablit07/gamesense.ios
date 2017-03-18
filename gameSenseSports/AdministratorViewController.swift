@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AWSS3
 
-class AdministratorViewController: UIViewController {
+class AdministratorViewController: UIViewController, URLSessionTaskDelegate {
 
     
     @IBOutlet weak var teamName: UITextField!
@@ -31,10 +31,19 @@ class AdministratorViewController: UIViewController {
     
     @IBAction func uploadFile(_ sender: Any) {
         let getPreSignedURLRequest = AWSS3GetPreSignedURLRequest()
+        let timestamp = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "yyyy-MM-dd-HH-mm"
+        var teamName = ""
+        if UserDefaults.standard.string(forKey: Constants.kTeamKey) != nil {
+            teamName = UserDefaults.standard.string(forKey: Constants.kTeamKey)!
+        }        
         getPreSignedURLRequest.bucket = "gamesense-test-responses"
-        getPreSignedURLRequest.key = "myFile.txt"
+        getPreSignedURLRequest.key = teamName + dateFormatter.string(from: timestamp)
         getPreSignedURLRequest.httpMethod = .PUT
-        getPreSignedURLRequest.expires = Date(timeIntervalSinceNow: 3600)
+        getPreSignedURLRequest.expires = Date(timeIntervalSinceNow: 360000)
         
         //Important: set contentType for a PUT request.
         let fileContentTypeStr = "text/plain"
@@ -57,11 +66,25 @@ class AdministratorViewController: UIViewController {
             let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
                 .appendingPathComponent("answers.txt")
             
-            let uploadTask: URLSessionTask = URLSession.shared.uploadTask(with: request, fromFile: URL(fileURLWithPath: fileURL.path))
+            let uploadTask: URLSessionTask = URLSession.shared.uploadTask(with: request, fromFile: URL(fileURLWithPath: fileURL.path), completionHandler: {(data, response, error) -> Void in
+                if (error != nil) {
+                    print("Error")
+                }
+                print("Complete")})
+            
+            
             uploadTask.resume()
             
             return nil
         }
+    }
+    
+    func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
+        print("progress..")
+    }
+    
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError: Error?) {
+        print("error!")
     }
     
     @IBAction func closeModal(_ sender: Any) {

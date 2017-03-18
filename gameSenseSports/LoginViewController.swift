@@ -11,6 +11,8 @@ import UIKit
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginActiveView: UIView!
+    @IBOutlet weak var firstNameField: UITextField!
+    @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var idField: UITextField!
     @IBOutlet weak var handSegment: UISegmentedControl!
     
@@ -53,6 +55,8 @@ class LoginViewController: UIViewController {
         super.viewWillAppear(animated)
         self.loginComplete = false
         self.idField.text = ""
+        self.firstNameField.text = ""
+        self.lastNameField.text = ""
         self.handSegment.selectedSegmentIndex = 1
         showLoginActiveView(shouldAppear: false)
     }
@@ -78,7 +82,7 @@ class LoginViewController: UIViewController {
             return true
         }
         showLoginActiveView(shouldAppear: true)
-        if (self.idField.text == Constants.adminPassPhrase)
+        if (self.firstNameField.text == Constants.adminPassPhrase)
         {
             if (identifier == "login")
             {
@@ -91,14 +95,14 @@ class LoginViewController: UIViewController {
             }
         }
         
-        if (self.idField.text?.isEmpty)!
+        if ((self.idField.text?.isEmpty)! || (self.firstNameField.text?.isEmpty)! || (self.lastNameField.text?.isEmpty)!)
         {
             showLoginActiveView(shouldAppear: false)
             self.showIDAlert()
             return false
         }
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.userID = self.idField.text!
+        appDelegate.userID = self.idField.text! + " " + self.firstNameField.text! + " " + self.lastNameField.text!
         if (handSegment.selectedSegmentIndex == 1)
         {
             appDelegate.batterHand = "right"
@@ -172,7 +176,7 @@ class LoginViewController: UIViewController {
     public func showIDAlert()
     {
         let alertController = UIAlertController(title: "Identification Required", message:
-            "Please Enter an Identification Number", preferredStyle: UIAlertControllerStyle.alert)
+            "Please Enter First Name, Last Name, and an Identification Number", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }

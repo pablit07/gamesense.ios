@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Rollbar.initWithAccessToken("3b7e8110851641b9898b93abf2ef0fa0", configuration: config)
         
-        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1, identityPoolId: "us-east-1_87pWOPnFh")
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1, identityPoolId: "us-east-1:321f4812-de99-4bd7-80bc-5268d28c84da")
         let configuration = AWSServiceConfiguration(region: .USEast1 , credentialsProvider:credentialsProvider)
         AWSServiceManager.default().defaultServiceConfiguration = configuration
         
