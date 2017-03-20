@@ -1,0 +1,24 @@
+{
+  "name": "gamesense.ios.redsbuild",
+  "version": "1.0.0",
+  "description": "Run to score test data",
+  "main": "index.js",
+  "dependencies": {
+    "moment": "^2.17.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pablit07/gamesense.ios.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pablit07/gamesense.ios/issues"
+  },
+  "homepage": "https://github.com/pablit07/gamesense.ios#readme"
+}
