@@ -238,9 +238,9 @@ class VideoPlayerViewController: UIViewController
                 self.downloadVideo()
             }
             else {
-                let alertController = UIAlertController(title: "Done", message:
+                let alertController = UIAlertController(title: "terminado", message:
                     "Thank you for your time. You have completed the gameSense Sports Pitch Recognition Test", preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: doneHandler))
+                alertController.addAction(UIAlertAction(title: "Enviar Prueba", style: UIAlertActionStyle.default, handler: doneHandler))
                 self.present(alertController, animated: true, completion: nil)
             }
         }
