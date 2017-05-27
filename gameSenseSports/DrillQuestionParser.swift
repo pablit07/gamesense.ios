@@ -49,6 +49,8 @@ struct DrillQuestionItem
     let drillQuestionID: Int
     let occludedVideo: String
     let fullVideo: String
+    let occludedHlsVideo: String
+    let fullHlsVideo: String
     let answerURL: String
     let responseURI0: String
     let responseURI1: String
@@ -60,6 +62,8 @@ extension DrillQuestionItem {
         let occludedVideo = json["occluded_video_file"] as? String,
         let fullVideo = json["full_video_file"] as? String,
         let answerURL = json["full_video"] as? String,
+        let occludedHlsVideo = json["hls_occluded_url"] as? String,
+        let fullHlsVideo = json["hls_full_url"] as? String,
         let responseURIs = json["response_uris"] as? [Any]
             else {
                 return nil
@@ -68,6 +72,8 @@ extension DrillQuestionItem {
         self.drillQuestionID = drillQuestionID
         self.occludedVideo = occludedVideo
         self.fullVideo = fullVideo
+        self.occludedHlsVideo = occludedHlsVideo
+        self.fullHlsVideo = fullHlsVideo
         self.answerURL = answerURL
         self.responseURI0 = responseURIs[0] as! String
         self.responseURI1 = responseURIs[1] as! String

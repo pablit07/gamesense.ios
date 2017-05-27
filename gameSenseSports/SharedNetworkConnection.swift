@@ -158,7 +158,12 @@ class SharedNetworkConnection: NSObject
 
     static func downloadVideo(resourceFilename : String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
     {
-        var request = URLRequest(url: URL(string: Constants.URLs.awsBase + resourceFilename)!)
+        downloadVideo(resourceFile: Constants.URLs.awsBase + resourceFilename, completionHandler: completionHandler)
+    }
+    
+    static func downloadVideo(resourceFile : String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
+    {
+        var request = URLRequest(url: URL(string: resourceFile)!)
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
         task.resume()

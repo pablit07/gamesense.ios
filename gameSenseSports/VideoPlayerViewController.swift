@@ -192,22 +192,36 @@ class VideoPlayerViewController: UIViewController
         let currentDrillQuestionItem = drillQuestionsArray[index]
         var cacheDirectory = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         var filename = ""
+        var hlsFile = ""
         if (!replay) {
-            cacheDirectory.appendPathComponent(currentDrillQuestionItem.occludedVideo)
-            filename = currentDrillQuestionItem.occludedVideo
-        }
-        else {
-            cacheDirectory.appendPathComponent(currentDrillQuestionItem.fullVideo)
-            filename = currentDrillQuestionItem.fullVideo
-        }
-        
-        if (FileManager.default.fileExists(atPath: cacheDirectory.path)) {
-            DispatchQueue.main.async {
-                self.updateVideoPlayer(videoURL: cacheDirectory)
+            if currentDrillQuestionItem.occludedHlsVideo != "" {
+                cacheDirectory.appendPathComponent((currentDrillQuestionItem.occludedHlsVideo as NSString).lastPathComponent)
+                hlsFile = currentDrillQuestionItem.occludedHlsVideo
+            } else {
+                filename = currentDrillQuestionItem.occludedVideo
             }
         }
         else {
-            SharedNetworkConnection.downloadVideo(resourceFilename: filename, completionHandler: { data, response, error in
+            cacheDirectory.appendPathComponent(currentDrillQuestionItem.fullVideo)
+            if currentDrillQuestionItem.fullHlsVideo != "" {
+                hlsFile = currentDrillQuestionItem.fullHlsVideo
+            }
+            filename = currentDrillQuestionItem.fullVideo
+        }
+        
+//        if (FileManager.default.fileExists(atPath: cacheDirectory.path)) {
+//            DispatchQueue.main.async {
+//                self.updateVideoPlayer(videoURL: cacheDirectory)
+//            }
+//        }
+        if (true) {
+            DispatchQueue.main.async {
+                self.updateVideoPlayer(videoURL: URL(string: hlsFile)!)
+            }
+        }
+
+        else {
+            let completionHandler: (Data?, URLResponse?, Error?) -> Void = { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
                     print("error=\(error)")
                     return
@@ -223,7 +237,12 @@ class VideoPlayerViewController: UIViewController
                 DispatchQueue.main.async {
                     self.updateVideoPlayer(videoURL: cacheDirectory)
                 }
-            })
+            }
+            if hlsFile != "" {
+                SharedNetworkConnection.downloadVideo(resourceFile: hlsFile, completionHandler: completionHandler)
+            } else {
+                SharedNetworkConnection.downloadVideo(resourceFilename: filename, completionHandler: completionHandler)
+            }
         }
     }
     
