@@ -189,7 +189,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <prototypes>
-                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="drillCell" id="p9w-Kk-Sqn">
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="drillCell" id="p9w-Kk-Sqn" customClass="DrillListTableViewCell" customModule="gameSenseSports" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="146" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p9w-Kk-Sqn" id="ZB6-fZ-f73">
@@ -210,8 +210,20 @@
                                                         <segue destination="Bf5-DP-fse" kind="showDetail" identifier="pitcherdetail" action="showViewController:sender:" id="68A-aQ-ygA"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWt-hU-r9m">
+                                                    <rect key="frame" x="248" y="19" width="71" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                                    <state key="normal" title="Download"/>
+                                                    <connections>
+                                                        <action selector="startDownloadButtonTap:" destination="p9w-Kk-Sqn" eventType="touchUpInside" id="fnO-zL-wVd"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="startDownload" destination="ZWt-hU-r9m" id="fM7-Y2-TTg"/>
+                                            <segue destination="uzr-Ny-Wxn" kind="show" identifier="VideoPlayer" id="buf-Fs-cOP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -463,6 +475,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NFt-we-mJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3669.5999999999999" y="-448.42578710644682"/>
+        </scene>
+        <!--Drill Download View Controller-->
+        <scene sceneID="fpl-WX-xWv">
+            <objects>
+                <viewController id="pG5-cM-Rb6" customClass="DrillDownloadViewController" customModule="gameSenseSports" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KxV-GJ-efn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zj1-42-LSf">
+                                <rect key="frame" x="-8" y="16" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Download"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="startButton" destination="Zj1-42-LSf" id="lwa-Yd-Fet"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7tp-9H-tlO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2177.5999999999999" y="-888.75562218890559"/>
         </scene>
     </scenes>
     <resources>
