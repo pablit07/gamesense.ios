@@ -71,9 +71,11 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "drillCell", for: indexPath)
+        let drillTableCell = (cell as? DrillListTableViewCell)
         let cellLabel = cell.viewWithTag(1) as! UILabel
         if (drillListArray.count > 0) {
             cellLabel.text = drillListArray[indexPath.row].title
+            drillTableCell?.drillId = drillListArray[indexPath.row].drillID
         }
         else {
             cellLabel.text = ""
