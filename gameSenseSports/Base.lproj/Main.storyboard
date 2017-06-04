@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -185,21 +186,34 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNw-AC-LhP">
-                                                    <rect key="frame" x="327" y="25" width="22" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWt-hU-r9m">
-                                                    <rect key="frame" x="248" y="19" width="71" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
-                                                    <state key="normal" title="Download"/>
+                                                <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qjR-io-ejP">
+                                                    <rect key="frame" x="258" y="35" width="48" height="2"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="LqG-TS-I3L"/>
+                                                        <constraint firstAttribute="height" constant="2" id="O6p-fh-Ong"/>
+                                                    </constraints>
+                                                </progressView>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWt-hU-r9m">
+                                                    <rect key="frame" x="273" y="25" width="28" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="34" id="Zdk-C8-UF9"/>
+                                                        <constraint firstAttribute="height" constant="32" id="nth-KG-CBL"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Download" image="download.png"/>
                                                     <connections>
                                                         <action selector="startDownloadButtonTap:" destination="p9w-Kk-Sqn" eventType="touchUpInside" id="fnO-zL-wVd"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZWt-hU-r9m" firstAttribute="centerY" secondItem="ZB6-fZ-f73" secondAttribute="centerY" id="38i-aa-Nk4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qjR-io-ejP" secondAttribute="trailing" constant="15" id="HbO-eG-bv9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZWt-hU-r9m" secondAttribute="trailing" constant="30" id="YfQ-Hw-wlJ"/>
+                                                <constraint firstItem="qjR-io-ejP" firstAttribute="centerY" secondItem="ZB6-fZ-f73" secondAttribute="centerY" id="fQF-CY-Mco"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="progressView" destination="qjR-io-ejP" id="hhl-Fv-4UQ"/>
                                             <outlet property="startDownload" destination="ZWt-hU-r9m" id="fM7-Y2-TTg"/>
                                             <segue destination="uzr-Ny-Wxn" kind="show" identifier="VideoPlayer" id="buf-Fs-cOP"/>
                                         </connections>
@@ -455,33 +469,10 @@
             </objects>
             <point key="canvasLocation" x="3669.5999999999999" y="-448.42578710644682"/>
         </scene>
-        <!--Drill Download View Controller-->
-        <scene sceneID="fpl-WX-xWv">
-            <objects>
-                <viewController id="pG5-cM-Rb6" customClass="DrillDownloadViewController" customModule="gameSenseSports" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KxV-GJ-efn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zj1-42-LSf">
-                                <rect key="frame" x="-8" y="16" width="82" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Download"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="startButton" destination="Zj1-42-LSf" id="lwa-Yd-Fet"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7tp-9H-tlO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2177.5999999999999" y="-888.75562218890559"/>
-        </scene>
     </scenes>
     <resources>
         <image name="clock.png" width="225" height="225"/>
+        <image name="download.png" width="76" height="76"/>
         <image name="gs_logo_login.png" width="1500" height="291"/>
         <image name="lance-lynn.jpg" width="750" height="727"/>
         <image name="round_ball.png" width="766" height="767"/>
