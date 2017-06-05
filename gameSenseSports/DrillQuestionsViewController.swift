@@ -105,8 +105,8 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         
         if isLandscape
         {
-            self.lineTimerView.isHidden = false
-            self.scoreView.isHidden = true
+//            self.lineTimerView.isHidden = false
+//            self.scoreView.isHidden = true
             self.view.backgroundColor = UIColor.clear
             self.view.alpha = 0.7
             self.timerView.isHidden = true
@@ -118,23 +118,23 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             } else if battingHand == "L" {
                 viewFrame.origin = CGPoint.init(x:0, y:0)
             }
-            viewFrame.size.width = deviceBounds.width - toMoveX
-            viewFrame.size.height = deviceBounds.height
+//            viewFrame.size.width = deviceBounds.width - toMoveX
+//            viewFrame.size.height = deviceBounds.height
             self.view.frame = viewFrame
-            self.pitchesTable.frame.origin.y = 1
+//            self.pitchesTable.frame.origin.y = 1
         } else {
-            self.timerView.isHidden = false
+//            self.timerView.isHidden = false
             self.scoreView.isHidden = false
             self.view.alpha = 1
-            self.view.superview?.frame = CGRect.init(x:0, y:parentViewController.movieView.frame.size.height + 63, width:deviceBounds.width, height:381)
+//            self.view.superview?.frame = CGRect.init(x:0, y:parentViewController.movieView.frame.size.height + 63, width:deviceBounds.width, height:381)
             self.view.backgroundColor = UIColor.black
-            self.view.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:381)
-            self.pitchesTable.frame = CGRect.init(x:0, y:86, width:deviceBounds.width, height:203)
-            self.scoreView.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:78)
-            self.scoreView.subviews[0].frame = CGRect.init(x:7, y:7, width:((deviceBounds.width / 2) - 17), height:67)
-            self.scoreView.subviews[1].frame = CGRect.init(x:((deviceBounds.width / 2) + 7), y:7, width:((deviceBounds.width / 2) - 17), height:67)
-            self.timerView.frame = CGRect.init(x:0, y:302, width:deviceBounds.width, height:64)
-            self.lineTimerView.isHidden = true
+//            self.view.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:381)
+//            self.pitchesTable.frame = CGRect.init(x:0, y:86, width:deviceBounds.width, height:203)
+//            self.scoreView.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:78)
+//            self.scoreView.subviews[0].frame = CGRect.init(x:7, y:7, width:((deviceBounds.width / 2) - 17), height:67)
+//            self.scoreView.subviews[1].frame = CGRect.init(x:((deviceBounds.width / 2) + 7), y:7, width:((deviceBounds.width / 2) - 17), height:67)
+//            self.timerView.frame = CGRect.init(x:0, y:302, width:deviceBounds.width, height:64)
+//            self.lineTimerView.isHidden = true
         }
     }
     
