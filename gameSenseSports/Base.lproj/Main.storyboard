@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -415,61 +416,135 @@
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9p-Ax-0ab">
                                 <rect key="frame" x="0.0" y="0.0" width="468" height="57.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V1s-zP-bQV">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V1s-zP-bQV">
                                         <rect key="frame" x="6.5" y="6" width="219.5" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsi-HI-4mL">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Question" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsi-HI-4mL">
                                                 <rect key="frame" x="8" y="8" width="120" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.69771144699999998" green="0.62081894660000003" blue="0.1220183987" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG7-6c-WWY">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG7-6c-WWY">
                                                 <rect key="frame" x="86" y="32" width="42" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.9934229457" green="0.98780879659999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="wG7-6c-WWY" firstAttribute="centerX" secondItem="V1s-zP-bQV" secondAttribute="centerX" id="NOY-Q7-WAC"/>
+                                            <constraint firstAttribute="bottom" secondItem="wG7-6c-WWY" secondAttribute="bottom" constant="3" id="OkC-u0-4CV"/>
+                                            <constraint firstItem="gsi-HI-4mL" firstAttribute="centerX" secondItem="V1s-zP-bQV" secondAttribute="centerX" id="TGa-tW-sCA"/>
+                                            <constraint firstItem="wG7-6c-WWY" firstAttribute="top" secondItem="gsi-HI-4mL" secondAttribute="bottom" constant="3" id="cQH-hM-ajZ"/>
+                                            <constraint firstItem="gsi-HI-4mL" firstAttribute="top" secondItem="V1s-zP-bQV" secondAttribute="top" constant="8" id="tuZ-wV-L9P"/>
+                                            <constraint firstItem="wG7-6c-WWY" firstAttribute="top" secondItem="gsi-HI-4mL" secondAttribute="bottom" constant="3" id="ynq-rs-H01"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="TGa-tW-sCA"/>
+                                                <exclude reference="tuZ-wV-L9P"/>
+                                                <exclude reference="NOY-Q7-WAC"/>
+                                                <exclude reference="OkC-u0-4CV"/>
+                                                <exclude reference="cQH-hM-ajZ"/>
+                                                <exclude reference="ynq-rs-H01"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="TGa-tW-sCA"/>
+                                                <include reference="tuZ-wV-L9P"/>
+                                                <include reference="NOY-Q7-WAC"/>
+                                                <include reference="OkC-u0-4CV"/>
+                                                <include reference="cQH-hM-ajZ"/>
+                                                <include reference="ynq-rs-H01"/>
+                                            </mask>
+                                        </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VlU-Rj-jp4">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VlU-Rj-jp4">
                                         <rect key="frame" x="240" y="6" width="219.5" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Points" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jq-H1-lJV">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Points" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jq-H1-lJV">
                                                 <rect key="frame" x="20" y="8" width="120" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.69771144699999998" green="0.62081894660000003" blue="0.1220183987" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYu-16-be4">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYu-16-be4">
                                                 <rect key="frame" x="98" y="32" width="42" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.9934229457" green="0.98780879659999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="lYu-16-be4" firstAttribute="centerX" secondItem="VlU-Rj-jp4" secondAttribute="centerX" id="Joc-nu-NzW"/>
+                                            <constraint firstItem="lYu-16-be4" firstAttribute="top" secondItem="3Jq-H1-lJV" secondAttribute="bottom" constant="3" id="RDk-7I-Xnn"/>
+                                            <constraint firstItem="lYu-16-be4" firstAttribute="top" secondItem="3Jq-H1-lJV" secondAttribute="bottom" constant="3" id="bHa-9x-1qH"/>
+                                            <constraint firstItem="3Jq-H1-lJV" firstAttribute="centerX" secondItem="VlU-Rj-jp4" secondAttribute="centerX" id="h2r-qv-djJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="lYu-16-be4" secondAttribute="bottom" constant="3" id="isH-rA-4QV"/>
+                                            <constraint firstItem="3Jq-H1-lJV" firstAttribute="top" secondItem="VlU-Rj-jp4" secondAttribute="top" constant="8" id="oSl-oi-FH8"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="h2r-qv-djJ"/>
+                                                <exclude reference="oSl-oi-FH8"/>
+                                                <exclude reference="Joc-nu-NzW"/>
+                                                <exclude reference="RDk-7I-Xnn"/>
+                                                <exclude reference="bHa-9x-1qH"/>
+                                                <exclude reference="isH-rA-4QV"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="h2r-qv-djJ"/>
+                                                <include reference="oSl-oi-FH8"/>
+                                                <include reference="Joc-nu-NzW"/>
+                                                <include reference="RDk-7I-Xnn"/>
+                                                <include reference="bHa-9x-1qH"/>
+                                                <include reference="isH-rA-4QV"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="V1s-zP-bQV" firstAttribute="leading" secondItem="Y9p-Ax-0ab" secondAttribute="leading" constant="6.5" id="A5k-V0-k8a"/>
+                                    <constraint firstAttribute="bottom" secondItem="V1s-zP-bQV" secondAttribute="bottom" constant="3.5" id="Kp1-4K-vrR"/>
+                                    <constraint firstAttribute="trailing" secondItem="VlU-Rj-jp4" secondAttribute="trailing" constant="8.5" id="LqG-Nv-CFL"/>
+                                    <constraint firstItem="V1s-zP-bQV" firstAttribute="top" secondItem="Y9p-Ax-0ab" secondAttribute="top" constant="6" id="QuG-Z0-9DP"/>
+                                    <constraint firstItem="VlU-Rj-jp4" firstAttribute="top" secondItem="Y9p-Ax-0ab" secondAttribute="top" constant="6" id="VU9-Ti-KBu"/>
+                                    <constraint firstItem="VlU-Rj-jp4" firstAttribute="leading" secondItem="Y9p-Ax-0ab" secondAttribute="centerX" id="XjK-oE-eYz"/>
+                                    <constraint firstAttribute="bottom" secondItem="VlU-Rj-jp4" secondAttribute="bottom" constant="3.5" id="qaM-j4-j7c"/>
+                                    <constraint firstItem="V1s-zP-bQV" firstAttribute="trailing" secondItem="Y9p-Ax-0ab" secondAttribute="centerX" id="rBT-cM-lKd"/>
                                     <constraint firstAttribute="height" constant="57.5" id="tjY-c1-EhC"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="tjY-c1-EhC"/>
+                                        <exclude reference="A5k-V0-k8a"/>
+                                        <exclude reference="Kp1-4K-vrR"/>
+                                        <exclude reference="QuG-Z0-9DP"/>
+                                        <exclude reference="rBT-cM-lKd"/>
+                                        <exclude reference="LqG-Nv-CFL"/>
+                                        <exclude reference="VU9-Ti-KBu"/>
+                                        <exclude reference="XjK-oE-eYz"/>
+                                        <exclude reference="qaM-j4-j7c"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <include reference="tjY-c1-EhC"/>
+                                        <include reference="A5k-V0-k8a"/>
+                                        <include reference="Kp1-4K-vrR"/>
+                                        <include reference="QuG-Z0-9DP"/>
+                                        <include reference="rBT-cM-lKd"/>
+                                        <include reference="LqG-Nv-CFL"/>
+                                        <include reference="VU9-Ti-KBu"/>
+                                        <include reference="XjK-oE-eYz"/>
+                                        <include reference="qaM-j4-j7c"/>
                                     </mask>
                                 </variation>
                             </view>
