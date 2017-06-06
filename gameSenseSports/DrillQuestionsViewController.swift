@@ -103,11 +103,19 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         let deviceBounds = UIScreen.main.bounds
         let parentViewController = self.parent as! VideoPlayerViewController
         
-        parentViewController.drillQuestionsTrailingLeft.isActive = false
-        parentViewController.drillQuestionsTrailingRight.isActive = true
+        if battingHand == "R" {
+            parentViewController.drillQuestionsTrailingLeft.isActive = false
+            parentViewController.drillQuestionsTrailingRight.isActive = true
         
-        parentViewController.drillQuestionsLeadingLeft.isActive = false
-        parentViewController.drillQuestionsLeadingRight.isActive = true
+            parentViewController.drillQuestionsLeadingLeft.isActive = false
+            parentViewController.drillQuestionsLeadingRight.isActive = true
+        } else {
+            parentViewController.drillQuestionsTrailingRight.isActive = false
+            parentViewController.drillQuestionsTrailingLeft.isActive = true
+            
+            parentViewController.drillQuestionsLeadingRight.isActive = false
+            parentViewController.drillQuestionsLeadingLeft.isActive = true
+        }
         
         if isLandscape
         {
