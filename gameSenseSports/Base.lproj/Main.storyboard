@@ -263,7 +263,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPy-h4-eSy">
-                                <rect key="frame" x="0.0" y="496" width="468" height="528"/>
+                                <rect key="frame" x="0.0" y="496" width="467.5" height="528"/>
                                 <connections>
                                     <segue destination="iui-Bq-9Za" kind="embed" id="V6f-Ll-Kzc"/>
                                 </connections>
@@ -313,6 +313,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Drill" id="U34-jC-PK9"/>
                     <connections>
+                        <outlet property="drillQuestionsLeadingLeft" destination="ArJ-jk-qOt" id="RGe-c1-TeK"/>
+                        <outlet property="drillQuestionsTrailingLeft" destination="P8K-lk-NK9" id="kFc-CR-dUn"/>
                         <outlet property="loadingView" destination="gmA-cy-KGH" id="KQw-Mx-6LM"/>
                         <outlet property="modalButton" destination="3P2-Bk-GG4" id="zM2-j5-aUs"/>
                         <outlet property="movieView" destination="H2U-eo-AJn" id="T5u-aE-mf1"/>
@@ -354,11 +356,11 @@
                         <viewControllerLayoutGuide type="bottom" id="KLY-VI-kN0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="G4o-pt-62B">
-                        <rect key="frame" x="0.0" y="0.0" width="468" height="528"/>
+                        <rect key="frame" x="0.0" y="0.0" width="467.5" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3nf-8z-Cjp" userLabel="Line Timer View">
-                                <rect key="frame" x="0.0" y="0.0" width="468" height="1"/>
+                                <rect key="frame" x="0.0" y="0.0" width="467.5" height="1"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -414,7 +416,7 @@
                                 </connections>
                             </tableView>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9p-Ax-0ab">
-                                <rect key="frame" x="0.0" y="0.0" width="468" height="57.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="468" height="58"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V1s-zP-bQV">
                                         <rect key="frame" x="6.5" y="6" width="219.5" height="48"/>
@@ -549,7 +551,7 @@
                                 </variation>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JMH-Ty-1R4">
-                                <rect key="frame" x="0.0" y="423.5" width="468" height="89.5"/>
+                                <rect key="frame" x="0.0" y="423.5" width="467.5" height="89.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2.50s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEA-AY-mwX">

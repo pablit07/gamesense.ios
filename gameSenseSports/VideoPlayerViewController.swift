@@ -23,6 +23,8 @@ class VideoPlayerViewController: UIViewController
         URLSession.shared.invalidateAndCancel()
     }
     
+    @IBOutlet weak var drillQuestionsTrailingLeft: NSLayoutConstraint!
+    @IBOutlet weak var drillQuestionsLeadingLeft: NSLayoutConstraint!
     @IBOutlet weak var modalButton: UIButton!
     @IBOutlet weak var movieView: UIView!
     @IBOutlet weak var loadingView: UIView!
