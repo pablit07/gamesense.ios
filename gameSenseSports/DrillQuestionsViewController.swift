@@ -103,6 +103,12 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         let deviceBounds = UIScreen.main.bounds
         let parentViewController = self.parent as! VideoPlayerViewController
         
+        parentViewController.drillQuestionsTrailingLeft.isActive = false
+        parentViewController.drillQuestionsTrailingRight.isActive = true
+        
+        parentViewController.drillQuestionsLeadingLeft.isActive = false
+        parentViewController.drillQuestionsLeadingRight.isActive = true
+        
         if isLandscape
         {
 //            self.lineTimerView.isHidden = false

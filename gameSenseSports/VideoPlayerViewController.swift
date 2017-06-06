@@ -23,6 +23,8 @@ class VideoPlayerViewController: UIViewController
         URLSession.shared.invalidateAndCancel()
     }
     
+    @IBOutlet weak var drillQuestionsLeadingRight: NSLayoutConstraint!
+    @IBOutlet weak var drillQuestionsTrailingRight: NSLayoutConstraint!
     @IBOutlet weak var drillQuestionsTrailingLeft: NSLayoutConstraint!
     @IBOutlet weak var drillQuestionsLeadingLeft: NSLayoutConstraint!
     @IBOutlet weak var modalButton: UIButton!
@@ -74,6 +76,8 @@ class VideoPlayerViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.drillQuestionsTrailingRight.isActive = false
+        self.drillQuestionsLeadingRight.isActive = false
         self.movieView.backgroundColor = UIColor.black
         let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
         drillListItem = parentViewController.selectedDrillItem
