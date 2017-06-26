@@ -314,7 +314,7 @@
 /* Begin PBXFileReference section */
 		1100A7131E7A22A90051CE16 /* AdministratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdministratorViewController.swift; sourceTree = "<group>"; };
 		1100A7151E7AEABF0051CE16 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
-		1100A7171E7AECBF0051CE16 /* PR-Test-Instructions-317.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PR-Test-Instructions-317.mp4"; sourceTree = "<group>"; };
+		1100A7171E7AECBF0051CE16 /* PR-Test-Instructions-317.mp4 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "PR-Test-Instructions-317.mp4"; sourceTree = "<group>"; };
 		110A95581E5A4FEA00EA36A4 /* test-ab.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "test-ab.json"; sourceTree = "<group>"; };
 		110A95591E5A4FEA00EA36A4 /* test-cd.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "test-cd.json"; sourceTree = "<group>"; };
 		110A955A1E5A4FEA00EA36A4 /* test-questions-ab.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "test-questions-ab.json"; sourceTree = "<group>"; };
@@ -1494,7 +1494,7 @@
 				INFOPLIST_FILE = gameSenseSports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = test.gameSenseSports;
+				PRODUCT_BUNDLE_IDENTIFIER = football.test.gameSenseSports;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "gameSenseSports/gameSenseSports-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1517,7 +1517,7 @@
 				INFOPLIST_FILE = gameSenseSports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = test.gameSenseSports;
+				PRODUCT_BUNDLE_IDENTIFIER = football.test.gameSenseSports;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "gameSenseSports/gameSenseSports-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
