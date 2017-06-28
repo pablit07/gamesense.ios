@@ -14,7 +14,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var idField: UITextField!
-    @IBOutlet weak var handSegment: UISegmentedControl!
     
 
     private var loginComplete: Bool = false
@@ -57,7 +56,6 @@ class LoginViewController: UIViewController {
         self.idField.text = ""
         self.firstNameField.text = ""
         self.lastNameField.text = ""
-        self.handSegment.selectedSegmentIndex = 1
         showLoginActiveView(shouldAppear: false)
     }
     

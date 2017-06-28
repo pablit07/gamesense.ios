@@ -53,18 +53,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="jqx-GN-efc">
-                                <rect key="frame" x="101" y="746" width="1160" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <segments>
-                                    <segment title="Left-Handed"/>
-                                    <segment title="Right-Handed"/>
-                                </segments>
-                                <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQp-Lx-GdV">
-                                <rect key="frame" x="200" y="830" width="390" height="67"/>
+                                <rect key="frame" x="101" y="800" width="1160" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.2666666667" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
@@ -73,18 +63,6 @@
                                 </state>
                                 <connections>
                                     <segue destination="uzr-Ny-Wxn" kind="show" identifier="login" id="BF0-bV-5gj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbe-XY-fKx">
-                                <rect key="frame" x="781" y="830" width="390" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.5568627451" green="0.2666666667" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Tutorial">
-                                    <color key="titleColor" red="0.9934229457" green="0.98780879659999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="6up-lt-dXh" kind="show" identifier="tutorial" id="FJa-qa-o0p"/>
                                 </connections>
                             </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LWc-Gv-zad">
@@ -107,7 +85,6 @@
                     </view>
                     <connections>
                         <outlet property="firstNameField" destination="F5r-U9-ZSr" id="YXc-ke-OoG"/>
-                        <outlet property="handSegment" destination="jqx-GN-efc" id="5bH-Kp-ARS"/>
                         <outlet property="idField" destination="Drx-OE-sLi" id="5q1-wd-XgB"/>
                         <outlet property="lastNameField" destination="NXu-QD-cTL" id="Zoh-MB-k8a"/>
                         <outlet property="loginActiveView" destination="0eK-ex-nAk" id="TvL-4a-0PC"/>
