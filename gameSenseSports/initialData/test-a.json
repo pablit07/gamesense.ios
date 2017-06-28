@@ -1,0 +1,22 @@
+{
+    "url": "/player/#!/footballdrill/21/",
+    "id": 21,
+    "title": "FB-IQ test win-loss run",
+    "number_of_questions": 5,
+    "randomize": true,
+    "advantage": false,
+    "formation": false,
+    "readonly": false,
+    "question_templates": {
+        "question_templates": [
+                               {
+                               "text": "Will the offense gain 4+ yards",
+                               "field_name": "advantage.2"
+                               }
+                               ]
+    },
+    "labels": [
+               "http://app.fb-iq.com/player/api-auth/labelvalues/77/",
+               "http://app.fb-iq.com/player/api-auth/labelvalues/84/"
+               ]
+}
