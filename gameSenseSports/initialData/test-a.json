@@ -3,7 +3,7 @@
     "id": 21,
     "title": "FB-IQ test win-loss run",
     "number_of_questions": 5,
-    "randomize": true,
+    "randomize": false,
     "advantage": false,
     "formation": false,
     "readonly": false,

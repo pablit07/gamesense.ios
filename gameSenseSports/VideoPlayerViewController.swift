@@ -64,20 +64,10 @@ class VideoPlayerViewController: UIViewController
     
     private func setDrillVariables()->String
     {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         var jsonString = ""
-        if (appDelegate.batterHand == "right")
-        {
-            jsonString = AppDelegate.readJsonFile(fileName: "test-ab", bundle: Bundle(for: type(of: self)))
-            self.containerView.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin]
-            self.containerView.frame.origin.x = self.view.frame.width - self.containerView.frame.origin.x - self.containerView.frame.width
-        }
-        else
-        {
-            jsonString = AppDelegate.readJsonFile(fileName: "test-cd", bundle: Bundle(for: type(of: self)))
-            self.containerView.autoresizingMask = [.flexibleTopMargin, .flexibleRightMargin]
-            self.containerView.frame.origin.x = self.containerPadding
-        }
+            jsonString = AppDelegate.readJsonFile(fileName: "test-a", bundle: Bundle(for: type(of: self)))
+        self.containerView.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin]
+        self.containerView.frame.origin.x = self.view.frame.width - self.containerView.frame.origin.x - self.containerView.frame.width
         return jsonString
     }
     
@@ -107,16 +97,8 @@ class VideoPlayerViewController: UIViewController
     
     private func getDrillQuestions()
     {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         var jsonString = ""
-        if (appDelegate.batterHand == "right")
-        {
-            jsonString = AppDelegate.readJsonFile(fileName: "test-questions-ab", bundle: Bundle(for: type(of: self)))
-        }
-        else
-        {
-            jsonString = AppDelegate.readJsonFile(fileName: "test-questions-cd", bundle: Bundle(for: type(of: self)))
-        }
+        jsonString = AppDelegate.readJsonFile(fileName: "test-questions-a", bundle: Bundle(for: type(of: self)))
         
         let data = jsonString.data(using: String.Encoding.utf8, allowLossyConversion: false)!
         self.drillQuestionsParser = DrillQuestionParser(jsonString: String(data: data, encoding: .utf8)!)

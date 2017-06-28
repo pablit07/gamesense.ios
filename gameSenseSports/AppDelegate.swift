@@ -15,18 +15,6 @@ import AWSCore
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private var _batterHand: String = ""
-    
-    public var batterHand : String
-        {
-        set(value)
-        {
-            _batterHand = value
-        }
-        get {
-            return _batterHand
-        }
-    }
     
     private var _userID: String = ""
     
