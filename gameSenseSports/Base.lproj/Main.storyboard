@@ -264,15 +264,22 @@
                                                 <color key="textColor" red="0.9934229457" green="0.98780879659999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Will the offense gain 4+ yards" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUi-Ta-9lo" userLabel="Question Text">
+                                                <rect key="frame" x="174" y="0.0" width="196" height="67"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.69771144699999998" green="0.62081894660000003" blue="0.1220183987" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VlU-Rj-jp4">
-                                        <rect key="frame" x="192" y="7" width="175" height="67"/>
+                                        <rect key="frame" x="192" y="3" width="175" height="67"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Points" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jq-H1-lJV">
-                                                <rect key="frame" x="20" y="8" width="120" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="67"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.69771144699999998" green="0.62081894660000003" blue="0.1220183987" alpha="1" colorSpace="calibratedRGB"/>
@@ -340,6 +347,7 @@
                     <connections>
                         <outlet property="pitchesTable" destination="rpO-U4-DXc" id="W9u-5m-C2v"/>
                         <outlet property="pointsLabel" destination="lYu-16-be4" id="M0C-ZK-dag"/>
+                        <outlet property="questionText" destination="FUi-Ta-9lo" id="sPo-1F-gUI"/>
                         <outlet property="questionsLabel" destination="wG7-6c-WWY" id="UXo-jU-a2T"/>
                         <outlet property="scoreView" destination="Y9p-Ax-0ab" id="E3c-4k-uqG"/>
                     </connections>

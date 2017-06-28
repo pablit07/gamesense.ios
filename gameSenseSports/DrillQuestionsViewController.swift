@@ -15,6 +15,8 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     @IBOutlet weak var questionsLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
     
+    @IBOutlet weak var questionText: UILabel!
+    
     @IBOutlet weak var scoreView: UIView!
 
     @IBOutlet weak var pitchesTable: UITableView!
@@ -68,6 +70,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         let parentViewController = self.parent as! VideoPlayerViewController
         questionsLabel.text = String(parentViewController.index + 1)
         drillQuestionItem = parentViewController.drillQuestionsArray[parentViewController.index]
+        questionText.text = drillQuestionItem?.questionText
         getPitchLocations()
     }
     

@@ -49,12 +49,14 @@ struct DrillQuestionItem
     let drillQuestionID: Int
     let occludedVideo: String
     let pitchArray: Array<Any>
+    let questionText: String
 }
 
 extension DrillQuestionItem {
     init?(json: [String: Any]) {
         guard let drillQuestionID = json["id"] as? Int,
         let occludedVideo = json["occluded_video_file"] as? String,
+        let questionText = json["text"] as? String,
         let responseURIs = json["response_uris"] as? [Any]
             else {
                 return nil
@@ -62,6 +64,7 @@ extension DrillQuestionItem {
         
         self.drillQuestionID = drillQuestionID
         self.occludedVideo = occludedVideo
+        self.questionText = questionText
         //Array of Objects -> [{},{},{}]
         var pArray = Array<Any>()
         let r0 = responseURIs[0] as? [Any]
