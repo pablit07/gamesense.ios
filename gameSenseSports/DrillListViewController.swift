@@ -80,6 +80,7 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         else {
             cellLabel.text = ""
         }
+        drillTableCell?.checkDrillListQuestions()
         return cell
     }
     

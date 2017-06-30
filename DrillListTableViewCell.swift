@@ -34,6 +34,35 @@ class DrillListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    public func checkDrillListQuestions() {
+        var drillId = self.drillId!
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        SharedNetworkConnection.apiGetDrillQuestions(apiToken: appDelegate.apiToken, drillID: drillId, completionHandler: { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(error)")
+                return
+            }
+            
+            var drillQuestionsParser = DrillQuestionParser(jsonString: String(data: data, encoding: .utf8)!)
+            var drillQuestionsArray = (drillQuestionsParser?.getDrillQuestionArray())!
+            var filenameArray = [String]()
+            for drillQuestion in drillQuestionsArray {
+                filenameArray.append(drillQuestion.occludedVideo)
+                filenameArray.append(drillQuestion.fullVideo)
+            }
+            for filename in filenameArray {
+                DispatchQueue.main.async {
+                    var cacheDirectory = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                    cacheDirectory.appendPathComponent(filename)
+                    if (FileManager.default.fileExists(atPath: cacheDirectory.path)) {
+                        self.startDownload.isHidden = true
+                    } else {
+                        self.startDownload.isHidden = false
+                    }
+                }
+            }
+        })
+    }
     
     private func getDrillListQuestions() {
         var drillId = self.drillId!
