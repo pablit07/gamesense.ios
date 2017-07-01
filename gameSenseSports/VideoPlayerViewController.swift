@@ -97,19 +97,27 @@ class VideoPlayerViewController: UIViewController
     
     private func getDrillQuestions()
     {
+        self.drillQuestionsArray = self.getDrillQuestionsFor(fileName: "test-questions-a")
+        self.drillQuestionsArray += self.getDrillQuestionsFor(fileName: "test-questions-b")
+        self.drillQuestionsArray += self.getDrillQuestionsFor(fileName: "test-questions-c")
+        self.drillQuestionsArray += self.getDrillQuestionsFor(fileName: "test-questions-d")
+        DispatchQueue.main.async {
+            self.downloadVideo()
+        }
+    }
+    
+    private func getDrillQuestionsFor(fileName: String)-> [DrillQuestionItem]
+    {
         var jsonString = ""
-        jsonString = AppDelegate.readJsonFile(fileName: "test-questions-a", bundle: Bundle(for: type(of: self)))
+        jsonString = AppDelegate.readJsonFile(fileName: fileName, bundle: Bundle(for: type(of: self)))
         
         let data = jsonString.data(using: String.Encoding.utf8, allowLossyConversion: false)!
         self.drillQuestionsParser = DrillQuestionParser(jsonString: String(data: data, encoding: .utf8)!)
         if (self.drillListItem?.randomize)! {
-            self.drillQuestionsArray = (self.drillQuestionsParser?.getDrillQuestionArray())!.shuffled()
+            return (self.drillQuestionsParser?.getDrillQuestionArray())!.shuffled()
         }
         else {
-            self.drillQuestionsArray = (self.drillQuestionsParser?.getDrillQuestionArray())!
-        }
-        DispatchQueue.main.async {
-            self.downloadVideo()
+            return (self.drillQuestionsParser?.getDrillQuestionArray())!
         }
     }
     
