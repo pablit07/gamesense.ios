@@ -22,6 +22,7 @@ class DrillListTableViewCell: UITableViewCell {
     var drillId : Int? = nil
     var numberToDownload = 0
     var completedDownloads = 0
+    var isCached = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,7 +35,13 @@ class DrillListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
     public func checkDrillListQuestions() {
+        if self.isCached {
+            self.startDownload.isHidden = true
+            return
+        }
+        
         var drillId = self.drillId!
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         SharedNetworkConnection.apiGetDrillQuestions(apiToken: appDelegate.apiToken, drillID: drillId, completionHandler: { data, response, error in
@@ -48,16 +55,16 @@ class DrillListTableViewCell: UITableViewCell {
             var filenameArray = [String]()
             for drillQuestion in drillQuestionsArray {
                 filenameArray.append(drillQuestion.occludedVideo)
-                filenameArray.append(drillQuestion.fullVideo)
             }
             for filename in filenameArray {
                 DispatchQueue.main.async {
                     var cacheDirectory = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
                     cacheDirectory.appendPathComponent(filename)
-                    if (FileManager.default.fileExists(atPath: cacheDirectory.path)) {
-                        self.startDownload.isHidden = true
-                    } else {
+                    if (!FileManager.default.fileExists(atPath: cacheDirectory.path)) {
                         self.startDownload.isHidden = false
+                        self.isCached = false
+                    } else {
+                        self.isCached = true
                     }
                 }
             }
@@ -65,7 +72,7 @@ class DrillListTableViewCell: UITableViewCell {
     }
     
     private func getDrillListQuestions() {
-        var drillId = self.drillId!
+        let drillId = self.drillId!
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.progressView.isHidden = false
         self.clearNumberForDownload()
@@ -75,8 +82,8 @@ class DrillListTableViewCell: UITableViewCell {
                 return
             }
             
-            var drillQuestionsParser = DrillQuestionParser(jsonString: String(data: data, encoding: .utf8)!)
-            var drillQuestionsArray = (drillQuestionsParser?.getDrillQuestionArray())!
+            let drillQuestionsParser = DrillQuestionParser(jsonString: String(data: data, encoding: .utf8)!)
+            let drillQuestionsArray = (drillQuestionsParser?.getDrillQuestionArray())!
             self.updateNumberForDownload(numberForDownload: (drillQuestionsArray.count * 2))
             var filenameArray = [String]()
             for drillQuestion in drillQuestionsArray {
