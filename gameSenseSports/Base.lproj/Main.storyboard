@@ -149,6 +149,61 @@
             </objects>
             <point key="canvasLocation" x="1012" y="372.86356821589209"/>
         </scene>
+        <!--Pitcher Info-->
+        <scene sceneID="Nfo-yd-MYH">
+            <objects>
+                <viewController id="JFp-vy-F8T" userLabel="Pitcher Info" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gGR-dd-Rrh"/>
+                        <viewControllerLayoutGuide type="bottom" id="O0f-Qw-apV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lnb-Gs-qrh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gs_logo_login.png" translatesAutoresizingMaskIntoConstraints="NO" id="c1N-oD-cw1">
+                                <rect key="frame" x="0.0" y="60" width="375" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QX-Kt-LnA">
+                                <rect key="frame" x="67" y="266" width="240" height="226"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">(6’1” 240lb.) Mixes mid-80s FB with cutter and occasional curve. Has deceptive motion throwing hard across his body. Difficulty = 5</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="82V-PG-dom">
+                                <rect key="frame" x="67" y="165" width="240" height="138"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkk-0d-l0j">
+                                <rect key="frame" x="67" y="617" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.14579808219832197" green="0.0" blue="0.67397836538461542" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" red="0.065588932028571634" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEl-tL-fCY">
+                                <rect key="frame" x="67" y="449" width="240" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Drilled" id="a8E-Eh-Z8j">
+                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="94w-8a-unG">
+                            <connections>
+                                <action selector="navSignOutPressed:" destination="ipA-Kb-iXZ" id="kE4-7C-mBT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OPm-ck-JnA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1968.8" y="287.40629685157421"/>
+        </scene>
         <!--Drill List-->
         <scene sceneID="HEa-VY-VCQ">
             <objects>
