@@ -1,488 +1,137 @@
 {
-    "count": 72,
+    "count": 5,
     "next": null,
     "previous": null,
     "results": [
                 {
-                "id": 1488,
+                "id": 1772,
                 "pitch_type_value": null,
                 "pitch_location_value": null,
                 "pitcher_hand_value": null,
                 "batter_hand_value": null,
-                "occluded_video": "\/player\/api-auth\/football\/videos\/62\/",
+                "occluded_video": "/player/api-auth/football/videos/187/",
                 "full_video": null,
                 "pitcher_name_value": null,
                 "response_uris": [
                                   [
-                                   {
-                                   "id": 2,
-                                   "name": "Yes"
-                                   },
-                                   {
-                                   "id": -1,
-                                   "name": "No"
-                                   }
-                                   ]
-                                  ],
-                "text": "Will the offense gain 4+ yards",
-                "field_name": "advantage",
-                "full_video_file": null,
-                "occluded_video_file": "Speed_O_D.mp4",
-                "file": "https:\/\/gamesense-videos.s3.amazonaws.com\/Speed_O_D.mp4",
-                "labels": {
-                "Defensive Front": 81,
-                "Defensive Shell": 82,
-                "Offensive Play": 86,
-                "Question Type": 77,
-                "Play Type": 84,
-                "Camera Angle": 31,
-                "Level of Difficulty": 83,
-                "Motion": 78,
-                "footballadvantage": 2,
-                "Perspective": 40,
-                "Offensive Formation": 85
-                },
-                "advantage": 2
-                },
-                {
-                "id": 1489,
-                "pitch_type_value": null,
-                "pitch_location_value": null,
-                "pitcher_hand_value": null,
-                "batter_hand_value": null,
-                "occluded_video": "\/player\/api-auth\/football\/videos\/61\/",
-                "full_video": null,
-                "pitcher_name_value": null,
-                "response_uris": [
-                                  [
-                                   {
-                                   "id": 2,
-                                   "name": "Yes"
-                                   },
-                                   {
-                                   "id": -1,
-                                   "name": "No"
-                                   }
-                                   ]
-                                  ],
-                "text": "Will the offense gain 4+ yards",
-                "field_name": "advantage",
-                "full_video_file": null,
-                "occluded_video_file": "Speed_O_O.mp4",
-                "file": "https:\/\/gamesense-videos.s3.amazonaws.com\/Speed_O_O.mp4",
-                "labels": {
-                "Defensive Front": 79,
-                "Defensive Shell": 29,
-                "Offensive Play": 80,
-                "Question Type": 77,
-                "Play Type": 84,
-                "Camera Angle": 73,
-                "Level of Difficulty": 33,
-                "Motion": 78,
-                "footballadvantage": 2,
-                "Perspective": 32
-                },
-                "advantage": 2
-                },
-                {
-                "id": 1490,
-                "pitch_type_value": null,
-                "pitch_location_value": null,
-                "pitcher_hand_value": null,
-                "batter_hand_value": null,
-                "occluded_video": "\/player\/api-auth\/football\/videos\/65\/",
-                "full_video": null,
-                "pitcher_name_value": null,
-                "response_uris": [
-                                  [
-                                   {
-                                   "id": 2,
-                                   "name": "Yes"
-                                   },
-                                   {
-                                   "id": -1,
-                                   "name": "No"
-                                   }
-                                   ]
-                                  ],
-                "text": "Will the offense gain 4+ yards",
-                "field_name": "advantage",
-                "full_video_file": null,
-                "occluded_video_file": "RPO_Give_D.mp4",
-                "file": "https:\/\/gamesense-videos.s3.amazonaws.com\/RPO_Give_D.mp4",
-                "labels": {
-                "Defensive Front": 97,
-                "Defensive Shell": 98,
-                "Offensive Play": 94,
-                "Question Type": 77,
-                "Play Type": 84,
-                "Camera Angle": 31,
-                "Level of Difficulty": 50,
-                "footballadvantage": 2,
-                "Perspective": 40,
-                "RPO": 88,
-                "Offensive Formation": 95
-                },
-                "advantage": 2
-                },
-                {
-                "id": 1491,
-                "pitch_type_value": null,
-                "pitch_location_value": null,
-                "pitcher_hand_value": null,
-                "batter_hand_value": null,
-                "occluded_video": "\/player\/api-auth\/football\/videos\/73\/",
-                "full_video": null,
-                "pitcher_name_value": null,
-                "response_uris": [
-                                  [
-                                   {
-                                   "id": 2,
-                                   "name": "Yes"
-                                   },
-                                   {
-                                   "id": -1,
-                                   "name": "No"
-                                   }
-                                   ]
-                                  ],
-                "text": "Will the offense gain 4+ yards",
-                "field_name": "advantage",
-                "full_video_file": null,
-                "occluded_video_file": "Power_D.mp4",
-                "file": "https:\/\/gamesense-videos.s3.amazonaws.com\/Power_D.mp4",
-                "labels": {
-                "Defensive Front": 118,
-                "Defensive Shell": 119,
-                "Offensive Play": 121,
-                "Question Type": 77,
-                "Play Type": 84,
-                "Camera Angle": 31,
-                "Level of Difficulty": 33,
-                "footballadvantage": 2,
-                "Perspective": 5,
-                "Offensive Formation": 120
-                },
-                "advantage": 2
-                },
-                {
-                "id": 1492,
-                "pitch_type_value": null,
-                "pitch_location_value": null,
-                "pitcher_hand_value": null,
-                "batter_hand_value": null,
-                "occluded_video": "\/player\/api-auth\/football\/videos\/75\/",
-                "full_video": null,
-                "pitcher_name_value": null,
-                "response_uris": [
-                                  [
-                                   {
-                                   "id": 2,
-                                   "name": "Yes"
-                                   },
-                                   {
-                                   "id": -1,
-                                   "name": "No"
-                                   }
-                                   ]
-                                  ],
-                "text": "Will the offense gain 4+ yards",
-                "field_name": "advantage",
-                "full_video_file": null,
-                "occluded_video_file": "Jet_Sweep_D.mp4",
-                "file": "https:\/\/gamesense-videos.s3.amazonaws.com\/Jet_Sweep_D.mp4",
-                "labels": {
-                "Defensive Front": 28,
-                "Defensive Shell": 29,
-                "Offensive Play": 126,
-                "Question Type": 77,
-                "Play Type": 84,
-                "Camera Angle": 39,
-                "Level of Difficulty": 33,
-                "footballadvantage": 2,
-                "Perspective": 5,
-                "Offensive Formation": 24
-                },
-                "advantage": 2
-                },
-                {
-                "id": 1493,
-                "pitch_type_value": null,
-                "pitch_location_value": null,
-                "pitcher_hand_value": null,
-                "batter_hand_value": null,
-                "occluded_video": "\/player\/api-auth\/football\/videos\/51\/",
-                "full_video": null,
-                "pitcher_name_value": null,
-                "response_uris": [
-                                  [
-                                   {
-                                   "id": -1,
-                                   "name": "Yes"
-                                   },
                                    {
                                    "id": 1,
-                                   "name": "No"
-                                   }
-                                   ]
-                                  ],
-                "text": "Will the offense gain 4+ yards",
-                "field_name": "advantage",
-                "full_video_file": null,
-                "occluded_video_file": "Inside_Zone_D.mp4",
-                "file": "https:\/\/gamesense-videos.s3.amazonaws.com\/Inside_Zone_D.mp4",
-                "labels": {
-                "Defensive Front": 36,
-                "Defensive Shell": 37,
-                "Offensive Play": 34,
-                "Question Type": 77,
-                "Play Type": 84,
-                "Camera Angle": 39,
-                "Level of Difficulty": 41,
-                "footballadvantage": 1,
-                "Perspective": 40,
-                "Offensive Formation": 38
-                },
-                "advantage": 1
-                },
-                {
-                "id": 1494,
-                "pitch_type_value": null,
-                "pitch_location_value": null,
-                "pitcher_hand_value": null,
-                "batter_hand_value": null,
-                "occluded_video": "\/player\/api-auth\/football\/videos\/52\/",
-                "full_video": null,
-                "pitcher_name_value": null,
-                "response_uris": [
-                                  [
-                                   {
-                                   "id": -1,
-                                   "name": "Yes"
+                                   "name": "Offense"
                                    },
-                                   {
-                                   "id": 1,
-                                   "name": "No"
-                                   }
-                                   ]
-                                  ],
-                "text": "Will the offense gain 4+ yards",
-                "field_name": "advantage",
-                "full_video_file": null,
-                "occluded_video_file": "Inside_Zone_O.mp4",
-                "file": "https:\/\/gamesense-videos.s3.amazonaws.com\/Inside_Zone_O.mp4",
-                "labels": {
-                "Defensive Front": 45,
-                "Defensive Shell": 46,
-                "Offensive Play": 48,
-                "Question Type": 77,
-                "Play Type": 84,
-                "Level of Difficulty": 47,
-                "footballadvantage": 1,
-                "Perspective": 44,
-                "Offensive Formation": 49
-                },
-                "advantage": 1
-                },
-                {
-                "id": 1495,
-                "pitch_type_value": null,
-                "pitch_location_value": null,
-                "pitcher_hand_value": null,
-                "batter_hand_value": null,
-                "occluded_video": "\/player\/api-auth\/football\/videos\/49\/",
-                "full_video": null,
-                "pitcher_name_value": null,
-                "response_uris": [
-                                  [
-                                   {
-                                   "id": -1,
-                                   "name": "Yes"
-                                   },
-                                   {
-                                   "id": 1,
-                                   "name": "No"
-                                   }
-                                   ]
-                                  ],
-                "text": "Will the offense gain 4+ yards",
-                "field_name": "advantage",
-                "full_video_file": null,
-                "occluded_video_file": "Zone_read_O.mp4",
-                "file": "https:\/\/gamesense-videos.s3.amazonaws.com\/Zone_read_O.mp4",
-                "labels": {
-                "Defensive Front": 28,
-                "Defensive Shell": 29,
-                "Offensive Play": 26,
-                "Question Type": 77,
-                "Play Type": 84,
-                "Camera Angle": 31,
-                "Level of Difficulty": 33,
-                "footballadvantage": 1,
-                "Perspective": 32,
-                "Offensive Formation": 30
-                },
-                "advantage": 1
-                },
-                {
-                "id": 1496,
-                "pitch_type_value": null,
-                "pitch_location_value": null,
-                "pitcher_hand_value": null,
-                "batter_hand_value": null,
-                "occluded_video": "\/player\/api-auth\/football\/videos\/74\/",
-                "full_video": null,
-                "pitcher_name_value": null,
-                "response_uris": [
-                                  [
                                    {
                                    "id": 2,
-                                   "name": "Yes"
-                                   },
-                                   {
-                                   "id": -1,
-                                   "name": "No"
+                                   "name": "Defense"
                                    }
                                    ]
                                   ],
-                "text": "Will the offense gain 4+ yards",
+                "text": "Who has the ADVANTAGE?",
                 "field_name": "advantage",
                 "full_video_file": null,
-                "occluded_video_file": "Power_O.mp4",
-                "file": "https:\/\/gamesense-videos.s3.amazonaws.com\/Power_O.mp4",
-                "labels": {
-                "Defensive Front": 124,
-                "Defensive Shell": 125,
-                "Offensive Play": 123,
-                "Question Type": 77,
-                "Play Type": 84,
-                "Camera Angle": 60,
-                "Level of Difficulty": 33,
-                "footballadvantage": 2,
-                "Perspective": 6,
-                "Offensive Formation": 122
-                },
-                "advantage": 2
+                "occluded_video_file": "PSSticks1O.mp4"
                 },
                 {
-                "id": 1497,
+                "id": 1773,
                 "pitch_type_value": null,
                 "pitch_location_value": null,
                 "pitcher_hand_value": null,
                 "batter_hand_value": null,
-                "occluded_video": "\/player\/api-auth\/football\/videos\/76\/",
+                "occluded_video": "/player/api-auth/football/videos/182/",
                 "full_video": null,
                 "pitcher_name_value": null,
                 "response_uris": [
                                   [
-                                   {
-                                   "id": 2,
-                                   "name": "Yes"
-                                   },
-                                   {
-                                   "id": -1,
-                                   "name": "No"
-                                   }
-                                   ]
-                                  ],
-                "text": "Will the offense gain 4+ yards",
-                "field_name": "advantage",
-                "full_video_file": null,
-                "occluded_video_file": "Jet_Sweep_O.mp4",
-                "file": "https:\/\/gamesense-videos.s3.amazonaws.com\/Jet_Sweep_O.mp4",
-                "labels": {
-                "Defensive Front": 128,
-                "Defensive Shell": 129,
-                "Offensive Play": 127,
-                "Question Type": 77,
-                "Play Type": 84,
-                "Camera Angle": 31,
-                "Level of Difficulty": 33,
-                "footballadvantage": 2,
-                "Perspective": 6,
-                "Offensive Formation": 24
-                },
-                "advantage": 2
-                },
-                {
-                "id": 1498,
-                "pitch_type_value": null,
-                "pitch_location_value": null,
-                "pitcher_hand_value": null,
-                "batter_hand_value": null,
-                "occluded_video": "\/player\/api-auth\/football\/videos\/79\/",
-                "full_video": null,
-                "pitcher_name_value": null,
-                "response_uris": [
-                                  [
-                                   {
-                                   "id": -1,
-                                   "name": "Yes"
-                                   },
                                    {
                                    "id": 1,
-                                   "name": "No"
+                                   "name": "Offense"
+                                   },
+                                   {
+                                   "id": 2,
+                                   "name": "Defense"
                                    }
                                    ]
                                   ],
-                "text": "Will the offense gain 4+ yards",
+                "text": "Who has the ADVANTAGE?",
                 "field_name": "advantage",
                 "full_video_file": null,
-                "occluded_video_file": "Out_Zone_O.mp4",
-                "file": "https:\/\/gamesense-videos.s3.amazonaws.com\/Out_Zone_O.mp4",
-                "labels": {
-                "Defensive Front": 139,
-                "Defensive Shell": 29,
-                "Offensive Play": 138,
-                "Question Type": 77,
-                "Play Type": 84,
-                "Camera Angle": 31,
-                "Level of Difficulty": 50,
-                "footballadvantage": 1,
-                "Perspective": 6,
-                "Offensive Formation": 137
-                },
-                "advantage": 1
+                "occluded_video_file": "PSSnag1O.mp4"
                 },
                 {
-                "id": 1499,
+                "id": 1774,
                 "pitch_type_value": null,
                 "pitch_location_value": null,
                 "pitcher_hand_value": null,
                 "batter_hand_value": null,
-                "occluded_video": "\/player\/api-auth\/football\/videos\/50\/",
+                "occluded_video": "/player/api-auth/football/videos/185/",
                 "full_video": null,
                 "pitcher_name_value": null,
                 "response_uris": [
                                   [
                                    {
-                                   "id": 2,
-                                   "name": "Yes"
+                                   "id": 1,
+                                   "name": "Offense"
                                    },
                                    {
-                                   "id": -1,
-                                   "name": "No"
+                                   "id": 2,
+                                   "name": "Defense"
                                    }
                                    ]
                                   ],
-                "text": "Will the offense gain 4+ yards",
+                "text": "Who has the ADVANTAGE?",
                 "field_name": "advantage",
                 "full_video_file": null,
-                "occluded_video_file": "Zone_Read_D.mp4",
-                "file": "https:\/\/gamesense-videos.s3.amazonaws.com\/Zone_Read_D.mp4",
-                "labels": {
-                "Defensive Front": 70,
-                "Defensive Shell": 76,
-                "Offensive Play": 75,
-                "Question Type": 77,
-                "Play Type": 84,
-                "Camera Angle": 73,
-                "Level of Difficulty": 74,
-                "footballadvantage": 2,
-                "Perspective": 69,
-                "Offensive Formation": 72
+                "occluded_video_file": "PSSpeedOut1D.mp4"
                 },
-                "advantage": 2
+                {
+                "id": 1775,
+                "pitch_type_value": null,
+                "pitch_location_value": null,
+                "pitcher_hand_value": null,
+                "batter_hand_value": null,
+                "occluded_video": "/player/api-auth/football/videos/157/",
+                "full_video": null,
+                "pitcher_name_value": null,
+                "response_uris": [
+                                  [
+                                   {
+                                   "id": 1,
+                                   "name": "Offense"
+                                   },
+                                   {
+                                   "id": 2,
+                                   "name": "Defense"
+                                   }
+                                   ]
+                                  ],
+                "text": "Who has the ADVANTAGE?",
+                "field_name": "advantage",
+                "full_video_file": null,
+                "occluded_video_file": "PSCadillac1DMovie.mp4"
+                },
+                {
+                "id": 1776,
+                "pitch_type_value": null,
+                "pitch_location_value": null,
+                "pitcher_hand_value": null,
+                "batter_hand_value": null,
+                "occluded_video": "/player/api-auth/football/videos/177/",
+                "full_video": null,
+                "pitcher_name_value": null,
+                "response_uris": [
+                                  [
+                                   {
+                                   "id": 1,
+                                   "name": "Offense"
+                                   },
+                                   {
+                                   "id": 2,
+                                   "name": "Defense"
+                                   }
+                                   ]
+                                  ],
+                "text": "Who has the ADVANTAGE?",
+                "field_name": "advantage",
+                "full_video_file": null,
+                "occluded_video_file": "PSRPOInZone1OMovie.mp4"
                 }
                 ]
 }
