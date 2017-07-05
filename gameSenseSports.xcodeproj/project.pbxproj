@@ -112,6 +112,7 @@
 		AF694DC11F044341008EA85C /* Speed_O_D.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AF694DC01F044341008EA85C /* Speed_O_D.mp4 */; };
 		AF8A22D21DF3ACF500A88E00 /* Rollbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */; };
 		AF8A22D71DF3C61600A88E00 /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A22D61DF3C61600A88E00 /* CrashReporter.framework */; };
+		AFD82DEE1F0BF11C004655A9 /* How to improve your reaction time in Football.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFD82DED1F0BF11C004655A9 /* How to improve your reaction time in Football.jpeg */; };
 		AFFDA25A1F08634000314453 /* test-questions-b.json in Resources */ = {isa = PBXBuildFile; fileRef = AFFDA2571F08634000314453 /* test-questions-b.json */; };
 		AFFDA25B1F08634000314453 /* test-questions-c.json in Resources */ = {isa = PBXBuildFile; fileRef = AFFDA2581F08634000314453 /* test-questions-c.json */; };
 		AFFDA25C1F08634000314453 /* test-questions-d.json in Resources */ = {isa = PBXBuildFile; fileRef = AFFDA2591F08634000314453 /* test-questions-d.json */; };
@@ -310,6 +311,7 @@
 		AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rollbar.framework; path = gameSenseSports/Rollbar.framework; sourceTree = "<group>"; };
 		AF8A22D31DF3C4B200A88E00 /* gameSenseSports-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gameSenseSports-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF8A22D61DF3C61600A88E00 /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CrashReporter.framework; path = gameSenseSports/CrashReporter.framework; sourceTree = "<group>"; };
+		AFD82DED1F0BF11C004655A9 /* How to improve your reaction time in Football.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "How to improve your reaction time in Football.jpeg"; sourceTree = "<group>"; };
 		AFFDA2571F08634000314453 /* test-questions-b.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "test-questions-b.json"; sourceTree = "<group>"; };
 		AFFDA2581F08634000314453 /* test-questions-c.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "test-questions-c.json"; sourceTree = "<group>"; };
 		AFFDA2591F08634000314453 /* test-questions-d.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "test-questions-d.json"; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				118287651E17363E0009CCAF /* round_ball.png */,
+				AFD82DED1F0BF11C004655A9 /* How to improve your reaction time in Football.jpeg */,
 				118287661E17363E0009CCAF /* round_strike.png */,
 				1182875F1E14D9BE0009CCAF /* clock.png */,
 				11DC88CF1DEF6501002D3847 /* gs_logo_login.png */,
@@ -807,6 +810,7 @@
 				AFFDA2831F09BFE600314453 /* ZoneRead1O.mp4 in Resources */,
 				AFFDA2971F09C81200314453 /* PSOutZone1DMovie.mp4 in Resources */,
 				11DC88D01DEF6501002D3847 /* gs_logo_login.png in Resources */,
+				AFD82DEE1F0BF11C004655A9 /* How to improve your reaction time in Football.jpeg in Resources */,
 				AFFDA2911F09C81200314453 /* PSToss1D.mp4 in Resources */,
 				AFFDA2801F09BFE600314453 /* Smash1D.mp4 in Resources */,
 				AFFDA2761F09BFE600314453 /* Levels_O.mp4 in Resources */,

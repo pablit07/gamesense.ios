@@ -40,7 +40,7 @@ class AdministratorViewController: UIViewController, URLSessionTaskDelegate {
         if UserDefaults.standard.string(forKey: Constants.kTeamKey) != nil {
             teamName = UserDefaults.standard.string(forKey: Constants.kTeamKey)!
         }        
-        getPreSignedURLRequest.bucket = "gamesense-test-responses"
+        getPreSignedURLRequest.bucket = "gamesense-test-responses-football"
         getPreSignedURLRequest.key = teamName + dateFormatter.string(from: timestamp)
         getPreSignedURLRequest.httpMethod = .PUT
         getPreSignedURLRequest.expires = Date(timeIntervalSinceNow: 360000)

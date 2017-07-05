@@ -66,8 +66,6 @@ class VideoPlayerViewController: UIViewController
     {
         var jsonString = ""
             jsonString = AppDelegate.readJsonFile(fileName: "test-a", bundle: Bundle(for: type(of: self)))
-        self.containerView.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin]
-        self.containerView.frame.origin.x = self.view.frame.width - self.containerView.frame.origin.x - self.containerView.frame.width
         return jsonString
     }
     
@@ -229,7 +227,7 @@ class VideoPlayerViewController: UIViewController
             }
             else {
                 let alertController = UIAlertController(title: "Done", message:
-                    "Thank you for your time. You have completed the gameSense Sports Pitch Recognition Test", preferredStyle: UIAlertControllerStyle.alert)
+                    "Thank you for your time. You have completed the gameSense Sports FB-IQ Test", preferredStyle: UIAlertControllerStyle.alert)
                 alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: doneHandler))
                 self.present(alertController, animated: true, completion: nil)
             }
