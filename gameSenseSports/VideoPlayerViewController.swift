@@ -30,6 +30,7 @@ class VideoPlayerViewController: UIViewController
     @IBOutlet weak var modalButton: UIButton!
     @IBOutlet weak var movieView: UIView!
     @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var debugView: UITextView!
     
     private var drillQuestionsParser = DrillQuestionParser(jsonString: "")
     private var drillListItem = DrillListItem(json: [:])
@@ -76,6 +77,7 @@ class VideoPlayerViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.debugView.text = ""
         self.drillQuestionsTrailingRight.isActive = false
         self.drillQuestionsLeadingRight.isActive = false
         self.movieView.backgroundColor = UIColor.black
@@ -108,9 +110,18 @@ class VideoPlayerViewController: UIViewController
         return true
     }
     
+    private func writeDebug(text: String) {
+        DispatchQueue.main.async {
+            let currentText = self.debugView.text ?? ""
+            let videoLabel = (self.drillQuestionsArray.count != 0) ? self.drillQuestionsArray[self.index].occludedVideo + ": " : "x:"
+            self.debugView.text = currentText + "\n" + videoLabel + text
+        }
+    }
+    
     private func startDtill()
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        writeDebug(text: "(Network)Posting Drill Activity")
         SharedNetworkConnection.apiPostRegisterDrill(apiToken: appDelegate.apiToken, drillID: drillListItem!.drillID, drillTitle: (drillListItem?.title)!, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
@@ -147,12 +158,15 @@ class VideoPlayerViewController: UIViewController
             
             let stringData = String(data: data, encoding: .utf8)!
             print(stringData)
+            
+            self.writeDebug(text: "(Network)Finished Drill Activity")
         })
     }
     
     private func getDrillQuestions()
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.writeDebug(text: "(Network)Retrieve Drill Questions")
         SharedNetworkConnection.apiGetDrillQuestions(apiToken: appDelegate.apiToken, drillID: drillListItem!.drillID, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
@@ -189,6 +203,7 @@ class VideoPlayerViewController: UIViewController
             DispatchQueue.main.async {
                 self.downloadVideo()
             }
+            self.writeDebug(text: "(Network)Finished Drill Questions")
         })
     }
     
@@ -211,8 +226,10 @@ class VideoPlayerViewController: UIViewController
             DispatchQueue.main.async {
                 self.updateVideoPlayer(videoURL: cacheDirectory)
             }
+            self.writeDebug(text: "Playing video from cache...")
         }
         else {
+            self.writeDebug(text: "(Network)Retrieving Video File")
             SharedNetworkConnection.downloadVideo(resourceFilename: filename, completionHandler: { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
                     print("error=\(error)")
@@ -229,6 +246,8 @@ class VideoPlayerViewController: UIViewController
                 DispatchQueue.main.async {
                     self.updateVideoPlayer(videoURL: cacheDirectory)
                 }
+                
+                self.writeDebug(text: "Network)Finished Video File")
             })
         }
     }
