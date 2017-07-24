@@ -84,7 +84,8 @@ class VideoPlayerViewController: UIViewController
         let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
         drillListItem = parentViewController.selectedDrillItem
         self.debugView.layoutManager.allowsNonContiguousLayout = false
-        
+        let username:String = (UserDefaults.standard.object(forKey: Constants.kUsernameKey) as? String)!
+        self.debugView.isHidden = (username != "peterfadde")
     }
     
     override func viewDidAppear(_ animated: Bool) {
