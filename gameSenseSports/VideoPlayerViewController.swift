@@ -83,6 +83,7 @@ class VideoPlayerViewController: UIViewController
         self.movieView.backgroundColor = UIColor.black
         let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
         drillListItem = parentViewController.selectedDrillItem
+        self.debugView.layoutManager.allowsNonContiguousLayout = false
         
     }
     
@@ -115,6 +116,8 @@ class VideoPlayerViewController: UIViewController
             let currentText = self.debugView.text ?? ""
             let videoLabel = (self.drillQuestionsArray.count != 0) ? self.drillQuestionsArray[self.index].occludedVideo + ": " : "x:"
             self.debugView.text = currentText + "\n" + videoLabel + text
+            let stringLength:Int = self.debugView.text.characters.count
+            self.debugView.scrollRangeToVisible(NSMakeRange(stringLength-1, 0))
         }
     }
     
@@ -247,7 +250,7 @@ class VideoPlayerViewController: UIViewController
                     self.updateVideoPlayer(videoURL: cacheDirectory)
                 }
                 
-                self.writeDebug(text: "Network)Finished Video File")
+                self.writeDebug(text: "(Network)Finished Video File")
             })
         }
     }
