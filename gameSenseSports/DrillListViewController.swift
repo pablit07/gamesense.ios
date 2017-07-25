@@ -16,6 +16,7 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     
     private var drillListParser = DrillListParser(jsonString: "")
     private var drillListArray = [DrillListItem]()
+    private var drillListCacheData:DrillListTableViewData? = nil
     private var _selectedDrillItem = DrillListItem(json: [:])
     public var selectedDrillItem : DrillListItem {
         set(value)
@@ -75,12 +76,16 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         let cellLabel = cell.viewWithTag(1) as! UILabel
         if (drillListArray.count > 0) {
             cellLabel.text = drillListArray[indexPath.row].title
+            drillTableCell?.title = drillListArray[indexPath.row].title
             drillTableCell?.drillId = drillListArray[indexPath.row].drillID
         }
         else {
             cellLabel.text = ""
         }
-        drillTableCell?.checkDrillListQuestions()
+        drillListCacheData?.checkCache(drillId: drillTableCell?.drillId, index: indexPath.row, update: {(isCached: Bool) in drillTableCell?.startDownload.isHidden = isCached })
+        drillTableCell?.progressView.isHidden = (drillListCacheData?.cacheFlags[indexPath.row].numberToDownload)! == 0
+        //drillTableCell?.checkDrillListQuestions()
+        drillTableCell?.cacheData = drillListCacheData
         return cell
     }
     
@@ -118,6 +123,7 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
             
             self.drillListParser = DrillListParser(jsonString: String(data: data, encoding: .utf8)!)
             self.drillListArray = (self.drillListParser?.getDrillListArray())!
+            self.drillListCacheData = DrillListTableViewData(cacheFlags: self.drillListArray.map { d in DrillListCellCacheModel(drillId: d.drillID) })
             DispatchQueue.main.async {
                 self.drillTableView.reloadData()
             }
@@ -130,4 +136,117 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         self.dismiss(animated: true, completion: {})
     }
     
+}
+
+struct DrillListCellCacheModel {
+    var isCached = false
+    let drillId: Int?
+    var numberToDownload = 0
+    var completedDownloads = 0
+    
+    init(drillId: Int?) {
+        self.drillId = drillId
+    }
+    
+    mutating func clearNumberForDownload() {
+        self.numberToDownload = 0
+    }
+}
+
+class DrillListTableViewData {
+    var cacheFlags: [DrillListCellCacheModel]
+    
+    init(cacheFlags: [DrillListCellCacheModel]) {
+        self.cacheFlags = cacheFlags
+    }
+    
+    func checkCache(drillId: Int?, index: Int, update: @escaping (_ isCached:Bool)->()) {
+        let isCached = self.cacheFlags[index].isCached
+        
+        if (drillId! == 85) {
+            let one = 1
+        }
+        
+        if isCached {
+            update(true)
+            return
+        }
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        SharedNetworkConnection.apiGetDrillQuestions(apiToken: appDelegate.apiToken, drillID: drillId!, completionHandler: { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(error)")
+                return
+            }
+            
+            let drillQuestionsParser = DrillQuestionParser(jsonString: String(data: data, encoding: .utf8)!)
+            let drillQuestionsArray = (drillQuestionsParser?.getDrillQuestionArray())!
+            var filenameArray = [String]()
+            for drillQuestion in drillQuestionsArray {
+                filenameArray.append(drillQuestion.occludedVideo)
+            }
+            for filename in filenameArray {
+                DispatchQueue.main.async {
+                    var cacheDirectory = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                    cacheDirectory.appendPathComponent(filename)
+                    if (!FileManager.default.fileExists(atPath: cacheDirectory.path)) {
+                        self.cacheFlags[index].isCached = false
+                        update(false)
+                    } else {
+                        self.cacheFlags[index].isCached = true
+                        update(true)
+                    }
+                }
+            }
+        })
+    }
+    
+    func populateCache(drillId: Int?, progress: @escaping (_ numberToDownload:Float, _ completedDownloads:Float)->(), onerror: @escaping ()->()) {
+        var cellCache = self.cacheFlags.first(where: {$0.drillId == drillId!})
+        cellCache?.clearNumberForDownload()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        SharedNetworkConnection.apiGetDrillQuestions(apiToken: appDelegate.apiToken, drillID: drillId!, completionHandler: { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(error)")
+                return
+            }
+            print("Get drill questions for \(drillId)")
+            
+            let drillQuestionsParser = DrillQuestionParser(jsonString: String(data: data, encoding: .utf8)!)
+            let drillQuestionsArray = (drillQuestionsParser?.getDrillQuestionArray())!
+            cellCache?.numberToDownload = drillQuestionsArray.count * 2
+            progress(Float((cellCache?.numberToDownload)!), Float((cellCache?.completedDownloads)!))
+            var filenameArray = [String]()
+            for drillQuestion in drillQuestionsArray {
+                filenameArray.append(drillQuestion.occludedVideo)
+                filenameArray.append(drillQuestion.fullVideo)
+            }
+            for filename in filenameArray {
+                var cacheDirectory = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                cacheDirectory.appendPathComponent(filename)
+                SharedNetworkConnection.downloadVideo(resourceFilename: filename, completionHandler: { data, response, error in
+                    guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                        print("error=\(error)")
+                        onerror()
+                        return
+                    }
+                    
+                    if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                        // 403 on no token
+                        print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                        print("response = \(response)")
+                    }
+
+                    cellCache?.completedDownloads += 1
+                    DispatchQueue.main.async {
+                        print(cellCache?.drillId, cellCache?.numberToDownload)
+                        progress(Float((cellCache?.numberToDownload)!), Float((cellCache?.completedDownloads)!))
+                    }
+                })
+            }
+            
+        })
+        //DispatchQueue.main.async { progress(10, 10) }
+    }
 }
