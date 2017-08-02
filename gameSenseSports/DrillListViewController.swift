@@ -82,15 +82,20 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         else {
             cellLabel.text = ""
         }
-        drillListCacheData?.checkCache(drillId: drillTableCell?.drillId, index: indexPath.row, update: {(isCached: Bool) in drillTableCell?.startDownload.isHidden = isCached })
-        drillTableCell?.progressView.isHidden = (drillListCacheData?.cacheFlags[indexPath.row].numberToDownload)! == 0
-        //drillTableCell?.checkDrillListQuestions()
+        // set up view state for each reusable cell
         drillTableCell?.cacheData = drillListCacheData
+        drillTableCell?.progressView.isHidden = (drillListCacheData?.cacheFlags[indexPath.row].numberToDownload)! == 0
+        drillTableCell?.startDownload.isHidden = !(drillTableCell?.progressView.isHidden)!
+        drillListCacheData?.checkCache(drillId: drillTableCell?.drillId, index: indexPath.row, update: (drillTableCell?.updateIsCached)!)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedDrillItem = drillListArray[indexPath.row]
+    }
+    
+    private func showAlert(alert: UIAlertController) {
+        self.present(alert, animated: true, completion: nil)
     }
 
     
@@ -123,7 +128,8 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
             
             self.drillListParser = DrillListParser(jsonString: String(data: data, encoding: .utf8)!)
             self.drillListArray = (self.drillListParser?.getDrillListArray())!
-            self.drillListCacheData = DrillListTableViewData(cacheFlags: self.drillListArray.map { d in DrillListCellCacheModel(drillId: d.drillID) })
+            // initialize cache data on startup
+            self.drillListCacheData = DrillListTableViewData(cacheFlags: self.drillListArray.map { d in DrillListCellCacheModel(drillId: d.drillID) }, parentController: self)
             DispatchQueue.main.async {
                 self.drillTableView.reloadData()
             }
@@ -138,7 +144,7 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     
 }
 
-struct DrillListCellCacheModel {
+class DrillListCellCacheModel {
     var isCached = false
     let drillId: Int?
     var numberToDownload = 0
@@ -148,24 +154,23 @@ struct DrillListCellCacheModel {
         self.drillId = drillId
     }
     
-    mutating func clearNumberForDownload() {
+    func clearNumberForDownload() {
         self.numberToDownload = 0
     }
 }
 
 class DrillListTableViewData {
     var cacheFlags: [DrillListCellCacheModel]
+    var errorAlert = UIAlertController(title: "Download Failed", message: "", preferredStyle: .alert)
+    var parentController:DrillListViewController
     
-    init(cacheFlags: [DrillListCellCacheModel]) {
+    init(cacheFlags: [DrillListCellCacheModel], parentController: DrillListViewController) {
         self.cacheFlags = cacheFlags
+        self.parentController = parentController
     }
     
     func checkCache(drillId: Int?, index: Int, update: @escaping (_ isCached:Bool)->()) {
         let isCached = self.cacheFlags[index].isCached
-        
-        if (drillId! == 85) {
-            let one = 1
-        }
         
         if isCached {
             update(true)
@@ -201,7 +206,7 @@ class DrillListTableViewData {
         })
     }
     
-    func populateCache(drillId: Int?, progress: @escaping (_ numberToDownload:Float, _ completedDownloads:Float)->(), onerror: @escaping ()->()) {
+    func populateCache(drillId: Int?, progress: @escaping (_ numberToDownload:Float, _ completedDownloads:Float)->(), onerror: @escaping (_:UIAlertController, _:DrillListViewController)->()) {
         var cellCache = self.cacheFlags.first(where: {$0.drillId == drillId!})
         cellCache?.clearNumberForDownload()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -211,7 +216,6 @@ class DrillListTableViewData {
                 print("error=\(error)")
                 return
             }
-            print("Get drill questions for \(drillId)")
             
             let drillQuestionsParser = DrillQuestionParser(jsonString: String(data: data, encoding: .utf8)!)
             let drillQuestionsArray = (drillQuestionsParser?.getDrillQuestionArray())!
@@ -228,7 +232,7 @@ class DrillListTableViewData {
                 SharedNetworkConnection.downloadVideo(resourceFilename: filename, completionHandler: { data, response, error in
                     guard let data = data, error == nil else {                                                 // check for fundamental networking error
                         print("error=\(error)")
-                        onerror()
+                        onerror(self.errorAlert, self.parentController)
                         return
                     }
                     
@@ -237,16 +241,20 @@ class DrillListTableViewData {
                         print("statusCode should be 200, but is \(httpStatus.statusCode)")
                         print("response = \(response)")
                     }
+                    
+                    try? data.write(to: cacheDirectory)
 
                     cellCache?.completedDownloads += 1
                     DispatchQueue.main.async {
-                        print(cellCache?.drillId, cellCache?.numberToDownload)
                         progress(Float((cellCache?.numberToDownload)!), Float((cellCache?.completedDownloads)!))
+                        if cellCache?.numberToDownload == cellCache?.completedDownloads {
+                            cellCache?.isCached = true
+                            cellCache?.clearNumberForDownload()
+                        }
                     }
                 })
             }
             
         })
-        //DispatchQueue.main.async { progress(10, 10) }
     }
 }

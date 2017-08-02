@@ -77,7 +77,6 @@ class DrillListTableViewCell: UITableViewCell {
                 print("error=\(error)")
                 return
             }
-            print("Get drill questions for \(self.drillId)")
             
             let drillQuestionsParser = DrillQuestionParser(jsonString: String(data: data, encoding: .utf8)!)
             let drillQuestionsArray = (drillQuestionsParser?.getDrillQuestionArray())!
@@ -112,14 +111,12 @@ class DrillListTableViewCell: UITableViewCell {
         })
     }
     
-    private func downloadError() {
-        let alert = UIAlertController(title: "Sorry", message: "Your drill \(self.title!) failed to download. If this issue continues, please contact gamesenseSports at " + Constants.gamesenseSportsContact, preferredStyle: UIAlertControllerStyle.alert)
+    private func downloadError(alert:UIAlertController, parentController:DrillListViewController) {
+        self.progressView.isHidden = true
+        self.startDownload.isHidden = false
+        alert.message = "Your drill \(self.title!) failed to download. If this issue continues, please contact gamesenseSports at " + Constants.gamesenseSportsContact
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.parentViewController?.present(alert, animated: true, completion: {
-            self.progressView.isHidden = true
-            self.startDownload.isHidden = false
-            
-        })
+        parentController.present(alert, animated: true, completion: nil)
     }
     
     private func updateNumberForDownload(numberForDownload: Int) {
@@ -136,6 +133,10 @@ class DrillListTableViewCell: UITableViewCell {
         }
     }
     
+    public func updateIsCached(isCached:Bool) {
+        self.startDownload.isHidden = isCached || !self.progressView.isHidden
+    }
+    
     private func clearNumberForDownload() {
         self.progressView.progress = 0
         self.numberToDownload = 0
@@ -148,18 +149,5 @@ class DrillListTableViewCell: UITableViewCell {
             self.clearNumberForDownload()
             self.cacheData?.populateCache(drillId: self.drillId, progress: self.updateNumberDownloaded, onerror: self.downloadError)
         }
-    }
-}
-
-extension UIView {
-    var parentViewController: UIViewController? {
-        var parentResponder: UIResponder? = self
-        while parentResponder != nil {
-            parentResponder = parentResponder!.next
-            if parentResponder is UIViewController {
-                return parentResponder as! UIViewController!
-            }
-        }
-        return nil
     }
 }
