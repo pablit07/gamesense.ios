@@ -160,10 +160,10 @@ class SharedNetworkConnection: NSObject
     {
         var request = URLRequest(url: URL(string: Constants.URLs.awsBase + resourceFilename)!)
         request.httpMethod = "GET"
-        let config = URLSessionConfiguration.default
-        config.timeoutIntervalForRequest = 180
-        config.timeoutIntervalForResource = 180
-        let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
+        let urlconfig = URLSessionConfiguration.default
+        urlconfig.timeoutIntervalForRequest = 180
+        urlconfig.timeoutIntervalForResource = 180
+        let session = URLSession(configuration: urlconfig, delegate: nil, delegateQueue: nil)
         let task = session.dataTask(with: request, completionHandler: completionHandler)
         task.resume()
     }

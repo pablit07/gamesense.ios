@@ -12,17 +12,13 @@ class DrillListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var startDownload: UIButton!
-    @IBAction func startDownloadButtonTap(_ sender: UIButton) {
-        self.startDownload.isHidden = true
-        if self.drillId != nil {
-            self.getDrillListQuestions()
-        }
-    }
     
     var drillId : Int? = nil
+    var title : String? = nil
     var numberToDownload = 0
     var completedDownloads = 0
     var isCached = false
+    var cacheData:DrillListTableViewData? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -108,7 +104,7 @@ class DrillListTableViewCell: UITableViewCell {
                         }
                         
                         try? data.write(to: cacheDirectory)
-                        DispatchQueue.main.async { self.updateNumberDownloaded() }
+                        //DispatchQueue.main.async { self.updateNumberDownloaded() }
                     })
                 }
             }
@@ -116,33 +112,44 @@ class DrillListTableViewCell: UITableViewCell {
         })
     }
     
-    private func downloadError() {
-        let alert = UIAlertController(title: "Sorry", message: "Your drill failed to download. If this issue continues, please contact gamesenseSports at " + Constants.gamesenseSportsContact, preferredStyle: UIAlertControllerStyle.alert)
+    private func downloadError(alert:UIAlertController, parentController:DrillListViewController) {
+        self.progressView.isHidden = true
+        self.startDownload.isHidden = false
+        alert.message = "Your drill \(self.title!) failed to download. If this issue continues, please contact gamesenseSports at " + Constants.gamesenseSportsContact
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.parentViewController?.present(alert, animated: true, completion: {
-            self.progressView.isHidden = true
-            self.startDownload.isHidden = false
-            
-        })
+        parentController.present(alert, animated: true, completion: nil)
     }
     
     private func updateNumberForDownload(numberForDownload: Int) {
         self.numberToDownload = numberForDownload
     }
     
-    private func updateNumberDownloaded() {
+    private func updateNumberDownloaded(numberToDownload:Float, completedDownloads:Float) {
         self.completedDownloads += 1
-        let progress = (Float(self.completedDownloads) / Float(self.numberToDownload))
+        let progress = (Float(completedDownloads) / Float(numberToDownload))
         self.progressView.setProgress(progress, animated: true)
-        if self.completedDownloads == self.numberToDownload {
+        if completedDownloads == numberToDownload {
             self.clearNumberForDownload()
             self.progressView.isHidden = true
         }
     }
     
+    public func updateIsCached(isCached:Bool) {
+        self.startDownload.isHidden = isCached || !self.progressView.isHidden
+    }
+    
     private func clearNumberForDownload() {
         self.progressView.progress = 0
         self.numberToDownload = 0
+    }
+    
+    @IBAction func startDownloadButtonTap(_ sender: UIButton) {
+        if self.drillId != nil {
+            self.startDownload.isHidden = true
+            self.progressView.isHidden = false
+            self.clearNumberForDownload()
+            self.cacheData?.populateCache(drillId: self.drillId, progress: self.updateNumberDownloaded, onerror: self.downloadError)
+        }
     }
 }
 
