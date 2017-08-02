@@ -97,6 +97,7 @@ class DrillListTableViewCell: UITableViewCell {
                     SharedNetworkConnection.downloadVideo(resourceFilename: filename, completionHandler: { data, response, error in
                         guard let data = data, error == nil else {                                                 // check for fundamental networking error
                             print("error=\(error)")
+                            self.downloadError()
                             return
                         }
                         
@@ -111,6 +112,16 @@ class DrillListTableViewCell: UITableViewCell {
                     })
                 }
             }
+            
+        })
+    }
+    
+    private func downloadError() {
+        let alert = UIAlertController(title: "Sorry", message: "Your drill failed to download. If this issue continues, please contact gamesenseSports at " + Constants.gamesenseSportsContact, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.parentViewController?.present(alert, animated: true, completion: {
+            self.progressView.isHidden = true
+            self.startDownload.isHidden = false
             
         })
     }
@@ -132,5 +143,18 @@ class DrillListTableViewCell: UITableViewCell {
     private func clearNumberForDownload() {
         self.progressView.progress = 0
         self.numberToDownload = 0
+    }
+}
+
+extension UIView {
+    var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self
+        while parentResponder != nil {
+            parentResponder = parentResponder!.next
+            if parentResponder is UIViewController {
+                return parentResponder as! UIViewController!
+            }
+        }
+        return nil
     }
 }
