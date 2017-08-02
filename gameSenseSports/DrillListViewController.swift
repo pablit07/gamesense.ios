@@ -94,11 +94,6 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         self.selectedDrillItem = drillListArray[indexPath.row]
     }
     
-    private func showAlert(alert: UIAlertController) {
-        self.present(alert, animated: true, completion: nil)
-    }
-
-    
     private func getDrillList()
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
