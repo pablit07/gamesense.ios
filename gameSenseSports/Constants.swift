@@ -15,18 +15,18 @@ struct Constants {
     static let kCacheKey = "cache"
     
     struct URLs {
-        static let Login = "https://app.gamesensesports.com/api-token-auth/"
-        static let DrillList = "https://app.gamesensesports.com/player/api-auth/baseball/drills/"
-        static let DrillQuestions = "https://app.gamesensesports.com/player/api-auth/baseball/drills/" // +id/questions
-        static let DrillVideo = "https://app.gamesensesports.com/player/api-auth/baseball/videos/" // + id
-        static let apiBase = "https://app.gamesensesports.com" // + responseURI
+        static let Login = "http://app.fastpitch-iq.com/api-token-auth/"
+        static let DrillList = "http://app.fastpitch-iq.com/player/api-auth/baseball/drills/"
+        static let DrillQuestions = "http://app.fastpitch-iq.com/player/api-auth/baseball/drills/" // +id/questions
+        static let DrillVideo = "http://app.fastpitch-iq.com/player/api-auth/baseball/videos/" // + id
+        static let apiBase = "http://app.fastpitch-iq.com" // + responseURI
         static let awsBase = "https://gamesense-videos.s3.amazonaws.com/"
         
-        static let apiRegisterDrill = "https://app.gamesensesports.com/account/api-auth/register-activity/drill/"
-        static let apiAnswerQuestion = "https://app.gamesensesports.com/account/api-auth/register-action/question/"
+        static let apiRegisterDrill = "http://app.fastpitch-iq.com/account/api-auth/register-activity/drill/"
+        static let apiAnswerQuestion = "http://app.fastpitch-iq.com/account/api-auth/register-action/question/"
         
-        static let apiDrillFinished = "https://app.gamesensesports.com/player/api-auth/score/"
-        static let apiDrillFinishedNext = "https://app.gamesensesports.com/account/api-auth/register-action/score/"
+        static let apiDrillFinished = "http://app.fastpitch-iq.com/player/api-auth/score/"
+        static let apiDrillFinishedNext = "http://app.fastpitch-iq.com/account/api-auth/register-action/score/"
         
         static let imageCacheZip = "https://s3.amazonaws.com/gamesense-secure/cache-init.zip"
     }

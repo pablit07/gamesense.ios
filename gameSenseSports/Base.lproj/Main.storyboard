@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,8 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lance-lynn.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cv4-au-mlW">
-                                <rect key="frame" x="0.0" y="0.0" width="1366" height="376"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lance-lynn.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cv4-au-mlW">
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="487"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Drx-OE-sLi">
@@ -65,9 +64,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.9934229457" green="0.98780879659999998" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gs_logo_login.png" translatesAutoresizingMaskIntoConstraints="NO" id="c8d-Yf-par">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gs_logo_login.png" translatesAutoresizingMaskIntoConstraints="NO" id="c8d-Yf-par">
                                 <rect key="frame" x="0.0" y="374.5" width="1366" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.15686274509803921" green="0.2196078431372549" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQp-Lx-GdV">
                                 <rect key="frame" x="408" y="665" width="546.5" height="61"/>
@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+            <point key="canvasLocation" x="32.503660322108345" y="36.9140625"/>
         </scene>
         <!--Registration-->
         <scene sceneID="esw-Am-l5h">
@@ -169,16 +169,17 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gs_logo_login.png" id="j6N-BT-qfD">
+                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gs_logo_login.png" id="j6N-BT-qfD">
                                     <rect key="frame" x="0.0" y="0.0" width="1045" height="112"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.15686274509803921" green="0.2196078431372549" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                                 </imageView>
                                 <prototypes>
-                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="drillCell" id="p9w-Kk-Sqn" customClass="DrillListTableViewCell" customModule="gameSenseSports" customModuleProvider="target">
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="drillCell" id="p9w-Kk-Sqn">
                                         <rect key="frame" x="0.0" y="185" width="1045" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p9w-Kk-Sqn" id="ZB6-fZ-f73">
-                                            <rect key="frame" x="0.0" y="0.0" width="1045" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1045" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojE-st-9dV">
@@ -188,35 +189,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qjR-io-ejP">
-                                                    <rect key="frame" x="258" y="35" width="48" height="2"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="LqG-TS-I3L"/>
-                                                        <constraint firstAttribute="height" constant="2" id="O6p-fh-Ong"/>
-                                                    </constraints>
-                                                </progressView>
-                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWt-hU-r9m">
-                                                    <rect key="frame" x="273" y="25" width="28" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="34" id="Zdk-C8-UF9"/>
-                                                        <constraint firstAttribute="height" constant="32" id="nth-KG-CBL"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Download" image="download.png"/>
-                                                    <connections>
-                                                        <action selector="startDownloadButtonTap:" destination="p9w-Kk-Sqn" eventType="touchUpInside" id="fnO-zL-wVd"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="ZWt-hU-r9m" firstAttribute="centerY" secondItem="ZB6-fZ-f73" secondAttribute="centerY" id="38i-aa-Nk4"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="qjR-io-ejP" secondAttribute="trailing" constant="15" id="HbO-eG-bv9"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ZWt-hU-r9m" secondAttribute="trailing" constant="30" id="YfQ-Hw-wlJ"/>
-                                                <constraint firstItem="qjR-io-ejP" firstAttribute="centerY" secondItem="ZB6-fZ-f73" secondAttribute="centerY" id="fQF-CY-Mco"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="progressView" destination="qjR-io-ejP" id="hhl-Fv-4UQ"/>
-                                            <outlet property="startDownload" destination="ZWt-hU-r9m" id="fM7-Y2-TTg"/>
                                             <segue destination="uzr-Ny-Wxn" kind="show" identifier="VideoPlayer" id="buf-Fs-cOP"/>
                                         </connections>
                                     </tableViewCell>
@@ -279,14 +254,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JpW-E3-7IH">
-                                <rect key="frame" x="69" y="893" width="912" height="131"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -323,7 +290,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Drill" id="U34-jC-PK9"/>
                     <connections>
-                        <outlet property="debugView" destination="JpW-E3-7IH" id="Fya-nh-aAg"/>
                         <outlet property="drillQuestionsLeadingLeft" destination="ArJ-jk-qOt" id="RGe-c1-TeK"/>
                         <outlet property="drillQuestionsLeadingRight" destination="SgC-3n-TwE" id="TsS-BR-HG2"/>
                         <outlet property="drillQuestionsTrailingLeft" destination="P8K-lk-NK9" id="kFc-CR-dUn"/>
@@ -632,7 +598,6 @@
     </scenes>
     <resources>
         <image name="clock.png" width="225" height="225"/>
-        <image name="download.png" width="76" height="76"/>
         <image name="gs_logo_login.png" width="1500" height="291"/>
         <image name="lance-lynn.jpg" width="750" height="727"/>
         <image name="round_ball.png" width="766" height="767"/>
