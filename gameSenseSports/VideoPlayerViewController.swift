@@ -251,7 +251,14 @@ class VideoPlayerViewController: UIViewController
         self.removeVideoPlayer()
         if (!replay) {
             //set view bounds
-            let player = AVPlayer(url: videoURL)
+            let asset = AVAsset(url: videoURL)
+            let assetKeys = [
+                "playable",
+                "hasProtectedContent"
+            ]
+            let playerItem = AVPlayerItem(asset: asset,automaticallyLoadedAssetKeys: assetKeys)
+            playerItem.preferredPeakBitRate = 420000
+            let player = AVPlayer(playerItem: playerItem)
             player.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions(), context: nil)
             let playerLayer = AVPlayerLayer(player: player)
             playerLayer.frame = self.movieView.bounds
@@ -276,7 +283,14 @@ class VideoPlayerViewController: UIViewController
             player.play()
         }
         else {
-            let player = AVPlayer(url: videoURL)
+            let asset = AVAsset(url: videoURL)
+            let assetKeys = [
+                "playable",
+                "hasProtectedContent"
+            ]
+            let playerItem = AVPlayerItem(asset: asset,automaticallyLoadedAssetKeys: assetKeys)
+            playerItem.preferredPeakBitRate = 420000
+            let player = AVPlayer(playerItem: playerItem)
             player.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions(), context: nil)
             let playerLayer = AVPlayerLayer(player: player)
             playerLayer.frame = self.movieView.bounds
