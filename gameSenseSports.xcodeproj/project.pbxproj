@@ -61,6 +61,7 @@
 		11E139211DE5E88E005B2A6F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E139201DE5E88E005B2A6F /* Constants.swift */; };
 		11ECB99D1DECC2B900BEBF31 /* ballcheer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11ECB99B1DECC2B900BEBF31 /* ballcheer.mp3 */; };
 		11ECB99E1DECC2B900BEBF31 /* caughtball.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11ECB99C1DECC2B900BEBF31 /* caughtball.mp3 */; };
+		AF0B92621F49F99C00104E4A /* PitcherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0B92611F49F99C00104E4A /* PitcherDetailViewController.swift */; };
 		AF3CC5D71EE116810095A69A /* DrillListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3CC5D61EE116810095A69A /* DrillListTableViewCell.swift */; };
 		AF76AA321E477D8D00A9407D /* lance-lynn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF76AA311E477D8D00A9407D /* lance-lynn.jpg */; };
 		AF8A22D21DF3ACF500A88E00 /* Rollbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */; };
@@ -165,6 +166,7 @@
 		11E139201DE5E88E005B2A6F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		11ECB99B1DECC2B900BEBF31 /* ballcheer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ballcheer.mp3; path = sounds/ballcheer.mp3; sourceTree = "<group>"; };
 		11ECB99C1DECC2B900BEBF31 /* caughtball.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = caughtball.mp3; path = sounds/caughtball.mp3; sourceTree = "<group>"; };
+		AF0B92611F49F99C00104E4A /* PitcherDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitcherDetailViewController.swift; sourceTree = "<group>"; };
 		AF3CC5D61EE116810095A69A /* DrillListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrillListTableViewCell.swift; path = ../DrillListTableViewCell.swift; sourceTree = "<group>"; };
 		AF76AA311E477D8D00A9407D /* lance-lynn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lance-lynn.jpg"; sourceTree = "<group>"; };
 		AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rollbar.framework; path = gameSenseSports/Rollbar.framework; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		11225C291DDE73AB0071D1CF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AF0B92611F49F99C00104E4A /* PitcherDetailViewController.swift */,
 				11698F941DDB999600C24D3C /* LoginViewController.swift */,
 				11698FD91DDD1CFD00C24D3C /* RegistrationWebViewController.swift */,
 				11698FC61DDBA28100C24D3C /* DrillListViewController.swift */,
@@ -572,6 +575,7 @@
 				11C04F0B1E3FEE49005BDC4B /* mztools.c in Sources */,
 				11C04F031E3FEE49005BDC4B /* entropy.c in Sources */,
 				11698F931DDB999600C24D3C /* AppDelegate.swift in Sources */,
+				AF0B92621F49F99C00104E4A /* PitcherDetailViewController.swift in Sources */,
 				11698FC91DDBA35A00C24D3C /* VideoPlayerViewController.swift in Sources */,
 				11225C311DE15CEC0071D1CF /* DrillListParser.swift in Sources */,
 				11C04F081E3FEE49005BDC4B /* sha1.c in Sources */,
