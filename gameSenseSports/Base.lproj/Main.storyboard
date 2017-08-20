@@ -149,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="1012" y="372.86356821589209"/>
         </scene>
-        <!--View Controller-->
+        <!--Pitcher Detail View Controller-->
         <scene sceneID="JxS-Fc-vV8">
             <objects>
-                <viewController id="Bf5-DP-fse" sceneMemberID="viewController">
+                <viewController id="Bf5-DP-fse" customClass="PitcherDetailViewController" customModule="gameSenseSports" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9XG-G6-Wgs"/>
                         <viewControllerLayoutGuide type="bottom" id="eZq-0U-n5E"/>
@@ -165,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIp-YM-uCv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="-1138"/>
+            <point key="canvasLocation" x="2577" y="-1229"/>
         </scene>
         <!--Drill List-->
         <scene sceneID="HEa-VY-VCQ">
@@ -203,11 +203,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Jb-AB-IvG">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Jb-AB-IvG" customClass="UIPitcherListButton" customModule="gameSenseSports" customModuleProvider="target">
                                                     <rect key="frame" x="341" y="26" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
-                                                        <segue destination="Bf5-DP-fse" kind="showDetail" action="showViewController:sender:" id="68A-aQ-ygA"/>
+                                                        <segue destination="Bf5-DP-fse" kind="showDetail" identifier="pitcherdetail" action="showViewController:sender:" id="68A-aQ-ygA"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
