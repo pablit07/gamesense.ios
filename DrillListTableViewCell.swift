@@ -12,15 +12,21 @@ class DrillListTableViewCell: UITableViewCell {
 
     
     var drillId : Int? = nil
+    var drillList : DrillList? = nil
+    
+    @IBOutlet weak var pitcherButton: UIPitcherListButton!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        self.pitcherButton.drillList = self.drillList
+        print(self.drillList)
         // Configure the view for the selected state
     }
 

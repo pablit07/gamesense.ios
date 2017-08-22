@@ -42,21 +42,29 @@ class DrillListParser : NSObject
     }
 }
 
+struct DrillList {
+    let id: Int
+    let title: String
+}
+
 struct DrillListItem {
     let url: String
     let drillID: Int
     let title: String
     let questionCount: Int
     let randomize: Bool
+    let primaryList: DrillList
 }
 
 extension DrillListItem {
     init?(json: [String: Any]) {
+        let lists = json["lists"] as? [[String: Any]]
         guard let url = json["url"] as? String,
             let title = json["title"] as? String,
             let drillID = json["id"] as? Int,
             let questionCount = json["number_of_questions"] as? Int,
-            let randomize = json["randomize"] as? Bool
+            let randomize = json["randomize"] as? Bool,
+            let primaryList = DrillList(json: lists)
             else {
                 return nil
         }
@@ -66,6 +74,24 @@ extension DrillListItem {
         self.drillID = drillID
         self.questionCount = questionCount
         self.randomize = randomize
+        self.primaryList = primaryList
     }
 }
 
+extension DrillList {
+    init?(json: [[String: Any]]? = nil) {
+        if json == nil || json!.count == 0 {
+            self.id = 0
+            self.title = "TEST"
+        } else {
+        
+            guard let id = json![0]["id"] as? Int,
+              let title = json![0]["title"] as? String
+                else {
+                    return nil
+            }
+            self.id = id
+            self.title = title
+        }
+    }
+}

@@ -14,13 +14,13 @@ class PitcherDetailViewController : UIViewController
     @IBOutlet weak var pitcher: UILabel!
     @IBOutlet weak var thumbnail: UIImageView!
     
-    var selectedListId = 0
+    var selectedListId : Int? = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
         self.selectedListId = parentViewController.selectedListId
-        self.pitcher.text = parentViewController.selectedListTitle
+        self.pitcher.text = parentViewController.selectedListTitle ?? ""
     }
     
 }

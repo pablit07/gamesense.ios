@@ -26,8 +26,8 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
             return _selectedDrillItem!
         }
     }
-    public var selectedListId = -1
-    public var selectedListTitle = ""
+    public var selectedListId : Int? = -1
+    public var selectedListTitle : String? = ""
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
@@ -78,6 +78,10 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         if (drillListArray.count > 0) {
             cellLabel.text = drillListArray[indexPath.row].title
             drillTableCell?.drillId = drillListArray[indexPath.row].drillID
+            print(drillListArray[indexPath.row].primaryList)
+            drillTableCell?.drillList = drillListArray[indexPath.row].primaryList
+            print(drillListArray[indexPath.row].drillID)
+            
         }
         else {
             cellLabel.text = ""
@@ -134,8 +138,8 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         let id = segue.identifier
         if id == "pitcherdetail" {
             let buttonView = (sender as! UIPitcherListButton)
-            self.selectedListId = buttonView.pitcherListId
-            self.selectedListTitle = buttonView.pitcherListTitle
+            self.selectedListId = buttonView.drillList?.id
+            self.selectedListTitle = buttonView.drillList?.title
         }
     }
     
@@ -143,6 +147,5 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
 
 class UIPitcherListButton : UIButton
 {
-    var pitcherListId = 0
-    var pitcherListTitle = ""
+    var drillList : DrillList? = nil
 }
