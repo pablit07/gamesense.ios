@@ -10,6 +10,10 @@ import UIKit
 
 class PitcherDetailViewController : UIViewController
 {
+    @IBOutlet weak var myDescription: UILabel!
+    @IBOutlet weak var pitcher: UILabel!
+    @IBOutlet weak var thumbnail: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
