@@ -27,6 +27,7 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     public var selectedListId = -1
+    public var selectedListTitle = ""
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
@@ -132,7 +133,9 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let id = segue.identifier
         if id == "pitcherdetail" {
-            self.selectedListId = (sender as! UIPitcherListButton).pitcherListId
+            let buttonView = (sender as! UIPitcherListButton)
+            self.selectedListId = buttonView.pitcherListId
+            self.selectedListTitle = buttonView.pitcherListTitle
         }
     }
     
@@ -141,4 +144,5 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
 class UIPitcherListButton : UIButton
 {
     var pitcherListId = 0
+    var pitcherListTitle = ""
 }
