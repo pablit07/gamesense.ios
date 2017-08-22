@@ -43,15 +43,18 @@ class LeaderboardScoreParser : NSObject
 
 struct LeaderboardItem {
     let playerName : String
+    let score : Int
 }
 
 extension LeaderboardItem {
     init?(json: [String: Any]? = nil) {
 
-        guard let playerName = json?["playerName"] as? String
+        guard let playerName = json?["playerName"] as? String,
+              let score = json?["value"] as? Int
         else {
             return nil
         }
         self.playerName = playerName
+        self.score = score
     }
 }

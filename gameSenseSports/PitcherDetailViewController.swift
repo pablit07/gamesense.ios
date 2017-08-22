@@ -31,11 +31,13 @@ class PitcherDetailViewController : UIViewController, UITableViewDataSource, UIT
         self.myDescription.text = parentViewController.selectedListDescription ?? ""
         
         if let urlSrc = parentViewController.selectedListImage {
-            let url = URL(string: urlSrc)
-            let data = try? Data(contentsOf: url!)
-            
-            if let imageData = data {
-                self.thumbnail.image = UIImage(data: imageData)
+            if urlSrc != "" {
+                let url = URL(string: urlSrc)
+                let data = try? Data(contentsOf: url!)
+                
+                if let imageData = data {
+                    self.thumbnail.image = UIImage(data: imageData)
+                }
             }
         }
         
@@ -84,8 +86,12 @@ class PitcherDetailViewController : UIViewController, UITableViewDataSource, UIT
         let cell = tableView.dequeueReusableCell(withIdentifier: "leaderboardScoreCell", for: indexPath)
         
         let cellLabel = cell.viewWithTag(1) as! UILabel
+        let scoreLabel = cell.viewWithTag(2) as! UILabel
         if ((leaderboardScoresArray?.count)! > 0) {
-            cellLabel.text = leaderboardScoresArray?[indexPath.row].playerName
+            let row = self.leaderboardScoresArray?[indexPath.row]
+            let score = "\(row!.score)"
+            cellLabel.text = row?.playerName
+            scoreLabel.text = score
         }
 
         return cell

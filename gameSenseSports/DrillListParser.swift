@@ -86,7 +86,7 @@ extension DrillList {
        
         if json == nil || json!.count == 0 {
             self.id = 0
-            self.title = "TEST"
+            self.title = "No data."
             self.image = ""
             self.description = ""
             self.leaderboardSource = ""
