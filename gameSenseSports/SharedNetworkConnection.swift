@@ -76,6 +76,16 @@ class SharedNetworkConnection: NSObject
         task.resume()
     }
     
+    static func apiGetLeaderboardScores(apiToken: String, leaderboardSource: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
+    {
+        var request = URLRequest(url: URL(string: Constants.URLs.apiBase + leaderboardSource)!)
+        let apiString = "Token " + apiToken
+        request.addValue(apiString, forHTTPHeaderField: "Authorization")
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
+        task.resume()
+    }
+    
     static func apiPostRegisterDrill(apiToken: String, drillID: Int, drillTitle: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
     {
         var request = URLRequest(url: URL(string: Constants.URLs.apiRegisterDrill)!)

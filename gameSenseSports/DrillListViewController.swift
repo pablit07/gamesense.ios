@@ -30,6 +30,7 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     public var selectedListTitle : String? = ""
     public var selectedListImage : String? = ""
     public var selectedListDescription : String? = ""
+    public var selectedListLeaderboardSource : String? = ""
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
@@ -144,6 +145,7 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
             self.selectedListTitle = buttonView.drillList?.title
             self.selectedListImage = buttonView.drillList?.image
             self.selectedListDescription = buttonView.drillList?.description
+            self.selectedListLeaderboardSource = buttonView.drillList?.leaderboardSource
         }
     }
     

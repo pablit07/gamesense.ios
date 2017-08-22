@@ -47,6 +47,7 @@ struct DrillList {
     let title: String
     let image: String
     let description: String
+    let leaderboardSource: String?
 }
 
 struct DrillListItem {
@@ -87,8 +88,8 @@ extension DrillList {
             self.title = "TEST"
             self.image = ""
             self.description = ""
-        } else {
-        
+            self.leaderboardSource = ""
+        } else {        
             guard let id = json![0]["id"] as? Int,
               let title = json![0]["title"] as? String,
                 let image = json![0]["image"] as? String,
@@ -96,10 +97,20 @@ extension DrillList {
                 else {
                     return nil
             }
+            guard let leaderboardSource = json![0]["leaderboard_scores_source"] as? String
+                else {
+                    self.id = id
+                    self.title = title
+                    self.image = image
+                    self.description = description
+                    self.leaderboardSource = nil
+                    return
+                }
             self.id = id
             self.title = title
             self.image = image
             self.description = description
+            self.leaderboardSource = leaderboardSource
         }
     }
 }
