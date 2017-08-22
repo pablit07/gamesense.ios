@@ -83,13 +83,15 @@ extension DrillListItem {
 
 extension DrillList {
     init?(json: [[String: Any]]? = nil) {
+       
         if json == nil || json!.count == 0 {
             self.id = 0
             self.title = "TEST"
             self.image = ""
             self.description = ""
             self.leaderboardSource = ""
-        } else {        
+        } else {
+            let json = json?.sorted { ($0["title"] as? String)! < ($1["title"] as? String)! }
             guard let id = json![0]["id"] as? Int,
               let title = json![0]["title"] as? String,
                 let image = json![0]["image"] as? String,
