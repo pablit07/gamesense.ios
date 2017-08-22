@@ -45,6 +45,8 @@ class DrillListParser : NSObject
 struct DrillList {
     let id: Int
     let title: String
+    let image: String
+    let description: String
 }
 
 struct DrillListItem {
@@ -83,15 +85,21 @@ extension DrillList {
         if json == nil || json!.count == 0 {
             self.id = 0
             self.title = "TEST"
+            self.image = ""
+            self.description = ""
         } else {
         
             guard let id = json![0]["id"] as? Int,
-              let title = json![0]["title"] as? String
+              let title = json![0]["title"] as? String,
+                let image = json![0]["image"] as? String,
+                let description = json![0]["description"] as? String
                 else {
                     return nil
             }
             self.id = id
             self.title = title
+            self.image = image
+            self.description = description
         }
     }
 }

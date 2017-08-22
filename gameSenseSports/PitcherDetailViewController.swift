@@ -21,6 +21,19 @@ class PitcherDetailViewController : UIViewController
         let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
         self.selectedListId = parentViewController.selectedListId
         self.pitcher.text = parentViewController.selectedListTitle ?? ""
+        self.myDescription.text = parentViewController.selectedListDescription ?? ""
+        
+        if let urlSrc = parentViewController.selectedListImage {
+            let url = URL(string: urlSrc)
+            let data = try? Data(contentsOf: url!)
+            
+            if let imageData = data {
+                self.thumbnail.image = UIImage(data: imageData)
+            }
+        }
+        
+        
+        
     }
     
 }

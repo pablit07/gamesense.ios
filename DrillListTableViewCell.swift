@@ -26,7 +26,6 @@ class DrillListTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         self.pitcherButton.drillList = self.drillList
-        print(self.drillList)
         // Configure the view for the selected state
     }
 
