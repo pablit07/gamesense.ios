@@ -24,6 +24,13 @@ class PitcherDetailViewController : UIViewController, UITableViewDataSource, UIT
         super.viewDidLoad()
         self.leaderboardTable.dataSource = self
         self.leaderboardTable.delegate = self
+        let swipeRight = UISwipeGestureRecognizer(target: self, action:#selector(self.swipeRightWithGestureRecognizer))
+        swipeRight.direction = .right;
+        self.view.addGestureRecognizer(swipeRight)
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeLeftWithGestureRecognizer))
+        swipeLeft.direction = .left;
+        self.view.addGestureRecognizer(swipeLeft)
+        
         resetView()
     }
     
@@ -34,6 +41,7 @@ class PitcherDetailViewController : UIViewController, UITableViewDataSource, UIT
     
     func resetView() {
         let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
+        self.leaderboardScoresArray?.removeAll()
         self.selectedListId = parentViewController.selectedListId
         self.pitcher.text = parentViewController.selectedListTitle ?? ""
         self.myDescription.text = parentViewController.selectedListDescription ?? ""
@@ -106,4 +114,24 @@ class PitcherDetailViewController : UIViewController, UITableViewDataSource, UIT
         
     }
     
+    @IBAction func testNext(_ sender: UIButton) {
+
+    }
+    
+    @IBAction func  swipeRightWithGestureRecognizer(gestureRecognizer:UISwipeGestureRecognizer)
+    {
+        let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
+        parentViewController.selectPreviousListId()
+        resetView()
+        getLeaderboard()
+    }
+    
+    @IBAction func swipeLeftWithGestureRecognizer(gestureRecognizer:UISwipeGestureRecognizer)
+    {
+        let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
+        parentViewController.selectNextListId()
+        resetView()
+        getLeaderboard()
+    }
+
 }
