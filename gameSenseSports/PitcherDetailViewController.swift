@@ -24,7 +24,15 @@ class PitcherDetailViewController : UIViewController, UITableViewDataSource, UIT
         super.viewDidLoad()
         self.leaderboardTable.dataSource = self
         self.leaderboardTable.delegate = self
-        
+        resetView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getLeaderboard()
+    }
+    
+    func resetView() {
         let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
         self.selectedListId = parentViewController.selectedListId
         self.pitcher.text = parentViewController.selectedListTitle ?? ""
@@ -40,11 +48,9 @@ class PitcherDetailViewController : UIViewController, UITableViewDataSource, UIT
                 }
             }
         }
-        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    func getLeaderboard() {
         let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
         
         // fire leaderboard scores request
@@ -66,7 +72,6 @@ class PitcherDetailViewController : UIViewController, UITableViewDataSource, UIT
                 }
             })
         }
-        
     }
     
     
