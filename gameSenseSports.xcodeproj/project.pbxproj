@@ -69,6 +69,10 @@
 		AFD803B61F4F4AE80051313D /* full_circle_2.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD803B21F4F4AE80051313D /* full_circle_2.png */; };
 		AFD803B71F4F4AE80051313D /* full_circle_3.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD803B31F4F4AE80051313D /* full_circle_3.png */; };
 		AFD803B81F4F4AE80051313D /* full_circle_4.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD803B41F4F4AE80051313D /* full_circle_4.png */; };
+		AFD803BD1F4F5F850051313D /* half_circle_1.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD803B91F4F5F850051313D /* half_circle_1.png */; };
+		AFD803BE1F4F5F850051313D /* half_circle_2.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD803BA1F4F5F850051313D /* half_circle_2.png */; };
+		AFD803BF1F4F5F850051313D /* half_circle_3.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD803BB1F4F5F850051313D /* half_circle_3.png */; };
+		AFD803C01F4F5F850051313D /* half_circle_4.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD803BC1F4F5F850051313D /* half_circle_4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +182,10 @@
 		AFD803B21F4F4AE80051313D /* full_circle_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = full_circle_2.png; path = images/full_circle_2.png; sourceTree = "<group>"; };
 		AFD803B31F4F4AE80051313D /* full_circle_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = full_circle_3.png; path = images/full_circle_3.png; sourceTree = "<group>"; };
 		AFD803B41F4F4AE80051313D /* full_circle_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = full_circle_4.png; path = images/full_circle_4.png; sourceTree = "<group>"; };
+		AFD803B91F4F5F850051313D /* half_circle_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = half_circle_1.png; path = images/half_circle_1.png; sourceTree = "<group>"; };
+		AFD803BA1F4F5F850051313D /* half_circle_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = half_circle_2.png; path = images/half_circle_2.png; sourceTree = "<group>"; };
+		AFD803BB1F4F5F850051313D /* half_circle_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = half_circle_3.png; path = images/half_circle_3.png; sourceTree = "<group>"; };
+		AFD803BC1F4F5F850051313D /* half_circle_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = half_circle_4.png; path = images/half_circle_4.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +236,10 @@
 		11225C2A1DDE73B30071D1CF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AFD803B91F4F5F850051313D /* half_circle_1.png */,
+				AFD803BA1F4F5F850051313D /* half_circle_2.png */,
+				AFD803BB1F4F5F850051313D /* half_circle_3.png */,
+				AFD803BC1F4F5F850051313D /* half_circle_4.png */,
 				AFD803B11F4F4AE80051313D /* full_circle_1.png */,
 				AFD803B21F4F4AE80051313D /* full_circle_2.png */,
 				AFD803B31F4F4AE80051313D /* full_circle_3.png */,
@@ -538,15 +550,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				11698FA01DDB999600C24D3C /* LaunchScreen.storyboard in Resources */,
+				AFD803BE1F4F5F850051313D /* half_circle_2.png in Resources */,
 				11698FC41DDB9C4700C24D3C /* gameSenseSports.png in Resources */,
 				AFD803B51F4F4AE80051313D /* full_circle_1.png in Resources */,
 				11698FD81DDD16FF00C24D3C /* logo.png in Resources */,
 				11DC88D01DEF6501002D3847 /* gs_logo_login.png in Resources */,
 				118287681E17363E0009CCAF /* round_strike.png in Resources */,
+				AFD803BD1F4F5F850051313D /* half_circle_1.png in Resources */,
 				11ECB99E1DECC2B900BEBF31 /* caughtball.mp3 in Resources */,
 				11698F9D1DDB999600C24D3C /* Assets.xcassets in Resources */,
 				AFD803B71F4F4AE80051313D /* full_circle_3.png in Resources */,
 				AF76AA321E477D8D00A9407D /* lance-lynn.jpg in Resources */,
+				AFD803BF1F4F5F850051313D /* half_circle_3.png in Resources */,
+				AFD803C01F4F5F850051313D /* half_circle_4.png in Resources */,
 				AFD803B61F4F4AE80051313D /* full_circle_2.png in Resources */,
 				AFD803B81F4F4AE80051313D /* full_circle_4.png in Resources */,
 				118287601E14D9BE0009CCAF /* clock.png in Resources */,

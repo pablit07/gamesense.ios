@@ -18,11 +18,22 @@ class DrillListTableViewCell: UITableViewCell {
             return _difficulty
         }
         set(value) {
-            for i in 0..<value {
-                let image = UIImage(named: "full_circle_1.png")
-                let imageView = UIImageView(image: image)
-                imageView.frame = CGRect(x: i*10, y: 0, width: 9, height: 9)
-                difficultyView.addSubview(imageView)
+            var numCircles = 0
+            for i in 0..<(value+1) {
+                if i % 2 == 0 && i != 0 {
+                    let image = UIImage(named: "full_circle_1.png")
+                    let imageView = UIImageView(image: image)
+                    imageView.frame = CGRect(x: numCircles*10, y: 0, width: 9, height: 9)
+                    difficultyView.addSubview(imageView)
+                    numCircles += 1
+                }
+                
+                if i == value && (value % 2 == 1) {
+                    let image = UIImage(named: "half_circle_1.png")
+                    let imageView = UIImageView(image: image)
+                    imageView.frame = CGRect(x: numCircles*10, y: 0, width: 5, height: 9)
+                    difficultyView.addSubview(imageView)
+                }
             }
             _difficulty = value
         }
