@@ -75,7 +75,8 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         let cellLabel = cell.viewWithTag(1) as! UILabel
         if (drillListArray.count > 0) {
             cellLabel.text = drillListArray[indexPath.row].title
-             drillTableCell?.difficulty = 3
+             drillTableCell?.difficulty = drillListArray[indexPath.row].primaryList.difficulty
+             drillTableCell?.occlusion = drillListArray[indexPath.row].occlusion
         }
         else {
             cellLabel.text = ""

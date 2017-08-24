@@ -42,21 +42,34 @@ class DrillListParser : NSObject
     }
 }
 
+struct DrillList {
+    let id: Int
+    let title: String
+    let image: String
+    let description: String
+    let leaderboardSource: String?
+    let difficulty: Int
+}
+
 struct DrillListItem {
     let url: String
     let drillID: Int
     let title: String
     let questionCount: Int
     let randomize: Bool
+    let primaryList: DrillList
+    let occlusion: Int
 }
 
 extension DrillListItem {
     init?(json: [String: Any]) {
+        let lists = json["lists"] as? [[String: Any]]
         guard let url = json["url"] as? String,
             let title = json["title"] as? String,
             let drillID = json["id"] as? Int,
             let questionCount = json["number_of_questions"] as? Int,
-            let randomize = json["randomize"] as? Bool
+            let randomize = json["randomize"] as? Bool,
+            let primaryList = DrillList(json: lists)
             else {
                 return nil
         }
@@ -66,6 +79,55 @@ extension DrillListItem {
         self.drillID = drillID
         self.questionCount = questionCount
         self.randomize = randomize
+        self.primaryList = primaryList
+        if title.contains("Advanced") {
+            self.occlusion = 3
+        } else if title.contains("Full Pitch") {
+            self.occlusion = 1
+        } else if title.contains("Wicked") {
+            self.occlusion = 4
+        } else {
+            self.occlusion = 2
+        }
     }
 }
 
+extension DrillList {
+    init?(json: [[String: Any]]? = nil) {
+       
+        if json == nil || json!.count == 0 {
+            self.id = 0
+            self.title = "No data."
+            self.image = ""
+            self.description = ""
+            self.leaderboardSource = ""
+            self.difficulty = 0
+        } else {
+            let json = json?.sorted { ($0["title"] as? String)! < ($1["title"] as? String)! }
+            guard let id = json![0]["id"] as? Int,
+              let title = json![0]["title"] as? String,
+                let image = json![0]["image"] as? String,
+                let description = json![0]["description"] as? String,
+                let difficulty = json![0]["difficulty"] as? Int
+                else {
+                    return nil
+            }
+            guard let leaderboardSource = json![0]["leaderboard_scores_source"] as? String
+                else {
+                    self.id = id
+                    self.title = title
+                    self.image = image
+                    self.description = description
+                    self.leaderboardSource = nil
+                    self.difficulty = difficulty
+                    return
+                }
+            self.id = id
+            self.title = title
+            self.image = image
+            self.description = description
+            self.leaderboardSource = leaderboardSource
+            self.difficulty = difficulty
+        }
+    }
+}

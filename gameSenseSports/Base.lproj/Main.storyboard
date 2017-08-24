@@ -194,10 +194,15 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D7N-dy-wWw">
+                                                    <rect key="frame" x="295" y="25" width="22" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="difficultyView" destination="8RJ-sh-OTl" id="Xif-5k-FKh"/>
+                                            <outlet property="occlusionImage" destination="D7N-dy-wWw" id="iJA-0m-jO8"/>
                                             <segue destination="uzr-Ny-Wxn" kind="show" identifier="VideoPlayer" id="buf-Fs-cOP"/>
                                         </connections>
                                     </tableViewCell>
