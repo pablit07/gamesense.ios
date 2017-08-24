@@ -171,7 +171,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <prototypes>
-                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="drillCell" id="p9w-Kk-Sqn">
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="drillCell" id="p9w-Kk-Sqn" customClass="DrillListTableViewCell" customModule="gameSenseSports" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="146" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p9w-Kk-Sqn" id="ZB6-fZ-f73">
@@ -190,13 +190,14 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                 </button>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8RJ-sh-OTl">
-                                                    <rect key="frame" x="127" y="-14" width="240" height="128"/>
+                                                    <rect key="frame" x="8" y="45" width="213" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="difficultyView" destination="8RJ-sh-OTl" id="Xif-5k-FKh"/>
                                             <segue destination="uzr-Ny-Wxn" kind="show" identifier="VideoPlayer" id="buf-Fs-cOP"/>
                                         </connections>
                                     </tableViewCell>

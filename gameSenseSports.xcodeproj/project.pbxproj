@@ -64,6 +64,11 @@
 		AF76AA321E477D8D00A9407D /* lance-lynn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF76AA311E477D8D00A9407D /* lance-lynn.jpg */; };
 		AF8A22D21DF3ACF500A88E00 /* Rollbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */; };
 		AF8A22D71DF3C61600A88E00 /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A22D61DF3C61600A88E00 /* CrashReporter.framework */; };
+		AFD803B01F4F46230051313D /* DrillListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD803AF1F4F46230051313D /* DrillListTableViewCell.swift */; };
+		AFD803B51F4F4AE80051313D /* full_circle_1.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD803B11F4F4AE80051313D /* full_circle_1.png */; };
+		AFD803B61F4F4AE80051313D /* full_circle_2.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD803B21F4F4AE80051313D /* full_circle_2.png */; };
+		AFD803B71F4F4AE80051313D /* full_circle_3.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD803B31F4F4AE80051313D /* full_circle_3.png */; };
+		AFD803B81F4F4AE80051313D /* full_circle_4.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD803B41F4F4AE80051313D /* full_circle_4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +173,11 @@
 		AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rollbar.framework; path = gameSenseSports/Rollbar.framework; sourceTree = "<group>"; };
 		AF8A22D31DF3C4B200A88E00 /* gameSenseSports-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gameSenseSports-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF8A22D61DF3C61600A88E00 /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CrashReporter.framework; path = gameSenseSports/CrashReporter.framework; sourceTree = "<group>"; };
+		AFD803AF1F4F46230051313D /* DrillListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrillListTableViewCell.swift; sourceTree = "<group>"; };
+		AFD803B11F4F4AE80051313D /* full_circle_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = full_circle_1.png; path = images/full_circle_1.png; sourceTree = "<group>"; };
+		AFD803B21F4F4AE80051313D /* full_circle_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = full_circle_2.png; path = images/full_circle_2.png; sourceTree = "<group>"; };
+		AFD803B31F4F4AE80051313D /* full_circle_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = full_circle_3.png; path = images/full_circle_3.png; sourceTree = "<group>"; };
+		AFD803B41F4F4AE80051313D /* full_circle_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = full_circle_4.png; path = images/full_circle_4.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +228,10 @@
 		11225C2A1DDE73B30071D1CF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AFD803B11F4F4AE80051313D /* full_circle_1.png */,
+				AFD803B21F4F4AE80051313D /* full_circle_2.png */,
+				AFD803B31F4F4AE80051313D /* full_circle_3.png */,
+				AFD803B41F4F4AE80051313D /* full_circle_4.png */,
 				118287651E17363E0009CCAF /* round_ball.png */,
 				118287661E17363E0009CCAF /* round_strike.png */,
 				1182875F1E14D9BE0009CCAF /* clock.png */,
@@ -277,6 +291,7 @@
 		11698F911DDB999600C24D3C /* gameSenseSports */ = {
 			isa = PBXGroup;
 			children = (
+				AFD803AE1F4F460C0051313D /* Views */,
 				11C04E071E3FED81005BDC4B /* Libraries */,
 				11225C2B1DDE7FDB0071D1CF /* DataAccessObjects */,
 				11225C2A1DDE73B30071D1CF /* Images */,
@@ -405,6 +420,14 @@
 			name = Sounds;
 			sourceTree = "<group>";
 		};
+		AFD803AE1F4F460C0051313D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AFD803AF1F4F46230051313D /* DrillListTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -516,12 +539,16 @@
 			files = (
 				11698FA01DDB999600C24D3C /* LaunchScreen.storyboard in Resources */,
 				11698FC41DDB9C4700C24D3C /* gameSenseSports.png in Resources */,
+				AFD803B51F4F4AE80051313D /* full_circle_1.png in Resources */,
 				11698FD81DDD16FF00C24D3C /* logo.png in Resources */,
 				11DC88D01DEF6501002D3847 /* gs_logo_login.png in Resources */,
 				118287681E17363E0009CCAF /* round_strike.png in Resources */,
 				11ECB99E1DECC2B900BEBF31 /* caughtball.mp3 in Resources */,
 				11698F9D1DDB999600C24D3C /* Assets.xcassets in Resources */,
+				AFD803B71F4F4AE80051313D /* full_circle_3.png in Resources */,
 				AF76AA321E477D8D00A9407D /* lance-lynn.jpg in Resources */,
+				AFD803B61F4F4AE80051313D /* full_circle_2.png in Resources */,
+				AFD803B81F4F4AE80051313D /* full_circle_4.png in Resources */,
 				118287601E14D9BE0009CCAF /* clock.png in Resources */,
 				118287671E17363E0009CCAF /* round_ball.png in Resources */,
 				11698FD61DDD14BE00C24D3C /* lance-lynn-OLD.jpg in Resources */,
@@ -565,6 +592,7 @@
 				11225C311DE15CEC0071D1CF /* DrillListParser.swift in Sources */,
 				11C04F081E3FEE49005BDC4B /* sha1.c in Sources */,
 				11698FC71DDBA28100C24D3C /* DrillListViewController.swift in Sources */,
+				AFD803B01F4F46230051313D /* DrillListTableViewCell.swift in Sources */,
 				11E1391F1DE4C932005B2A6F /* SharedNetworkConnection.swift in Sources */,
 				1147DC891DEAA3A5000D8025 /* DrillQuestionsViewController.swift in Sources */,
 				11C04F0E1E3FEE49005BDC4B /* SSZipArchive+Swift.swift in Sources */,
