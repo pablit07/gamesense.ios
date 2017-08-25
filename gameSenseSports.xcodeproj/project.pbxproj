@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1107AC891F43F892002B2CA6 /* ProfileWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1107AC881F43F892002B2CA6 /* ProfileWebViewController.swift */; };
 		11225C281DDE55C40071D1CF /* JsonTestStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11225C271DDE55C40071D1CF /* JsonTestStrings.swift */; };
 		11225C311DE15CEC0071D1CF /* DrillListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11225C301DE15CEC0071D1CF /* DrillListParser.swift */; };
 		11225C331DE168B40071D1CF /* DrillQuestionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11225C321DE168B40071D1CF /* DrillQuestionParser.swift */; };
@@ -17,6 +18,12 @@
 		11225C401DE380550071D1CF /* drillVideo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 11225C3F1DE380550071D1CF /* drillVideo.txt */; };
 		11225C421DE380700071D1CF /* drillQuestionPitchLocations.txt in Resources */ = {isa = PBXBuildFile; fileRef = 11225C411DE380700071D1CF /* drillQuestionPitchLocations.txt */; };
 		1147DC891DEAA3A5000D8025 /* DrillQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1147DC881DEAA3A5000D8025 /* DrillQuestionsViewController.swift */; };
+		115C95511F4678AA00224F50 /* account@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 115C954C1F4678AA00224F50 /* account@2x.png */; };
+		115C95521F4678AA00224F50 /* charts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 115C954D1F4678AA00224F50 /* charts@2x.png */; };
+		115C95531F4678AA00224F50 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 115C954E1F4678AA00224F50 /* home@2x.png */; };
+		115C95541F4678AA00224F50 /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 115C954F1F4678AA00224F50 /* logout@2x.png */; };
+		115C95551F4678AA00224F50 /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 115C95501F4678AA00224F50 /* profile@2x.png */; };
+		115C95571F467C6300224F50 /* home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 115C95561F467C6300224F50 /* home_icon.png */; };
 		11698F931DDB999600C24D3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11698F921DDB999600C24D3C /* AppDelegate.swift */; };
 		11698F951DDB999600C24D3C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11698F941DDB999600C24D3C /* LoginViewController.swift */; };
 		11698F981DDB999600C24D3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11698F961DDB999600C24D3C /* Main.storyboard */; };
@@ -56,6 +63,7 @@
 		11C04F0E1E3FEE49005BDC4B /* SSZipArchive+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C04EFB1E3FEE49005BDC4B /* SSZipArchive+Swift.swift */; };
 		11C04F0F1E3FEE49005BDC4B /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C04EFD1E3FEE49005BDC4B /* SSZipArchive.m */; };
 		11C04F111E3FEFE3005BDC4B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C04F101E3FEFE3005BDC4B /* libz.tbd */; };
+		11D25C751F427079003CC09C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D25C741F427079003CC09C /* ProfileViewController.swift */; };
 		11DC88D01DEF6501002D3847 /* gs_logo_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 11DC88CF1DEF6501002D3847 /* gs_logo_login.png */; };
 		11E1391F1DE4C932005B2A6F /* SharedNetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1391E1DE4C932005B2A6F /* SharedNetworkConnection.swift */; };
 		11E139211DE5E88E005B2A6F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E139201DE5E88E005B2A6F /* Constants.swift */; };
@@ -84,6 +92,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1107AC881F43F892002B2CA6 /* ProfileWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileWebViewController.swift; sourceTree = "<group>"; };
 		11225C271DDE55C40071D1CF /* JsonTestStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonTestStrings.swift; sourceTree = "<group>"; };
 		11225C301DE15CEC0071D1CF /* DrillListParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrillListParser.swift; sourceTree = "<group>"; };
 		11225C321DE168B40071D1CF /* DrillQuestionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrillQuestionParser.swift; sourceTree = "<group>"; };
@@ -94,6 +103,12 @@
 		11225C3F1DE380550071D1CF /* drillVideo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = drillVideo.txt; path = json/drillVideo.txt; sourceTree = "<group>"; };
 		11225C411DE380700071D1CF /* drillQuestionPitchLocations.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = drillQuestionPitchLocations.txt; path = json/drillQuestionPitchLocations.txt; sourceTree = "<group>"; };
 		1147DC881DEAA3A5000D8025 /* DrillQuestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrillQuestionsViewController.swift; sourceTree = "<group>"; };
+		115C954C1F4678AA00224F50 /* account@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "account@2x.png"; path = "images/account@2x.png"; sourceTree = "<group>"; };
+		115C954D1F4678AA00224F50 /* charts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "charts@2x.png"; path = "images/charts@2x.png"; sourceTree = "<group>"; };
+		115C954E1F4678AA00224F50 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home@2x.png"; path = "images/home@2x.png"; sourceTree = "<group>"; };
+		115C954F1F4678AA00224F50 /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logout@2x.png"; path = "images/logout@2x.png"; sourceTree = "<group>"; };
+		115C95501F4678AA00224F50 /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "profile@2x.png"; path = "images/profile@2x.png"; sourceTree = "<group>"; };
+		115C95561F467C6300224F50 /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home_icon.png; path = images/home_icon.png; sourceTree = "<group>"; };
 		11698F8F1DDB999600C24D3C /* gameSenseSports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gameSenseSports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11698F921DDB999600C24D3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11698F941DDB999600C24D3C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +174,7 @@
 		11C04EFE1E3FEE49005BDC4B /* SSZipCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipCommon.h; sourceTree = "<group>"; };
 		11C04EFF1E3FEE49005BDC4B /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 		11C04F101E3FEFE3005BDC4B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		11D25C741F427079003CC09C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		11DC88CF1DEF6501002D3847 /* gs_logo_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gs_logo_login.png; path = images/gs_logo_login.png; sourceTree = "<group>"; };
 		11E1391E1DE4C932005B2A6F /* SharedNetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedNetworkConnection.swift; sourceTree = "<group>"; };
 		11E139201DE5E88E005B2A6F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -211,6 +227,8 @@
 				11698FC61DDBA28100C24D3C /* DrillListViewController.swift */,
 				11698FC81DDBA35A00C24D3C /* VideoPlayerViewController.swift */,
 				1147DC881DEAA3A5000D8025 /* DrillQuestionsViewController.swift */,
+				11D25C741F427079003CC09C /* ProfileViewController.swift */,
+				1107AC881F43F892002B2CA6 /* ProfileWebViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -218,6 +236,12 @@
 		11225C2A1DDE73B30071D1CF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				115C95561F467C6300224F50 /* home_icon.png */,
+				115C954C1F4678AA00224F50 /* account@2x.png */,
+				115C954D1F4678AA00224F50 /* charts@2x.png */,
+				115C954E1F4678AA00224F50 /* home@2x.png */,
+				115C954F1F4678AA00224F50 /* logout@2x.png */,
+				115C95501F4678AA00224F50 /* profile@2x.png */,
 				118287651E17363E0009CCAF /* round_ball.png */,
 				118287661E17363E0009CCAF /* round_strike.png */,
 				1182875F1E14D9BE0009CCAF /* clock.png */,
@@ -514,10 +538,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				115C95541F4678AA00224F50 /* logout@2x.png in Resources */,
 				11698FA01DDB999600C24D3C /* LaunchScreen.storyboard in Resources */,
+				115C95551F4678AA00224F50 /* profile@2x.png in Resources */,
 				11698FC41DDB9C4700C24D3C /* gameSenseSports.png in Resources */,
+				115C95531F4678AA00224F50 /* home@2x.png in Resources */,
 				11698FD81DDD16FF00C24D3C /* logo.png in Resources */,
 				11DC88D01DEF6501002D3847 /* gs_logo_login.png in Resources */,
+				115C95521F4678AA00224F50 /* charts@2x.png in Resources */,
+				115C95571F467C6300224F50 /* home_icon.png in Resources */,
 				118287681E17363E0009CCAF /* round_strike.png in Resources */,
 				11ECB99E1DECC2B900BEBF31 /* caughtball.mp3 in Resources */,
 				11698F9D1DDB999600C24D3C /* Assets.xcassets in Resources */,
@@ -525,6 +554,7 @@
 				118287601E14D9BE0009CCAF /* clock.png in Resources */,
 				118287671E17363E0009CCAF /* round_ball.png in Resources */,
 				11698FD61DDD14BE00C24D3C /* lance-lynn-OLD.jpg in Resources */,
+				115C95511F4678AA00224F50 /* account@2x.png in Resources */,
 				11698F981DDB999600C24D3C /* Main.storyboard in Resources */,
 				11ECB99D1DECC2B900BEBF31 /* ballcheer.mp3 in Resources */,
 				11C04F091E3FEE49005BDC4B /* Info.plist in Resources */,
@@ -569,6 +599,7 @@
 				1147DC891DEAA3A5000D8025 /* DrillQuestionsViewController.swift in Sources */,
 				11C04F0E1E3FEE49005BDC4B /* SSZipArchive+Swift.swift in Sources */,
 				11C04F0F1E3FEE49005BDC4B /* SSZipArchive.m in Sources */,
+				11D25C751F427079003CC09C /* ProfileViewController.swift in Sources */,
 				11698FDA1DDD1CFD00C24D3C /* RegistrationWebViewController.swift in Sources */,
 				11C04F0A1E3FEE49005BDC4B /* ioapi.c in Sources */,
 				11C04F061E3FEE49005BDC4B /* prng.c in Sources */,
@@ -580,6 +611,7 @@
 				11698F9B1DDB999600C24D3C /* gameSenseSports.xcdatamodeld in Sources */,
 				11225C371DE26AF50071D1CF /* DrillPitchLocationParser.swift in Sources */,
 				11225C351DE262F20071D1CF /* DrillVideoParser.swift in Sources */,
+				1107AC891F43F892002B2CA6 /* ProfileWebViewController.swift in Sources */,
 				11C04F001E3FEE49005BDC4B /* aescrypt.c in Sources */,
 				11C04F0D1E3FEE49005BDC4B /* zip.c in Sources */,
 				11C04F071E3FEE49005BDC4B /* pwd2key.c in Sources */,
