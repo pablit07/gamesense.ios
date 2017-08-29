@@ -34,9 +34,14 @@ class DrillListTableViewCell: UITableViewCell {
     private func downloadError(alert:UIAlertController, parentController:DrillListViewController) {
         self.progressView.isHidden = true
         self.startDownload.isHidden = false
+        if parentController.isAlertShown {
+            return
+        }
         alert.message = "Your drill \(self.title!) failed to download. If this issue continues, please contact gamesenseSports at " + Constants.gamesenseSportsContact
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        parentController.present(alert, animated: true, completion: nil)
+        parentController.isAlertShown = true
+        DispatchQueue.main.sync {
+            parentController.present(alert, animated: true, completion: nil)
+        }
     }
     
     private func updateNumberForDownload(numberForDownload: Int) {

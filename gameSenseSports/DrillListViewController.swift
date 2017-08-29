@@ -28,6 +28,8 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
+    public var isAlertShown = false
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         let verticalClass = self.traitCollection.verticalSizeClass
@@ -167,6 +169,9 @@ class DrillListTableViewData {
     init(cacheFlags: [DrillListCellCacheModel], parentController: DrillListViewController) {
         self.cacheFlags = cacheFlags
         self.parentController = parentController
+        errorAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
+            parentController.isAlertShown = false
+        }))
     }
     
     func checkCache(drillId: Int?, index: Int, update: @escaping (_ isCached:Bool)->()) {
@@ -229,8 +234,10 @@ class DrillListTableViewData {
             for filename in filenameArray {
                 var cacheDirectory = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
                 cacheDirectory.appendPathComponent(filename)
+
                 SharedNetworkConnection.downloadVideo(resourceFilename: filename, completionHandler: { data, response, error in
-                    guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                    guard let data = data, error == nil else {
+                        // check for fundamental networking error
                         print("error=\(error)")
                         onerror(self.errorAlert, self.parentController)
                         return
@@ -246,6 +253,7 @@ class DrillListTableViewData {
 
                     cellCache?.completedDownloads += 1
                     DispatchQueue.main.async {
+//                        print(filename, cellCache?.drillId, "==", drillId, cellCache?.completedDownloads)
                         progress(Float((cellCache?.numberToDownload)!), Float((cellCache?.completedDownloads)!))
                         if cellCache?.numberToDownload == cellCache?.completedDownloads {
                             cellCache?.isCached = true
