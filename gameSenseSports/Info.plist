@@ -22,11 +22,6 @@
 	<true/>
 	<key>LSUIPresentationMode</key>
 	<integer>0</integer>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
