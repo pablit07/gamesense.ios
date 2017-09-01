@@ -58,7 +58,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let icon = cell.viewWithTag(1) as! UIImageView
         switch (indexPath.row) {
         case 0:
-            label.text = "Profile"
+            label.text = "Home"
             let image = UIImage(named:"home.png")
             icon.image = image
             break
