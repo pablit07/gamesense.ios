@@ -49,7 +49,7 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getDrillList()
+        getDrillList(optimize: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -86,10 +86,10 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     }
 
     
-    private func getDrillList()
+    private func getDrillList(optimize: Bool = false)
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        SharedNetworkConnection.apiGetDrillList(apiToken: appDelegate.apiToken, completionHandler: { data, response, error in
+        SharedNetworkConnection.apiGetDrillList(apiToken: appDelegate.apiToken, limit: (optimize ? 10 : 0), completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
                 return
@@ -117,6 +117,10 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
             self.drillListArray = (self.drillListParser?.getDrillListArray())!
             DispatchQueue.main.async {
                 self.drillTableView.reloadData()
+            }
+            
+            if optimize {
+                self.getDrillList()
             }
         })
     }

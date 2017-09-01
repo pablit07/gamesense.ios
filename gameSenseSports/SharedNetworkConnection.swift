@@ -36,9 +36,13 @@ class SharedNetworkConnection: NSObject
         }
     }
     
-    static func apiGetDrillList(apiToken: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
+    static func apiGetDrillList(apiToken: String, limit: Int = 0, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
     {
-        var request = URLRequest(url: URL(string: Constants.URLs.DrillList)!)
+        var url = Constants.URLs.DrillList
+        if limit > 0 {
+            url += "?limit=" + "\(limit)" + "&ordering=title"
+        }
+        var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "GET"
         let apiString = "Token " + apiToken
         request.addValue(apiString, forHTTPHeaderField: "Authorization")
