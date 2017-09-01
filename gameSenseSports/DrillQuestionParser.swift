@@ -35,7 +35,10 @@ class DrillQuestionParser : NSObject
                 for object in array {
                     // access all objects in array
                     let drillQuestionItem = DrillQuestionItem(json: object as! [String : Any])
-                    drillQuestionArray.append(drillQuestionItem!)
+                    if drillQuestionItem != nil {
+                        drillQuestionArray.append(drillQuestionItem!)
+                    }
+
                 }
             }
         }

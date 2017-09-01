@@ -278,10 +278,11 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             }
             let parentViewController = self.parent as? VideoPlayerViewController
             parentViewController?.showIndicator(shouldAppear: false)
-            if parentViewController != nil {
-                self.showAnswer(correctAnswer: correctAnswer)
-            }
         })
+        
+        if parentViewController != nil {
+            self.showAnswer(correctAnswer: correctAnswer)
+        }
     }
     
     private func showAnswer(correctAnswer: Bool)
@@ -484,6 +485,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     }
     
     @IBAction func buttonPressed(sender: UIButton) {
+        sender.isEnabled = false
         if (!timeout)
         {
             self.answered = true
@@ -492,6 +494,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             self.shapeLayer.timeOffset = pausedTime
             let hiddenLabel = sender.superview?.viewWithTag(4) as! UILabel
             self.getVideoAnswer(pitchType: Int(hiddenLabel.text!)!, pitchLocation: sender.tag)
+            sender.isEnabled = true
         }
     }
 }
