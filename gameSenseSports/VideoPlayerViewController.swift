@@ -72,6 +72,8 @@ class VideoPlayerViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         self.movieView.backgroundColor = UIColor.black
         let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
         drillListItem = parentViewController.selectedDrillItem
@@ -100,6 +102,14 @@ class VideoPlayerViewController: UIViewController
         self.presenting = true
         self.removeVideoPlayer()
         return true
+    }
+    
+    override var shouldAutorotate : Bool {
+        return true
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscape
     }
     
     private func startDtill()
