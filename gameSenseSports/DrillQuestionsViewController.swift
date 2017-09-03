@@ -159,13 +159,13 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         
         SharedNetworkConnection.apiGetDrillPitchLocation(apiToken: appDelegate.apiToken, responseURI: drillVideo, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+                print("error=\(error as Optional)")
                 return
             }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+                print("response = \(response as Optional)")
                 return
             }
             
@@ -183,14 +183,14 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         SharedNetworkConnection.apiGetDrillVideo(apiToken: appDelegate.apiToken, responseURI: (drillQuestionItem?.answerURL)!, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+                print("error=\(error as Optional)")
                 return
             }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 // 403 on no token
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+                print("response = \(response as Optional)")
                 
                 
                 SharedNetworkConnection.apiLoginWithStoredCredentials(completionHandler: { data, response, error in
@@ -265,8 +265,8 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         }
         
         SharedNetworkConnection.apiPostAnswerQuestion(apiToken: appDelegate.apiToken, correctAnswer: correctAnswer, activityID: parentViewController.returnedDrillID, questionID: drillQuestionItem.drillQuestionID, answerID: self.answeredPitchTypeID, pitchLocation: pitchLocation, questionJson: drillQuestionItem.fullJson, completionHandler: { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+            guard let _ = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(error as Optional)")
                 let parentViewController = self.parent as! VideoPlayerViewController
                 parentViewController.showIndicator(shouldAppear: false)
                 return
@@ -275,7 +275,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 // 403 on no token
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+                print("response = \(response as Optional)")
                 
                 SharedNetworkConnection.apiLoginWithStoredCredentials(completionHandler: { data, response, error in
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -399,7 +399,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     }
     
     private func addCircle() {
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: self.view.frame.width/2,y: 33), radius: CGFloat(40), startAngle: CGFloat(-M_PI_2), endAngle:CGFloat(2*M_PI-M_PI_2), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: self.view.frame.width/2,y: 33), radius: CGFloat(40), startAngle: CGFloat(-(Double.pi/2)), endAngle:CGFloat(2*Double.pi-(Double.pi/2)), clockwise: true)
         
         self.shapeLayer.path = circlePath.cgPath
         self.shapeLayer.fillColor = UIColor.clear.cgColor

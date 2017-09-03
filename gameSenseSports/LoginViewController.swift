@@ -81,7 +81,7 @@ class LoginViewController: UIViewController {
         
         SharedNetworkConnection.apiLogin(username: username, password: password, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+                print("error=\(error as Optional)")
                 self.showLoginActiveView(shouldAppear: false)
                 return
             }
@@ -98,7 +98,7 @@ class LoginViewController: UIViewController {
                     self.showLoginActiveView(shouldAppear: false)
                 }
                 self.present(alert, animated: true, completion: nil)
-                print("response = \(response)")
+                print("response = \(response as Optional)")
                 return
             }
             

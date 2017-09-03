@@ -106,14 +106,14 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         SharedNetworkConnection.apiGetDrillList(apiToken: appDelegate.apiToken, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+                print("error=\(error as Optional)")
                 return
             }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 // 403 on no token
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+                print("response = \(response as Optional)")
                 
                 SharedNetworkConnection.apiLoginWithStoredCredentials(completionHandler: { data, response, error in
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -185,7 +185,7 @@ class DrillListTableViewData {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         SharedNetworkConnection.apiGetDrillQuestions(apiToken: appDelegate.apiToken, drillID: drillId!, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+                print("error=\(error as Optional)")
                 return
             }
             
@@ -212,13 +212,13 @@ class DrillListTableViewData {
     }
     
     func populateCache(drillId: Int?, progress: @escaping (_ numberToDownload:Float, _ completedDownloads:Float)->(), onerror: @escaping (_:UIAlertController, _:DrillListViewController)->()) {
-        var cellCache = self.cacheFlags.first(where: {$0.drillId == drillId!})
+        let cellCache = self.cacheFlags.first(where: {$0.drillId == drillId!})
         cellCache?.clearNumberForDownload()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         SharedNetworkConnection.apiGetDrillQuestions(apiToken: appDelegate.apiToken, drillID: drillId!, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+                print("error=\(error as Optional)")
                 return
             }
             
@@ -238,7 +238,7 @@ class DrillListTableViewData {
                 SharedNetworkConnection.downloadVideo(resourceFilename: filename, completionHandler: { data, response, error in
                     guard let data = data, error == nil else {
                         // check for fundamental networking error
-                        print("error=\(error)")
+                        print("error=\(error as Optional)")
                         onerror(self.errorAlert, self.parentController)
                         return
                     }
@@ -246,7 +246,7 @@ class DrillListTableViewData {
                     if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                         // 403 on no token
                         print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                        print("response = \(response)")
+                        print("response = \(response as Optional)")
                     }
                     
                     try? data.write(to: cacheDirectory)

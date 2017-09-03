@@ -58,14 +58,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         {
             SharedNetworkConnection.downloadCache(completionHandler: { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                    print("error=\(error)")
+                    print("error=\(error as Optional)")
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                     // 403 on no token
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
+                    print("response = \(response as Optional)")
                 }
                 try? data.write(to: cacheDirectory.appendingPathComponent("cache.zip"))
                 // Unzip

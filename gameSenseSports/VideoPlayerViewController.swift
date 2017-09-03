@@ -128,14 +128,14 @@ class VideoPlayerViewController: UIViewController
         writeDebug(text: "(Network)Posting Drill Activity")
         SharedNetworkConnection.apiPostRegisterDrill(apiToken: appDelegate.apiToken, drillID: drillListItem!.drillID, drillTitle: (drillListItem?.title)!, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+                print("error=\(error as Optional)")
                 return
             }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 // 403 on no token
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+                print("response = \(response as Optional)")
                 
                 if (httpStatus.statusCode == 403)
                 {
@@ -173,14 +173,14 @@ class VideoPlayerViewController: UIViewController
         self.writeDebug(text: "(Network)Retrieve Drill Questions")
         SharedNetworkConnection.apiGetDrillQuestions(apiToken: appDelegate.apiToken, drillID: drillListItem!.drillID, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+                print("error=\(error as Optional)")
                 return
             }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 // 403 on no token
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+                print("response = \(response as Optional)")
                 
                 SharedNetworkConnection.apiLoginWithStoredCredentials(completionHandler: { data, response, error in
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -236,14 +236,14 @@ class VideoPlayerViewController: UIViewController
             self.writeDebug(text: "(Network)Retrieving Video File")
             SharedNetworkConnection.downloadVideo(resourceFilename: filename, completionHandler: { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                    print("error=\(error)")
+                    print("error=\(error as Optional)")
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                     // 403 on no token
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
+                    print("response = \(response as Optional)")
                 }
                 
                 try? data.write(to: cacheDirectory)
@@ -403,14 +403,14 @@ class VideoPlayerViewController: UIViewController
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 SharedNetworkConnection.apiDrillFinished(apiToken: appDelegate.apiToken, drill_id: (self.drillListItem?.drillID)!, activityID: self.returnedDrillID, score: self.points, locationScore: self.locationPoints, typeScore: self.typePoints, completionHandler:  { data, response, error in
                     guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                        print("error=\(error)")
+                        print("error=\(error as Optional)")
                         return
                     }
                     
                     if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                         // 403 on no token
                         print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                        print("response = \(response)")
+                        print("response = \(response as Optional)")
                         
                         if (httpStatus.statusCode == 403)
                         {

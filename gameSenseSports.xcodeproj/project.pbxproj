@@ -487,7 +487,7 @@
 				TargetAttributes = {
 					11698F8E1DDB999600C24D3C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 2LR9N6ERWB;
+						DevelopmentTeam = SV776CBUW2;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -755,7 +755,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 2LR9N6ERWB;
+				DEVELOPMENT_TEAM = SV776CBUW2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/gameSenseSports",
@@ -776,7 +776,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 2LR9N6ERWB;
+				DEVELOPMENT_TEAM = SV776CBUW2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/gameSenseSports",
