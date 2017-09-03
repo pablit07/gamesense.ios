@@ -295,9 +295,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             parentViewController?.showIndicator(shouldAppear: false)
         })
         
-        if parentViewController != nil {
-            self.showAnswer(correctAnswer: correctAnswer)
-        }
+        self.showAnswer(correctAnswer: correctAnswer)
     }
     
     private func showAnswer(correctAnswer: Bool)
