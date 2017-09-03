@@ -48,6 +48,7 @@ struct DrillList {
     let image: String
     let description: String
     let leaderboardSource: String?
+    let difficulty: Int
 }
 
 struct DrillListItem {
@@ -57,6 +58,7 @@ struct DrillListItem {
     let questionCount: Int
     let randomize: Bool
     let primaryList: DrillList
+    let occlusion: Int
 }
 
 extension DrillListItem {
@@ -78,6 +80,15 @@ extension DrillListItem {
         self.questionCount = questionCount
         self.randomize = randomize
         self.primaryList = primaryList
+        if title.contains("Advanced") {
+            self.occlusion = 3
+        } else if title.contains("Full Pitch") {
+            self.occlusion = 1
+        } else if title.contains("Wicked") {
+            self.occlusion = 4
+        } else {
+            self.occlusion = 2
+        }
     }
 }
 
@@ -90,12 +101,14 @@ extension DrillList {
             self.image = ""
             self.description = ""
             self.leaderboardSource = ""
+            self.difficulty = 0
         } else {
             let json = json?.sorted { ($0["title"] as? String)! < ($1["title"] as? String)! }
             guard let id = json![0]["id"] as? Int,
               let title = json![0]["title"] as? String,
                 let image = json![0]["image"] as? String,
-                let description = json![0]["description"] as? String
+                let description = json![0]["description"] as? String,
+                let difficulty = json![0]["difficulty"] as? Int
                 else {
                     return nil
             }
@@ -106,6 +119,7 @@ extension DrillList {
                     self.image = image
                     self.description = description
                     self.leaderboardSource = nil
+                    self.difficulty = difficulty
                     return
                 }
             self.id = id
@@ -113,6 +127,7 @@ extension DrillList {
             self.image = image
             self.description = description
             self.leaderboardSource = leaderboardSource
+            self.difficulty = difficulty
         }
     }
 }

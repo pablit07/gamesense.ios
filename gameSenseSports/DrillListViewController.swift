@@ -82,7 +82,8 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
             cellLabel.text = drillListArray[indexPath.row].title
             drillTableCell?.drillId = drillListArray[indexPath.row].drillID
             drillTableCell?.drillList = drillListArray[indexPath.row].primaryList
-            
+            drillTableCell?.difficulty = drillListArray[indexPath.row].primaryList.difficulty
+            drillTableCell?.occlusion = drillListArray[indexPath.row].occlusion
         }
         else {
             cellLabel.text = ""

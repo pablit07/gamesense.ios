@@ -438,22 +438,33 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojE-st-9dV">
-                                                    <rect key="frame" x="8" y="26" width="272" height="21"/>
+                                                    <rect key="frame" x="33" y="26" width="272" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZb-Mq-m86" customClass="UIPitcherListButton" customModule="gameSenseSports" customModuleProvider="target">
-                                                    <rect key="frame" x="293" y="30" width="22" height="22"/>
+                                                    <rect key="frame" x="293" y="25" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                                     <connections>
                                                         <segue destination="Bf5-DP-fse" kind="show" identifier="pitcherdetail" id="zPv-Rx-h6g"/>
                                                     </connections>
                                                 </button>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0lf-Ed-p3W">
+                                                    <rect key="frame" x="33" y="45" width="213" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Gp-Vk-Hbg">
+                                                    <rect key="frame" x="1" y="22" width="28" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="difficultyView" destination="0lf-Ed-p3W" id="QpH-Cv-z99"/>
+                                            <outlet property="occlusionImage" destination="2Gp-Vk-Hbg" id="vJk-36-gHX"/>
                                             <outlet property="pitcherButton" destination="WZb-Mq-m86" id="CXb-yM-DGg"/>
                                             <segue destination="uzr-Ny-Wxn" kind="show" identifier="VideoPlayer" id="buf-Fs-cOP"/>
                                         </connections>
@@ -463,7 +474,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Drilled" id="mbM-GQ-wyr">
+                    <navigationItem key="navigationItem" title="Drills" id="mbM-GQ-wyr">
                         <barButtonItem key="rightBarButtonItem" title="Sign Out" id="YLq-d2-WGo">
                             <connections>
                                 <action selector="navSignOutPressed:" destination="ipA-Kb-iXZ" id="5dB-iK-CD2"/>
@@ -477,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSm-lQ-cQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1728.515625" y="-448.46266471449485"/>
+            <point key="canvasLocation" x="1726.875" y="-448.75"/>
         </scene>
         <!--Video-->
         <scene sceneID="NHn-eC-ZM5">
