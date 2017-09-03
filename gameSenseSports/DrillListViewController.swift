@@ -26,6 +26,11 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
             return _selectedDrillItem!
         }
     }
+    public var selectedListId : Int? = -1
+    public var selectedListTitle : String? = ""
+    public var selectedListImage : String? = ""
+    public var selectedListDescription : String? = ""
+    public var selectedListLeaderboardSource : String? = ""
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
@@ -71,9 +76,13 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "drillCell", for: indexPath)
+        let drillTableCell = (cell as? DrillListTableViewCell)
         let cellLabel = cell.viewWithTag(1) as! UILabel
         if (drillListArray.count > 0) {
             cellLabel.text = drillListArray[indexPath.row].title
+            drillTableCell?.drillId = drillListArray[indexPath.row].drillID
+            drillTableCell?.drillList = drillListArray[indexPath.row].primaryList
+            
         }
         else {
             cellLabel.text = ""
@@ -126,5 +135,55 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         appDelegate.apiToken = ""
         self.dismiss(animated: true, completion: {})
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let id = segue.identifier
+        if id == "pitcherdetail" {
+            let buttonView = (sender as! UIPitcherListButton)
+            setDrillList(drillList: buttonView.drillList)
+        }
+    }
     
+    func setDrillList(drillList: DrillList?) {
+        self.selectedListId = drillList?.id
+        self.selectedListTitle = drillList?.title
+        self.selectedListImage = drillList?.image
+        self.selectedListDescription = drillList?.description
+        self.selectedListLeaderboardSource = drillList?.leaderboardSource
+    }
+    
+    public func selectNextListId() {
+        var index = self.drillListArray.index(where: {$0.primaryList.id == self.selectedListId})!
+        while self.drillListArray[index].primaryList.id == self.selectedListId ||
+              self.drillListArray[index].primaryList.id == 0 ||
+              // remove "All gS Drills"
+              self.drillListArray[index].primaryList.id == 20 {
+            index = self.drillListArray.index(after: index)
+            if index == self.drillListArray.count {
+                index = 0
+            }
+        }
+        let item = self.drillListArray[index]
+        setDrillList(drillList: item.primaryList)
+    }
+    
+    public func selectPreviousListId() {
+        var index = self.drillListArray.index(where: {$0.primaryList.id == self.selectedListId})!
+        while self.drillListArray[index].primaryList.id == self.selectedListId ||
+            self.drillListArray[index].primaryList.id == 0 ||
+            // remove "All gS Drills"
+            self.drillListArray[index].primaryList.id == 20 {
+                index = self.drillListArray.index(before: index)
+                if index == -1 {
+                    index = self.drillListArray.count - 1
+                }
+        }
+        let item = self.drillListArray[index]
+        setDrillList(drillList: item.primaryList)
+    }
+    
+}
+
+class UIPitcherListButton : UIButton
+{
+    var drillList : DrillList? = nil
 }

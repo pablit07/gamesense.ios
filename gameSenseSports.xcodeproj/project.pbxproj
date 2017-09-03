@@ -69,7 +69,10 @@
 		11E139211DE5E88E005B2A6F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E139201DE5E88E005B2A6F /* Constants.swift */; };
 		11ECB99D1DECC2B900BEBF31 /* ballcheer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11ECB99B1DECC2B900BEBF31 /* ballcheer.mp3 */; };
 		11ECB99E1DECC2B900BEBF31 /* caughtball.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11ECB99C1DECC2B900BEBF31 /* caughtball.mp3 */; };
+		AF0B92621F49F99C00104E4A /* PitcherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0B92611F49F99C00104E4A /* PitcherDetailViewController.swift */; };
+		AF3CC5D71EE116810095A69A /* DrillListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3CC5D61EE116810095A69A /* DrillListTableViewCell.swift */; };
 		AF76AA321E477D8D00A9407D /* lance-lynn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF76AA311E477D8D00A9407D /* lance-lynn.jpg */; };
+		AF8864081F4CD65500FDF67B /* LeaderboardScoreParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8864071F4CD65500FDF67B /* LeaderboardScoreParser.swift */; };
 		AF8A22D21DF3ACF500A88E00 /* Rollbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */; };
 		AF8A22D71DF3C61600A88E00 /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A22D61DF3C61600A88E00 /* CrashReporter.framework */; };
 /* End PBXBuildFile section */
@@ -180,7 +183,10 @@
 		11E139201DE5E88E005B2A6F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		11ECB99B1DECC2B900BEBF31 /* ballcheer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ballcheer.mp3; path = sounds/ballcheer.mp3; sourceTree = "<group>"; };
 		11ECB99C1DECC2B900BEBF31 /* caughtball.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = caughtball.mp3; path = sounds/caughtball.mp3; sourceTree = "<group>"; };
+		AF0B92611F49F99C00104E4A /* PitcherDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitcherDetailViewController.swift; sourceTree = "<group>"; };
+		AF3CC5D61EE116810095A69A /* DrillListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrillListTableViewCell.swift; path = ../DrillListTableViewCell.swift; sourceTree = "<group>"; };
 		AF76AA311E477D8D00A9407D /* lance-lynn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lance-lynn.jpg"; sourceTree = "<group>"; };
+		AF8864071F4CD65500FDF67B /* LeaderboardScoreParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardScoreParser.swift; sourceTree = "<group>"; };
 		AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rollbar.framework; path = gameSenseSports/Rollbar.framework; sourceTree = "<group>"; };
 		AF8A22D31DF3C4B200A88E00 /* gameSenseSports-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gameSenseSports-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF8A22D61DF3C61600A88E00 /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CrashReporter.framework; path = gameSenseSports/CrashReporter.framework; sourceTree = "<group>"; };
@@ -222,6 +228,7 @@
 		11225C291DDE73AB0071D1CF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AF0B92611F49F99C00104E4A /* PitcherDetailViewController.swift */,
 				11698F941DDB999600C24D3C /* LoginViewController.swift */,
 				11698FD91DDD1CFD00C24D3C /* RegistrationWebViewController.swift */,
 				11698FC61DDBA28100C24D3C /* DrillListViewController.swift */,
@@ -262,6 +269,7 @@
 				11225C341DE262F20071D1CF /* DrillVideoParser.swift */,
 				11225C361DE26AF50071D1CF /* DrillPitchLocationParser.swift */,
 				11E1391E1DE4C932005B2A6F /* SharedNetworkConnection.swift */,
+				AF8864071F4CD65500FDF67B /* LeaderboardScoreParser.swift */,
 			);
 			name = DataAccessObjects;
 			sourceTree = "<group>";
@@ -301,6 +309,7 @@
 		11698F911DDB999600C24D3C /* gameSenseSports */ = {
 			isa = PBXGroup;
 			children = (
+				AF3CC5D81EE1A5F70095A69A /* Views */,
 				11C04E071E3FED81005BDC4B /* Libraries */,
 				11225C2B1DDE7FDB0071D1CF /* DataAccessObjects */,
 				11225C2A1DDE73B30071D1CF /* Images */,
@@ -427,6 +436,14 @@
 				11ECB99C1DECC2B900BEBF31 /* caughtball.mp3 */,
 			);
 			name = Sounds;
+			sourceTree = "<group>";
+		};
+		AF3CC5D81EE1A5F70095A69A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF3CC5D61EE116810095A69A /* DrillListTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -591,6 +608,8 @@
 				11C04F0B1E3FEE49005BDC4B /* mztools.c in Sources */,
 				11C04F031E3FEE49005BDC4B /* entropy.c in Sources */,
 				11698F931DDB999600C24D3C /* AppDelegate.swift in Sources */,
+				AF8864081F4CD65500FDF67B /* LeaderboardScoreParser.swift in Sources */,
+				AF0B92621F49F99C00104E4A /* PitcherDetailViewController.swift in Sources */,
 				11698FC91DDBA35A00C24D3C /* VideoPlayerViewController.swift in Sources */,
 				11225C311DE15CEC0071D1CF /* DrillListParser.swift in Sources */,
 				11C04F081E3FEE49005BDC4B /* sha1.c in Sources */,
@@ -616,6 +635,7 @@
 				11C04F0D1E3FEE49005BDC4B /* zip.c in Sources */,
 				11C04F071E3FEE49005BDC4B /* pwd2key.c in Sources */,
 				11E139211DE5E88E005B2A6F /* Constants.swift in Sources */,
+				AF3CC5D71EE116810095A69A /* DrillListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
