@@ -418,11 +418,15 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     }
     
     func startClockTimer() {
+        if answered { return }
         self.countDownTimer.invalidate()
         self.countDownTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(DrillQuestionsViewController.countdown), userInfo: nil, repeats: true)
 
         self.startAnimation()
-        
+    }
+    
+    func stopAnimation() {
+        self.lineLayer.removeAllAnimations()
     }
     
     func countdown()
@@ -430,6 +434,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         if (answered)
         {
             self.countDownTimer.invalidate()
+            self.stopAnimation()
             return
         }
         self.timerValue -= 0.1
