@@ -72,8 +72,11 @@ class VideoPlayerViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
+        // force to landscape for this view only
+        let currentOrientationValue = UIDevice.current.orientation
+        if currentOrientationValue != UIDeviceOrientation.landscapeLeft && currentOrientationValue != UIDeviceOrientation.landscapeRight {
+            UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
+        }
         self.movieView.backgroundColor = UIColor.black
         let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
         drillListItem = parentViewController.selectedDrillItem
