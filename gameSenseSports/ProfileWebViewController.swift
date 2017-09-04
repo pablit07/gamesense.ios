@@ -27,7 +27,7 @@ class ProfileWebViewController: UIViewController {
             navBar.title = "Account"
             break
         case 2:
-            let url = NSURL(string: "https://app.gamesensesports.com/dashboard/statistics")
+            let url = NSURL(string: "https://app.gamesensesports.com/dashboard/score-chart")
             let requestObj = NSURLRequest(url: url! as URL)
             profileWebView.loadRequest(requestObj as URLRequest)
             navBar.title = "Statistics"

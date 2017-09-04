@@ -89,11 +89,33 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.dismissMenu()
         }
         
-        //Web View
-        if (indexPath.row == 1 || indexPath.row == 2) {
-            self.selected = indexPath.row
-            self.performSegue(withIdentifier: "profileWebview", sender: nil)
+        // Safari
+        if indexPath.row == 2 || indexPath.row == 1 {
+            var url = ""
+            switch indexPath.row {
+            case 1:
+                url = "https://app.gamesensesports.com/dashboard/subscriptions"
+                break
+            case 2:
+                url = "https://app.gamesensesports.com/dashboard/score-chart"
+                break
+            default:
+                break
+            }
+            
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(NSURL(string:url)! as URL, options: [:], completionHandler: nil)
+            } else {
+                // Fallback on earlier versions
+                UIApplication.shared.openURL(NSURL(string:url)! as URL)
+            }
         }
+        
+        //Web View (not used)
+//        if (false) {
+//            self.selected = indexPath.row
+//            self.performSegue(withIdentifier: "profileWebview", sender: nil)
+//        }
         
         //Logout
         if (indexPath.row == 3) {
