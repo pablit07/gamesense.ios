@@ -500,7 +500,7 @@
         <!--Video-->
         <scene sceneID="NHn-eC-ZM5">
             <objects>
-                <viewController title="Video" id="uzr-Ny-Wxn" customClass="VideoPlayerViewController" customModule="gameSenseSports" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="videoplayer" title="Video" id="uzr-Ny-Wxn" customClass="VideoPlayerViewController" customModule="gameSenseSports" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EWN-pO-kaq"/>
                         <viewControllerLayoutGuide type="bottom" id="I5k-NU-qkc"/>
