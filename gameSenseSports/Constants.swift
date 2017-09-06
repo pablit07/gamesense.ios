@@ -15,18 +15,19 @@ struct Constants {
     static let kCacheKey = "cache"
     
     struct URLs {
-        static let Login = "https://app.gamesensesports.com/api-token-auth/"
-        static let DrillList = "https://app.gamesensesports.com/player/api-auth/baseball/drills/"
-        static let DrillQuestions = "https://app.gamesensesports.com/player/api-auth/baseball/drills/" // +id/questions
-        static let DrillVideo = "https://app.gamesensesports.com/player/api-auth/baseball/videos/" // + id
-        static let apiBase = "https://app.gamesensesports.com" // + responseURI
+        static let apiBase = "https://app.gamesensesports.com"
+        static let Login = apiBase + "/api-token-auth/"
+        static let DrillList = apiBase + "/player/api-auth/baseball/drills/"
+        static let DrillQuestions = apiBase + "/player/api-auth/baseball/drills/" // +id/questions
+        static let DrillVideo = apiBase + "/player/api-auth/baseball/videos/" // + id
+         // + responseURI
         static let awsBase = "https://gamesense-videos.s3.amazonaws.com/"
         
-        static let apiRegisterDrill = "https://app.gamesensesports.com/account/api-auth/register-activity/drill/"
-        static let apiAnswerQuestion = "https://app.gamesensesports.com/account/api-auth/register-action/question/"
+        static let apiRegisterDrill = apiBase + "/account/api-auth/register-activity/drill/"
+        static let apiAnswerQuestion = apiBase + "/account/api-auth/register-action/question/"
         
-        static let apiDrillFinished = "https://app.gamesensesports.com/player/api-auth/score/"
-        static let apiDrillFinishedNext = "https://app.gamesensesports.com/account/api-auth/register-action/score/"
+        static let apiDrillFinished = apiBase + "/player/api-auth/score/"
+        static let apiDrillFinishedNext = apiBase + "/account/api-auth/register-action/score/"
         
         static let imageCacheZip = "https://s3.amazonaws.com/gamesense-secure/cache-init.zip"
     }

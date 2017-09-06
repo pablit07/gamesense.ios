@@ -9,7 +9,7 @@
 			<string>gameSenseSports</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>gamesense</string>
+				<string>gamesensebaseball</string>
 			</array>
 		</dict>
 	</array>

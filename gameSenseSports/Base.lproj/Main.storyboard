@@ -311,32 +311,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ffm-am-KGs">
-                                <rect key="frame" x="0.0" y="52" width="320" height="276"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ffm-am-KGs">
+                                <rect key="frame" x="0.0" y="30" width="320" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OmT-8m-uYI">
-                                        <rect key="frame" x="4" y="6" width="329.5" height="116"/>
+                                        <rect key="frame" x="4" y="6" width="329.5" height="100.5"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="41"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIt-mW-e5Y">
-                                        <rect key="frame" x="8" y="119" width="154" height="147"/>
+                                        <rect key="frame" x="8" y="83" width="154" height="147"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pv0-Fb-Yxt">
-                                        <rect key="frame" x="162" y="119" width="150" height="132"/>
+                                        <rect key="frame" x="162" y="83" width="150" height="132"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h44-4X-VFD">
-                                <rect key="frame" x="0.0" y="326" width="320" height="242"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h44-4X-VFD">
+                                <rect key="frame" x="0.0" y="310" width="320" height="240"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMf-Z2-OoJ">
                                         <rect key="frame" x="6" y="0.0" width="308" height="30"/>
@@ -347,7 +347,7 @@
                                         </state>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BKx-NX-oDc">
-                                        <rect key="frame" x="0.0" y="29" width="320" height="182"/>
+                                        <rect key="frame" x="0.0" y="28.5" width="320" height="180.5"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
@@ -410,7 +410,7 @@
         <!--Drill List-->
         <scene sceneID="HEa-VY-VCQ">
             <objects>
-                <viewController title="Drill List" id="ipA-Kb-iXZ" customClass="DrillListViewController" customModule="gameSenseSports" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="drilllist" title="Drill List" id="ipA-Kb-iXZ" customClass="DrillListViewController" customModule="gameSenseSports" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Xx-Qb-PeM"/>
                         <viewControllerLayoutGuide type="bottom" id="cet-Df-Hjx"/>
@@ -554,7 +554,7 @@
         <!--Navigation Controller-->
         <scene sceneID="3UW-ce-5rR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lMR-bs-zoz" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="drilllistnav" automaticallyAdjustsScrollViewInsets="NO" id="lMR-bs-zoz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zwO-dZ-skW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

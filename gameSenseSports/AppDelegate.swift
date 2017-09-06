@@ -80,9 +80,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         // Access the storyboard and fetch an instance of the view controller
+        let data = url.absoluteString.components(separatedBy: "#")[1]
+        let drillData = NSData(base64Encoded: data, options: NSData.Base64DecodingOptions())
+        let json = (try? JSONSerialization.jsonObject(with: drillData! as Data, options: [])) as! [String: Any]
+        let drill = DrillListItem(json: json)
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
-        let viewController: VideoPlayerViewController = storyboard.instantiateViewController(withIdentifier: "videoplayer") as! VideoPlayerViewController;
-        
+        let videoPlayerViewController: VideoPlayerViewController = storyboard.instantiateViewController(withIdentifier: "videoplayer") as! VideoPlayerViewController;
+//        let drillListViewController: DrillListViewController = storyboard.instantiateViewController(withIdentifier: "drilllist") as! DrillListViewController
+        let navController = storyboard.instantiateViewController(withIdentifier: "drilllistnav") as! UINavigationController
+        let drillListViewController: DrillListViewController = navController.viewControllers[0] as! DrillListViewController
+        drillListViewController.selectedDrillItem = drill!
+        navController.pushViewController(videoPlayerViewController, animated: false)
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = navController
+        self.window?.makeKeyAndVisible()
         // Then push that view controller onto the navigation stack
 //        let rootViewController = self.window!.rootViewController as! UINavigationController;
 //        rootViewController.pushViewController(viewController, animated: true);

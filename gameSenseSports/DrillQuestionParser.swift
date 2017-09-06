@@ -61,12 +61,13 @@ struct DrillQuestionItem
 
 extension DrillQuestionItem {
     init?(json: [String: Any]) {
+        
         guard let drillQuestionID = json["id"] as? Int,
         let occludedVideo = json["occluded_video_file"] as? String,
-        let fullVideo = json["full_video_file"] as? String,
-        let answerURL = json["full_video"] as? String,
+        let fullVideo = json["full_video_file"] as? String ?? json["occluded_video_file"] as? String,
+        let answerURL = json["full_video"] as? String ?? json["occluded_video"] as? String,
         let occludedHlsVideo = json["hls_occluded_url"] as? String,
-        let fullHlsVideo = json["hls_full_url"] as? String,
+        let fullHlsVideo = json["hls_full_url"] as? String ?? json["hls_occluded_url"] as? String,
         let responseURIs = json["response_uris"] as? [Any]
             else {
                 return nil

@@ -52,7 +52,6 @@ struct DrillList {
 }
 
 struct DrillListItem {
-    let url: String
     let drillID: Int
     let title: String
     let questionCount: Int
@@ -64,22 +63,20 @@ struct DrillListItem {
 extension DrillListItem {
     init?(json: [String: Any]) {
         let lists = json["lists"] as? [[String: Any]]
-        guard let url = json["url"] as? String,
-            let title = json["title"] as? String,
+        guard let title = json["title"] as? String,
             let drillID = json["id"] as? Int,
             let questionCount = json["number_of_questions"] as? Int,
-            let randomize = json["randomize"] as? Bool,
-            let primaryList = DrillList(json: lists)
+            let randomize = json["randomize"] as? Bool
             else {
                 return nil
         }
         
-        self.url = url
         self.title = title
         self.drillID = drillID
         self.questionCount = questionCount
         self.randomize = randomize
-        self.primaryList = primaryList
+        if let lists = lists { self.primaryList = DrillList(json: lists)! }
+        else { self.primaryList = DrillList()! }
         if title.contains("Advanced") {
             self.occlusion = 3
         } else if title.contains("Full Pitch") {
