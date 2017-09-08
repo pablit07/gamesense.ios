@@ -84,16 +84,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let drillData = NSData(base64Encoded: data, options: NSData.Base64DecodingOptions())
         let json = (try? JSONSerialization.jsonObject(with: drillData! as Data, options: [])) as! [String: Any]
         let drill = DrillListItem(json: json)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil);
-        let videoPlayerViewController: VideoPlayerViewController = storyboard.instantiateViewController(withIdentifier: "videoplayer") as! VideoPlayerViewController;
-//        let drillListViewController: DrillListViewController = storyboard.instantiateViewController(withIdentifier: "drilllist") as! DrillListViewController
-        let navController = storyboard.instantiateViewController(withIdentifier: "drilllistnav") as! UINavigationController
-        let drillListViewController: DrillListViewController = navController.viewControllers[0] as! DrillListViewController
-        drillListViewController.selectedDrillItem = drill!
-        navController.pushViewController(videoPlayerViewController, animated: false)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginController: LoginViewController = storyboard.instantiateViewController(withIdentifier: "login") as! LoginViewController
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = navController
+        self.window?.rootViewController = loginController
         self.window?.makeKeyAndVisible()
+        if self.apiToken != "" {
+            let videoPlayerViewController: VideoPlayerViewController = storyboard.instantiateViewController(withIdentifier: "videoplayer") as! VideoPlayerViewController;
+            //        let drillListViewController: DrillListViewController = storyboard.instantiateViewController(withIdentifier: "drilllist") as! DrillListViewController
+            let navController = storyboard.instantiateViewController(withIdentifier: "drilllistnav") as! UINavigationController
+            let drillListViewController: DrillListViewController = navController.viewControllers[0] as! DrillListViewController
+            
+            drillListViewController.selectedDrillItem = drill!
+            navController.pushViewController(videoPlayerViewController, animated: false)
+            loginController.present(navController, animated: true, completion: nil)
+        }
         // Then push that view controller onto the navigation stack
 //        let rootViewController = self.window!.rootViewController as! UINavigationController;
 //        rootViewController.pushViewController(viewController, animated: true);

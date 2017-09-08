@@ -210,25 +210,26 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         self.answeredPitchTypeID = pitchType
         self.answeredPitchLocationID = pitchLocation
         
-        let parentViewController = self.parent as! VideoPlayerViewController
-        if (pitchType == self.drillVideoItem?.pitchTypeID && pitchLocation == self.drillVideoItem?.pitchLocationID) {
-            parentViewController.locationPoints += 10
-            parentViewController.typePoints += 10
-            self.calculcatePoints(points: 25)
-            self.sendUserAnswer(correctAnswer: true)
-        }
-        else {
-            var points = 0
-            if (pitchType == self.drillVideoItem?.pitchTypeID) {
-                points += 10
-                parentViewController.typePoints += 10
-            }
-            if (pitchLocation == self.drillVideoItem?.pitchLocationID) {
-                points += 10
+        if let parentViewController = self.parent as? VideoPlayerViewController {
+            if (pitchType == self.drillVideoItem?.pitchTypeID && pitchLocation == self.drillVideoItem?.pitchLocationID) {
                 parentViewController.locationPoints += 10
+                parentViewController.typePoints += 10
+                self.calculcatePoints(points: 25)
+                self.sendUserAnswer(correctAnswer: true)
             }
-            self.calculcatePoints(points: points)
-            self.sendUserAnswer(correctAnswer: false)
+            else {
+                var points = 0
+                if (pitchType == self.drillVideoItem?.pitchTypeID) {
+                    points += 10
+                    parentViewController.typePoints += 10
+                }
+                if (pitchLocation == self.drillVideoItem?.pitchLocationID) {
+                    points += 10
+                    parentViewController.locationPoints += 10
+                }
+                self.calculcatePoints(points: points)
+                self.sendUserAnswer(correctAnswer: false)
+            }
         }
     }
     
