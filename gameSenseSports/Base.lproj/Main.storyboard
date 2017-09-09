@@ -514,10 +514,6 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3P2-Bk-GG4">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gPy-h4-eSy">
                                 <rect key="frame" x="0.0" y="206" width="320" height="274"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
@@ -536,20 +532,34 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrL-YX-G1J">
+                                <rect key="frame" x="110" y="190" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="bJk-Ro-hQi"/>
+                                    <constraint firstAttribute="height" constant="100" id="mER-8E-XLu"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="play.png"/>
+                                <connections>
+                                    <action selector="playButtonPressed:" destination="uzr-Ny-Wxn" eventType="touchUpInside" id="sXD-UE-neY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="MrL-YX-G1J" firstAttribute="centerY" secondItem="RNk-e3-ZfL" secondAttribute="centerY" id="jT1-oD-now"/>
+                            <constraint firstItem="MrL-YX-G1J" firstAttribute="centerX" secondItem="RNk-e3-ZfL" secondAttribute="centerX" id="yAm-mt-DCa"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Drill" id="U34-jC-PK9"/>
                     <connections>
                         <outlet property="loadingView" destination="gmA-cy-KGH" id="KQw-Mx-6LM"/>
-                        <outlet property="modalButton" destination="3P2-Bk-GG4" id="zM2-j5-aUs"/>
                         <outlet property="movieView" destination="H2U-eo-AJn" id="T5u-aE-mf1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsd-z1-JWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2576.8000000000002" y="-448.42578710644682"/>
+            <point key="canvasLocation" x="2576.25" y="-448.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3UW-ce-5rR">
@@ -776,6 +786,7 @@
         <image name="gs_logo_login.png" width="1500" height="291"/>
         <image name="home_icon.png" width="40" height="35"/>
         <image name="lance-lynn.jpg" width="750" height="727"/>
+        <image name="play.png" width="200" height="200"/>
         <image name="profile.png" width="75" height="75"/>
         <image name="round_ball.png" width="766" height="767"/>
         <image name="round_strike.png" width="766" height="767"/>
