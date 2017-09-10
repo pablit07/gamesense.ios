@@ -4,4 +4,7 @@
 
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <Rollbar/Rollbar.h>
+#import <GoogleAnalytics/GAI.h>
+#import "GAIFields.h"
+#import "GAIDictionaryBuilder.h"
 #import "SSZipArchive.h"

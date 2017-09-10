@@ -69,6 +69,7 @@
 		11E139211DE5E88E005B2A6F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E139201DE5E88E005B2A6F /* Constants.swift */; };
 		11ECB99D1DECC2B900BEBF31 /* ballcheer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11ECB99B1DECC2B900BEBF31 /* ballcheer.mp3 */; };
 		11ECB99E1DECC2B900BEBF31 /* caughtball.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11ECB99C1DECC2B900BEBF31 /* caughtball.mp3 */; };
+		A8290B59379F26AA57787B49 /* libPods-gameSenseSports.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3642BFA2F2050BD2D1E07B31 /* libPods-gameSenseSports.a */; };
 		AF0B92621F49F99C00104E4A /* PitcherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0B92611F49F99C00104E4A /* PitcherDetailViewController.swift */; };
 		AF3CC5D71EE116810095A69A /* DrillListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3CC5D61EE116810095A69A /* DrillListTableViewCell.swift */; };
 		AF76AA321E477D8D00A9407D /* lance-lynn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF76AA311E477D8D00A9407D /* lance-lynn.jpg */; };
@@ -195,6 +196,8 @@
 		11E139201DE5E88E005B2A6F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		11ECB99B1DECC2B900BEBF31 /* ballcheer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ballcheer.mp3; path = sounds/ballcheer.mp3; sourceTree = "<group>"; };
 		11ECB99C1DECC2B900BEBF31 /* caughtball.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = caughtball.mp3; path = sounds/caughtball.mp3; sourceTree = "<group>"; };
+		3642BFA2F2050BD2D1E07B31 /* libPods-gameSenseSports.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gameSenseSports.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		422D7E26DF320FBDB8879001 /* Pods-gameSenseSports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gameSenseSports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gameSenseSports/Pods-gameSenseSports.debug.xcconfig"; sourceTree = "<group>"; };
 		AF0B92611F49F99C00104E4A /* PitcherDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitcherDetailViewController.swift; sourceTree = "<group>"; };
 		AF3CC5D61EE116810095A69A /* DrillListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrillListTableViewCell.swift; path = ../DrillListTableViewCell.swift; sourceTree = "<group>"; };
 		AF76AA311E477D8D00A9407D /* lance-lynn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lance-lynn.jpg"; sourceTree = "<group>"; };
@@ -214,6 +217,7 @@
 		AFFAC0261F5CA25D00E2634F /* occlusion_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = occlusion_2.png; path = images/occlusion_2.png; sourceTree = "<group>"; };
 		AFFAC0271F5CA25D00E2634F /* occlusion_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = occlusion_3.png; path = images/occlusion_3.png; sourceTree = "<group>"; };
 		AFFAC0281F5CA25D00E2634F /* occlusion_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = occlusion_4.png; path = images/occlusion_4.png; sourceTree = "<group>"; };
+		D949346BDFC850193A2DD6DE /* Pods-gameSenseSports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gameSenseSports.release.xcconfig"; path = "Pods/Target Support Files/Pods-gameSenseSports/Pods-gameSenseSports.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +233,7 @@
 				11698FD01DDBA3C300C24D3C /* MobileCoreServices.framework in Frameworks */,
 				11698FCD1DDBA3BD00C24D3C /* AVFoundation.framework in Frameworks */,
 				11698FCE1DDBA3BD00C24D3C /* AVKit.framework in Frameworks */,
+				A8290B59379F26AA57787B49 /* libPods-gameSenseSports.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +254,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DFAB5CE74E205BF41962625 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				422D7E26DF320FBDB8879001 /* Pods-gameSenseSports.debug.xcconfig */,
+				D949346BDFC850193A2DD6DE /* Pods-gameSenseSports.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		11225C291DDE73AB0071D1CF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +343,7 @@
 				11698FB41DDB999600C24D3C /* gameSenseSportsUITests */,
 				11698F901DDB999600C24D3C /* Products */,
 				11698FCA1DDBA3BD00C24D3C /* Frameworks */,
+				0DFAB5CE74E205BF41962625 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -394,6 +409,7 @@
 				11698FCF1DDBA3C300C24D3C /* MobileCoreServices.framework */,
 				11698FCB1DDBA3BD00C24D3C /* AVFoundation.framework */,
 				11698FCC1DDBA3BD00C24D3C /* AVKit.framework */,
+				3642BFA2F2050BD2D1E07B31 /* libPods-gameSenseSports.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -489,9 +505,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11698FBA1DDB999600C24D3C /* Build configuration list for PBXNativeTarget "gameSenseSports" */;
 			buildPhases = (
+				0FD7795D1E8586B8428DCD41 /* [CP] Check Pods Manifest.lock */,
 				11698F8B1DDB999600C24D3C /* Sources */,
 				11698F8C1DDB999600C24D3C /* Frameworks */,
 				11698F8D1DDB999600C24D3C /* Resources */,
+				6AF1C2046B8E67D6B43676BE /* [CP] Embed Pods Frameworks */,
+				EA49214567B19C3D63883AAD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -645,6 +664,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FD7795D1E8586B8428DCD41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gameSenseSports-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AF1C2046B8E67D6B43676BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-gameSenseSports/Pods-gameSenseSports-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA49214567B19C3D63883AAD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-gameSenseSports/Pods-gameSenseSports-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		11698F8B1DDB999600C24D3C /* Sources */ = {
@@ -836,6 +906,7 @@
 		};
 		11698FBB1DDB999600C24D3C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 422D7E26DF320FBDB8879001 /* Pods-gameSenseSports.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -857,6 +928,7 @@
 		};
 		11698FBC1DDB999600C24D3C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D949346BDFC850193A2DD6DE /* Pods-gameSenseSports.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

@@ -34,6 +34,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Rollbar.initWithAccessToken("3b7e8110851641b9898b93abf2ef0fa0", configuration: config)
         
+        guard let gai = GAI.sharedInstance() else {
+            assert(false, "Google Analytics not configured correctly")
+        }
+        gai.tracker(withTrackingId: "UA-76645768-2")
+        // Optional: automatically report uncaught exceptions.
+        gai.trackUncaughtExceptions = true
+        
+        // Optional: set Logger to VERBOSE for debug information.
+        // Remove before app release.
+        gai.logger.logLevel = .verbose;
+        
         let cacheDirectory = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         let fileManager =  FileManager.default
         let files = try! fileManager.contentsOfDirectory(at: cacheDirectory, includingPropertiesForKeys: nil, options: [])

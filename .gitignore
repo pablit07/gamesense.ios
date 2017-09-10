@@ -1,3 +1,6 @@
 *.xcuserdatad/
 .DS_STORE/
 DerivedData/
+gameSenseSports.xcworkspace/
+Podfile.lock
+/Pods

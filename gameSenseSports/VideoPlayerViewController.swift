@@ -13,7 +13,6 @@ import MobileCoreServices
 
 import UIKit
 
-
 class VideoPlayerViewController: UIViewController
 {
  
@@ -86,6 +85,11 @@ class VideoPlayerViewController: UIViewController
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.resetView()
+        
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker?.set(kGAIScreenName, value: "/videoplayer/\(String(describing: self.drillListItem?.drillID))")
+        let build = (GAIDictionaryBuilder.createScreenView().build() as NSDictionary) as! [AnyHashable: Any]
+        tracker?.send(build)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

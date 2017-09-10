@@ -37,6 +37,11 @@ class PitcherDetailViewController : UIViewController, UITableViewDataSource, UIT
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         getLeaderboard()
+        
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker?.set(kGAIScreenName, value: "/pitcherdetail/\(String(describing: self.selectedListId))")
+        let build = (GAIDictionaryBuilder.createScreenView().build() as NSDictionary) as! [AnyHashable: Any]
+        tracker?.send(build)
     }
     
     func resetView() {
