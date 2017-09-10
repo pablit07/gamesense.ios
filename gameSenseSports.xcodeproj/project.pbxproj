@@ -72,6 +72,7 @@
 		A8290B59379F26AA57787B49 /* libPods-gameSenseSports.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3642BFA2F2050BD2D1E07B31 /* libPods-gameSenseSports.a */; };
 		AF0B92621F49F99C00104E4A /* PitcherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0B92611F49F99C00104E4A /* PitcherDetailViewController.swift */; };
 		AF3CC5D71EE116810095A69A /* DrillListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3CC5D61EE116810095A69A /* DrillListTableViewCell.swift */; };
+		AF69513C1F64E09F00FDE369 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = AF69513B1F64E09F00FDE369 /* play.png */; };
 		AF76AA321E477D8D00A9407D /* lance-lynn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF76AA311E477D8D00A9407D /* lance-lynn.jpg */; };
 		AF8864081F4CD65500FDF67B /* LeaderboardScoreParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8864071F4CD65500FDF67B /* LeaderboardScoreParser.swift */; };
 		AF8A22D21DF3ACF500A88E00 /* Rollbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */; };
@@ -200,6 +201,7 @@
 		422D7E26DF320FBDB8879001 /* Pods-gameSenseSports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gameSenseSports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gameSenseSports/Pods-gameSenseSports.debug.xcconfig"; sourceTree = "<group>"; };
 		AF0B92611F49F99C00104E4A /* PitcherDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitcherDetailViewController.swift; sourceTree = "<group>"; };
 		AF3CC5D61EE116810095A69A /* DrillListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrillListTableViewCell.swift; path = ../DrillListTableViewCell.swift; sourceTree = "<group>"; };
+		AF69513B1F64E09F00FDE369 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = images/play.png; sourceTree = "<group>"; };
 		AF76AA311E477D8D00A9407D /* lance-lynn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lance-lynn.jpg"; sourceTree = "<group>"; };
 		AF8864071F4CD65500FDF67B /* LeaderboardScoreParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardScoreParser.swift; sourceTree = "<group>"; };
 		AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rollbar.framework; path = gameSenseSports/Rollbar.framework; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 		11225C2A1DDE73B30071D1CF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AF69513B1F64E09F00FDE369 /* play.png */,
 				AFFAC01D1F5CA25D00E2634F /* full_circle_1.png */,
 				AFFAC01E1F5CA25D00E2634F /* full_circle_2.png */,
 				AFFAC01F1F5CA25D00E2634F /* full_circle_3.png */,
@@ -639,6 +642,7 @@
 				115C95511F4678AA00224F50 /* account@2x.png in Resources */,
 				11698F981DDB999600C24D3C /* Main.storyboard in Resources */,
 				11ECB99D1DECC2B900BEBF31 /* ballcheer.mp3 in Resources */,
+				AF69513C1F64E09F00FDE369 /* play.png in Resources */,
 				AFFAC02A1F5CA25D00E2634F /* full_circle_2.png in Resources */,
 				11C04F091E3FEE49005BDC4B /* Info.plist in Resources */,
 				AFFAC0291F5CA25D00E2634F /* full_circle_1.png in Resources */,
