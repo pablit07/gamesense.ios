@@ -39,7 +39,7 @@ class PitcherDetailViewController : UIViewController, UITableViewDataSource, UIT
         getLeaderboard()
         
         let tracker = GAI.sharedInstance().defaultTracker
-        tracker?.set(kGAIScreenName, value: "/pitcherdetail/\(String(describing: self.selectedListId))")
+        tracker?.set(kGAIScreenName, value: "/pitcherdetail/" + String(self.selectedListId!))
         let build = (GAIDictionaryBuilder.createScreenView().build() as NSDictionary) as! [AnyHashable: Any]
         tracker?.send(build)
     }
