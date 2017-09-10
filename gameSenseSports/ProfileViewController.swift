@@ -68,7 +68,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             icon.image = image
             break
         case 2:
-            label.text = "Statistics"
+            label.text = "My Scores"
             let image = UIImage(named:"charts.png")
             icon.image = image
             break
