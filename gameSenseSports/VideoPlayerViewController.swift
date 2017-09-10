@@ -22,7 +22,6 @@ class VideoPlayerViewController: UIViewController
         URLSession.shared.invalidateAndCancel()
     }
     
-    @IBOutlet weak var modalButton: UIButton!
     @IBOutlet weak var movieView: UIView!
     @IBOutlet weak var loadingView: UIView!
     
@@ -41,6 +40,9 @@ class VideoPlayerViewController: UIViewController
     public var typePoints = 0
     
     public var returnedDrillID = -1
+    
+    public var hasDrillStarted = false
+    public var onDrillStarted: (() -> ())? = nil
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
@@ -231,39 +233,16 @@ class VideoPlayerViewController: UIViewController
 //                self.updateVideoPlayer(videoURL: cacheDirectory)
 //            }
 //        }
-        if (true) {
-            DispatchQueue.main.async {
-                self.updateVideoPlayer(videoURL: URL(string: hlsFile)!)
-            }
+        DispatchQueue.main.async {
+            self.updateVideoPlayer(videoURL: URL(string: hlsFile)!, startPlaying: self.hasDrillStarted)
         }
 
-        else {
-            let completionHandler: (Data?, URLResponse?, Error?) -> Void = { data, response, error in
-                guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                    print("error=\(error)")
-                    return
-                }
-                
-                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                    // 403 on no token
-                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
-                }
-                
-                try? data.write(to: cacheDirectory)
-                DispatchQueue.main.async {
-                    self.updateVideoPlayer(videoURL: cacheDirectory)
-                }
-            }
-            if hlsFile != "" {
-                SharedNetworkConnection.downloadVideo(resourceFile: hlsFile, completionHandler: completionHandler)
-            } else {
-                SharedNetworkConnection.downloadVideo(resourceFilename: filename, completionHandler: completionHandler)
-            }
-        }
+//        else {
+//
+//        }
     }
     
-    private func updateVideoPlayer(videoURL: URL)
+    private func updateVideoPlayer(videoURL: URL, startPlaying: Bool = false)
     {
         self.removeVideoPlayer()
         if (!replay) {
@@ -277,7 +256,9 @@ class VideoPlayerViewController: UIViewController
             playerItem.preferredPeakBitRate = 420000
             let player = AVPlayer(playerItem: playerItem)
             player.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions(), context: nil)
-            let playerLayer = AVPlayerLayer(player: player)
+//            let playerLayer = AVPlayerLayer(player: player)
+            let playerLayer = AVPlayerLayer()
+            playerLayer.player = player
             playerLayer.frame = self.movieView.bounds
             playerLayer.bounds = self.movieView.bounds
 
@@ -294,10 +275,10 @@ class VideoPlayerViewController: UIViewController
                 playerLayer.frame = CGRect.init(x:0, y:0, width:screenSize.width, height:(screenSize.width * 0.5625))
             }
             playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
-            self.movieView.layer.addSublayer(playerLayer)
+            self.movieView.layer.insertSublayer(playerLayer, at: 0)
             
             NotificationCenter.default.addObserver(self, selector: #selector(VideoPlayerViewController.playerFinished), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
-            player.play()
+            if startPlaying { player.play() }
         }
         else {
             let asset = AVAsset(url: videoURL)
@@ -499,5 +480,13 @@ class VideoPlayerViewController: UIViewController
         alert.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.default, handler: nextHandler))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func playButtonPressed(_ sender: UIButton) {
+        sender.isHidden = true
+        (movieView.layer.sublayers?[0] as? AVPlayerLayer)?.player?.play()
+        hasDrillStarted = true
+        onDrillStarted!()
+    }
+    
 }
 

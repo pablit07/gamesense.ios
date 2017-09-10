@@ -73,7 +73,13 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     
     public func resetViewForDisplay()
     {
-        self.view.alpha = 1
+        let parentViewController = self.parent as! VideoPlayerViewController
+        if parentViewController.hasDrillStarted {
+            self.view.alpha = 1
+        } else {
+            let onDrillStartedHandler = {self.view.alpha = (self.isLandscape) ? 0.7 : 1}
+            parentViewController.onDrillStarted = onDrillStartedHandler
+        }
         answered = false
         answeredCorrectly = false
         timeout = false
@@ -84,7 +90,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         answeredPitchTypeID = -1
         self.shapeLayer.removeFromSuperlayer()
         self.shapeLayer = CAShapeLayer()
-        let parentViewController = self.parent as! VideoPlayerViewController
         pointsLabel.text = String(parentViewController.points)
         questionsLabel.text = String(parentViewController.index + 1)
         drillQuestionItem = parentViewController.drillQuestionsArray[parentViewController.index]
@@ -108,7 +113,9 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             self.lineTimerView.isHidden = false
             self.scoreView.isHidden = true
             self.view.backgroundColor = UIColor.clear
-            self.view.alpha = 0.7
+            if parentViewController.hasDrillStarted {
+                self.view.alpha = 0.7
+            }
             self.timerView.isHidden = true
             let toMoveX = deviceBounds.width * 0.68
             var viewFrame = self.view.frame
