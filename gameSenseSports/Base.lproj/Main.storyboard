@@ -474,17 +474,14 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlO-91-6J7">
                                 <rect key="frame" x="0.0" y="64" width="65" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="FhR-IW-Vvj" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" id="hu7-7I-QNt"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Drills" id="mbM-GQ-wyr">
-                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="YLq-d2-WGo">
+                        <barButtonItem key="leftBarButtonItem" image="side_baricon" width="10" id="PW1-eT-pFN" userLabel="Menu">
                             <connections>
-                                <action selector="navSignOutPressed:" destination="ipA-Kb-iXZ" id="5dB-iK-CD2"/>
+                                <segue destination="FhR-IW-Vvj" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" id="uuT-P2-Sqk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -779,5 +776,6 @@
         <image name="profile.png" width="75" height="75"/>
         <image name="round_ball.png" width="766" height="767"/>
         <image name="round_strike.png" width="766" height="767"/>
+        <image name="side_baricon" width="22" height="22"/>
     </resources>
 </document>
