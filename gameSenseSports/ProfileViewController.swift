@@ -86,6 +86,15 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Home
         if (indexPath.row == 0) {
+            let presentingViewController = self.presentingViewController as! UINavigationController
+            var rootDrillListViewController: DrillListViewController?
+            
+            for vc in presentingViewController.viewControllers.reversed() {
+                if vc is DrillListViewController {
+                    rootDrillListViewController = vc as? DrillListViewController
+                }
+            }
+            presentingViewController.popToViewController(rootDrillListViewController!, animated: false)
             self.dismissMenu()
         }
         

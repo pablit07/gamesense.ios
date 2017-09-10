@@ -20,6 +20,7 @@ struct Constants {
         static let DrillList = apiBase + "/player/api-auth/baseball/drills/"
         static let DrillQuestions = apiBase + "/player/api-auth/baseball/drills/" // +id/questions
         static let DrillVideo = apiBase + "/player/api-auth/baseball/videos/" // + id
+        static let DrillListForList = apiBase + "/player/api-auth/baseball/drilllists/" // + id/drills/
          // + responseURI
         static let awsBase = "https://gamesense-videos.s3.amazonaws.com/"
         

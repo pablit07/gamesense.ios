@@ -36,9 +36,12 @@ class SharedNetworkConnection: NSObject
         }
     }
     
-    static func apiGetDrillList(apiToken: String, limit: Int = 0, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
+    static func apiGetDrillList(apiToken: String, limit: Int = 0, listId: Int? = nil, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
     {
-        var url = Constants.URLs.DrillList
+        var url = (listId == nil) ? Constants.URLs.DrillList : Constants.URLs.DrillListForList
+        if listId != nil {
+            url += String(listId!) + "/drills/"
+        }
         if limit > 0 {
             url += "?limit=" + "\(limit)" + "&ordering=title"
         }

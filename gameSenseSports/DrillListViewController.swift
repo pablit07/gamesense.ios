@@ -98,8 +98,18 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     
     private func getDrillList(optimize: Bool = false)
     {
+        var listId: Int?
+        // get the list id if receiving from pitcher detail
+        for vc in (self.navigationController?.viewControllers)! {
+            if let pitcherDetailViewController = vc as? PitcherDetailViewController {
+                if pitcherDetailViewController.selectedListId != -1 {
+                    listId = pitcherDetailViewController.selectedListId
+                }
+            }
+        }
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        SharedNetworkConnection.apiGetDrillList(apiToken: appDelegate.apiToken, limit: (optimize ? 10 : 0), completionHandler: { data, response, error in
+        SharedNetworkConnection.apiGetDrillList(apiToken: appDelegate.apiToken, limit: (optimize ? 10 : 0), listId: listId, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
                 return
