@@ -58,7 +58,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.alpha = 0
-        loadVideos()
         self.isLandscape = self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact
     }
     
@@ -222,10 +221,11 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
                 parentViewController.locationPoints += 10
                 parentViewController.typePoints += 10
                 self.calculcatePoints(points: 25)
-                self.sendUserAnswer(correctAnswer: true)
+                self.sendUserAnswer(correctAnswer: true, bothIncorrect: false)
             }
             else {
                 var points = 0
+                let bothIncorrect = pitchType != self.drillVideoItem?.pitchTypeID && pitchLocation != self.drillVideoItem?.pitchLocationID
                 if (pitchType == self.drillVideoItem?.pitchTypeID) {
                     points += 10
                     parentViewController.typePoints += 10
@@ -235,7 +235,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
                     parentViewController.locationPoints += 10
                 }
                 self.calculcatePoints(points: points)
-                self.sendUserAnswer(correctAnswer: false)
+                self.sendUserAnswer(correctAnswer: false, bothIncorrect: bothIncorrect)
             }
         }
     }
@@ -247,7 +247,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         self.pointsLabel.text = String(parentViewController.points)
     }
     
-    private func sendUserAnswer(correctAnswer: Bool)
+    private func sendUserAnswer(correctAnswer: Bool, bothIncorrect: Bool)
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let parentViewController = self.parent as! VideoPlayerViewController
@@ -277,7 +277,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
                     if let dictionary = json as? [String: Any] {
                         if let apiToken = dictionary["token"] as? (String) {
                             appDelegate.apiToken = apiToken
-                            self.sendUserAnswer(correctAnswer: correctAnswer)
                         }
                     }
                 })
@@ -289,11 +288,11 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         })
         
         if parentViewController != nil {
-            self.showAnswer(correctAnswer: correctAnswer)
+            self.showAnswer(correctAnswer: correctAnswer, bothIncorrect: bothIncorrect)
         }
     }
     
-    private func showAnswer(correctAnswer: Bool)
+    private func showAnswer(correctAnswer: Bool, bothIncorrect: Bool)
     {
         self.answeredCorrectly = correctAnswer
         var message = "The correct answer is: \n"
@@ -319,14 +318,24 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: replayHandler))
             alert.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.default, handler: nextHandler))
             self.present(alert, animated: true, completion: nil)
-            //audioPlayerHit?.play()
+            if UserDefaults.standard.object(forKey: Constants.kSound) as? Int == 1 {
+                AudioServicesPlaySystemSound(Constants.positiveSoundId)
+                if #available(iOS 10.0, *) {
+                    let generator = UIImpactFeedbackGenerator(style: .heavy)
+                    generator.impactOccurred()
+                } else {
+                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                }
+            }
         }
         else {
             let alert = UIAlertController(title: "Miss", message: message, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: replayHandler))
             alert.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.default, handler: nextHandler))
             self.present(alert, animated: true, completion: nil)
-            //audioPlayerMiss?.play()
+            if bothIncorrect && UserDefaults.standard.object(forKey: Constants.kSound) as? Int == 1 {
+                AudioServicesPlaySystemSound(Constants.negativeSoundId)
+            }
         }
     }
     
@@ -344,33 +353,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         parentViewController.index += 1
         self.view.alpha = 0
         parentViewController.resetView()
-    }
-    
-    private func loadVideos()
-    {
-        let urlHit = URL.init(fileURLWithPath: Bundle.main.path(
-            forResource: "ballcheer",
-            ofType: "mp3")!)
-        
-        do {
-            try audioPlayerHit = AVAudioPlayer(contentsOf: urlHit)
-            audioPlayerHit?.delegate = self
-            audioPlayerHit?.prepareToPlay()
-        } catch let error as NSError {
-            print("audioPlayer error \(error.localizedDescription)")
-        }
-        
-        let urlMiss = URL.init(fileURLWithPath: Bundle.main.path(
-            forResource: "caughtball",
-            ofType: "mp3")!)
-        
-        do {
-            try audioPlayerMiss = AVAudioPlayer(contentsOf: urlMiss)
-            audioPlayerMiss?.delegate = self
-            audioPlayerMiss?.prepareToPlay()
-        } catch let error as NSError {
-            print("audioPlayer error \(error.localizedDescription)")
-        }
     }
     
     

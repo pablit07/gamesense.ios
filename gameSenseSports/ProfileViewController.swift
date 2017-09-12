@@ -14,9 +14,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     public var selected = 0
     var animated = false
     
+    @IBOutlet weak var soundSwitch: UISwitch!
     @IBOutlet weak var username: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.soundSwitch.isOn = UserDefaults.standard.object(forKey: Constants.kSound) as? Int == 1
         
         if let userDefault = UserDefaults.standard.object(forKey: Constants.kUsernameKey) as? String {
             username.text = userDefault
@@ -141,6 +144,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func dismissMenu(sender: UIButton) {
         self.dismissMenu()
+    }
+    
+    @IBAction func changeSwitch(_ sender: UISwitch) {
+        if sender.isOn {
+            UserDefaults.standard.setValue(1, forKey: Constants.kSound)
+        } else {
+            UserDefaults.standard.setValue(0, forKey: Constants.kSound)
+        }
     }
     
     func dismissMenu()

@@ -13,6 +13,10 @@ struct Constants {
     static let kUsernameKey = "username"
     static let kPasswordKey = "password"
     static let kCacheKey = "cache"
+    static let kSound = "soundOn"
+    static let positiveSoundId: UInt32 = 1054
+    static let negativeSoundId: UInt32 = 1053
+    
     
     struct URLs {
         static let apiBase = "https://app.gamesensesports.com"

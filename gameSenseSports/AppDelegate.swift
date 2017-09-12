@@ -84,6 +84,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         }
         
+        if (UserDefaults.standard.object(forKey: Constants.kSound) == nil) {
+            UserDefaults.standard.setValue(1, forKey: Constants.kSound)
+        }
+        
+        
         return true
     }
     
