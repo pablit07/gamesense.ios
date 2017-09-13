@@ -16,7 +16,9 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     
     private var drillListParser = DrillListParser(jsonString: "")
     private var drillListArray = [DrillListItem]()
+    private var drillListMap = [String:[DrillListItem]]()
     private var _selectedDrillItem = DrillListItem(json: [:])
+    private var listId: Int?
     public var selectedDrillItem : DrillListItem {
         set(value)
         {
@@ -32,17 +34,6 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     public var selectedListDescription : String? = ""
     public var selectedListLeaderboardSource : String? = ""
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        let verticalClass = self.traitCollection.verticalSizeClass
-        let isLandscape = verticalClass == UIUserInterfaceSizeClass.compact
-        if isLandscape {
-            self.logo.isHidden = true
-        } else {
-            self.logo.isHidden = false
-        }
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,20 +52,43 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    func numberOfSectionsInTableView(in tableView: UITableView) -> Int {
-        return 1
+    
+    private func getDrillListMap(drillListArray: [DrillListItem]) -> [String:[DrillListItem]] {
+        var map = [String:[DrillListItem]]()
+        for item in drillListArray {
+            let index = String(item.title[item.title.startIndex])
+            if (map[index] != nil) {
+                map[index]?.append(item)
+            } else {
+                map[index] = [DrillListItem]()
+                map[index]?.append(item)
+            }
+        }
+        return map
     }
-
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if self.listId != nil {
+            return 1
+        }
+        return self.drillListMap.keys.count
+    }
+    
+    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return index
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if ((drillListParser?.getDrillListArray().count)! > 0) {
-            return (drillListParser?.getDrillListArray().count)!
+        if ((drillListArray.count) > 0) {
+            if self.listId != nil {
+                return drillListArray.count
+            }
+            return drillListMap[drillListMap.keys.sorted()[section]]!.count
         }
         return 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    private func tableViewWithListId(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "drillCell", for: indexPath)
         let drillTableCell = (cell as? DrillListTableViewCell)
         let cellLabel = cell.viewWithTag(1) as! UILabel
@@ -91,6 +105,36 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         return cell
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if self.listId != nil {
+            return tableViewWithListId(tableView, cellForRowAt: indexPath)
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "drillCell", for: indexPath)
+        let drillTableCell = (cell as? DrillListTableViewCell)
+        let cellLabel = cell.viewWithTag(1) as! UILabel
+        if (drillListArray.count > 0) {
+//            let drillCell = drillListArray[indexPath.row]
+            let drillCell = drillListMap[drillListMap.keys.sorted()[indexPath.section]]?[indexPath.row]
+            cellLabel.text = drillCell?.title
+            drillTableCell?.drillId = drillCell?.drillID
+            drillTableCell?.drillList = drillCell?.primaryList
+            drillTableCell?.difficulty = (drillCell?.primaryList.difficulty)!
+            drillTableCell?.occlusion = (drillCell?.occlusion)!
+        }
+        else {
+            cellLabel.text = ""
+        }
+        return cell
+    }
+
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        if self.listId != nil {
+            return nil
+        }
+        return [String](self.drillListMap.keys).sorted()
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedDrillItem = drillListArray[indexPath.row]
     }
@@ -98,18 +142,18 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     
     private func getDrillList(optimize: Bool = false)
     {
-        var listId: Int?
+        self.listId = nil
         // get the list id if receiving from pitcher detail
         for vc in (self.navigationController?.viewControllers)! {
             if let pitcherDetailViewController = vc as? PitcherDetailViewController {
                 if pitcherDetailViewController.selectedListId != -1 {
-                    listId = pitcherDetailViewController.selectedListId
+                    self.listId = pitcherDetailViewController.selectedListId
                 }
             }
         }
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        SharedNetworkConnection.apiGetDrillList(apiToken: appDelegate.apiToken, limit: (optimize ? 10 : 0), listId: listId, completionHandler: { data, response, error in
+        SharedNetworkConnection.apiGetDrillList(apiToken: appDelegate.apiToken, limit: (optimize ? 13 : 0), listId: listId, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
                 return
@@ -135,6 +179,7 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
             
             self.drillListParser = DrillListParser(jsonString: String(data: data, encoding: .utf8)!)
             self.drillListArray = (self.drillListParser?.getDrillListArray())!
+            self.drillListMap = self.getDrillListMap(drillListArray: self.drillListArray)
             DispatchQueue.main.async {
                 self.drillTableView.reloadData()
             }

@@ -53,7 +53,7 @@ struct DrillList {
 
 struct DrillListItem {
     let drillID: Int
-    let title: String
+    var title: String
     let questionCount: Int
     let randomize: Bool
     let primaryList: DrillList
@@ -79,12 +79,16 @@ extension DrillListItem {
         else { self.primaryList = DrillList()! }
         if title.contains("Advanced") {
             self.occlusion = 3
+            self.title = title.replacingOccurrences(of: "- Advanced", with: "")
         } else if title.contains("Full Pitch") {
+            self.title = title.replacingOccurrences(of: "- Full Pitch", with: "")
             self.occlusion = 1
         } else if title.contains("Wicked") {
             self.occlusion = 4
+            self.title = title.replacingOccurrences(of: "- Wicked", with: "")
         } else {
             self.occlusion = 2
+            self.title = title.replacingOccurrences(of: "- Basic", with: "")
         }
     }
 }
