@@ -122,6 +122,20 @@ class SharedNetworkConnection: NSObject
         task.resume()
     }
     
+    static func apiPostDeviceToken(apiToken: String, username: String, deviceToken: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
+    {
+        var request = URLRequest(url: URL(string: Constants.URLs.apiPostDeviceToken)!)
+        let apiString = "Token " + apiToken
+        request.addValue(apiString, forHTTPHeaderField: "Authorization")
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField:"Content-Type")
+        request.httpMethod = "POST"
+        let encodeString = "{\"value\": \"" + deviceToken + "\",\"username\": \"" + username + "\"}"
+        let postString = "p=" + encodeString.toBase64()
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
+        task.resume()
+    }
+    
     static func apiDrillFinished(apiToken: String, drill_id: Int, activityID: Int, score: Int, locationScore: Int, typeScore: Int, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
     {
         var request = URLRequest(url: URL(string: Constants.URLs.apiDrillFinished)!)
@@ -194,4 +208,19 @@ class SharedNetworkConnection: NSObject
 
 extension CharacterSet {
     static let rfc3986Unreserved = CharacterSet(charactersIn: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~")
+}
+
+extension String {
+    
+    func fromBase64() -> String? {
+        guard let data = Data(base64Encoded: self) else {
+            return nil
+        }
+        
+        return String(data: data, encoding: .utf8)
+    }
+    
+    func toBase64() -> String {
+        return Data(self.utf8).base64EncodedString()
+    }
 }

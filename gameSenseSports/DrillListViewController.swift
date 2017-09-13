@@ -14,6 +14,8 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var drillTableView: UITableView!
     @IBOutlet weak var logo: UIImageView!
     
+    private var regFired = false
+    
     private var drillListParser = DrillListParser(jsonString: "")
     private var drillListArray = [DrillListItem]()
     private var _selectedDrillItem = DrillListItem(json: [:])
@@ -54,7 +56,51 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        if (!regFired) {
+            self.registerToken()
+            self.regFired = true
+        }
+        
         getDrillList(optimize: true)
+    }
+    
+    func registerToken()
+    {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        if let deviceToken = UserDefaults.standard.object(forKey: Constants.kDeviceKey) as? String {
+            if let username = UserDefaults.standard.object(forKey: Constants.kUsernameKey) as? String {
+                if (UserDefaults.standard.object(forKey: Constants.kDeviceRegistered) as? Bool) == nil {
+                    SharedNetworkConnection.apiPostDeviceToken(apiToken: appDelegate.apiToken, username: username, deviceToken: deviceToken, completionHandler: {  data, response, error in
+                        guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                            print("error=\(error)")
+                            return
+                        }
+                        
+                        if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                            print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                            print("response = \(response)")
+                            
+                            if (httpStatus.statusCode == 403) {
+                                SharedNetworkConnection.apiLoginWithStoredCredentials(completionHandler: { data, response, error in
+                                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                    let json = try? JSONSerialization.jsonObject(with: data!, options: [])
+                                    if let dictionary = json as? [String: Any] {
+                                        if let apiToken = dictionary["token"] as? (String) {
+                                            appDelegate.apiToken = apiToken
+                                            self.registerToken()
+                                        }
+                                    }
+                                })
+                            }
+                        } else {
+                            let stringData = String(data: data, encoding: .utf8)!
+                            print(stringData)
+                            UserDefaults.standard.set(true, forKey: Constants.kDeviceRegistered)
+                        }
+                    })
+                }
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

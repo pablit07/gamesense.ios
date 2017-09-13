@@ -108,6 +108,7 @@
 
 /* Begin PBXFileReference section */
 		1107AC881F43F892002B2CA6 /* ProfileWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileWebViewController.swift; sourceTree = "<group>"; };
+		111C54E61F5DE2FF00CD56A7 /* gameSenseSports.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gameSenseSports.entitlements; sourceTree = "<group>"; };
 		11225C271DDE55C40071D1CF /* JsonTestStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonTestStrings.swift; sourceTree = "<group>"; };
 		11225C301DE15CEC0071D1CF /* DrillListParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrillListParser.swift; sourceTree = "<group>"; };
 		11225C321DE168B40071D1CF /* DrillQuestionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrillQuestionParser.swift; sourceTree = "<group>"; };
@@ -345,6 +346,7 @@
 		11698F911DDB999600C24D3C /* gameSenseSports */ = {
 			isa = PBXGroup;
 			children = (
+				111C54E61F5DE2FF00CD56A7 /* gameSenseSports.entitlements */,
 				AF3CC5D81EE1A5F70095A69A /* Views */,
 				11C04E071E3FED81005BDC4B /* Libraries */,
 				11225C2B1DDE7FDB0071D1CF /* DataAccessObjects */,
@@ -553,6 +555,11 @@
 						DevelopmentTeam = 2LR9N6ERWB;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					11698FA51DDB999600C24D3C = {
 						CreatedOnToolsVersion = 8.0;
@@ -780,7 +787,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -825,7 +832,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -839,6 +846,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = gameSenseSports/gameSenseSports.entitlements;
 				DEVELOPMENT_TEAM = 2LR9N6ERWB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -860,6 +868,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = gameSenseSports/gameSenseSports.entitlements;
 				DEVELOPMENT_TEAM = 2LR9N6ERWB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -13,6 +13,10 @@ struct Constants {
     static let kUsernameKey = "username"
     static let kPasswordKey = "password"
     static let kCacheKey = "cache"
+
+    static let kDeviceKey = "deviceToken"
+    static let kDeviceRegistered = "deviceRegistered"
+
     
     struct URLs {
         static let Login = "https://app.gamesensesports.com/api-token-auth/"
@@ -29,6 +33,8 @@ struct Constants {
         static let apiDrillFinishedNext = "https://app.gamesensesports.com/account/api-auth/register-action/score/"
         
         static let imageCacheZip = "https://s3.amazonaws.com/gamesense-secure/cache-init.zip"
+        
+        static let apiPostDeviceToken = "https://app.gamesensesports.com/account/api-auth/devicetokens/"
     }
     
     static func getDrillList() -> String
