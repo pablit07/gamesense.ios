@@ -37,7 +37,7 @@ class DrillListParser : NSObject
                 }
             }
         }
-        drillArray = drillArray.sorted { $0.title < $1.title }
+        drillArray = drillArray.sorted { $0.title.substring(to: $0.title.index($0.title.startIndex, offsetBy: 5)) == $1.title.substring(to: $1.title.index($1.title.startIndex, offsetBy: 5)) ? $0.occlusion < $1.occlusion : $0.title.substring(to: $0.title.index($0.title.startIndex, offsetBy: 5)) < $1.title.substring(to: $1.title.index($1.title.startIndex, offsetBy: 5)) }
         return drillArray
     }
 }
