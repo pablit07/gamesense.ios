@@ -41,11 +41,11 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         self.navigationController?.navigationBar.topItem?.title = "Drill List";
         drillTableView.dataSource = self
         drillTableView.delegate = self
+        getDrillList(optimize: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getDrillList(optimize: true)
     }
     
     override func didReceiveMemoryWarning() {
