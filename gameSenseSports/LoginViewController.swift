@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var Password: UITextField!
     @IBOutlet weak var loginActiveView: UIView!
@@ -36,6 +36,9 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+        
+        self.Username.delegate = self
+        self.Password.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -168,6 +171,13 @@ class LoginViewController: UIViewController {
                 self.view.frame.origin.y += keyboardSize.height
             }
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.Username {
+            self.Password.becomeFirstResponder()
+        }
+        return true
     }
     
 }
