@@ -485,7 +485,9 @@ class VideoPlayerViewController: UIViewController
         sender.isHidden = true
         (movieView.layer.sublayers?[0] as? AVPlayerLayer)?.player?.play()
         hasDrillStarted = true
-        onDrillStarted!()
+        if onDrillStarted != nil {
+            onDrillStarted!()
+        }
     }
     
 }

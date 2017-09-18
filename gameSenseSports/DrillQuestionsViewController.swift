@@ -105,6 +105,9 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     private func updateViewComponents(battingHand: String)
     {
         let deviceBounds = UIScreen.main.bounds
+        if self.parent == nil || !(self.parent is VideoPlayerViewController) {
+            return
+        }
         let parentViewController = self.parent as! VideoPlayerViewController
         
         if isLandscape

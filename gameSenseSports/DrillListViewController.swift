@@ -200,6 +200,8 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         if id == "pitcherdetail" {
             let buttonView = (sender as! UIPitcherListButton)
             setDrillList(drillList: buttonView.drillList)
+        } else if id == "VideoPlayer" {
+            SharedNetworkConnection.apiGetDrillListTask?.cancel()
         }
     }
     
