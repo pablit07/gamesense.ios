@@ -131,7 +131,9 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         } else {
             self.timerView.isHidden = false
             self.scoreView.isHidden = false
-            self.view.alpha = 1
+            if parentViewController.hasDrillStarted {
+                self.view.alpha = 1
+            }
             self.view.superview?.frame = CGRect.init(x:0, y:parentViewController.movieView.frame.size.height + 63, width:deviceBounds.width, height:381)
             self.view.backgroundColor = UIColor.black
             self.view.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:381)
