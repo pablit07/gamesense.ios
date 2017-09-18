@@ -10,6 +10,11 @@ import Foundation
 
 class SharedNetworkConnection: NSObject
 {
+    static var apiGetDrillListTask: URLSessionDataTask? = nil
+    static var apiGetDrillQuestionsTask: URLSessionDataTask? = nil
+    static var apiGetDrillVideoTask: URLSessionDataTask? = nil
+    static var apiGetLeaderboardScoresTask: URLSessionDataTask? = nil
+    
     static func testURL(urlSession: URLSession, urlComponents: URLComponents, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
     {
         let task = URLSession.shared.dataTask(with: urlComponents.url!, completionHandler: completionHandler)
@@ -38,6 +43,9 @@ class SharedNetworkConnection: NSObject
     
     static func apiGetDrillList(apiToken: String, limit: Int = 0, listId: Int? = nil, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
     {
+        if self.apiGetDrillListTask != nil && self.apiGetDrillListTask?.state != .completed {
+            self.apiGetDrillListTask?.cancel()
+        }
         var url = (listId == nil) ? Constants.URLs.DrillList : Constants.URLs.DrillListForList
         if listId != nil {
             url += String(listId!) + "/drills/"
@@ -51,26 +59,35 @@ class SharedNetworkConnection: NSObject
         request.addValue(apiString, forHTTPHeaderField: "Authorization")
         let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
         task.resume()
+        self.apiGetDrillListTask = task
     }
 
     static func apiGetDrillQuestions(apiToken: String, drillID: Int, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
     {
+        if self.apiGetDrillQuestionsTask != nil && self.apiGetDrillQuestionsTask?.state != .completed {
+            self.apiGetDrillQuestionsTask?.cancel()
+        }
         var request = URLRequest(url: URL(string: Constants.URLs.DrillQuestions + String(drillID) + "/questions/")!)
         request.httpMethod = "GET"
         let apiString = "Token " + apiToken
         request.addValue(apiString, forHTTPHeaderField: "Authorization")
         let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
         task.resume()
+        self.apiGetDrillQuestionsTask = task
     }
 
     static func apiGetDrillVideo(apiToken: String, responseURI: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
     {
+        if self.apiGetDrillVideoTask != nil && self.apiGetDrillVideoTask?.state != .completed {
+            self.apiGetDrillVideoTask?.cancel()
+        }
         var request = URLRequest(url: URL(string: Constants.URLs.apiBase + responseURI)!)
         let apiString = "Token " + apiToken
         request.addValue(apiString, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
         task.resume()
+        self.apiGetDrillVideoTask = task
     }
 
     static func apiGetDrillPitchLocation(apiToken: String, responseURI: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
@@ -85,12 +102,16 @@ class SharedNetworkConnection: NSObject
     
     static func apiGetLeaderboardScores(apiToken: String, leaderboardSource: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
     {
+        if self.apiGetLeaderboardScoresTask != nil && self.apiGetLeaderboardScoresTask?.state != .completed {
+            self.apiGetLeaderboardScoresTask?.cancel()
+        }
         var request = URLRequest(url: URL(string: Constants.URLs.apiBase + leaderboardSource)!)
         let apiString = "Token " + apiToken
         request.addValue(apiString, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
         task.resume()
+        self.apiGetLeaderboardScoresTask = task
     }
     
     static func apiPostRegisterDrill(apiToken: String, drillID: Int, drillTitle: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void)
