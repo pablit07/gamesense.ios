@@ -68,7 +68,7 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if self.listId != nil {
+        if self.listId != nil || self.drillListArray.count < 15 {
             return 1
         }
         return self.drillListMap.keys.count
@@ -80,7 +80,7 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if ((drillListArray.count) > 0) {
-            if self.listId != nil {
+            if self.listId != nil || self.drillListArray.count < 15 {
                 return drillListArray.count
             }
             return drillListMap[drillListMap.keys.sorted()[section]]!.count
@@ -106,7 +106,7 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if self.listId != nil {
+        if self.listId != nil || self.drillListArray.count < 15 {
             return tableViewWithListId(tableView, cellForRowAt: indexPath)
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "drillCell", for: indexPath)
@@ -129,7 +129,7 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
 
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        if self.listId != nil {
+        if self.listId != nil || self.drillListArray.count < 15 {
             return nil
         }
         return [String](self.drillListMap.keys).sorted()
