@@ -59,6 +59,18 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         // Do any additional setup after loading the view, typically from a nib.
         self.view.alpha = 0
         self.isLandscape = self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact
+        
+        let urlMiss = URL.init(fileURLWithPath: Bundle.main.path(
+            forResource: "caughtball",
+            ofType: "mp3")!)
+        
+        do {
+            try audioPlayerMiss = AVAudioPlayer(contentsOf: urlMiss)
+            audioPlayerMiss?.delegate = self
+            audioPlayerMiss?.prepareToPlay()
+        } catch let error as NSError {
+            print("audioPlayer error \(error.localizedDescription)")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,11 +85,13 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     public func resetViewForDisplay()
     {
         let parentViewController = self.parent as! VideoPlayerViewController
-        if parentViewController.hasDrillStarted {
-            self.view.alpha = 1
-        } else {
-            let onDrillStartedHandler = {self.view.alpha = (self.isLandscape) ? 0.7 : 1}
-            parentViewController.onDrillStarted = onDrillStartedHandler
+        if !parentViewController.replay {
+            if parentViewController.hasDrillStarted {
+                self.view.alpha = 1
+            } else {
+                let onDrillStartedHandler = {self.view.alpha = (self.isLandscape) ? 0.7 : 1}
+                parentViewController.onDrillStarted = onDrillStartedHandler
+            }
         }
         answered = false
         answeredCorrectly = false
@@ -115,7 +129,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             self.lineTimerView.isHidden = false
             self.scoreView.isHidden = true
             self.view.backgroundColor = UIColor.clear
-            if parentViewController.hasDrillStarted {
+            if parentViewController.hasDrillStarted && !parentViewController.replay {
                 self.view.alpha = 0.7
             }
             self.timerView.isHidden = true
@@ -134,7 +148,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         } else {
             self.timerView.isHidden = false
             self.scoreView.isHidden = false
-            if parentViewController.hasDrillStarted {
+            if parentViewController.hasDrillStarted && !parentViewController.replay {
                 self.view.alpha = 1
             }
             self.view.superview?.frame = CGRect.init(x:0, y:parentViewController.movieView.frame.size.height + 63, width:deviceBounds.width, height:381)
@@ -318,11 +332,13 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         
         message = message + "\n\nPoints: \(points)\nQuestion: \(questionCount)\n "
         
+        self.view.alpha = 0
+        
         if (correctAnswer) {
             let alert = UIAlertController(title: "Correct!", message: message, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: replayHandler))
             alert.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.default, handler: nextHandler))
-            self.present(alert, animated: true, completion: nil)
+            self.present(alert, animated: false, completion: nil)
             if UserDefaults.standard.object(forKey: Constants.kSound) as? Int == 1 {
                 AudioServicesPlaySystemSound(Constants.positiveSoundId)
                 if #available(iOS 10.0, *) {
@@ -332,14 +348,13 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
                     AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 }
             }
-        }
-        else {
+        } else {
             let alert = UIAlertController(title: "Miss", message: message, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: replayHandler))
             alert.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.default, handler: nextHandler))
-            self.present(alert, animated: true, completion: nil)
+            self.present(alert, animated: false, completion: nil)
             if bothIncorrect && UserDefaults.standard.object(forKey: Constants.kSound) as? Int == 1 {
-                AudioServicesPlaySystemSound(Constants.negativeSoundId)
+                audioPlayerMiss?.play()
             }
         }
     }

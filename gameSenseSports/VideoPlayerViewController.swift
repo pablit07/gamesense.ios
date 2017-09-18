@@ -449,17 +449,15 @@ class VideoPlayerViewController: UIViewController
     {
         if (shouldAppear) {
             self.loadingView.isUserInteractionEnabled = false
-            UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
+            UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
                 self.loadingView.alpha = 1
-            },completion: { finished in
-            })
+            },completion: nil)
         }
         else {
             self.loadingView.isUserInteractionEnabled = false
-            UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
+            UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
                 self.loadingView.alpha = 0
-            },completion: { finished in
-            })
+            },completion: nil)
         }
     }
     
