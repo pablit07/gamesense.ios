@@ -136,7 +136,11 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedDrillItem = drillListArray[indexPath.row]
+        if self.listId != nil || self.drillListArray.count < 15 {
+            self.selectedDrillItem = drillListArray[indexPath.row]
+        } else {
+            self.selectedDrillItem = (drillListMap[drillListMap.keys.sorted()[indexPath.section]]?[indexPath.row])!
+       }
     }
 
     
