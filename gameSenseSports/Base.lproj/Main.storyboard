@@ -169,7 +169,7 @@
                                         <rect key="frame" x="45" y="8" width="82" height="83"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2dN-1w-Qqb">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2dN-1w-Qqb">
                                         <rect key="frame" x="0.0" y="148" width="171" height="312"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.31764705882352939" green="0.38823529411764707" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -245,7 +245,6 @@
         <!--Profile Web View Controller-->
         <scene sceneID="cWD-IQ-UoC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TbI-kD-hGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Xt2-rQ-Raz" customClass="ProfileWebViewController" customModule="gameSenseSports" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="whY-mE-m17"/>
@@ -294,6 +293,7 @@
                         <outlet property="profileWebView" destination="LBD-R6-Vu8" id="HL7-Ie-I63"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TbI-kD-hGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2732" y="-1261.6191904047978"/>
         </scene>
@@ -572,7 +572,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2.50s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEA-AY-mwX">
-                                        <rect key="frame" x="-3" y="33" width="327" height="21"/>
+                                        <rect key="frame" x="0.0" y="33" width="327" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <color key="textColor" red="0.9934229457" green="0.98780879659999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
