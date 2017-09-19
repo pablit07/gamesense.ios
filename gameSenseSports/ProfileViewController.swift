@@ -14,12 +14,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     public var selected = 0
     var animated = false
     
-    @IBOutlet weak var soundSwitch: UISwitch!
+    @IBOutlet weak var tableView: UITableView!
+    var soundSwitch: UISwitch!
     @IBOutlet weak var username: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.soundSwitch = UISwitch(frame: CGRect(x: 45, y: 8, width: 39, height: 41))
+        self.soundSwitch.addTarget(self, action: #selector(changeSwitch(_:)), for: .valueChanged)
         self.soundSwitch.isOn = UserDefaults.standard.object(forKey: Constants.kSound) as? Int == 1
+        
+        self.tableView.tableFooterView = self.getFooter()
         
         if let userDefault = UserDefaults.standard.object(forKey: Constants.kUsernameKey) as? String {
             username.text = userDefault
@@ -135,6 +140,20 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             appDelegate.apiToken = ""
             self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         }
+    }
+    
+    func getFooter() -> UIView? {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: 171, height: 50))
+        
+        
+        footerView.addSubview(self.soundSwitch)
+        
+        let soundLabel = UILabel(frame: CGRect(x: 100, y: 14, width: 50, height: 21))
+        soundLabel.text = "Sound"
+        soundLabel.textColor = UIColor.white
+        footerView.addSubview(soundLabel)
+        
+        return footerView
     }
     
     override func didReceiveMemoryWarning() {
