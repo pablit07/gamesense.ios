@@ -57,6 +57,7 @@ struct DrillQuestionItem
     let answerURL: String
     let responseURI0: String
     let responseURI1: String
+    let pitchCount: String
 }
 
 extension DrillQuestionItem {
@@ -68,7 +69,8 @@ extension DrillQuestionItem {
         let answerURL = json["full_video"] as? String ?? json["occluded_video"] as? String,
         let occludedHlsVideo = json["hls_occluded_url"] as? String,
         let fullHlsVideo = json["hls_full_url"] as? String ?? json["hls_occluded_url"] as? String,
-        let responseURIs = json["response_uris"] as? [Any]
+        let responseURIs = json["response_uris"] as? [Any],
+        let pitchCount = json["pitch_count"] as? String?
             else {
                 return nil
         }
@@ -81,6 +83,7 @@ extension DrillQuestionItem {
         self.answerURL = answerURL
         self.responseURI0 = responseURIs[0] as! String
         self.responseURI1 = responseURIs[1] as! String
+        self.pitchCount = pitchCount ?? ""
         self.fullJson = try! String(data:JSONSerialization.data(withJSONObject: json, options: .prettyPrinted),encoding: String.Encoding.utf8)!
     }
 }
