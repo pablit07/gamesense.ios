@@ -8,6 +8,14 @@
 
 import UIKit
 
+enum NavOrder: Int {
+    case home = 0
+    case account = 1
+    case userGuide = 2
+    case myScores = 3
+    case logout = 4
+}
+
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var menuView: UIView!
@@ -20,7 +28,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.soundSwitch = UISwitch(frame: CGRect(x: 45, y: 8, width: 39, height: 41))
+        self.soundSwitch = UISwitch(frame: CGRect(x: 30, y: 8, width: 39, height: 41))
         self.soundSwitch.addTarget(self, action: #selector(changeSwitch(_:)), for: .valueChanged)
         self.soundSwitch.isOn = UserDefaults.standard.object(forKey: Constants.kSound) as? Int == 1
         
@@ -57,35 +65,38 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath)
         let label = cell.viewWithTag(2) as! UILabel
         let icon = cell.viewWithTag(1) as! UIImageView
-        switch (indexPath.row) {
-        case 0:
+        switch (NavOrder(rawValue: indexPath.row)!) {
+        case NavOrder.home:
             label.text = "Home"
             let image = UIImage(named:"home.png")
             icon.image = image
             break
-        case 1:
+        case NavOrder.account:
             label.text = "Account"
             let image = UIImage(named:"account.png")
             icon.image = image
             break
-        case 2:
+        case NavOrder.userGuide:
+            label.text = "User Guide"
+            let image = UIImage(named:"tutorial-icon.png")
+            icon.image = image
+            break
+        case NavOrder.myScores:
             label.text = "My Scores"
             let image = UIImage(named:"charts.png")
             icon.image = image
             break
-        case 3:
+        case NavOrder.logout:
             label.text = "Log Out"
             let image = UIImage(named:"logout.png")
             icon.image = image
-            break
-        default:
             break
         }
         return cell
@@ -93,7 +104,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Home
-        if (indexPath.row == 0) {
+        let row = NavOrder(rawValue: indexPath.row)
+        if (row == NavOrder.home) {
             let presentingViewController = self.presentingViewController as! UINavigationController
             var rootDrillListViewController: DrillListViewController?
             
@@ -107,13 +119,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         // Safari
-        if indexPath.row == 2 || indexPath.row == 1 {
+        if row == NavOrder.account || row == NavOrder.myScores {
             var url = ""
-            switch indexPath.row {
-            case 1:
+            switch row! {
+            case NavOrder.account:
                 url = "https://app.gamesensesports.com/dashboard/subscriptions"
                 break
-            case 2:
+            case NavOrder.myScores:
                 url = "https://app.gamesensesports.com/dashboard/score-chart"
                 break
             default:
@@ -134,8 +146,15 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 //            self.performSegue(withIdentifier: "profileWebview", sender: nil)
 //        }
         
+        //User Guide
+        if (row == NavOrder.userGuide) {
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "userguide", sender: self)
+            }
+        }
+        
         //Logout
-        if (indexPath.row == 3) {
+        if (row == NavOrder.logout) {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.apiToken = ""
             self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
@@ -148,7 +167,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         footerView.addSubview(self.soundSwitch)
         
-        let soundLabel = UILabel(frame: CGRect(x: 100, y: 14, width: 50, height: 21))
+        let soundLabel = UILabel(frame: CGRect(x: 85, y: 14, width: 50, height: 21))
         soundLabel.text = "Sound"
         soundLabel.textColor = UIColor.white
         footerView.addSubview(soundLabel)

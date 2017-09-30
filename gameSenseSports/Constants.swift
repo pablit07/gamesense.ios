@@ -14,6 +14,7 @@ struct Constants {
     static let kPasswordKey = "password"
     static let kCacheKey = "cache"
     static let kSound = "soundOn"
+    static let kHasSeenUserGuide = "hasSeenUserGuide"
     static let positiveSoundId: UInt32 = 1054
     static let negativeSoundId: UInt32 = 1053
     

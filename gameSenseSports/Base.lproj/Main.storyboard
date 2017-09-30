@@ -243,6 +243,7 @@
                         <outlet property="tableView" destination="2dN-1w-Qqb" id="SCN-Sf-JzS"/>
                         <outlet property="username" destination="nNh-OJ-5Qd" id="osL-Ev-cF2"/>
                         <segue destination="Xt2-rQ-Raz" kind="show" identifier="profileWebview" id="waH-E3-jIf"/>
+                        <segue destination="9Gk-3j-a3Q" kind="presentation" identifier="userguide" id="Kcz-9T-rkI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mgu-3G-agc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -498,6 +499,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="drillTableView" destination="ZFf-od-oZs" id="Zgm-E1-OAh"/>
+                        <segue destination="9Gk-3j-a3Q" kind="presentation" identifier="userguidewelcome" id="nDL-uY-dd7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSm-lQ-cQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -693,6 +695,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsd-z1-JWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2576.25" y="-450"/>
+        </scene>
+        <!--Slideshow View Controller-->
+        <scene sceneID="lVU-0N-Cfb">
+            <objects>
+                <viewController id="9Gk-3j-a3Q" customClass="SlideshowViewController" customModule="gameSenseSports" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bmH-h8-Ms5"/>
+                        <viewControllerLayoutGuide type="bottom" id="wqS-WY-9O4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7ba-xU-Yhx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVt-EH-iSJ">
+                                <rect key="frame" x="0.0" y="28" width="320" height="408"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="ZVt-EH-iSJ" id="Qtc-RY-fv7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q5m-Kg-Wvb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33.75" y="-976.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3UW-ce-5rR">
@@ -945,6 +974,7 @@
         <image name="side_baricon" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="nDL-uY-dd7"/>
         <segue reference="If3-cv-wlT"/>
     </inferredMetricsTieBreakers>
 </document>

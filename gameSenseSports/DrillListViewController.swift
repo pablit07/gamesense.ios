@@ -42,6 +42,7 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         drillTableView.dataSource = self
         drillTableView.delegate = self
         getDrillList(optimize: true)
+        checkSegueToUserGuide()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -245,6 +246,13 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
         }
         let item = self.drillListArray[index]
         setDrillList(drillList: item.primaryList)
+    }
+    
+    private func checkSegueToUserGuide() {
+        if UserDefaults.standard.object(forKey: Constants.kHasSeenUserGuide) as? Int != 1 {
+            UserDefaults.standard.setValue(1, forKey: Constants.kHasSeenUserGuide)
+            performSegue(withIdentifier: "userguidewelcome", sender: self)
+        }
     }
     
 }

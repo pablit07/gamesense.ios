@@ -71,6 +71,15 @@
 		11ECB99E1DECC2B900BEBF31 /* caughtball.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11ECB99C1DECC2B900BEBF31 /* caughtball.mp3 */; };
 		A8290B59379F26AA57787B49 /* libPods-gameSenseSports.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3642BFA2F2050BD2D1E07B31 /* libPods-gameSenseSports.a */; };
 		AF0B92621F49F99C00104E4A /* PitcherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0B92611F49F99C00104E4A /* PitcherDetailViewController.swift */; };
+		AF27D5691F7FE0CE00ED4D6B /* SlideshowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF27D5681F7FE0CE00ED4D6B /* SlideshowViewController.swift */; };
+		AF27D56B1F7FE74A00ED4D6B /* welcomescreen.png in Resources */ = {isa = PBXBuildFile; fileRef = AF27D56A1F7FE74A00ED4D6B /* welcomescreen.png */; };
+		AF27D56D1F7FE87B00ED4D6B /* drill_list.png in Resources */ = {isa = PBXBuildFile; fileRef = AF27D56C1F7FE87B00ED4D6B /* drill_list.png */; };
+		AF27D5731F7FEA8A00ED4D6B /* completing drills.png in Resources */ = {isa = PBXBuildFile; fileRef = AF27D56E1F7FEA8A00ED4D6B /* completing drills.png */; };
+		AF27D5741F7FEA8A00ED4D6B /* pitcher_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = AF27D56F1F7FEA8A00ED4D6B /* pitcher_profile.png */; };
+		AF27D5751F7FEA8A00ED4D6B /* post-drill response.png in Resources */ = {isa = PBXBuildFile; fileRef = AF27D5701F7FEA8A00ED4D6B /* post-drill response.png */; };
+		AF27D5761F7FEA8A00ED4D6B /* the end.png in Resources */ = {isa = PBXBuildFile; fileRef = AF27D5711F7FEA8A00ED4D6B /* the end.png */; };
+		AF27D5771F7FEA8A00ED4D6B /* yours_stats.png in Resources */ = {isa = PBXBuildFile; fileRef = AF27D5721F7FEA8A00ED4D6B /* yours_stats.png */; };
+		AF27D5791F7FEF8400ED4D6B /* tutorial-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AF27D5781F7FEF8400ED4D6B /* tutorial-icon.png */; };
 		AF3CC5D71EE116810095A69A /* DrillListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3CC5D61EE116810095A69A /* DrillListTableViewCell.swift */; };
 		AF69513C1F64E09F00FDE369 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = AF69513B1F64E09F00FDE369 /* play.png */; };
 		AF76AA321E477D8D00A9407D /* lance-lynn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF76AA311E477D8D00A9407D /* lance-lynn.jpg */; };
@@ -213,6 +222,15 @@
 		3642BFA2F2050BD2D1E07B31 /* libPods-gameSenseSports.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gameSenseSports.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		422D7E26DF320FBDB8879001 /* Pods-gameSenseSports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gameSenseSports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gameSenseSports/Pods-gameSenseSports.debug.xcconfig"; sourceTree = "<group>"; };
 		AF0B92611F49F99C00104E4A /* PitcherDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitcherDetailViewController.swift; sourceTree = "<group>"; };
+		AF27D5681F7FE0CE00ED4D6B /* SlideshowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideshowViewController.swift; sourceTree = "<group>"; };
+		AF27D56A1F7FE74A00ED4D6B /* welcomescreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomescreen.png; sourceTree = "<group>"; };
+		AF27D56C1F7FE87B00ED4D6B /* drill_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drill_list.png; sourceTree = "<group>"; };
+		AF27D56E1F7FEA8A00ED4D6B /* completing drills.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "completing drills.png"; sourceTree = "<group>"; };
+		AF27D56F1F7FEA8A00ED4D6B /* pitcher_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pitcher_profile.png; sourceTree = "<group>"; };
+		AF27D5701F7FEA8A00ED4D6B /* post-drill response.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "post-drill response.png"; sourceTree = "<group>"; };
+		AF27D5711F7FEA8A00ED4D6B /* the end.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "the end.png"; sourceTree = "<group>"; };
+		AF27D5721F7FEA8A00ED4D6B /* yours_stats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yours_stats.png; sourceTree = "<group>"; };
+		AF27D5781F7FEF8400ED4D6B /* tutorial-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tutorial-icon.png"; path = "images/tutorial-icon.png"; sourceTree = "<group>"; };
 		AF3CC5D61EE116810095A69A /* DrillListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrillListTableViewCell.swift; path = ../DrillListTableViewCell.swift; sourceTree = "<group>"; };
 		AF69513B1F64E09F00FDE369 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = images/play.png; sourceTree = "<group>"; };
 		AF76AA311E477D8D00A9407D /* lance-lynn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lance-lynn.jpg"; sourceTree = "<group>"; };
@@ -302,6 +320,7 @@
 				1147DC881DEAA3A5000D8025 /* DrillQuestionsViewController.swift */,
 				11D25C741F427079003CC09C /* ProfileViewController.swift */,
 				1107AC881F43F892002B2CA6 /* ProfileWebViewController.swift */,
+				AF27D5681F7FE0CE00ED4D6B /* SlideshowViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -320,6 +339,14 @@
 				E379E7B61F7E4BA900B0C23E /* redS.png */,
 				E379E7B71F7E4BA900B0C23E /* replay.png */,
 				E379E7B81F7E4BA900B0C23E /* slider.png */,
+				AF27D5781F7FEF8400ED4D6B /* tutorial-icon.png */,
+				AF27D56E1F7FEA8A00ED4D6B /* completing drills.png */,
+				AF27D56F1F7FEA8A00ED4D6B /* pitcher_profile.png */,
+				AF27D5701F7FEA8A00ED4D6B /* post-drill response.png */,
+				AF27D5711F7FEA8A00ED4D6B /* the end.png */,
+				AF27D5721F7FEA8A00ED4D6B /* yours_stats.png */,
+				AF27D56C1F7FE87B00ED4D6B /* drill_list.png */,
+				AF27D56A1F7FE74A00ED4D6B /* welcomescreen.png */,
 				AF69513B1F64E09F00FDE369 /* play.png */,
 				AFFAC01D1F5CA25D00E2634F /* full_circle_1.png */,
 				AFFAC01E1F5CA25D00E2634F /* full_circle_2.png */,
@@ -652,11 +679,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF27D5791F7FEF8400ED4D6B /* tutorial-icon.png in Resources */,
 				AFFAC02F1F5CA25D00E2634F /* half_circle_3.png in Resources */,
 				115C95541F4678AA00224F50 /* logout@2x.png in Resources */,
 				11698FA01DDB999600C24D3C /* LaunchScreen.storyboard in Resources */,
 				115C95551F4678AA00224F50 /* profile@2x.png in Resources */,
 				E379E7C11F7E4BA900B0C23E /* replay.png in Resources */,
+				AF27D5751F7FEA8A00ED4D6B /* post-drill response.png in Resources */,
 				AFFAC0341F5CA25D00E2634F /* occlusion_4.png in Resources */,
 				E379E7BA1F7E4BA900B0C23E /* greenB.png in Resources */,
 				11698FC41DDB9C4700C24D3C /* gameSenseSports.png in Resources */,
@@ -674,10 +703,14 @@
 				AFFAC02E1F5CA25D00E2634F /* half_circle_2.png in Resources */,
 				AFFAC02C1F5CA25D00E2634F /* full_circle_4.png in Resources */,
 				11698F9D1DDB999600C24D3C /* Assets.xcassets in Resources */,
+				AF27D56D1F7FE87B00ED4D6B /* drill_list.png in Resources */,
+				AF27D5731F7FEA8A00ED4D6B /* completing drills.png in Resources */,
 				AFFAC0301F5CA25D00E2634F /* half_circle_4.png in Resources */,
 				AFFAC02D1F5CA25D00E2634F /* half_circle_1.png in Resources */,
 				AF76AA321E477D8D00A9407D /* lance-lynn.jpg in Resources */,
 				E379E7BB1F7E4BA900B0C23E /* greenS.png in Resources */,
+				AF27D56B1F7FE74A00ED4D6B /* welcomescreen.png in Resources */,
+				AF27D5771F7FEA8A00ED4D6B /* yours_stats.png in Resources */,
 				AFFAC0331F5CA25D00E2634F /* occlusion_3.png in Resources */,
 				AFFAC0321F5CA25D00E2634F /* occlusion_2.png in Resources */,
 				E379E7C21F7E4BA900B0C23E /* slider.png in Resources */,
@@ -687,6 +720,8 @@
 				118287671E17363E0009CCAF /* round_ball.png in Resources */,
 				11698FD61DDD14BE00C24D3C /* lance-lynn-OLD.jpg in Resources */,
 				E379E7C01F7E4BA900B0C23E /* redS.png in Resources */,
+				AF27D5741F7FEA8A00ED4D6B /* pitcher_profile.png in Resources */,
+				AF27D5761F7FEA8A00ED4D6B /* the end.png in Resources */,
 				115C95511F4678AA00224F50 /* account@2x.png in Resources */,
 				11698F981DDB999600C24D3C /* Main.storyboard in Resources */,
 				11ECB99D1DECC2B900BEBF31 /* ballcheer.mp3 in Resources */,
@@ -782,6 +817,7 @@
 				11698F931DDB999600C24D3C /* AppDelegate.swift in Sources */,
 				AF8864081F4CD65500FDF67B /* LeaderboardScoreParser.swift in Sources */,
 				AF0B92621F49F99C00104E4A /* PitcherDetailViewController.swift in Sources */,
+				AF27D5691F7FE0CE00ED4D6B /* SlideshowViewController.swift in Sources */,
 				11698FC91DDBA35A00C24D3C /* VideoPlayerViewController.swift in Sources */,
 				11225C311DE15CEC0071D1CF /* DrillListParser.swift in Sources */,
 				11C04F081E3FEE49005BDC4B /* sha1.c in Sources */,
