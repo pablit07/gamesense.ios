@@ -219,32 +219,34 @@ class DrillListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     public func selectNextListId() {
-        var index = self.drillListArray.index(where: {$0.primaryList.id == self.selectedListId})!
-        while self.drillListArray[index].primaryList.id == self.selectedListId ||
-              self.drillListArray[index].primaryList.id == 0 ||
+        let drillListArray = self.drillListArray.sorted(by: {$0.primaryList.title < $1.primaryList.title})
+        var index = drillListArray.index(where: {$0.primaryList.id == self.selectedListId})!
+        while drillListArray[index].primaryList.id == self.selectedListId ||
+              drillListArray[index].primaryList.id == 0 ||
               // remove "All gS Drills"
-              self.drillListArray[index].primaryList.id == 20 {
-            index = self.drillListArray.index(after: index)
-            if index == self.drillListArray.count {
+              drillListArray[index].primaryList.id == 20 {
+            index = drillListArray.index(after: index)
+            if index == drillListArray.count {
                 index = 0
             }
         }
-        let item = self.drillListArray[index]
+        let item = drillListArray[index]
         setDrillList(drillList: item.primaryList)
     }
     
     public func selectPreviousListId() {
-        var index = self.drillListArray.index(where: {$0.primaryList.id == self.selectedListId})!
+        let drillListArray = self.drillListArray.sorted(by: {$0.primaryList.title < $1.primaryList.title})
+        var index = drillListArray.index(where: {$0.primaryList.id == self.selectedListId})!
         while self.drillListArray[index].primaryList.id == self.selectedListId ||
-            self.drillListArray[index].primaryList.id == 0 ||
+            drillListArray[index].primaryList.id == 0 ||
             // remove "All gS Drills"
-            self.drillListArray[index].primaryList.id == 20 {
-                index = self.drillListArray.index(before: index)
+            drillListArray[index].primaryList.id == 20 {
+                index = drillListArray.index(before: index)
                 if index == -1 {
-                    index = self.drillListArray.count - 1
+                    index = drillListArray.count - 1
                 }
         }
-        let item = self.drillListArray[index]
+        let item = drillListArray[index]
         setDrillList(drillList: item.primaryList)
     }
     
