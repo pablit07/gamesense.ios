@@ -50,6 +50,8 @@ class VideoPlayerViewController: UIViewController
     public var hasDrillStarted = false
     public var onDrillStarted: (() -> ())? = nil
     
+    private var currentpreferredPeakBitRate = 420000.0
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         let screenSize : CGRect = self.movieView.bounds
@@ -268,10 +270,9 @@ class VideoPlayerViewController: UIViewController
                 "hasProtectedContent"
             ]
             let playerItem = AVPlayerItem(asset: asset,automaticallyLoadedAssetKeys: assetKeys)
-            playerItem.preferredPeakBitRate = 420000
-            let player = AVPlayer(playerItem: playerItem)
-            player.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions(), context: nil)
-//            let playerLayer = AVPlayerLayer(player: player)
+            playerItem.preferredPeakBitRate = currentpreferredPeakBitRate
+            let player = getPlayerInstance(playerItem: playerItem)
+            //            let playerLayer = AVPlayerLayer(player: player)
             let playerLayer = AVPlayerLayer()
             playerLayer.player = player
             playerLayer.frame = self.movieView.bounds
@@ -311,9 +312,8 @@ class VideoPlayerViewController: UIViewController
                 "hasProtectedContent"
             ]
             let playerItem = AVPlayerItem(asset: asset,automaticallyLoadedAssetKeys: assetKeys)
-            playerItem.preferredPeakBitRate = 420000
-            let player = AVPlayer(playerItem: playerItem)
-            player.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions(), context: nil)
+            playerItem.preferredPeakBitRate = currentpreferredPeakBitRate
+            let player = getPlayerInstance(playerItem: playerItem)
             let playerLayer = AVPlayerLayer(player: player)
             playerLayer.frame = self.movieView.bounds
             playerLayer.bounds = self.movieView.bounds
@@ -339,6 +339,19 @@ class VideoPlayerViewController: UIViewController
         
 //        self.replayNextBgView.center = CGPoint(x:self.movieView.center.x-35, y:self.movieView.center.y-50)
 
+    }
+    
+    private func getPlayerInstance(playerItem: AVPlayerItem) -> AVPlayer {
+        var player = AVPlayer(playerItem: playerItem)
+        player.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions(), context: nil)
+        player.addPeriodicTimeObserver(forInterval: CMTimeMake(1, 1), queue: DispatchQueue.main, using: { (time: CMTime) -> Void in
+            if let lastEvent = player.currentItem?.accessLog()?.events.last {
+                if self.currentpreferredPeakBitRate < lastEvent.observedBitrate {
+                    self.currentpreferredPeakBitRate = lastEvent.observedBitrate
+                }
+            }
+        })
+        return player
     }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
