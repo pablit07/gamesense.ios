@@ -50,7 +50,7 @@ class VideoPlayerViewController: UIViewController
     public var hasDrillStarted = false
     public var onDrillStarted: (() -> ())? = nil
     
-    private var currentpreferredPeakBitRate = 420000.0
+    private var currentpreferredPeakBitRate = 1000000.0
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
