@@ -86,6 +86,8 @@
 		AF8864081F4CD65500FDF67B /* LeaderboardScoreParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8864071F4CD65500FDF67B /* LeaderboardScoreParser.swift */; };
 		AF8A22D21DF3ACF500A88E00 /* Rollbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */; };
 		AF8A22D71DF3C61600A88E00 /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A22D61DF3C61600A88E00 /* CrashReporter.framework */; };
+		AF8E137D1F94E6B90067D80D /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8E137C1F94E6B90067D80D /* next.png */; };
+		AF8E137F1F94E74C0067D80D /* replay.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8E137E1F94E74C0067D80D /* replay.png */; };
 		AFFAC0291F5CA25D00E2634F /* full_circle_1.png in Resources */ = {isa = PBXBuildFile; fileRef = AFFAC01D1F5CA25D00E2634F /* full_circle_1.png */; };
 		AFFAC02A1F5CA25D00E2634F /* full_circle_2.png in Resources */ = {isa = PBXBuildFile; fileRef = AFFAC01E1F5CA25D00E2634F /* full_circle_2.png */; };
 		AFFAC02B1F5CA25D00E2634F /* full_circle_3.png in Resources */ = {isa = PBXBuildFile; fileRef = AFFAC01F1F5CA25D00E2634F /* full_circle_3.png */; };
@@ -101,12 +103,10 @@
 		E379E7B91F7E4BA900B0C23E /* fastball.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7AF1F7E4BA900B0C23E /* fastball.png */; };
 		E379E7BA1F7E4BA900B0C23E /* greenB.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B01F7E4BA900B0C23E /* greenB.png */; };
 		E379E7BB1F7E4BA900B0C23E /* greenS.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B11F7E4BA900B0C23E /* greenS.png */; };
-		E379E7BC1F7E4BA900B0C23E /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B21F7E4BA900B0C23E /* next.png */; };
 		E379E7BD1F7E4BA900B0C23E /* plainB.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B31F7E4BA900B0C23E /* plainB.png */; };
 		E379E7BE1F7E4BA900B0C23E /* plainS.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B41F7E4BA900B0C23E /* plainS.png */; };
 		E379E7BF1F7E4BA900B0C23E /* redB.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B51F7E4BA900B0C23E /* redB.png */; };
 		E379E7C01F7E4BA900B0C23E /* redS.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B61F7E4BA900B0C23E /* redS.png */; };
-		E379E7C11F7E4BA900B0C23E /* replay.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B71F7E4BA900B0C23E /* replay.png */; };
 		E379E7C21F7E4BA900B0C23E /* slider.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B81F7E4BA900B0C23E /* slider.png */; };
 		E379E7C41F7F562800B0C23E /* curveBall.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7C31F7F562800B0C23E /* curveBall.png */; };
 		E379E7C51F81F35B00B0C23E /* DrillQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1147DC881DEAA3A5000D8025 /* DrillQuestionsViewController.swift */; };
@@ -238,6 +238,8 @@
 		AF8A22D11DF3ACF500A88E00 /* Rollbar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rollbar.framework; path = gameSenseSports/Rollbar.framework; sourceTree = "<group>"; };
 		AF8A22D31DF3C4B200A88E00 /* gameSenseSports-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gameSenseSports-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF8A22D61DF3C61600A88E00 /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CrashReporter.framework; path = gameSenseSports/CrashReporter.framework; sourceTree = "<group>"; };
+		AF8E137C1F94E6B90067D80D /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = next.png; path = images/next.png; sourceTree = "<group>"; };
+		AF8E137E1F94E74C0067D80D /* replay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = replay.png; path = images/replay.png; sourceTree = "<group>"; };
 		AFFAC01D1F5CA25D00E2634F /* full_circle_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = full_circle_1.png; path = images/full_circle_1.png; sourceTree = "<group>"; };
 		AFFAC01E1F5CA25D00E2634F /* full_circle_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = full_circle_2.png; path = images/full_circle_2.png; sourceTree = "<group>"; };
 		AFFAC01F1F5CA25D00E2634F /* full_circle_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = full_circle_3.png; path = images/full_circle_3.png; sourceTree = "<group>"; };
@@ -254,12 +256,10 @@
 		E379E7AF1F7E4BA900B0C23E /* fastball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fastball.png; sourceTree = "<group>"; };
 		E379E7B01F7E4BA900B0C23E /* greenB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenB.png; sourceTree = "<group>"; };
 		E379E7B11F7E4BA900B0C23E /* greenS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenS.png; sourceTree = "<group>"; };
-		E379E7B21F7E4BA900B0C23E /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		E379E7B31F7E4BA900B0C23E /* plainB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plainB.png; sourceTree = "<group>"; };
 		E379E7B41F7E4BA900B0C23E /* plainS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plainS.png; sourceTree = "<group>"; };
 		E379E7B51F7E4BA900B0C23E /* redB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redB.png; sourceTree = "<group>"; };
 		E379E7B61F7E4BA900B0C23E /* redS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redS.png; sourceTree = "<group>"; };
-		E379E7B71F7E4BA900B0C23E /* replay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = replay.png; sourceTree = "<group>"; };
 		E379E7B81F7E4BA900B0C23E /* slider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider.png; sourceTree = "<group>"; };
 		E379E7C31F7F562800B0C23E /* curveBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = curveBall.png; sourceTree = "<group>"; };
 		E379E7CC1F8340CB00B0C23E /* HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
@@ -328,16 +328,16 @@
 		11225C2A1DDE73B30071D1CF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AF8E137E1F94E74C0067D80D /* replay.png */,
+				AF8E137C1F94E6B90067D80D /* next.png */,
 				E379E7AF1F7E4BA900B0C23E /* fastball.png */,
 				E379E7C31F7F562800B0C23E /* curveBall.png */,
 				E379E7B01F7E4BA900B0C23E /* greenB.png */,
 				E379E7B11F7E4BA900B0C23E /* greenS.png */,
-				E379E7B21F7E4BA900B0C23E /* next.png */,
 				E379E7B31F7E4BA900B0C23E /* plainB.png */,
 				E379E7B41F7E4BA900B0C23E /* plainS.png */,
 				E379E7B51F7E4BA900B0C23E /* redB.png */,
 				E379E7B61F7E4BA900B0C23E /* redS.png */,
-				E379E7B71F7E4BA900B0C23E /* replay.png */,
 				E379E7B81F7E4BA900B0C23E /* slider.png */,
 				AF27D5781F7FEF8400ED4D6B /* tutorial-icon.png */,
 				AF27D56E1F7FEA8A00ED4D6B /* completing drills.png */,
@@ -684,13 +684,12 @@
 				115C95541F4678AA00224F50 /* logout@2x.png in Resources */,
 				11698FA01DDB999600C24D3C /* LaunchScreen.storyboard in Resources */,
 				115C95551F4678AA00224F50 /* profile@2x.png in Resources */,
-				E379E7C11F7E4BA900B0C23E /* replay.png in Resources */,
 				AF27D5751F7FEA8A00ED4D6B /* post-drill response.png in Resources */,
 				AFFAC0341F5CA25D00E2634F /* occlusion_4.png in Resources */,
 				E379E7BA1F7E4BA900B0C23E /* greenB.png in Resources */,
 				11698FC41DDB9C4700C24D3C /* gameSenseSports.png in Resources */,
 				115C95531F4678AA00224F50 /* home@2x.png in Resources */,
-				E379E7BC1F7E4BA900B0C23E /* next.png in Resources */,
+				AF8E137F1F94E74C0067D80D /* replay.png in Resources */,
 				11698FD81DDD16FF00C24D3C /* logo.png in Resources */,
 				11DC88D01DEF6501002D3847 /* gs_logo_login.png in Resources */,
 				115C95521F4678AA00224F50 /* charts@2x.png in Resources */,
@@ -718,6 +717,7 @@
 				AFFAC02B1F5CA25D00E2634F /* full_circle_3.png in Resources */,
 				AFFAC0311F5CA25D00E2634F /* occlusion_1.png in Resources */,
 				118287671E17363E0009CCAF /* round_ball.png in Resources */,
+				AF8E137D1F94E6B90067D80D /* next.png in Resources */,
 				11698FD61DDD14BE00C24D3C /* lance-lynn-OLD.jpg in Resources */,
 				E379E7C01F7E4BA900B0C23E /* redS.png in Resources */,
 				AF27D5741F7FEA8A00ED4D6B /* pitcher_profile.png in Resources */,
