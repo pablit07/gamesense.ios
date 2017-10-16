@@ -9,15 +9,17 @@
 import UIKit
 import AVFoundation
 
+
 class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UITableViewDataSource, UITableViewDelegate
 {
     
-    @IBOutlet weak var questionsLabel: UILabel!
-    @IBOutlet weak var pointsLabel: UILabel!
+    //@IBOutlet weak var questionsLabel: UILabel!
+    //@IBOutlet weak var pointsLabel: UILabel!
     
-    @IBOutlet weak var scoreView: UIView!
+    //@IBOutlet weak var scoreView: UIView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var lineTimerView: UIView!
+    @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var timerView: UIView!
 
     @IBOutlet weak var pitchesTable: UITableView!
@@ -58,7 +60,15 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.alpha = 0
-        self.isLandscape = self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact
+//        self.isLandscape = self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact
+//        let verticalClass = self.traitCollection.verticalSizeClass
+//        self.isLandscape = verticalClass == UIUserInterfaceSizeClass.compact
+
+        if self.drillVideoItem != nil {
+            updateViewComponents(battingHand: (self.drillVideoItem?.batterHand)!)
+        } else {
+            updateViewComponents(battingHand: "R")
+        }
         
         let urlMiss = URL.init(fileURLWithPath: Bundle.main.path(
             forResource: "caughtball",
@@ -71,10 +81,15 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         } catch let error as NSError {
             print("audioPlayer error \(error.localizedDescription)")
         }
+        
+//        self.navigationController?.navigationBar.topItem?.title = "Drill List";
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.pitchesTable.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        self.pitchesTable.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     override func didReceiveMemoryWarning() {
@@ -103,11 +118,12 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         answeredPitchTypeID = -1
         self.shapeLayer.removeFromSuperlayer()
         self.shapeLayer = CAShapeLayer()
-        pointsLabel.text = String(parentViewController.points)
-        questionsLabel.text = String(parentViewController.index + 1)
         drillQuestionItem = parentViewController.drillQuestionsArray[parentViewController.index]
         getPitchLocations()
         loadVideoData()
+        self.countLabel.layer.borderWidth = 3.0
+        self.countLabel.layer.borderColor = UIColor.red.cgColor
+        self.countLabel.isHidden = true
     }
     
     public func triggerCountdown()
@@ -126,14 +142,14 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         
         if isLandscape
         {
-            self.lineTimerView.isHidden = false
-            self.scoreView.isHidden = true
+            self.lineTimerView.isHidden = true
+            //self.scoreView.isHidden = true
             self.view.backgroundColor = UIColor.clear
             if parentViewController.hasDrillStarted && !parentViewController.replay {
                 self.view.alpha = 0.7
             }
             self.timerView.isHidden = true
-            let toMoveX = deviceBounds.width * 0.68
+            let toMoveX = deviceBounds.width - 195
             var viewFrame = self.view.frame
             assert(battingHand == "R" || battingHand == "L")
             if battingHand == "R" {
@@ -144,10 +160,13 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             viewFrame.size.width = deviceBounds.width - toMoveX
             viewFrame.size.height = deviceBounds.height
             self.view.frame = viewFrame
-            self.pitchesTable.frame.origin.y = 1
+//            let yPos = self.lineTimerView.frame.origin.y+self.countLabel.frame.size.height+10
+//            self.pitchesTable.frame.origin.y = 1
+            self.pitchesTable.frame = CGRect.init(x:self.pitchesTable.frame.origin.x, y:self.pitchesTable.frame.origin.y, width:self.pitchesTable.frame.size.width, height:viewFrame.size.height)
+            self.lineTimerView.frame = CGRect.init(x:self.lineTimerView.frame.origin.x, y:self.lineTimerView.frame.origin.y, width:self.countLabel.frame.size.width, height:self.lineTimerView.frame.size.height)
         } else {
             self.timerView.isHidden = false
-            self.scoreView.isHidden = false
+            //self.scoreView.isHidden = false
             if parentViewController.hasDrillStarted && !parentViewController.replay {
                 self.view.alpha = 1
             }
@@ -155,9 +174,9 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             self.view.backgroundColor = UIColor.black
             self.view.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:381)
             self.pitchesTable.frame = CGRect.init(x:0, y:86, width:deviceBounds.width, height:203)
-            self.scoreView.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:78)
-            self.scoreView.subviews[0].frame = CGRect.init(x:7, y:7, width:((deviceBounds.width / 2) - 17), height:67)
-            self.scoreView.subviews[1].frame = CGRect.init(x:((deviceBounds.width / 2) + 7), y:7, width:((deviceBounds.width / 2) - 17), height:67)
+            //self.scoreView.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:78)
+            //self.scoreView.subviews[0].frame = CGRect.init(x:7, y:7, width:((deviceBounds.width / 2) - 17), height:67)
+            //self.scoreView.subviews[1].frame = CGRect.init(x:((deviceBounds.width / 2) + 7), y:7, width:((deviceBounds.width / 2) - 17), height:67)
             self.timerView.frame = CGRect.init(x:0, y:302, width:deviceBounds.width, height:64)
             self.lineTimerView.isHidden = true
         }
@@ -263,7 +282,8 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     {
         let parentViewController = self.parent as! VideoPlayerViewController
         parentViewController.points += points
-        self.pointsLabel.text = String(parentViewController.points)
+        print("Points : \(parentViewController.points)")
+//        self.pointsLabel.text = String(parentViewController.points)
     }
     
     private func sendUserAnswer(correctAnswer: Bool, bothIncorrect: Bool)
@@ -279,7 +299,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         
         SharedNetworkConnection.apiPostAnswerQuestion(apiToken: appDelegate.apiToken, correctAnswer: correctAnswer, activityID: parentViewController.returnedDrillID, questionID: drillQuestionItem.drillQuestionID, answerID: self.answeredPitchTypeID, pitchLocation: pitchLocation, questionJson: drillQuestionItem.fullJson, completionHandler: { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+                print("error=\(String(describing: error))")
                 let parentViewController = self.parent as! VideoPlayerViewController
                 parentViewController.showIndicator(shouldAppear: false)
                 return
@@ -288,7 +308,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 // 403 on no token
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+                print("response = \(String(describing: response))")
                 
                 SharedNetworkConnection.apiLoginWithStoredCredentials(completionHandler: { data, response, error in
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -307,38 +327,28 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         })
         
         if parentViewController != nil {
+            self.pitchesTable.reloadData()
             self.showAnswer(correctAnswer: correctAnswer, bothIncorrect: bothIncorrect)
         }
     }
     
     private func showAnswer(correctAnswer: Bool, bothIncorrect: Bool)
     {
-        self.answeredCorrectly = correctAnswer
-        var message = "The correct answer is: \n"
-        for drillPitchItem in self.pitchArray {
-            if (drillPitchItem.drillPitchID == self.correctPitchTypeID) {
-                if (self.correctPitchLocationID == 2) {
-                    message = message + drillPitchItem.name + "\nStrike"
-                }
-                else {
-                    message = message + drillPitchItem.name + "\nBall"
-                }
-            }
-        }
         
         let parentViewController = self.parent as? VideoPlayerViewController
         let points = (parentViewController?.points)!
         let questionCount = (parentViewController?.index)! + 1
-        
-        message = message + "\n\nPoints: \(points)\nQuestion: \(questionCount)\n "
-        
-        self.view.alpha = 0
-        
+        parentViewController?.didShowQuestionNumberAndPoints(pitch: questionCount, totalPoints: points)
+
+        self.answeredCorrectly = correctAnswer
+        self.countLabel.text = (drillQuestionItem?.pitchCount)! as String
+
+        if (self.countLabel.text?.characters.count)! > 0 {
+            self.countLabel.isHidden = false
+        }
+
         if (correctAnswer) {
-            let alert = UIAlertController(title: "Correct!", message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: replayHandler))
-            alert.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.default, handler: nextHandler))
-            self.present(alert, animated: false, completion: nil)
+            
             if UserDefaults.standard.object(forKey: Constants.kSound) as? Int == 1 {
                 AudioServicesPlaySystemSound(Constants.positiveSoundId)
                 if #available(iOS 10.0, *) {
@@ -349,10 +359,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
                 }
             }
         } else {
-            let alert = UIAlertController(title: "Miss", message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: replayHandler))
-            alert.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.default, handler: nextHandler))
-            self.present(alert, animated: false, completion: nil)
             if bothIncorrect && UserDefaults.standard.object(forKey: Constants.kSound) as? Int == 1 {
                 audioPlayerMiss?.play()
             }
@@ -362,7 +368,8 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     func replayHandler(alert: UIAlertAction!) {
         let parentViewController = self.parent as! VideoPlayerViewController
         parentViewController.replay = true
-        self.view.alpha = 0
+//        self.view.alpha = 0
+        self.lineTimerView.isHidden = true
         parentViewController.resetView()
     }
     
@@ -371,7 +378,8 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         let parentViewController = self.parent as! VideoPlayerViewController
         parentViewController.replay = false
         parentViewController.index += 1
-        self.view.alpha = 0
+//        self.view.alpha = 0
+        self.lineTimerView.isHidden = true
         parentViewController.resetView()
     }
     
@@ -394,7 +402,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     }
     
     private func addCircle() {
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: self.view.frame.width/2,y: 33), radius: CGFloat(40), startAngle: CGFloat(-M_PI_2), endAngle:CGFloat(2*M_PI-M_PI_2), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: self.view.frame.width/2,y: 33), radius: CGFloat(40), startAngle: CGFloat(-Double.pi / 2), endAngle:CGFloat(2*Double.pi - Double.pi / 2), clockwise: true)
         
         self.shapeLayer.path = circlePath.cgPath
         self.shapeLayer.fillColor = UIColor.clear.cgColor
@@ -407,7 +415,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     private func addLine() {
         let linePath = UIBezierPath()
         linePath.move(to: CGPoint(x:0, y:0))
-        linePath.addLine(to: CGPoint(x:self.view.frame.width, y:0))
+        linePath.addLine(to: CGPoint(x:self.countLabel.frame.width, y:0))
         self.lineLayer.path = linePath.cgPath
         self.lineLayer.fillColor = UIColor.clear.cgColor
         self.lineLayer.strokeColor = UIColor.white.cgColor
@@ -429,6 +437,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     
     func startClockTimer() {
         if answered { return }
+        self.lineTimerView.isHidden = false
         self.countDownTimer.invalidate()
         self.countDownTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(DrillQuestionsViewController.countdown), userInfo: nil, repeats: true)
 
@@ -437,6 +446,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     
     func stopAnimation() {
         self.lineLayer.removeAllAnimations()
+        self.lineTimerView.isHidden = true
     }
     
     func countdown()
@@ -479,25 +489,79 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "answerCell", for: indexPath)
         let drillPitchItem = self.pitchArray[indexPath.row]
-        let pitchLabel = cell.viewWithTag(3) as! UILabel
-            pitchLabel.text = drillPitchItem.name
+        
+        let pitchTypeLabel = cell.viewWithTag(3) as! UILabel
+        pitchTypeLabel.text = drillPitchItem.name
+        
+        
+        if (drillPitchItem.drillPitchID == self.correctPitchTypeID) { //GreenColor
+            pitchTypeLabel.backgroundColor = UIColor(red: 80/255, green: 204/255, blue: 107/255, alpha: 1.0)
+        } else {
+            switch drillPitchItem.drillPitchID {
+            case 1: //"#f39c12" FastBall
+                pitchTypeLabel.backgroundColor = UIColor(red: 243/255, green: 156/255, blue: 18/255, alpha: 1.0)
+            case 2: //"#f31286" Changeup
+                pitchTypeLabel.backgroundColor = UIColor(red: 243/255, green: 18/255, blue: 134/255, alpha: 1.0)
+            case 3: //"#975113" Cutter
+                pitchTypeLabel.backgroundColor = UIColor(red: 151/255, green: 81/255, blue: 19/255, alpha: 1.0)
+            case 4://"#3498db" Curveball
+                pitchTypeLabel.backgroundColor = UIColor(red: 52/255, green: 152/255, blue: 219/255, alpha: 1.0)
+            case 5: //"#6334db" Slider
+                pitchTypeLabel.backgroundColor = UIColor(red: 99/255, green: 52/255, blue: 219/255, alpha: 1.0)
+                
+            default: //"#f39c12"
+                pitchTypeLabel.backgroundColor = UIColor(red: 243/255, green: 156/255, blue: 18/255, alpha: 1.0)
+            }
+        }
+        
+        
+        let ballImage = cell.viewWithTag(1) as! UIButton
+        let strikeImage = cell.viewWithTag(2) as! UIButton
+        
+        ballImage.alpha = 1
+        strikeImage.alpha = 1
+        
+        cell.contentView.bringSubview(toFront: ballImage)
+        cell.contentView.bringSubview(toFront: strikeImage)
+        
+        var selectedButtonBColor: String? = "plainB.png"
+        var selectedButtonSColor: String?  = "plainS.png"
+        
+        if (drillPitchItem.drillPitchID == self.answeredPitchTypeID) {
+            if (self.answeredPitchLocationID == 1) {
+                selectedButtonBColor = "redB.png"
+            } else {
+                selectedButtonSColor = "redS.png"
+            }
+        }
+        
+        if (drillPitchItem.drillPitchID == self.correctPitchTypeID) {
+            if (self.correctPitchLocationID == 1) {
+                selectedButtonBColor = "greenB.png"
+            } else {
+                selectedButtonSColor = "greenS.png"
+            }
+        }
+        
+        
+        let image1 = UIImage(named: selectedButtonBColor!) as UIImage?
+        ballImage.setImage(image1, for: UIControlState.normal)
+        
+        let image2 = UIImage(named: selectedButtonSColor!) as UIImage?
+        strikeImage.setImage(image2, for: UIControlState.normal)
+        
         let hiddenLabel = cell.viewWithTag(4) as! UILabel
         hiddenLabel.text = String(drillPitchItem.drillPitchID)
-
-        if (alternateColor) {
-            alternateColor = false
-            cell.backgroundColor = UIColor.lightGray
-        }
-        else {
-            alternateColor = true
-            cell.backgroundColor = UIColor.darkGray
-        }
+        
+        cell.backgroundColor = UIColor.clear
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+    
     
     @IBAction func buttonPressed(sender: UIButton) {
         sender.isEnabled = false
@@ -507,7 +571,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             let pausedTime = self.shapeLayer.convertTime(CACurrentMediaTime(), from: nil)
             self.shapeLayer.speed = 0
             self.shapeLayer.timeOffset = pausedTime
-            let hiddenLabel = sender.superview?.viewWithTag(4) as! UILabel
+            let hiddenLabel = sender.superview?.superview?.viewWithTag(4) as! UILabel
             self.getVideoAnswer(pitchType: Int(hiddenLabel.text!)!, pitchLocation: sender.tag)
             sender.isEnabled = true
         }

@@ -24,7 +24,11 @@ class VideoPlayerViewController: UIViewController
     
     @IBOutlet weak var movieView: UIView!
     @IBOutlet weak var loadingView: UIView!
-    
+    @IBOutlet weak var scoreView: UIView!
+    @IBOutlet weak var replayNextBgView: UIView!
+    @IBOutlet weak var questionsTextField: UILabel!
+    @IBOutlet weak var pointsTextField: UILabel!
+
     private var drillQuestionsParser = DrillQuestionParser(jsonString: "")
     private var drillListItem = DrillListItem(json: [:])
     private var presenting = false
@@ -32,6 +36,8 @@ class VideoPlayerViewController: UIViewController
     private var drillStartTime = ""
     
     public var drillQuestionsArray = [DrillQuestionItem]()
+    private var drillVideoItem = DrillVideoItem(json: [:])
+
     public var replay = false
     public var index = 0
 
@@ -81,7 +87,16 @@ class VideoPlayerViewController: UIViewController
         self.movieView.backgroundColor = UIColor.black
         let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
         drillListItem = parentViewController.selectedDrillItem
+
+//
+//        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: 50)
+//
+        let rightBarButton = UIBarButtonItem(customView: self.scoreView!)
+        self.navigationItem.rightBarButtonItem = rightBarButton
         
+
+        self.replayNextBgView.alpha = 0
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -279,6 +294,15 @@ class VideoPlayerViewController: UIViewController
             
             NotificationCenter.default.addObserver(self, selector: #selector(VideoPlayerViewController.playerFinished), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
             if startPlaying { player.play() }
+            
+            if drillListItem?.title.range(of:"RHP") != nil {
+                self.replayNextBgView.center = CGPoint(x:playerLayer.frame.origin.x+playerLayer.frame.size.width/2+50,
+                                                       y:playerLayer.frame.origin.y+playerLayer.frame.size.height/2)
+
+            } else {
+            self.replayNextBgView.center = CGPoint(x:playerLayer.frame.origin.x+playerLayer.frame.size.width/2-50,
+                                                   y:playerLayer.frame.origin.y+playerLayer.frame.size.height/2)
+            }
         }
         else {
             let asset = AVAsset(url: videoURL)
@@ -300,7 +324,21 @@ class VideoPlayerViewController: UIViewController
             self.movieView.layer.addSublayer(playerLayer)
             NotificationCenter.default.addObserver(self, selector: #selector(VideoPlayerViewController.replayFinished), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
             player.play()
+            
+            if drillListItem?.title.range(of:"RHP") != nil {
+                self.replayNextBgView.center = CGPoint(x:playerLayer.frame.origin.x+playerLayer.frame.size.width/2+50,
+                                                       y:playerLayer.frame.origin.y+playerLayer.frame.size.height/2)
+                
+            } else {
+                self.replayNextBgView.center = CGPoint(x:playerLayer.frame.origin.x+playerLayer.frame.size.width/2-50,
+                                                       y:playerLayer.frame.origin.y+playerLayer.frame.size.height/2)
+            }
+
+
         }
+        
+//        self.replayNextBgView.center = CGPoint(x:self.movieView.center.x-35, y:self.movieView.center.y-50)
+
     }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -473,10 +511,11 @@ class VideoPlayerViewController: UIViewController
     func replayFinished()
     {
         // Allow another replay
-        let alert = UIAlertController(title: (drillListItem?.title)! + " " + String(index + 1), message: nil, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: replayHandler))
-        alert.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.default, handler: nextHandler))
-        self.present(alert, animated: true, completion: nil)
+//        let alert = UIAlertController(title: (drillListItem?.title)! + " " + String(index + 1), message: nil, preferredStyle: UIAlertControllerStyle.alert)
+//        alert.addAction(UIAlertAction(title: "Replay", style: UIAlertActionStyle.default, handler: replayHandler))
+//        alert.addAction(UIAlertAction(title: "Next", style: UIAlertActionStyle.default, handler: nextHandler))
+//        self.present(alert, animated: true, completion: nil)
+        self.replayNextBgView.alpha = 1
     }
     
     @IBAction func playButtonPressed(_ sender: UIButton) {
@@ -488,5 +527,25 @@ class VideoPlayerViewController: UIViewController
         }
     }
     
+    
+    
+    @IBAction func replayClicked(_ sender: Any) {
+        self.replay = true
+        self.replayNextBgView.alpha = 0
+        self.resetView()
+    }
+    
+    @IBAction func nextClicked(_ sender: Any) {
+        self.replay = false
+        self.index += 1
+        self.replayNextBgView.alpha = 0
+        self.resetView()
+    }
+    
+    public func didShowQuestionNumberAndPoints(pitch: Int, totalPoints: Int) {
+        self.questionsTextField.text = "\(pitch)"
+        self.pointsTextField.text = "\(totalPoints)pts"
+        self.replayNextBgView.alpha = 1
+    }
 }
 

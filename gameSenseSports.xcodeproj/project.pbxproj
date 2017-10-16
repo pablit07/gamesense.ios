@@ -89,6 +89,19 @@
 		AFFAC0321F5CA25D00E2634F /* occlusion_2.png in Resources */ = {isa = PBXBuildFile; fileRef = AFFAC0261F5CA25D00E2634F /* occlusion_2.png */; };
 		AFFAC0331F5CA25D00E2634F /* occlusion_3.png in Resources */ = {isa = PBXBuildFile; fileRef = AFFAC0271F5CA25D00E2634F /* occlusion_3.png */; };
 		AFFAC0341F5CA25D00E2634F /* occlusion_4.png in Resources */ = {isa = PBXBuildFile; fileRef = AFFAC0281F5CA25D00E2634F /* occlusion_4.png */; };
+		E379E7B91F7E4BA900B0C23E /* fastball.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7AF1F7E4BA900B0C23E /* fastball.png */; };
+		E379E7BA1F7E4BA900B0C23E /* greenB.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B01F7E4BA900B0C23E /* greenB.png */; };
+		E379E7BB1F7E4BA900B0C23E /* greenS.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B11F7E4BA900B0C23E /* greenS.png */; };
+		E379E7BC1F7E4BA900B0C23E /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B21F7E4BA900B0C23E /* next.png */; };
+		E379E7BD1F7E4BA900B0C23E /* plainB.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B31F7E4BA900B0C23E /* plainB.png */; };
+		E379E7BE1F7E4BA900B0C23E /* plainS.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B41F7E4BA900B0C23E /* plainS.png */; };
+		E379E7BF1F7E4BA900B0C23E /* redB.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B51F7E4BA900B0C23E /* redB.png */; };
+		E379E7C01F7E4BA900B0C23E /* redS.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B61F7E4BA900B0C23E /* redS.png */; };
+		E379E7C11F7E4BA900B0C23E /* replay.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B71F7E4BA900B0C23E /* replay.png */; };
+		E379E7C21F7E4BA900B0C23E /* slider.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7B81F7E4BA900B0C23E /* slider.png */; };
+		E379E7C41F7F562800B0C23E /* curveBall.png in Resources */ = {isa = PBXBuildFile; fileRef = E379E7C31F7F562800B0C23E /* curveBall.png */; };
+		E379E7C51F81F35B00B0C23E /* DrillQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1147DC881DEAA3A5000D8025 /* DrillQuestionsViewController.swift */; };
+		E379E7CD1F8340CB00B0C23E /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E379E7CC1F8340CB00B0C23E /* HexColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,6 +233,18 @@
 		AFFAC0271F5CA25D00E2634F /* occlusion_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = occlusion_3.png; path = images/occlusion_3.png; sourceTree = "<group>"; };
 		AFFAC0281F5CA25D00E2634F /* occlusion_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = occlusion_4.png; path = images/occlusion_4.png; sourceTree = "<group>"; };
 		D949346BDFC850193A2DD6DE /* Pods-gameSenseSports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gameSenseSports.release.xcconfig"; path = "Pods/Target Support Files/Pods-gameSenseSports/Pods-gameSenseSports.release.xcconfig"; sourceTree = "<group>"; };
+		E379E7AF1F7E4BA900B0C23E /* fastball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fastball.png; sourceTree = "<group>"; };
+		E379E7B01F7E4BA900B0C23E /* greenB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenB.png; sourceTree = "<group>"; };
+		E379E7B11F7E4BA900B0C23E /* greenS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenS.png; sourceTree = "<group>"; };
+		E379E7B21F7E4BA900B0C23E /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		E379E7B31F7E4BA900B0C23E /* plainB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plainB.png; sourceTree = "<group>"; };
+		E379E7B41F7E4BA900B0C23E /* plainS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plainS.png; sourceTree = "<group>"; };
+		E379E7B51F7E4BA900B0C23E /* redB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redB.png; sourceTree = "<group>"; };
+		E379E7B61F7E4BA900B0C23E /* redS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redS.png; sourceTree = "<group>"; };
+		E379E7B71F7E4BA900B0C23E /* replay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = replay.png; sourceTree = "<group>"; };
+		E379E7B81F7E4BA900B0C23E /* slider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider.png; sourceTree = "<group>"; };
+		E379E7C31F7F562800B0C23E /* curveBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = curveBall.png; sourceTree = "<group>"; };
+		E379E7CC1F8340CB00B0C23E /* HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +293,7 @@
 		11225C291DDE73AB0071D1CF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E379E7CC1F8340CB00B0C23E /* HexColor.swift */,
 				AF0B92611F49F99C00104E4A /* PitcherDetailViewController.swift */,
 				11698F941DDB999600C24D3C /* LoginViewController.swift */,
 				11698FD91DDD1CFD00C24D3C /* RegistrationWebViewController.swift */,
@@ -283,6 +309,17 @@
 		11225C2A1DDE73B30071D1CF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E379E7AF1F7E4BA900B0C23E /* fastball.png */,
+				E379E7C31F7F562800B0C23E /* curveBall.png */,
+				E379E7B01F7E4BA900B0C23E /* greenB.png */,
+				E379E7B11F7E4BA900B0C23E /* greenS.png */,
+				E379E7B21F7E4BA900B0C23E /* next.png */,
+				E379E7B31F7E4BA900B0C23E /* plainB.png */,
+				E379E7B41F7E4BA900B0C23E /* plainS.png */,
+				E379E7B51F7E4BA900B0C23E /* redB.png */,
+				E379E7B61F7E4BA900B0C23E /* redS.png */,
+				E379E7B71F7E4BA900B0C23E /* replay.png */,
+				E379E7B81F7E4BA900B0C23E /* slider.png */,
 				AF69513B1F64E09F00FDE369 /* play.png */,
 				AFFAC01D1F5CA25D00E2634F /* full_circle_1.png */,
 				AFFAC01E1F5CA25D00E2634F /* full_circle_2.png */,
@@ -572,17 +609,19 @@
 				TargetAttributes = {
 					11698F8E1DDB999600C24D3C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 2LR9N6ERWB;
+						DevelopmentTeam = 8E3KUE7JSQ;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					11698FA51DDB999600C24D3C = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8E3KUE7JSQ;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 11698F8E1DDB999600C24D3C;
 					};
 					11698FB01DDB999600C24D3C = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8E3KUE7JSQ;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 11698F8E1DDB999600C24D3C;
 					};
@@ -617,14 +656,20 @@
 				115C95541F4678AA00224F50 /* logout@2x.png in Resources */,
 				11698FA01DDB999600C24D3C /* LaunchScreen.storyboard in Resources */,
 				115C95551F4678AA00224F50 /* profile@2x.png in Resources */,
+				E379E7C11F7E4BA900B0C23E /* replay.png in Resources */,
 				AFFAC0341F5CA25D00E2634F /* occlusion_4.png in Resources */,
+				E379E7BA1F7E4BA900B0C23E /* greenB.png in Resources */,
 				11698FC41DDB9C4700C24D3C /* gameSenseSports.png in Resources */,
 				115C95531F4678AA00224F50 /* home@2x.png in Resources */,
+				E379E7BC1F7E4BA900B0C23E /* next.png in Resources */,
 				11698FD81DDD16FF00C24D3C /* logo.png in Resources */,
 				11DC88D01DEF6501002D3847 /* gs_logo_login.png in Resources */,
 				115C95521F4678AA00224F50 /* charts@2x.png in Resources */,
+				E379E7BE1F7E4BA900B0C23E /* plainS.png in Resources */,
+				E379E7B91F7E4BA900B0C23E /* fastball.png in Resources */,
 				115C95571F467C6300224F50 /* home_icon.png in Resources */,
 				118287681E17363E0009CCAF /* round_strike.png in Resources */,
+				E379E7BF1F7E4BA900B0C23E /* redB.png in Resources */,
 				11ECB99E1DECC2B900BEBF31 /* caughtball.mp3 in Resources */,
 				AFFAC02E1F5CA25D00E2634F /* half_circle_2.png in Resources */,
 				AFFAC02C1F5CA25D00E2634F /* full_circle_4.png in Resources */,
@@ -632,17 +677,22 @@
 				AFFAC0301F5CA25D00E2634F /* half_circle_4.png in Resources */,
 				AFFAC02D1F5CA25D00E2634F /* half_circle_1.png in Resources */,
 				AF76AA321E477D8D00A9407D /* lance-lynn.jpg in Resources */,
+				E379E7BB1F7E4BA900B0C23E /* greenS.png in Resources */,
 				AFFAC0331F5CA25D00E2634F /* occlusion_3.png in Resources */,
 				AFFAC0321F5CA25D00E2634F /* occlusion_2.png in Resources */,
+				E379E7C21F7E4BA900B0C23E /* slider.png in Resources */,
 				118287601E14D9BE0009CCAF /* clock.png in Resources */,
 				AFFAC02B1F5CA25D00E2634F /* full_circle_3.png in Resources */,
 				AFFAC0311F5CA25D00E2634F /* occlusion_1.png in Resources */,
 				118287671E17363E0009CCAF /* round_ball.png in Resources */,
 				11698FD61DDD14BE00C24D3C /* lance-lynn-OLD.jpg in Resources */,
+				E379E7C01F7E4BA900B0C23E /* redS.png in Resources */,
 				115C95511F4678AA00224F50 /* account@2x.png in Resources */,
 				11698F981DDB999600C24D3C /* Main.storyboard in Resources */,
 				11ECB99D1DECC2B900BEBF31 /* ballcheer.mp3 in Resources */,
+				E379E7BD1F7E4BA900B0C23E /* plainB.png in Resources */,
 				AF69513C1F64E09F00FDE369 /* play.png in Resources */,
+				E379E7C41F7F562800B0C23E /* curveBall.png in Resources */,
 				AFFAC02A1F5CA25D00E2634F /* full_circle_2.png in Resources */,
 				11C04F091E3FEE49005BDC4B /* Info.plist in Resources */,
 				AFFAC0291F5CA25D00E2634F /* full_circle_1.png in Resources */,
@@ -742,6 +792,7 @@
 				11C04F0F1E3FEE49005BDC4B /* SSZipArchive.m in Sources */,
 				11D25C751F427079003CC09C /* ProfileViewController.swift in Sources */,
 				11698FDA1DDD1CFD00C24D3C /* RegistrationWebViewController.swift in Sources */,
+				E379E7CD1F8340CB00B0C23E /* HexColor.swift in Sources */,
 				11C04F0A1E3FEE49005BDC4B /* ioapi.c in Sources */,
 				11C04F061E3FEE49005BDC4B /* prng.c in Sources */,
 				11C04F021E3FEE49005BDC4B /* aestab.c in Sources */,
@@ -767,6 +818,7 @@
 			files = (
 				11225C281DDE55C40071D1CF /* JsonTestStrings.swift in Sources */,
 				11698FAB1DDB999600C24D3C /* gameSenseSportsTests.swift in Sources */,
+				E379E7C51F81F35B00B0C23E /* DrillQuestionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -914,7 +966,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 2LR9N6ERWB;
+				DEVELOPMENT_TEAM = 8E3KUE7JSQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/gameSenseSports",
@@ -936,7 +988,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 2LR9N6ERWB;
+				DEVELOPMENT_TEAM = 8E3KUE7JSQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/gameSenseSports",
