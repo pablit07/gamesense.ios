@@ -140,8 +140,8 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         }
         let parentViewController = self.parent as! VideoPlayerViewController
         
-        if isLandscape
-        {
+//        if isLandscape
+//        {
             self.lineTimerView.isHidden = true
             //self.scoreView.isHidden = true
             self.view.backgroundColor = UIColor.clear
@@ -164,22 +164,22 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
 //            self.pitchesTable.frame.origin.y = 1
             self.pitchesTable.frame = CGRect.init(x:self.pitchesTable.frame.origin.x, y:self.pitchesTable.frame.origin.y, width:self.pitchesTable.frame.size.width, height:viewFrame.size.height)
             self.lineTimerView.frame = CGRect.init(x:self.lineTimerView.frame.origin.x, y:self.lineTimerView.frame.origin.y, width:self.countLabel.frame.size.width, height:self.lineTimerView.frame.size.height)
-        } else {
-            self.timerView.isHidden = false
-            //self.scoreView.isHidden = false
-            if parentViewController.hasDrillStarted && !parentViewController.replay {
-                self.view.alpha = 1
-            }
-            self.view.superview?.frame = CGRect.init(x:0, y:parentViewController.movieView.frame.size.height + 63, width:deviceBounds.width, height:381)
-            self.view.backgroundColor = UIColor.black
-            self.view.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:381)
-            self.pitchesTable.frame = CGRect.init(x:0, y:86, width:deviceBounds.width, height:203)
-            //self.scoreView.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:78)
-            //self.scoreView.subviews[0].frame = CGRect.init(x:7, y:7, width:((deviceBounds.width / 2) - 17), height:67)
-            //self.scoreView.subviews[1].frame = CGRect.init(x:((deviceBounds.width / 2) + 7), y:7, width:((deviceBounds.width / 2) - 17), height:67)
-            self.timerView.frame = CGRect.init(x:0, y:302, width:deviceBounds.width, height:64)
-            self.lineTimerView.isHidden = true
-        }
+//        } else {
+//            self.timerView.isHidden = false
+//            //self.scoreView.isHidden = false
+//            if parentViewController.hasDrillStarted && !parentViewController.replay {
+//                self.view.alpha = 1
+//            }
+//            self.view.superview?.frame = CGRect.init(x:0, y:parentViewController.movieView.frame.size.height + 63, width:deviceBounds.width, height:381)
+//            self.view.backgroundColor = UIColor.black
+//            self.view.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:381)
+//            self.pitchesTable.frame = CGRect.init(x:0, y:86, width:deviceBounds.width, height:203)
+//            //self.scoreView.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:78)
+//            //self.scoreView.subviews[0].frame = CGRect.init(x:7, y:7, width:((deviceBounds.width / 2) - 17), height:67)
+//            //self.scoreView.subviews[1].frame = CGRect.init(x:((deviceBounds.width / 2) + 7), y:7, width:((deviceBounds.width / 2) - 17), height:67)
+//            self.timerView.frame = CGRect.init(x:0, y:302, width:deviceBounds.width, height:64)
+//            self.lineTimerView.isHidden = true
+//        }
     }
     
     private func getPitchLocations()
