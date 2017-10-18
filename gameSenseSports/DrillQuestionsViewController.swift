@@ -107,6 +107,8 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
                 let onDrillStartedHandler = {self.view.alpha = (self.isLandscape) ? 0.7 : 1}
                 parentViewController.onDrillStarted = onDrillStartedHandler
             }
+        } else {
+            self.view.alpha = 0
         }
         answered = false
         answeredCorrectly = false

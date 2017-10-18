@@ -406,18 +406,6 @@ class VideoPlayerViewController: UIViewController
             layer.removeFromSuperlayer()
         }
     }
-    
-    func replayHandler(alert: UIAlertAction!) {
-        self.replay = true
-        self.resetView()
-    }
-    
-    func nextHandler(alert: UIAlertAction!)
-    {
-        self.replay = false
-        self.index += 1
-        self.resetView()
-    }
 
     func replayDrillHandler(alert: UIAlertAction!) {
         self.drillQuestionsArray = self.drillQuestionsArray.shuffled()
