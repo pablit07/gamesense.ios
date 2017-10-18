@@ -532,15 +532,20 @@ class VideoPlayerViewController: UIViewController
     
     @IBAction func replayClicked(_ sender: Any) {
         self.replay = true
-        self.replayNextBgView.alpha = 0
-        self.resetView()
+        DispatchQueue.main.async {
+            self.replayNextBgView.alpha = 0
+            self.resetView()
+        }
     }
     
     @IBAction func nextClicked(_ sender: Any) {
         self.replay = false
         self.index += 1
-        self.replayNextBgView.alpha = 0
-        self.resetView()
+        DispatchQueue.main.async {
+            self.replayNextBgView.alpha = 0
+            self.questionsTextField.text = "\(self.index+1)"
+            self.resetView()
+        }
     }
     
     public func didShowQuestionNumberAndPoints(pitch: Int, totalPoints: Int) {
