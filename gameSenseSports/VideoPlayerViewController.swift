@@ -131,7 +131,7 @@ class VideoPlayerViewController: UIViewController
     }
     
     override var shouldAutorotate : Bool {
-        return true
+        return false
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
