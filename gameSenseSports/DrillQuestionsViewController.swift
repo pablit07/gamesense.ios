@@ -123,7 +123,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         loadVideoData()
         self.countLabel.layer.borderWidth = 3.0
         self.countLabel.layer.borderColor = UIColor.red.cgColor
-        self.countLabel.isHidden = true
+        self.countLabel.isHidden = false
     }
     
     public func triggerCountdown()
@@ -239,8 +239,15 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             
             let drillVideoParser = DrillVideoParser(jsonString: String(data: data, encoding: .utf8)!)
             self.drillVideoItem = drillVideoParser?.getDrillVideoItem()
+
             
             DispatchQueue.main.async {
+                self.countLabel.text = (self.drillQuestionItem?.pitchCount)! as String
+                
+                if (self.countLabel.text == "") {
+                    self.countLabel.text = "2-1"
+                }
+                
                 self.updateViewComponents(battingHand: (self.drillVideoItem?.batterHand)!)
             }
         })
@@ -341,11 +348,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         parentViewController?.didShowQuestionNumberAndPoints(pitch: questionCount, totalPoints: points)
 
         self.answeredCorrectly = correctAnswer
-        self.countLabel.text = (drillQuestionItem?.pitchCount)! as String
-
-        if (self.countLabel.text?.characters.count)! > 0 {
-            self.countLabel.isHidden = false
-        }
 
         if (correctAnswer) {
             
