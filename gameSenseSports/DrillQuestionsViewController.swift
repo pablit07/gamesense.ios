@@ -369,25 +369,6 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         }
     }
     
-    func replayHandler(alert: UIAlertAction!) {
-        let parentViewController = self.parent as! VideoPlayerViewController
-        parentViewController.replay = true
-//        self.view.alpha = 0
-        self.lineTimerView.isHidden = true
-        parentViewController.resetView()
-    }
-    
-    func nextHandler(alert: UIAlertAction!)
-    {
-        let parentViewController = self.parent as! VideoPlayerViewController
-        parentViewController.replay = false
-        parentViewController.index += 1
-//        self.view.alpha = 0
-        self.lineTimerView.isHidden = true
-        parentViewController.resetView()
-    }
-    
-    
     private var shapeLayer = CAShapeLayer()
     private var lineLayer = CAShapeLayer()
     private var countDownTimer = Timer()
