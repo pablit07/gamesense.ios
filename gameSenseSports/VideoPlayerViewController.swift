@@ -543,7 +543,9 @@ class VideoPlayerViewController: UIViewController
         self.index += 1
         DispatchQueue.main.async {
             self.replayNextBgView.alpha = 0
-            self.questionsTextField.text = "\(self.index+1)"
+            if (self.index + 1 <= (self.drillListItem?.questionCount)!) {
+                self.questionsTextField.text = "\(self.index+1)"
+            }
             self.resetView()
         }
     }
