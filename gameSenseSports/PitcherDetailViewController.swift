@@ -14,7 +14,9 @@ class PitcherDetailViewController : UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var pitcher: UILabel!
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var leaderboardTable: UITableView!
-    
+    @IBOutlet weak var thumbnailWidth: NSLayoutConstraint!
+    @IBOutlet weak var thumbnailHeight: NSLayoutConstraint!
+
     var selectedListId : Int? = 0
     
     var leaderboardScoresParser : LeaderboardScoreParser? = nil
@@ -32,6 +34,12 @@ class PitcherDetailViewController : UIViewController, UITableViewDataSource, UIT
         self.view.addGestureRecognizer(swipeLeft)
         
         resetView()
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            thumbnailWidth.constant = 200
+            thumbnailHeight.constant = 200
+            thumbnail.updateConstraints()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
