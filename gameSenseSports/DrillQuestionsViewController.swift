@@ -10,7 +10,8 @@ import UIKit
 import AVFoundation
 
 
-class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UITableViewDataSource, UITableViewDelegate
+class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
+    UITableViewDataSource, UITableViewDelegate
 {
     
     //@IBOutlet weak var questionsLabel: UILabel!
@@ -21,9 +22,8 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     @IBOutlet weak var lineTimerView: UIView!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var timerView: UIView!
-
     @IBOutlet weak var pitchesTable: UITableView!
-    
+
     private var audioPlayerHit: AVAudioPlayer?
     private var audioPlayerMiss: AVAudioPlayer?
     
@@ -81,7 +81,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         } catch let error as NSError {
             print("audioPlayer error \(error.localizedDescription)")
         }
-        
+
 //        self.navigationController?.navigationBar.topItem?.title = "Drill List";
 
     }
@@ -151,7 +151,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
                 self.view.alpha = 0.7
             }
             self.timerView.isHidden = true
-            let toMoveX = deviceBounds.width - 195
+            let toMoveX = deviceBounds.width - 160
             var viewFrame = self.view.frame
             assert(battingHand == "R" || battingHand == "L")
             if battingHand == "R" {
@@ -164,8 +164,10 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
             self.view.frame = viewFrame
 //            let yPos = self.lineTimerView.frame.origin.y+self.countLabel.frame.size.height+10
 //            self.pitchesTable.frame.origin.y = 1
-            self.pitchesTable.frame = CGRect.init(x:self.pitchesTable.frame.origin.x, y:self.pitchesTable.frame.origin.y, width:self.pitchesTable.frame.size.width, height:viewFrame.size.height)
-            self.lineTimerView.frame = CGRect.init(x:self.lineTimerView.frame.origin.x, y:self.lineTimerView.frame.origin.y, width:self.countLabel.frame.size.width, height:self.lineTimerView.frame.size.height)
+            self.pitchesTable.frame = CGRect.init(x: 0, y: 0,
+                                                  width:self.pitchesTable.frame.size.width,
+                                                  height:viewFrame.size.height)
+//            self.lineTimerView.frame = CGRect.init(x:self.lineTimerView.frame.origin.x, y:self.lineTimerView.frame.origin.y, width:self.countLabel.frame.size.width, height:self.lineTimerView.frame.size.height)
 //        } else {
 //            self.timerView.isHidden = false
 //            //self.scoreView.isHidden = false
@@ -399,8 +401,11 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     
     private func addLine() {
         let linePath = UIBezierPath()
+
+        // Subtract count label's border width
         linePath.move(to: CGPoint(x:0, y:0))
-        linePath.addLine(to: CGPoint(x:self.countLabel.frame.width, y:0))
+        linePath.addLine(to: CGPoint(x:self.countLabel.frame.width - 9, y:0))
+
         self.lineLayer.path = linePath.cgPath
         self.lineLayer.fillColor = UIColor.clear.cgColor
         self.lineLayer.strokeColor = UIColor.white.cgColor
@@ -470,6 +475,14 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.pitchArray.count
     }
+
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (UIDevice.current.userInterfaceIdiom == .pad) {
+            return 120
+        } else {
+            return 60
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "answerCell", for: indexPath)
@@ -534,7 +547,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         
         let image2 = UIImage(named: selectedButtonSColor!) as UIImage?
         strikeImage.setImage(image2, for: UIControlState.normal)
-        
+
         let hiddenLabel = cell.viewWithTag(4) as! UILabel
         hiddenLabel.text = String(drillPitchItem.drillPitchID)
         
@@ -542,12 +555,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate, UIT
         
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    
-    
+
     @IBAction func buttonPressed(sender: UIButton) {
         sender.isEnabled = false
         if (!timeout)
