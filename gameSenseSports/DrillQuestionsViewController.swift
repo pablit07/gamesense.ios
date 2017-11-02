@@ -9,7 +9,6 @@
 import UIKit
 import AVFoundation
 
-
 class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
     UITableViewDataSource, UITableViewDelegate
 {
@@ -23,7 +22,8 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var timerView: UIView!
     @IBOutlet weak var pitchesTable: UITableView!
-
+    @IBOutlet weak var cellHeight: NSLayoutConstraint!
+    
     private var audioPlayerHit: AVAudioPlayer?
     private var audioPlayerMiss: AVAudioPlayer?
     
@@ -81,6 +81,9 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
         } catch let error as NSError {
             print("audioPlayer error \(error.localizedDescription)")
         }
+
+        pitchesTable.rowHeight = UITableViewAutomaticDimension
+//        pitchesTable.estimatedRowHeight = 60
 
 //        self.navigationController?.navigationBar.topItem?.title = "Drill List";
 
@@ -477,13 +480,9 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
     }
 
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (UIDevice.current.userInterfaceIdiom == .pad) {
-            return 120
-        } else {
-            return 60
-        }
+        return UIDevice.current.userInterfaceIdiom == .pad ? 120 : 60
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "answerCell", for: indexPath)
         let drillPitchItem = self.pitchArray[indexPath.row]
