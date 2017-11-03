@@ -87,8 +87,16 @@ class VideoPlayerViewController: UIViewController
             UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
         }
         self.movieView.backgroundColor = UIColor.black
-        let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
-        drillListItem = parentViewController.selectedDrillItem
+        
+        var parentViewController : DrillListViewController? = nil
+        for var vc in (self.navigationController?.viewControllers.reversed())! {
+            if let vc = (vc as? DrillListViewController) {
+                parentViewController = vc
+                break
+            }
+        }
+//        let parentViewController = self.navigationController?.viewControllers[0] as! DrillListViewController
+        drillListItem = parentViewController?.selectedDrillItem
 
 //
 //        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: 50)
