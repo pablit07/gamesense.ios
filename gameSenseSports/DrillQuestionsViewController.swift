@@ -128,6 +128,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
         loadVideoData()
         self.countLabel.layer.borderWidth = 3.0
         self.countLabel.layer.borderColor = UIColor.red.cgColor
+        self.countLabel.layer.backgroundColor = UIColor.black.cgColor
         self.countLabel.isHidden = false
     }
     
@@ -249,12 +250,11 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
 
             
             DispatchQueue.main.async {
-                self.countLabel.text = (self.drillQuestionItem?.pitchCount)! as String
+                self.countLabel.text = ((self.drillQuestionItem?.pitchCount)! as String) + " count"
                 
                 if (self.countLabel.text == "") {
-                    self.countLabel.text = "2-1"
+                    self.countLabel.text = "2-1 count"
                 }
-                
                 self.updateViewComponents(battingHand: (self.drillVideoItem?.batterHand)!)
             }
         })

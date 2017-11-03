@@ -560,7 +560,7 @@ class VideoPlayerViewController: UIViewController
     
     public func didShowQuestionNumberAndPoints(pitch: Int, totalPoints: Int) {
         self.questionsTextField.text = "\(pitch)"
-        self.pointsTextField.text = "\(totalPoints)pts"
+        self.pointsTextField.text = "\(totalPoints)"
         self.replayNextBgView.alpha = 1
     }
 }
