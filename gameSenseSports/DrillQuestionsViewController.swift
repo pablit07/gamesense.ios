@@ -111,24 +111,28 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
                 let onDrillStartedHandler = {self.view.alpha = (self.isLandscape) ? 0.7 : 1}
                 parentViewController.onDrillStarted = onDrillStartedHandler
             }
+            answered = false
+            answeredCorrectly = false
+            timeout = false
+            alternateColor = false
+            correctPitchLocationID = -1
+            correctPitchTypeID = -1
+            answeredPitchLocationID = -1
+            answeredPitchTypeID = -1
+            self.shapeLayer.removeFromSuperlayer()
+            self.shapeLayer = CAShapeLayer()
+            drillQuestionItem = parentViewController.drillQuestionsArray[parentViewController.index]
+            getPitchLocations()
+            loadVideoData()
+            self.countLabel.layer.borderWidth = 3.0
+            self.countLabel.layer.borderColor = UIColor.red.cgColor
+            self.countLabel.layer.backgroundColor = UIColor.black.cgColor
+            self.countLabel.isHidden = false
+        } else {
+            DispatchQueue.main.async {
+                self.countLabel.text = self.countLabel.text! + " "
+            }
         }
-        answered = false
-        answeredCorrectly = false
-        timeout = false
-        alternateColor = false
-        correctPitchLocationID = -1
-        correctPitchTypeID = -1
-        answeredPitchLocationID = -1
-        answeredPitchTypeID = -1
-        self.shapeLayer.removeFromSuperlayer()
-        self.shapeLayer = CAShapeLayer()
-        drillQuestionItem = parentViewController.drillQuestionsArray[parentViewController.index]
-        getPitchLocations()
-        loadVideoData()
-        self.countLabel.layer.borderWidth = 3.0
-        self.countLabel.layer.borderColor = UIColor.red.cgColor
-        self.countLabel.layer.backgroundColor = UIColor.black.cgColor
-        self.countLabel.isHidden = false
     }
     
     public func triggerCountdown()
@@ -249,17 +253,18 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
 
             
             DispatchQueue.main.async {
-                self.countLabel.text = ((self.drillQuestionItem?.pitchCount)! as String)  + " count"
+                self.updateViewComponents(battingHand: (self.drillVideoItem?.batterHand)!)
                 
+                self.countLabel.text = ((self.drillQuestionItem?.pitchCount)! as String)  + " count"
+
                 if (self.countLabel.text == " count") {
-                    
+
                     if ((self.parent as? VideoPlayerViewController)?.index ?? 1) % 2 == 0 {
                         self.countLabel.text = "0-0 count"
                     } else {
                         self.countLabel.text = "2-1 count"
                     }
                 }
-                self.updateViewComponents(battingHand: (self.drillVideoItem?.batterHand)!)
             }
         })
     }
