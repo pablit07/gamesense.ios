@@ -772,7 +772,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nf-8z-Cjp" userLabel="Line Timer View">
-                                <rect key="frame" x="21" y="1" width="150" height="3"/>
+                                <rect key="frame" x="1" y="1" width="150" height="3"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="XHC-Vj-f4f"/>
@@ -892,16 +892,16 @@
                         <constraints>
                             <constraint firstItem="JMH-Ty-1R4" firstAttribute="height" secondItem="Sbe-g6-3TP" secondAttribute="height" id="0ax-ao-OsE"/>
                             <constraint firstItem="JMH-Ty-1R4" firstAttribute="top" secondItem="rpO-U4-DXc" secondAttribute="bottom" constant="-11" id="5HF-rL-nvj"/>
-                            <constraint firstItem="3nf-8z-Cjp" firstAttribute="leading" secondItem="G4o-pt-62B" secondAttribute="leadingMargin" constant="5" id="G4P-hu-mTV"/>
                             <constraint firstAttribute="trailing" secondItem="rpO-U4-DXc" secondAttribute="trailing" constant="-7" id="Gc2-lJ-lcV"/>
-                            <constraint firstItem="rpO-U4-DXc" firstAttribute="trailingMargin" secondItem="G4o-pt-62B" secondAttribute="trailingMargin" constant="8" id="KBt-wh-egL"/>
                             <constraint firstItem="Sbe-g6-3TP" firstAttribute="bottom" secondItem="rpO-U4-DXc" secondAttribute="top" id="Pkz-sd-RlN"/>
                             <constraint firstItem="rpO-U4-DXc" firstAttribute="leading" secondItem="G4o-pt-62B" secondAttribute="leading" constant="-4" id="UxE-F6-DyV"/>
                             <constraint firstItem="KLY-VI-kN0" firstAttribute="top" secondItem="JMH-Ty-1R4" secondAttribute="bottom" constant="73" id="akC-1r-tj2"/>
                             <constraint firstItem="3nf-8z-Cjp" firstAttribute="width" secondItem="Sbe-g6-3TP" secondAttribute="width" id="bcj-ns-mEo"/>
                             <constraint firstItem="JMH-Ty-1R4" firstAttribute="leading" secondItem="Sbe-g6-3TP" secondAttribute="leading" id="iGm-x7-ahv"/>
                             <constraint firstItem="JMH-Ty-1R4" firstAttribute="trailing" secondItem="Sbe-g6-3TP" secondAttribute="trailing" id="kIW-NY-4Rt"/>
+                            <constraint firstItem="3nf-8z-Cjp" firstAttribute="leading" secondItem="JMH-Ty-1R4" secondAttribute="leading" id="lDN-GX-ZiN"/>
                             <constraint firstItem="Sbe-g6-3TP" firstAttribute="leading" secondItem="rpO-U4-DXc" secondAttribute="leading" constant="5" id="lPC-xL-ixp"/>
+                            <constraint firstItem="3nf-8z-Cjp" firstAttribute="trailing" secondItem="JMH-Ty-1R4" secondAttribute="trailing" id="n4Z-iJ-EcP"/>
                             <constraint firstItem="3nf-8z-Cjp" firstAttribute="top" secondItem="iTh-jy-8AZ" secondAttribute="bottom" constant="1" id="taa-C8-q6o"/>
                             <constraint firstItem="Sbe-g6-3TP" firstAttribute="top" secondItem="3nf-8z-Cjp" secondAttribute="bottom" constant="6" id="yZZ-4h-yUh"/>
                         </constraints>
