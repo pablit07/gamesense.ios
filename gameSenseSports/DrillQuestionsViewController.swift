@@ -104,6 +104,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
     {
         let parentViewController = self.parent as! VideoPlayerViewController
         if !parentViewController.replay {
+            self.pitchesTable.isUserInteractionEnabled = true
             if parentViewController.hasDrillStarted {
                 self.view.alpha = 1
             } else {
@@ -458,6 +459,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
         self.timerValue -= 0.1
         if self.timerValue < 0 {
             self.timeout = true
+            self.pitchesTable.isUserInteractionEnabled = false
             self.getVideoAnswer(pitchType: -1, pitchLocation: -1)
             self.setLabelText(value: "0.00s")
             self.countDownTimer.invalidate()
@@ -561,7 +563,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
     }
 
     @IBAction func buttonPressed(sender: UIButton) {
-        sender.isEnabled = false
+        pitchesTable.isUserInteractionEnabled = false
         if (!timeout)
         {
             self.answered = true
