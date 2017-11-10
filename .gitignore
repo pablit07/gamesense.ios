@@ -4,3 +4,4 @@ DerivedData/
 gameSenseSports.xcworkspace/
 Podfile.lock
 /Pods
+.DS_Store

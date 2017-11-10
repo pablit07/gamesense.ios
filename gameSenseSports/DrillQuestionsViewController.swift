@@ -148,49 +148,26 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
             return
         }
         let parentViewController = self.parent as! VideoPlayerViewController
-        
-//        if isLandscape
-//        {
-            self.lineTimerView.isHidden = true
-            //self.scoreView.isHidden = true
-            self.view.backgroundColor = UIColor.clear
-            if parentViewController.hasDrillStarted && !parentViewController.replay {
-                self.view.alpha = 0.7
-            }
-            self.timerView.isHidden = true
-            let toMoveX = deviceBounds.width - 160
-            var viewFrame = self.view.frame
-            assert(battingHand == "R" || battingHand == "L")
-            if battingHand == "R" {
-                viewFrame.origin = CGPoint.init(x:toMoveX, y:0)
-            } else if battingHand == "L" {
-                viewFrame.origin = CGPoint.init(x:0, y:0)
-            }
-            viewFrame.size.width = deviceBounds.width - toMoveX
-            viewFrame.size.height = deviceBounds.height
-            self.view.frame = viewFrame
-//            let yPos = self.lineTimerView.frame.origin.y+self.countLabel.frame.size.height+10
-//            self.pitchesTable.frame.origin.y = 1
-            self.pitchesTable.frame = CGRect.init(x: 0, y: 0,
-                                                  width:self.pitchesTable.frame.size.width,
-                                                  height:viewFrame.size.height)
-//            self.lineTimerView.frame = CGRect.init(x:self.lineTimerView.frame.origin.x, y:self.lineTimerView.frame.origin.y, width:self.countLabel.frame.size.width, height:self.lineTimerView.frame.size.height)
-//        } else {
-//            self.timerView.isHidden = false
-//            //self.scoreView.isHidden = false
-//            if parentViewController.hasDrillStarted && !parentViewController.replay {
-//                self.view.alpha = 1
-//            }
-//            self.view.superview?.frame = CGRect.init(x:0, y:parentViewController.movieView.frame.size.height + 63, width:deviceBounds.width, height:381)
-//            self.view.backgroundColor = UIColor.black
-//            self.view.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:381)
-//            self.pitchesTable.frame = CGRect.init(x:0, y:86, width:deviceBounds.width, height:203)
-//            //self.scoreView.frame = CGRect.init(x:0, y:0, width:deviceBounds.width, height:78)
-//            //self.scoreView.subviews[0].frame = CGRect.init(x:7, y:7, width:((deviceBounds.width / 2) - 17), height:67)
-//            //self.scoreView.subviews[1].frame = CGRect.init(x:((deviceBounds.width / 2) + 7), y:7, width:((deviceBounds.width / 2) - 17), height:67)
-//            self.timerView.frame = CGRect.init(x:0, y:302, width:deviceBounds.width, height:64)
-//            self.lineTimerView.isHidden = true
-//        }
+        self.lineTimerView.isHidden = true
+        self.view.backgroundColor = UIColor.clear
+        if parentViewController.hasDrillStarted && !parentViewController.replay {
+            self.view.alpha = 0.7
+        }
+        self.timerView.isHidden = true
+        let toMoveX = deviceBounds.width - 160
+        var viewFrame = self.view.frame
+        assert(battingHand == "R" || battingHand == "L")
+        if battingHand == "R" {
+            viewFrame.origin = CGPoint.init(x:toMoveX, y:0)
+        } else if battingHand == "L" {
+            viewFrame.origin = CGPoint.init(x:0, y:0)
+        }
+        viewFrame.size.width = deviceBounds.width - toMoveX
+        viewFrame.size.height = deviceBounds.height
+        self.view.frame = viewFrame
+        self.pitchesTable.frame = CGRect.init(x: 0, y: 40,
+                                              width:self.pitchesTable.frame.size.width,
+                                              height:viewFrame.size.height)
     }
     
     private func getPitchLocations()
@@ -250,21 +227,20 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
             
             let drillVideoParser = DrillVideoParser(jsonString: String(data: data, encoding: .utf8)!)
             self.drillVideoItem = drillVideoParser?.getDrillVideoItem()
-
             
             DispatchQueue.main.async {
                 self.updateViewComponents(battingHand: (self.drillVideoItem?.batterHand)!)
                 
-                self.countLabel.text = ((self.drillQuestionItem?.pitchCount)! as String)  + " count"
-
-                if (self.countLabel.text == " count") {
-
-                    if ((self.parent as? VideoPlayerViewController)?.index ?? 1) % 2 == 0 {
-                        self.countLabel.text = "0-0 count"
-                    } else {
-                        self.countLabel.text = "2-1 count"
-                    }
-                }
+//                self.countLabel.text = ((self.drillQuestionItem?.pitchCount)! as String)  + " count"
+//
+//                if (self.countLabel.text == " count") {
+//
+//                    if ((self.parent as? VideoPlayerViewController)?.index ?? 1) % 2 == 0 {
+//                        self.countLabel.text = "0-0 count"
+//                    } else {
+//                        self.countLabel.text = "2-1 count"
+//                    }
+//                }
             }
         })
     }
@@ -416,7 +392,7 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
 
         // Subtract count label's border width
         linePath.move(to: CGPoint(x:0, y:0))
-        linePath.addLine(to: CGPoint(x:self.countLabel.frame.width - 9, y:0))
+        linePath.addLine(to: CGPoint(x:self.countLabel.frame.width, y:0))
 
         self.lineLayer.path = linePath.cgPath
         self.lineLayer.fillColor = UIColor.clear.cgColor
