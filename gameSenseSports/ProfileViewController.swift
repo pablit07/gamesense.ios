@@ -123,10 +123,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             var url = ""
             switch row! {
             case NavOrder.account:
-                url = "https://app.gamesensesports.com/dashboard/subscriptions"
+                url = "https://app.fastpitch-iq.com/dashboard/subscriptions"
                 break
             case NavOrder.myScores:
-                url = "https://app.gamesensesports.com/dashboard/score-chart"
+                url = "https://app.fastpitch-iq.com/dashboard/score-chart"
                 break
             default:
                 break

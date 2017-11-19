@@ -479,14 +479,31 @@ class DrillQuestionsViewController: UIViewController, AVAudioPlayerDelegate,
             switch drillPitchItem.drillPitchID {
             case 1: //"#f39c12" FastBall
                 pitchTypeLabel.backgroundColor = UIColor(red: 243/255, green: 156/255, blue: 18/255, alpha: 1.0)
+                break
             case 2: //"#f31286" Changeup
                 pitchTypeLabel.backgroundColor = UIColor(red: 243/255, green: 18/255, blue: 134/255, alpha: 1.0)
+                break
             case 3: //"#975113" Cutter
                 pitchTypeLabel.backgroundColor = UIColor(red: 151/255, green: 81/255, blue: 19/255, alpha: 1.0)
+                break
             case 4://"#3498db" Curveball
                 pitchTypeLabel.backgroundColor = UIColor(red: 52/255, green: 152/255, blue: 219/255, alpha: 1.0)
+                break
             case 5: //"#6334db" Slider
                 pitchTypeLabel.backgroundColor = UIColor(red: 99/255, green: 52/255, blue: 219/255, alpha: 1.0)
+                break
+            case 106: //"#975113" Rise
+                pitchTypeLabel.backgroundColor = UIColor(red: 99/255, green: 52/255, blue: 219/255, alpha: 1.0)
+                break
+            case 108://"#3498db" Drop
+                pitchTypeLabel.backgroundColor = UIColor(red: 151/255, green: 81/255, blue: 19/255, alpha: 1.0)
+                break
+            case 109: //"#3498db" Screw
+                pitchTypeLabel.backgroundColor = UIColor(red: 52/255, green: 152/255, blue: 219/255, alpha: 1.0)
+                break
+            case 110: //"#f31286" Knuckle
+                pitchTypeLabel.backgroundColor = UIColor(red: 243/255, green: 18/255, blue: 134/255, alpha: 1.0)
+                break
                 
             default: //"#f39c12"
                 pitchTypeLabel.backgroundColor = UIColor(red: 243/255, green: 156/255, blue: 18/255, alpha: 1.0)

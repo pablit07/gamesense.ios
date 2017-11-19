@@ -20,7 +20,7 @@ struct Constants {
     
     
     struct URLs {
-        static let apiBase = "https://app.gamesensesports.com"
+        static let apiBase = "https://app.fastpitch-iq.com"
         static let Login = apiBase + "/api-token-auth/"
         static let DrillList = apiBase + "/player/api-auth/baseball/drills/"
         static let DrillQuestions = apiBase + "/player/api-auth/baseball/drills/" // +id/questions
