@@ -638,7 +638,7 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 2LR9N6ERWB;
 						LastSwiftMigration = 0810;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					11698FA51DDB999600C24D3C = {
 						CreatedOnToolsVersion = 8.0;
@@ -1002,6 +1002,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2LR9N6ERWB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1012,6 +1014,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fastpitch-iq.gameSenseSports";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "681b39e1-5650-43ba-b886-8492d66da541";
+				PROVISIONING_PROFILE_SPECIFIER = "Fastpitch-IQ Testing";
 				SWIFT_OBJC_BRIDGING_HEADER = "gameSenseSports/gameSenseSports-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1024,6 +1028,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2LR9N6ERWB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1034,6 +1040,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fastpitch-iq.gameSenseSports";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "681b39e1-5650-43ba-b886-8492d66da541";
+				PROVISIONING_PROFILE_SPECIFIER = "Fastpitch-IQ Testing";
 				SWIFT_OBJC_BRIDGING_HEADER = "gameSenseSports/gameSenseSports-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
